@@ -54,7 +54,7 @@
     'x4.report': 'Internship report — power grids (PDF) ↗',
     'proj.title': 'Projects', 'proj.flag': 'Flagship project',
     'p1.meta': 'Matlab · solo', 'p1.h': 'Power grid analysis',
-    'p1.p': 'Load flow from 4 to 165 buses (PQ/PV/slack) · comparison of 3 methods (accuracy vs computation time) · transient stability.',
+    'p1.p': 'Load flow from 3 to 118 buses (PQ/PV/slack) · comparison of 3 methods (accuracy vs computation time) · transient stability.',
     'p1.t3': 'Transient stability',
     'repo.soon': '· soon',
     'p2.meta': 'Python · PyQt', 'p2.h': 'Winding and flux analysis program',
