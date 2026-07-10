@@ -6,6 +6,7 @@
   <title>Khalil LAGHA — Étudiant M2 CSEE | Électronique de puissance &amp; énergie</title>
   <meta name="description" content="Khalil LAGHA, étudiant M2 CSEE (Conception de Systèmes d'Énergie Électrique) à l'Université Grenoble Alpes. Électronique de puissance, VE/powertrain, réseaux électriques, IA appliquée à l'énergie. Recherche alternance dès septembre 2026 ou stage de fin d'études printemps–été 2027.">
   <link rel="canonical" href="https://khalilellahlagha.github.io/">
+  <meta name="theme-color" content="#0a0e1c">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://khalilellahlagha.github.io/">
   <meta property="og:title" content="Khalil LAGHA — Étudiant M2 CSEE | Électronique de puissance & énergie">
@@ -53,6 +54,7 @@
   </script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
   <a class="skip-link" href="#accueil" data-i18n="skip">Aller au contenu</a>
 
   <header class="site-header">
@@ -94,6 +96,7 @@
   <main id="main">
     <!-- ============ HERO ============ -->
     <section id="accueil" class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-bg" aria-hidden="true">
         <svg viewBox="0 0 1440 500" preserveAspectRatio="none" focusable="false">
           <path class="wave-baseline" d="M0 250 H1440" />
@@ -117,17 +120,31 @@
 
         <div class="cta-row reveal">
           <a class="btn btn-primary" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="cta.contact">Me contacter</span></a>
-          <a class="btn btn-ghost" id="cv-link" href="cv/CV_Khalil_LAGHA_FR.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0 4-4m-4 4-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="cta.cv">Télécharger mon CV</span></a>
+          <a class="btn btn-ghost js-cv-design" href="cv/CV_Khalil_LAGHA_FR.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0 4-4m-4 4-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="cta.cv">Télécharger mon CV</span></a>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/khalil-ellah-lagha" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.94 8.5v10.06H3.6V8.5h3.34ZM7.16 5.4a1.9 1.9 0 1 1-3.8 0 1.9 1.9 0 0 1 3.8 0ZM20.4 12.9v5.66h-3.33v-5.27c0-1.32-.47-2.22-1.66-2.22-.9 0-1.44.6-1.68 1.19-.08.21-.1.5-.1.8v5.5H10.3s.04-8.93 0-9.86h3.33v1.4c.44-.68 1.23-1.65 3-1.65 2.2 0 3.77 1.43 3.77 4.45Z" fill="currentColor"/></svg>LinkedIn</a>
           <a class="btn btn-ghost" href="https://github.com/KhalilEllahLAGHA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" fill="currentColor"/></svg>GitHub</a>
         </div>
+
+        <p class="cv-alt reveal"><span data-i18n="cta.cvats">Aussi disponible :</span> <a class="js-cv-ats" href="cv/CV_Khalil_LAGHA_ATS_FR.pdf" download><span data-i18n="cta.cvats2">CV version ATS (mise en page simple, pour les candidatures en ligne)</span></a></p>
 
         <p class="hero-meta reveal">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-7-5.1-7-11a7 7 0 0 1 14 0c0 5.9-7 11-7 11Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           Grenoble, France&nbsp;·&nbsp;<span data-i18n="hero.work">Autorisé à travailler en France</span>
         </p>
       </div>
+
+      <a class="scroll-cue" href="#a-propos" aria-label="Faire défiler vers À propos" data-i18n-aria="aria.scroll">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </section>
+
+    <!-- ============ OUTILS (marquee) ============ -->
+    <div class="tools-strip" aria-hidden="true">
+      <div class="tools-track">
+        <span>Matlab/Simulink</span><span>Python</span><span>LTspice</span><span>Proteus</span><span>EPLAN</span><span>AutoCAD Electrical</span><span>Siemens TIA Portal</span><span>Step7</span><span>SolidWorks</span><span>Arduino</span><span>C/C++</span><span>Git</span>
+        <span>Matlab/Simulink</span><span>Python</span><span>LTspice</span><span>Proteus</span><span>EPLAN</span><span>AutoCAD Electrical</span><span>Siemens TIA Portal</span><span>Step7</span><span>SolidWorks</span><span>Arduino</span><span>C/C++</span><span>Git</span>
+      </div>
+    </div>
 
     <!-- ============ À PROPOS ============ -->
     <section id="a-propos" class="section">
@@ -264,7 +281,7 @@
           </article>
 
           <article class="card reveal">
-            <div class="card-top"><span class="card-meta" data-i18n="p2.meta">Python · PyQt</span></div>
+            <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2 15c0-4 4-4 4 0s4 4 4 0 4-4 4 0 4 4 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M2 9h20" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2 3" stroke-linecap="round"/></svg></span><span class="card-meta" data-i18n="p2.meta">Python · PyQt</span></div>
             <h3 data-i18n="p2.h">Analyse de bobinage et de flux</h3>
             <p data-i18n="p2.p">Application PyQt : bobinage triphasé, profils de FMM par dent, densité de flux par réseau de réluctances, validation FEMM.</p>
             <ul class="tags"><li>Python</li><li>PyQt</li><li>FEMM</li><li data-i18n="p2.t2">Réluctances</li></ul>
@@ -272,7 +289,7 @@
           </article>
 
           <article class="card reveal">
-            <div class="card-top"><span class="card-meta">Matlab/Simulink</span></div>
+            <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20 12a8 8 0 1 1-2.34-5.66" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18 2v4.5h-4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/></svg></span><span class="card-meta">Matlab/Simulink</span></div>
             <h3 data-i18n="p3.h">Commande vectorielle FOC — moteur asynchrone</h3>
             <p data-i18n="p3.p">Transformées de Park, régulateurs PID, observateurs.</p>
             <ul class="tags"><li>FOC</li><li>Park</li><li>PID</li></ul>
@@ -280,7 +297,7 @@
           </article>
 
           <article class="card reveal">
-            <div class="card-top"><span class="card-meta">Simulink</span></div>
+            <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 7h10m4 0h4M3 12h4m4 0h10M3 17h13m4 0h1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="card-meta">Simulink</span></div>
             <h3 data-i18n="p6.h">Commande en cascade d'un MCC</h3>
             <p data-i18n="p6.p">Commande en tension via un pont à thyristors triphasé · boucle de vitesse externe, boucle de courant interne.</p>
             <ul class="tags"><li data-i18n="p6.t1">MCC</li><li>Thyristors</li><li>Cascade</li></ul>
@@ -288,7 +305,7 @@
           </article>
 
           <article class="card reveal">
-            <div class="card-top"><span class="card-meta">Step7</span></div>
+            <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M6 3v18M18 3v18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6 8h12M6 16h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="8" r="1.6" fill="currentColor"/><circle cx="12" cy="16" r="1.6" fill="currentColor"/></svg></span><span class="card-meta">Step7</span></div>
             <h3 data-i18n="p4.h">Automatisme Siemens Step7</h3>
             <p data-i18n="p4.p">IHM + programme Ladder d'un cycle machine (simulation).</p>
             <ul class="tags"><li>Ladder</li><li>IHM</li></ul>
@@ -296,7 +313,7 @@
           </article>
 
           <article class="card reveal">
-            <div class="card-top"><span class="card-meta">Arduino</span></div>
+            <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="5" y="7" width="14" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7V3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="3" r="1.4" fill="currentColor"/><circle cx="9.2" cy="12" r="1.4" fill="currentColor"/><circle cx="14.8" cy="12" r="1.4" fill="currentColor"/><path d="M9.5 15.4h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="card-meta">Arduino</span></div>
             <h3 data-i18n="p5.h">Robot suiveur de ligne</h3>
             <p data-i18n="p5.p">Conception et programmation.</p>
             <ul class="tags"><li>Arduino</li><li>C/C++</li></ul>
@@ -356,9 +373,11 @@
         <p class="contact-pitch reveal" data-i18n="contact.pitch">Une opportunité d'alternance ou de stage en électronique de puissance, VE / powertrain, réseaux électriques ou IA appliquée à l'énergie ? Écrivez-moi.</p>
         <div class="cta-row reveal">
           <a class="btn btn-primary" href="mailto:Lkhalilellah@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="contact.mail">M'écrire</span></a>
+          <a class="btn btn-ghost js-cv-design" href="cv/CV_Khalil_LAGHA_FR.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0 4-4m-4 4-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="cta.cvshort">Mon CV</span></a>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/khalil-ellah-lagha" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn btn-ghost" href="https://github.com/KhalilEllahLAGHA" target="_blank" rel="noopener">GitHub</a>
         </div>
+        <p class="cv-alt reveal"><span data-i18n="cta.cvats">Aussi disponible :</span> <a class="js-cv-ats" href="cv/CV_Khalil_LAGHA_ATS_FR.pdf" download><span data-i18n="cta.cvats2">CV version ATS (mise en page simple, pour les candidatures en ligne)</span></a></p>
         <p class="contact-email reveal"><a href="mailto:Lkhalilellah@gmail.com">Lkhalilellah@gmail.com</a></p>
         <p class="hero-meta reveal">Grenoble, France&nbsp;·&nbsp;<span data-i18n="hero.work">Autorisé à travailler en France</span></p>
       </div>
@@ -382,5 +401,9 @@
       </div>
     </div>
   </footer>
+
+  <a class="to-top" href="#accueil" aria-label="Revenir en haut" data-i18n-aria="aria.top">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 14 6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
 </body>
 </html>

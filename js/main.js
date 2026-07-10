@@ -28,6 +28,9 @@
     'chip1': 'Power electronics', 'chip2': 'EV / powertrain', 'chip3': 'Electrical grids', 'chip4': 'AI applied to power systems',
     'cta.contact': 'Contact me',
     'cta.cv': 'Download my CV',
+    'cta.cvshort': 'My CV',
+    'cta.cvats': 'Also available:',
+    'cta.cvats2': 'ATS version of my CV (plain single-column layout, for online applications)',
     'hero.work': 'Authorized to work in France',
     'about.title': 'About',
     'about.p1': 'M2 student in CSEE (Electrical Energy Systems Design) at Université Grenoble Alpes, passionate about power electronics and energy conversion. Trained in the Electrical Engineering programme of École Nationale Polytechnique d\'Alger, ranked 2nd of the M1 EEA cohort at UGA (annual average 15,43/20). My experience covers PEMFC fuel-cell modelling (GIPSA-lab), industrial converters and automation (EURL Lagha) and power grids (Sonelgaz).',
@@ -86,7 +89,7 @@
     'contact.mail': 'Email me'
   };
 
-  var EN_ARIA = { 'aria.nav': 'Main navigation', 'aria.menu': 'Menu', 'aria.chips': 'Areas of interest' };
+  var EN_ARIA = { 'aria.nav': 'Main navigation', 'aria.menu': 'Menu', 'aria.chips': 'Areas of interest', 'aria.scroll': 'Scroll to About', 'aria.top': 'Back to top' };
 
   /* Capture French strings from the DOM so we can switch back. */
   var FR = {}, FR_ARIA = {};
@@ -116,10 +119,13 @@
     });
     root.lang = lang;
     d.title = TITLES[lang];
-    var cvl = d.getElementById('cv-link');
-    if (cvl) {
-      cvl.setAttribute('href', lang === 'fr' ? 'cv/CV_Khalil_LAGHA_FR.pdf' : 'cv/CV_Khalil_LAGHA_EN.pdf');
-    }
+    /* Both CV types download in the language currently displayed. */
+    d.querySelectorAll('.js-cv-design').forEach(function (a) {
+      a.setAttribute('href', lang === 'fr' ? 'cv/CV_Khalil_LAGHA_FR.pdf' : 'cv/CV_Khalil_LAGHA_EN.pdf');
+    });
+    d.querySelectorAll('.js-cv-ats').forEach(function (a) {
+      a.setAttribute('href', lang === 'fr' ? 'cv/CV_Khalil_LAGHA_ATS_FR.pdf' : 'cv/CV_Khalil_LAGHA_ATS_EN.pdf');
+    });
     d.querySelectorAll('.lang-toggle').forEach(function (b) {
       b.textContent = lang === 'fr' ? 'EN' : 'FR';
       b.setAttribute('aria-label', lang === 'fr' ? 'Switch to English' : 'Passer en français');
@@ -229,6 +235,49 @@
     }, { rootMargin: '-40% 0px -55% 0px' });
     sections.forEach(function (s) { spy.observe(s); });
   }
+
+  /* ==================== Scroll progress + back to top ==================== */
+
+  var progress = d.querySelector('.scroll-progress span');
+  var toTop = d.querySelector('.to-top');
+  var ticking = false;
+
+  function onScroll() {
+    if (ticking) { return; }
+    ticking = true;
+    requestAnimationFrame(function () {
+      var doc = d.documentElement;
+      var max = doc.scrollHeight - doc.clientHeight;
+      var y = window.scrollY || doc.scrollTop || 0;
+      if (progress) { progress.style.transform = 'scaleX(' + (max > 0 ? y / max : 0) + ')'; }
+      if (toTop) { toTop.classList.toggle('show', y > 600); }
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ==================== Card spotlight ==================== */
+
+  if (!reduced && window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    d.querySelectorAll('.card').forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+
+  /* ==================== Staggered reveals ==================== */
+
+  ['.cards', '.stat-cards', '.skill-grid', '.timeline'].forEach(function (sel) {
+    d.querySelectorAll(sel).forEach(function (group) {
+      for (var i = 0; i < group.children.length; i++) {
+        group.children[i].style.setProperty('--rd', Math.min(i, 7) * 70 + 'ms');
+      }
+    });
+  });
 
   /* ==================== Misc ==================== */
 
