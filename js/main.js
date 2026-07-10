@@ -27,6 +27,7 @@
     'hero.subline': 'Looking for a work-study contract (alternance) starting September 2026 (2–3 weeks company / university rotation) or a final-year internship in spring–summer 2027.',
     'chip1': 'Power electronics', 'chip2': 'EV / powertrain', 'chip3': 'Electrical grids', 'chip4': 'AI applied to power systems',
     'cta.contact': 'Contact me',
+    'cta.cv': 'Download my CV',
     'hero.work': 'Authorized to work in France',
     'about.title': 'About',
     'about.p1': 'M2 student in CSEE (Electrical Energy Systems Design) at Université Grenoble Alpes, passionate about power electronics and energy conversion. Trained in the Electrical Engineering programme of École Nationale Polytechnique d\'Alger, ranked 2nd of the M1 EEA cohort at UGA (annual average 15,43/20). My experience covers PEMFC fuel-cell modelling (GIPSA-lab), industrial converters and automation (EURL Lagha) and power grids (Sonelgaz).',
@@ -115,6 +116,10 @@
     });
     root.lang = lang;
     d.title = TITLES[lang];
+    var cvl = d.getElementById('cv-link');
+    if (cvl) {
+      cvl.setAttribute('href', lang === 'fr' ? 'cv/CV_Khalil_LAGHA_FR.pdf' : 'cv/CV_Khalil_LAGHA_EN.pdf');
+    }
     d.querySelectorAll('.lang-toggle').forEach(function (b) {
       b.textContent = lang === 'fr' ? 'EN' : 'FR';
       b.setAttribute('aria-label', lang === 'fr' ? 'Switch to English' : 'Passer en français');
