@@ -113,10 +113,10 @@ h1, h2, h3 { line-height: 1.15; text-wrap: balance; }
 .brand-logo { width: 34px; height: 34px; flex: none; }
 .brand-name strong { color: var(--accent); font-weight: 700; }
 
-.nav ul { display: flex; gap: 0.15rem; }
+.nav ul { display: flex; gap: 0.1rem; flex-wrap: nowrap; }
 .nav a {
-  display: inline-block; padding: 0.55rem 0.7rem; border-radius: 8px;
-  color: var(--muted); font-size: 0.95rem; font-weight: 500;
+  display: inline-block; padding: 0.55rem 0.6rem; border-radius: 8px;
+  color: var(--muted); font-size: 0.92rem; font-weight: 500; white-space: nowrap;
 }
 .nav a:hover { color: var(--text); text-decoration: none; background: var(--accent-soft); }
 .nav a[aria-current="true"] { color: var(--accent); }
@@ -552,8 +552,8 @@ a.file-btn:hover {
 .to-top:hover { color: var(--accent); border-color: var(--accent); }
 .to-top svg { width: 20px; height: 20px; }
 
-/* ---------- Mobile ---------- */
-@media (max-width: 767px) {
+/* ---------- Header nav collapse (own breakpoint: 8 nav items need more room than the general mobile layout) ---------- */
+@media (max-width: 900px) {
   .burger { display: inline-flex; }
   .nav {
     position: fixed; z-index: 49; top: 64px; left: 0; right: 0;
@@ -566,7 +566,10 @@ a.file-btn:hover {
   .nav.open { opacity: 1; visibility: visible; transform: none; }
   .nav ul { flex-direction: column; gap: 0.1rem; }
   .nav a { display: block; padding: 0.85rem 0.9rem; font-size: 1.02rem; }
+}
 
+/* ---------- Mobile ---------- */
+@media (max-width: 767px) {
   .timeline::before { left: 5px; }
   .tl-item { grid-template-columns: 1fr; gap: 0.5rem; padding-left: 1.6rem; }
   .tl-item::before { left: 0; top: 6px; }
