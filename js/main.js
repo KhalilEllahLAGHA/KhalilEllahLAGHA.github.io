@@ -55,12 +55,15 @@
     'x3.p3': 'Supervision HMI in Siemens TIA Portal · EPLAN schematics.',
     'x4.date': '2024 · 15 days · observation', 'x4.role': 'Power Grid Intern',
     'x4.p1': 'Substation structure and the full generation → distribution chain (400/220 kV → 60 kV → 30/10 kV → 400/230 V) · visit of an MV/LV substation.',
-    'x4.report': 'Internship report — power grids (PDF) ↗',
+    'x4.report': 'Internship report — power grids',
     'proj.title': 'Projects', 'proj.flag': 'Flagship project',
     'p1.meta': 'Matlab · solo', 'p1.h': 'Power grid analysis',
     'p1.p': 'Load flow from 3 to 118 buses (PQ/PV/slack) · comparison of 3 methods (accuracy vs computation time) · transient stability.',
     'p1.t3': 'Transient stability',
+    'p1.r2': 'Project report',
     'repo.soon': '· soon',
+    'repo.soon2': 'soon',
+    'files.label': 'View the files',
     'p2.meta': 'Python · PyQt', 'p2.h': 'Winding and flux analysis program',
     'p2.p': 'PyQt app: three-phase winding, tooth-based MMF profiles, reluctance-network flux density, FEMM validation.',
     'p2.t2': 'Reluctance networks',
@@ -70,7 +73,21 @@
     'p6.p': 'Voltage control through a three-phase thyristor bridge · outer speed loop, inner current loop.',
     'p6.t1': 'DC motor',
     'p4.h': 'Siemens Step7 automation', 'p4.p': 'HMI + Ladder program for a machine cycle (simulation).',
-    'p5.h': 'Line-follower robot', 'p5.p': 'Design and programming.',
+    'p5.h': 'Line-follower robot',
+    'p5.p': 'Design and programming · Poly Maze competition (4th edition, VIC — ENP, 07/2024), team OPTIMUM.',
+    'p5.t3': 'Competition',
+    'p5.cert': 'Participation certificate',
+    'p7.meta': 'ENP · Lab reports',
+    'p7.h': 'Power electronics lab work',
+    'p7.p': 'Three-phase diode rectification, single-phase semi-controlled bridge, smoothing and commutation overlap — bench measurements, theoretical analysis and Matlab/Simulink simulations.',
+    'p7.t1': 'Rectification',
+    'p7.r1': 'Three-phase diode rectifier',
+    'p7.r2': 'Single-phase semi-controlled bridge',
+    'p7.r3': 'Smoothing and commutation',
+    'p8.h': 'Neural network from scratch (MLP)',
+    'p8.p': 'Multilayer perceptron and gradient backpropagation hand-coded in Matlab, no toolbox — two implementations: didactic loops and vectorised matrix computation.',
+    'p8.t1': 'Backpropagation',
+    'p8.t2': 'Neural networks',
     'skills.title': 'Skills',
     'sk.d1': 'Power conversion (all types)',
     'sk.d2': 'Power conversion for the electrical grid',
@@ -280,11 +297,6 @@
   });
 
   /* ==================== Misc ==================== */
-
-  /* Placeholder repo links: no navigation until repos exist. */
-  d.querySelectorAll('.repo-link[aria-disabled="true"]').forEach(function (a) {
-    a.addEventListener('click', function (e) { e.preventDefault(); });
-  });
 
   var yearEl = d.getElementById('year');
   if (yearEl) { yearEl.textContent = String(new Date().getFullYear()); }

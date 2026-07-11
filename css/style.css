@@ -411,13 +411,45 @@ h1, h2, h3 { line-height: 1.15; text-wrap: balance; }
   background: var(--btn-bg); color: var(--btn-ink);
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
 }
-.repo-link {
-  margin-top: auto; padding-top: 0.6rem;
-  font-size: 0.85rem; color: var(--muted); cursor: default;
+/* Documents & files attached to a project */
+.card-files {
+  margin-top: auto; padding-top: 0.9rem;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem;
+  border-top: 1px dashed var(--border);
 }
-.repo-link::before { content: "❯ "; color: var(--accent); }
-.repo-link em { font-style: normal; color: var(--accent); font-size: 0.85em; }
-.repo-link:hover { text-decoration: none; }
+.files-label {
+  flex-basis: 100%;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--muted);
+  display: inline-flex; align-items: center; gap: 0.45rem;
+}
+.files-label::before {
+  content: ""; width: 7px; height: 7px; flex: none;
+  background: var(--accent); transform: rotate(45deg); border-radius: 1.5px;
+}
+.file-btn {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  max-width: 100%;
+  padding: 0.42rem 0.7rem;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg-alt);
+  color: var(--text); font-size: 0.84rem; font-weight: 500; line-height: 1.3;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.file-btn > span:first-of-type { overflow-wrap: anywhere; }
+.file-btn svg { width: 15px; height: 15px; flex: none; color: var(--accent); }
+a.file-btn:hover {
+  text-decoration: none; border-color: var(--accent); color: var(--accent);
+  transform: translateY(-2px); box-shadow: 0 6px 18px var(--glow);
+}
+.file-ext {
+  flex: none;
+  padding: 0.04rem 0.38rem; border: 1px solid var(--accent); border-radius: 6px;
+  color: var(--accent); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.05em;
+}
+.file-btn.is-soon { opacity: 0.55; }
+.file-btn.is-soon .file-ext { border-style: dashed; }
+.tl-card .file-btn { margin-top: 0.85rem; }
 
 @media (min-width: 860px) {
   .card-flagship { grid-column: span 2; }
