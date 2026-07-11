@@ -382,14 +382,51 @@
       <div class="container">
         <h2 class="sec-title reveal"><span class="sec-n" aria-hidden="true">05</span><span data-i18n="skills.title">Compétences</span></h2>
 
+        <p class="domains-hint reveal" data-i18n="sk.hint">Survolez ou touchez un domaine pour voir le détail.</p>
         <ul class="skill-domains reveal">
-          <li data-i18n="sk.d1">Conversion de puissance (tous types)</li>
+          <li class="sd">
+            <button type="button" class="sd-toggle" aria-expanded="false" aria-controls="sd-panel-1">
+              <span data-i18n="sk.d1">Conversion de puissance (tous types)</span>
+              <svg class="sd-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sd-panel" id="sd-panel-1">
+              <p data-i18n="sk.d1.detail">Convertisseurs statiques : AC-AC, AC-DC, DC-DC, DC-AC. Capable d'analyser un cahier des charges et de dimensionner un convertisseur from scratch — bases et notions avancées d'électronique de puissance. Simulation sous Matlab/Simulink (bibliothèque Simscape Power Systems).</p>
+              <ul class="tags"><li>AC-AC</li><li>AC-DC</li><li>DC-DC</li><li>DC-AC</li><li>Simulink</li><li>Simscape Power Systems</li></ul>
+            </div>
+          </li>
           <li data-i18n="sk.d2">Conversion pour le réseau électrique</li>
           <li data-i18n="sk.d3">Électronique de puissance pour la commande des machines</li>
           <li data-i18n="sk.d4">Machines électriques &amp; transformateurs</li>
-          <li data-i18n="sk.d5">Analyse de réseaux, stabilité transitoire</li>
-          <li data-i18n="sk.d6">Automatique</li>
-          <li data-i18n="sk.d7">Automatisme (API/PLC, IHM/SCADA)</li>
+          <li class="sd">
+            <button type="button" class="sd-toggle" aria-expanded="false" aria-controls="sd-panel-5">
+              <span data-i18n="sk.d5">Analyse de réseaux, stabilité transitoire</span>
+              <svg class="sd-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sd-panel" id="sd-panel-5">
+              <p data-i18n="sk.d5.detail">Des matrices d'admittance et d'impédance jusqu'au load flow et à la stabilité transitoire.</p>
+              <ul class="tags"><li data-i18n="sk.d5.t1">Matrices Y/Z</li><li>Load flow</li><li data-i18n="sk.d5.t3">Stabilité transitoire</li></ul>
+            </div>
+          </li>
+          <li class="sd">
+            <button type="button" class="sd-toggle" aria-expanded="false" aria-controls="sd-panel-6">
+              <span data-i18n="sk.d6">Automatique</span>
+              <svg class="sd-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sd-panel" id="sd-panel-6">
+              <p data-i18n="sk.d6.detail">PID, LQR, filtre de Kalman, identification de systèmes, automatique avancée.</p>
+              <ul class="tags"><li>PID</li><li>LQR</li><li data-i18n="sk.d6.t3">Filtre de Kalman</li><li data-i18n="sk.d6.t4">Identification de systèmes</li></ul>
+            </div>
+          </li>
+          <li class="sd">
+            <button type="button" class="sd-toggle" aria-expanded="false" aria-controls="sd-panel-7">
+              <span data-i18n="sk.d7">Automatisme (API/PLC, IHM/SCADA)</span>
+              <svg class="sd-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sd-panel" id="sd-panel-7">
+              <p data-i18n="sk.d7.detail">Siemens TIA Portal, Step7 — programmation Ladder (LD), Function Block Diagram (FBD) et Sequential Function Chart (SFC).</p>
+              <ul class="tags"><li>TIA Portal</li><li>Step7</li><li>LD</li><li>FBD</li><li>SFC</li></ul>
+            </div>
+          </li>
           <li data-i18n="sk.d8">IA (réseaux de neurones, algorithmes génétiques, logique floue)</li>
         </ul>
 
@@ -408,6 +445,16 @@
               <li><span data-i18n="sk.ar">Arabe</span><span class="lvl" data-i18n="sk.arlvl">natif</span></li>
             </ul>
             <p class="cert" data-i18n="sk.cert">Certification : SLB NEST &amp; SIPP Niveau 2 — 07/2025, HSE.</p>
+          </div>
+          <div class="skill-card reveal">
+            <h3 data-i18n="sk.soft">Savoir-être</h3>
+            <ul class="tags tags-lg">
+              <li data-i18n="sk.soft1">Apprentissage rapide</li>
+              <li data-i18n="sk.soft2">À l'aise avec outils &amp; logiciels</li>
+              <li data-i18n="sk.soft3">Résolution de problèmes</li>
+              <li data-i18n="sk.soft4">Rigueur</li>
+              <li data-i18n="sk.soft5">Organisation</li>
+            </ul>
           </div>
           <div class="skill-card reveal">
             <h3 data-i18n="sk.assoc">Vie associative</h3>

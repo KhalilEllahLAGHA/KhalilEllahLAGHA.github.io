@@ -456,19 +456,51 @@ a.file-btn:hover {
 }
 
 /* ---------- Skills ---------- */
+.domains-hint { color: var(--muted); font-size: 0.86rem; margin-bottom: 0.9rem; }
 .skill-domains {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 0.7rem; margin-bottom: 1.6rem;
+  align-items: start; gap: 0.7rem; margin-bottom: 1.6rem;
 }
-.skill-domains li {
+.skill-domains > li:not(.sd) {
   display: flex; align-items: center; gap: 0.65rem;
   padding: 0.85rem 1rem; border: 1px solid var(--border); border-radius: 12px;
   background: var(--surface); font-size: 0.94rem;
 }
-.skill-domains li::before {
+.skill-domains > li:not(.sd)::before {
   content: ""; width: 8px; height: 8px; flex: none;
   background: var(--accent); transform: rotate(45deg); border-radius: 2px;
 }
+
+/* Expandable skill domains: hover-to-peek (pointer devices) + click/keyboard to pin open */
+.sd-toggle {
+  display: flex; width: 100%; align-items: center; gap: 0.65rem;
+  padding: 0.85rem 1rem; border: 1px solid var(--border); border-radius: 12px;
+  background: var(--surface); color: var(--text); font: inherit; font-size: 0.94rem;
+  text-align: left; cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.sd-toggle::before {
+  content: ""; width: 8px; height: 8px; flex: none;
+  background: var(--accent); transform: rotate(45deg); border-radius: 2px;
+}
+.sd-toggle span { flex: 1; }
+.sd-chevron { width: 18px; height: 18px; flex: none; color: var(--muted); transition: transform 0.25s ease, color 0.2s ease; }
+.sd-toggle:hover, .sd-toggle:focus-visible { border-color: var(--accent); }
+.sd-toggle:hover .sd-chevron, .sd-toggle:focus-visible .sd-chevron { color: var(--accent); }
+
+.sd-panel {
+  max-height: 0; overflow: hidden; opacity: 0; margin-top: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.35s ease;
+}
+.sd-panel p { color: var(--muted); font-size: 0.87rem; line-height: 1.55; padding: 0 0.15rem; }
+.sd-panel .tags { margin-top: 0.6rem; padding: 0 0.15rem; }
+
+@media (hover: hover) and (pointer: fine) {
+  .sd:hover .sd-panel, .sd:focus-within .sd-panel { max-height: 20rem; opacity: 1; margin-top: 0.7rem; }
+  .sd:hover .sd-chevron, .sd:focus-within .sd-chevron { transform: rotate(180deg); }
+}
+.sd.is-open .sd-panel { max-height: 20rem; opacity: 1; margin-top: 0.7rem; }
+.sd.is-open .sd-chevron { transform: rotate(180deg); }
 .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
 .skill-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);

@@ -93,17 +93,30 @@
     'p8.t1': 'Backpropagation',
     'p8.t2': 'Neural networks',
     'skills.title': 'Skills',
+    'sk.hint': 'Hover or tap a domain to see the detail.',
     'sk.d1': 'Power conversion (all types)',
+    'sk.d1.detail': 'Static converters: AC-AC, AC-DC, DC-DC, DC-AC. Able to read a specification (cahier des charges) and design a converter from scratch — solid fundamentals plus advanced power-electronics topics. Simulation in Matlab/Simulink (Simscape Power Systems library).',
     'sk.d2': 'Power conversion for the electrical grid',
     'sk.d3': 'Power electronics for machine control',
     'sk.d4': 'Electrical machines & transformers',
     'sk.d5': 'Power system analysis, transient stability',
+    'sk.d5.detail': 'From admittance and impedance matrices to load flow and transient stability.',
+    'sk.d5.t1': 'Y/Z matrices', 'sk.d5.t3': 'Transient stability',
     'sk.d6': 'Control engineering',
+    'sk.d6.detail': 'PID, LQR, Kalman filter, system identification, advanced control theory.',
+    'sk.d6.t3': 'Kalman filter', 'sk.d6.t4': 'System identification',
     'sk.d7': 'Industrial automation (PLC, HMI/SCADA)',
+    'sk.d7.detail': 'Siemens TIA Portal, Step7 — Ladder Diagram (LD), Function Block Diagram (FBD) and Sequential Function Chart (SFC) programming.',
     'sk.d8': 'AI (neural networks, genetic algorithms, fuzzy logic)',
     'sk.sw': 'Software', 'sk.lc': 'Languages & certification',
     'sk.fr': 'French', 'sk.en': 'English', 'sk.ar': 'Arabic', 'sk.arlvl': 'native',
     'sk.cert': 'Certification: SLB NEST & SIPP Level 2 — 07/2025, HSE.',
+    'sk.soft': 'Soft skills',
+    'sk.soft1': 'Fast learner',
+    'sk.soft2': 'Comfortable with new tools & software',
+    'sk.soft3': 'Problem solving',
+    'sk.soft4': 'Rigorous',
+    'sk.soft5': 'Organized',
     'sk.assoc': 'Student involvement',
     'docs.title': 'Documents',
     'docs.intro': 'Academic transcript and recommendation letters.',
@@ -299,6 +312,18 @@
       });
     });
   }
+
+  /* ==================== Skill domain expand/collapse ==================== */
+
+  /* Hover already reveals the panel via CSS on precise pointers; click/tap
+     pins it open so touch screens and keyboard users (Enter/Space) can see it too. */
+  d.querySelectorAll('.sd-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var li = btn.closest('.sd');
+      var open = li.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
 
   /* ==================== Staggered reveals ==================== */
 
