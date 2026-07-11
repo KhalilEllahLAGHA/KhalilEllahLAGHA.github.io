@@ -24,7 +24,7 @@
     'nav.proj': 'Projects', 'nav.skills': 'Skills', 'nav.docs': 'Documents', 'nav.contact': 'Contact',
     'hero.kicker': 'Work-study from September 2026 · Final-year internship 2027',
     'hero.tagline': 'M2 student in Electrical Energy Systems Design — power electronics & energy conversion',
-    'hero.subline': 'Looking for a work-study contract (alternance) starting September 2026 (2–3 weeks company / university rotation) or a final-year internship in spring–summer 2027.',
+    'hero.subline': 'Looking for a work-study contract (alternance, 2–3-week rotation) from September 2026, or a final-year internship in spring–summer 2027.',
     'chip1': 'Power electronics', 'chip2': 'EV / powertrain', 'chip3': 'Electrical grids', 'chip4': 'AI applied to power systems',
     'cta.contact': 'Contact me',
     'cta.cv': 'Download my CV',
