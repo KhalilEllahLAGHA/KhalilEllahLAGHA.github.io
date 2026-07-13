@@ -311,6 +311,47 @@
         card.style.setProperty('--my', (e.clientY - r.top) + 'px');
       });
     });
+
+    /* Hero grid brightens around the cursor */
+    var hero = d.querySelector('.hero');
+    if (hero) {
+      hero.addEventListener('mousemove', function (e) {
+        var r = hero.getBoundingClientRect();
+        hero.style.setProperty('--hx', (e.clientX - r.left) + 'px');
+        hero.style.setProperty('--hy', (e.clientY - r.top) + 'px');
+      });
+      hero.addEventListener('mouseleave', function () {
+        hero.style.setProperty('--hx', '-999px');
+        hero.style.setProperty('--hy', '-999px');
+      });
+    }
+  }
+
+  /* ==================== Stat count-up ==================== */
+
+  var counters = d.querySelectorAll('.stat strong[data-count]');
+  if (!reduced && 'IntersectionObserver' in window && counters.length) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) { return; }
+        cio.unobserve(entry.target);
+        var el = entry.target;
+        var target = parseFloat(el.getAttribute('data-count'));
+        var dec = parseInt(el.getAttribute('data-decimals') || '0', 10);
+        var node = el.firstChild; /* the number text node — <small> suffix stays intact */
+        if (!node || node.nodeType !== 3 || isNaN(target)) { return; }
+        var t0 = null;
+        function step(ts) {
+          if (t0 === null) { t0 = ts; }
+          var p = Math.min((ts - t0) / 1100, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          node.nodeValue = (target * eased).toFixed(dec).replace('.', ',');
+          if (p < 1) { requestAnimationFrame(step); }
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { cio.observe(el); });
   }
 
   /* ==================== Skill domain expand/collapse ==================== */

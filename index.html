@@ -14,6 +14,12 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:site_name" content="Khalil LAGHA — Portfolio">
+  <meta property="og:image" content="https://khalilellahlagha.github.io/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Khalil LAGHA — Étudiant M2 CSEE, électronique de puissance &amp; systèmes d'énergie">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://khalilellahlagha.github.io/assets/og.png">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1120'/%3E%3Cpath d='M10 44q7-20 14 0t14 0q3.5-10 7-10' stroke='%23fbbf24' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='20' r='5' fill='%23fbbf24'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -135,27 +141,21 @@
           Grenoble, France&nbsp;·&nbsp;<a href="tel:+33698347550">(+33)&nbsp;6&nbsp;98&nbsp;34&nbsp;75&nbsp;50</a>&nbsp;·&nbsp;<span data-i18n="hero.work">Autorisé à travailler en France</span>
         </p>
         </div>
+      </div>
 
-        <div class="hero-scope reveal" aria-hidden="true">
-          <div class="scope-head">
-            <span class="scope-led"></span>
-            <span class="scope-name">OSCILLOSCOPE</span>
-            <span class="scope-badge">CH1 · CH2</span>
-          </div>
-          <div class="scope-screen">
-            <svg viewBox="0 0 300 170" preserveAspectRatio="none" focusable="false">
-              <path class="scope-mid" d="M0 85 H300"/>
-              <path class="scope-sine" d="M0 85 Q37.5 5 75 85 T150 85 T225 85 T300 85"/>
-              <path class="scope-pwm" d="M0 132 H28 V56 H72 V132 H118 V56 H150 V132 H196 V56 H240 V132 H272 V56 H300"/>
-            </svg>
-            <span class="scope-sweep"></span>
-          </div>
-          <div class="scope-read">
-            <span>CH1 · V<sub>out</sub> <b>48.0 V</b></span>
-            <span>CH2 · PWM <b>D = 0.62</b></span>
-            <span>ΔV <b>&lt; 5 %</b></span>
-          </div>
-        </div>
+      <div class="hero-schematic" aria-hidden="true">
+        <svg viewBox="0 0 420 190" focusable="false">
+          <path d="M30 160 H390 M30 160 V112 M30 100 V70 M30 70 H120 M165 70 H200 M200 70 H220 M340 70 H390 M390 70 V85 M390 135 V160"/>
+          <path d="M20 100 H40 M25 112 H35"/>
+          <path d="M120 70 L160 52"/>
+          <circle cx="120" cy="70" r="2.4"/><circle cx="165" cy="70" r="2.4"/>
+          <path d="M200 70 V96 M192 96 H208 M208 112 H192 L200 96 Z M200 112 V160"/>
+          <path d="M220 70 a15 15 0 0 1 30 0 a15 15 0 0 1 30 0 a15 15 0 0 1 30 0 a15 15 0 0 1 30 0"/>
+          <path d="M340 70 V105 M328 105 H352 M328 115 H352 M340 115 V160"/>
+          <path d="M390 85 l8 6 -16 8 16 8 -16 8 16 8 -8 6"/>
+          <circle class="sch-a" cx="200" cy="70" r="3.4"/>
+          <path class="sch-a" d="M245 48 h30 m-7 -4 7 4 -7 4"/>
+        </svg>
       </div>
 
       <a class="scroll-cue" href="#a-propos" aria-label="Faire défiler vers À propos" data-i18n-aria="aria.scroll">
@@ -182,7 +182,7 @@
           </div>
           <div class="stat-cards">
             <div class="stat reveal"><strong data-i18n="stat1v">2ᵉ</strong><span data-i18n="stat1l">de promotion — M1 EEA (UGA)</span></div>
-            <div class="stat reveal"><strong>15,43<small>/20</small></strong><span data-i18n="stat2l">moyenne annuelle M1</span></div>
+            <div class="stat reveal"><strong data-count="15.43" data-decimals="2">15,43<small>/20</small></strong><span data-i18n="stat2l">moyenne annuelle M1</span></div>
             <div class="stat reveal"><strong>C2</strong><span data-i18n="stat3l">anglais</span></div>
           </div>
         </div>
@@ -196,6 +196,7 @@
         <ol class="timeline">
           <li class="tl-item reveal">
             <span class="tl-date">09/2026</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 4 2 9l10 5 10-5-10-5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6 11.5V16c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-4.5M22 9v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
             <div class="tl-card">
               <h3 data-i18n="e1.h">M2 CSEE — Conception de Systèmes d'Énergie Électrique</h3>
               <p class="tl-org">Université Grenoble Alpes</p>
@@ -204,6 +205,7 @@
           </li>
           <li class="tl-item reveal">
             <span class="tl-date">2025 – 2026</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 21h18M5 21v-9m4.5 9v-9m5 9v-9m4.5 9v-9M3 12 12 4l9 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             <div class="tl-card">
               <h3>M1 EEA (EECS)</h3>
               <p class="tl-org">Université Grenoble Alpes</p>
@@ -212,6 +214,7 @@
           </li>
           <li class="tl-item reveal">
             <span class="tl-date">2021 – 2025</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
             <div class="tl-card">
               <h3 data-i18n="e3.h">Cycle ingénieur Électrotechnique</h3>
               <p class="tl-org">École Nationale Polytechnique d'Alger</p>
@@ -220,6 +223,7 @@
           </li>
           <li class="tl-item reveal">
             <span class="tl-date">2021</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M17 4H7l6 8-6 8h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             <div class="tl-card">
               <h3 data-i18n="e4.h">Baccalauréat Mathématiques</h3>
               <p class="tl-note" data-i18n="e4.p">Mention Très Bien — 16,93/20.</p>
@@ -236,6 +240,7 @@
         <ol class="timeline">
           <li class="tl-item reveal">
             <span class="tl-date" data-i18n="x1.date">04 → 07/2026 · 3,5 mois</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M10 3v5.2L4.8 17.5A2 2 0 0 0 6.6 20.5h10.8a2 2 0 0 0 1.8-3L14 8.2V3M8.5 3h7M7.5 14h9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             <div class="tl-card">
               <h3 data-i18n="x1.role">Stagiaire Recherche</h3>
               <p class="tl-org">GIPSA-lab, Grenoble</p>
@@ -248,6 +253,7 @@
           </li>
           <li class="tl-item reveal">
             <span class="tl-date" data-i18n="x2.date">2025 · 1 mois</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M8 21 12 3l4 18M9.3 15h5.4M10.4 9.5h3.2M6 21h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             <div class="tl-card">
               <h3 data-i18n="x2.role">Stagiaire</h3>
               <p class="tl-org">SLB / Schlumberger</p>
@@ -263,6 +269,7 @@
           </li>
           <li class="tl-item reveal">
             <span class="tl-date" data-i18n="x3.date">2024 · 15 jours + 1 mois</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3.5" y="5.5" width="17" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 18.5 20.5 5.5M6.5 9.5q1.5-2.2 3 0M14 15.5h3.5M14 17.5h3.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
             <div class="tl-card">
               <h3 data-i18n="x3.role">Stagiaire Électronique de puissance &amp; Automatisme</h3>
               <p class="tl-org">EURL Lagha</p>
@@ -281,6 +288,7 @@
           </li>
           <li class="tl-item reveal">
             <span class="tl-date" data-i18n="x4.date">2024 · 15 jours · observation</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 3 6.5 21M12 3l5.5 18M8.8 9.5h6.4M7.3 14.5h9.4M5 21h14M8.8 9.5l6.9 5M15.2 9.5l-6.9 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             <div class="tl-card">
               <h3 data-i18n="x4.role">Stagiaire Réseaux</h3>
               <p class="tl-org">Sonelgaz</p>
@@ -501,6 +509,7 @@
         <ul class="skill-domains reveal">
           <li class="sd">
             <button type="button" class="sd-toggle" aria-expanded="false" aria-controls="sd-panel-1">
+              <svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h13l-3.5-3.5M20 16H7l3.5 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <span data-i18n="sk.d1">Conversion de puissance (tous types)</span>
               <svg class="sd-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
@@ -509,11 +518,12 @@
               <ul class="tags"><li>AC-AC</li><li>AC-DC</li><li>DC-DC</li><li>DC-AC</li><li>Simulink</li><li>Simscape Power Systems</li></ul>
             </div>
           </li>
-          <li data-i18n="sk.d2">Conversion pour le réseau électrique</li>
-          <li data-i18n="sk.d3">Électronique de puissance pour la commande des machines</li>
-          <li data-i18n="sk.d4">Machines électriques &amp; transformateurs</li>
+          <li><svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M13 7.5 9.2 12.7h2.9l-1 4.3 3.9-5.2h-3l1-4.3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span data-i18n="sk.d2">Conversion pour le réseau électrique</span></li>
+          <li><svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16.5 12H21M8 14.5v-5l2 3 2-3v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="sk.d3">Électronique de puissance pour la commande des machines</span></li>
+          <li><svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="8.8" cy="12" r="5.6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="15.2" cy="12" r="5.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span data-i18n="sk.d4">Machines électriques &amp; transformateurs</span></li>
           <li class="sd">
             <button type="button" class="sd-toggle" aria-expanded="false" aria-controls="sd-panel-5">
+              <svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21h18M3 17.5 8.5 12l3.5 3 6-7M18 8h3.2v3.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <span data-i18n="sk.d5">Analyse de réseaux, stabilité transitoire</span>
               <svg class="sd-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
@@ -524,6 +534,7 @@
           </li>
           <li class="sd">
             <button type="button" class="sd-toggle" aria-expanded="false" aria-controls="sd-panel-6">
+              <svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12a8 8 0 1 1-2.34-5.66" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 2v4.5h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></svg>
               <span data-i18n="sk.d6">Automatique</span>
               <svg class="sd-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
@@ -534,6 +545,7 @@
           </li>
           <li class="sd">
             <button type="button" class="sd-toggle" aria-expanded="false" aria-controls="sd-panel-7">
+              <svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="9.5" y="9.5" width="5" height="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
               <span data-i18n="sk.d7">Automatisme (API/PLC, IHM/SCADA)</span>
               <svg class="sd-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
@@ -542,7 +554,7 @@
               <ul class="tags"><li>TIA Portal</li><li>Step7</li><li>LD</li><li>FBD</li><li>SFC</li></ul>
             </div>
           </li>
-          <li data-i18n="sk.d8">IA (réseaux de neurones, algorithmes génétiques, logique floue)</li>
+          <li><svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="5" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="19" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.7 7 10.3 11M6.7 17l3.6-4M14 12h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-i18n="sk.d8">IA (réseaux de neurones, algorithmes génétiques, logique floue)</span></li>
         </ul>
 
         <div class="skill-grid">

@@ -29,6 +29,7 @@
   --glow: rgba(245, 158, 11, 0.16);
   --wave2: #5f6f9c;
   --grid-line: rgba(164, 174, 203, 0.055);
+  --grid-line-hot: rgba(251, 191, 36, 0.18);
   --spot: rgba(251, 191, 36, 0.07);
   --accent-2: #f59e0b;
   --pcb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cg fill='none' stroke='%23a4aecb' stroke-opacity='0.06'%3E%3Cpath d='M24 0v34l22 22h44'/%3E%3Ccircle cx='94' cy='56' r='3'/%3E%3Cpath d='M180 44h-34l-16 16v48'/%3E%3Ccircle cx='130' cy='112' r='3'/%3E%3Cpath d='M0 132h56l16-16'/%3E%3Ccircle cx='76' cy='112' r='2.5'/%3E%3Cpath d='M156 180v-28l-22-22'/%3E%3Ccircle cx='24' cy='0' r='2.5'/%3E%3Ccircle cx='156' cy='180' r='2.5'/%3E%3C/g%3E%3C/svg%3E");
@@ -52,6 +53,7 @@
   --glow: rgba(245, 158, 11, 0.14);
   --wave2: #93a0c2;
   --grid-line: rgba(22, 28, 49, 0.05);
+  --grid-line-hot: rgba(180, 83, 9, 0.16);
   --spot: rgba(180, 83, 9, 0.05);
   --accent-2: #d97706;
   --pcb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cg fill='none' stroke='%23161c31' stroke-opacity='0.05'%3E%3Cpath d='M24 0v34l22 22h44'/%3E%3Ccircle cx='94' cy='56' r='3'/%3E%3Cpath d='M180 44h-34l-16 16v48'/%3E%3Ccircle cx='130' cy='112' r='3'/%3E%3Cpath d='M0 132h56l16-16'/%3E%3Ccircle cx='76' cy='112' r='2.5'/%3E%3Cpath d='M156 180v-28l-22-22'/%3E%3Ccircle cx='24' cy='0' r='2.5'/%3E%3Ccircle cx='156' cy='180' r='2.5'/%3E%3C/g%3E%3C/svg%3E");
@@ -607,6 +609,7 @@ a.file-btn:hover {
   .timeline::before { left: 5px; }
   .tl-item { grid-template-columns: 1fr; gap: 0.5rem; padding-left: 1.6rem; }
   .tl-item::before { left: 0; top: 6px; }
+  .tl-ico { left: -5px; top: 0; }
   .tl-date { text-align: left; }
   .about-grid { grid-template-columns: 1fr; }
   .stat-cards { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
@@ -622,78 +625,34 @@ a.file-btn:hover {
 /* PCB-trace pattern on alternate sections */
 .section-alt { background-image: var(--pcb); background-size: 180px 180px; }
 
-/* Hero: two columns on wide screens, oscilloscope panel on the right */
-@media (min-width: 1080px) {
-  .hero-inner {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
-    gap: clamp(2rem, 4vw, 3.5rem);
-    align-items: center;
-    width: 100%;
-  }
+/* Hero: faint buck-converter schematic in the backdrop */
+.hero-schematic {
+  position: absolute; z-index: -1; pointer-events: none;
+  right: clamp(0.5rem, 4vw, 4rem); bottom: clamp(2rem, 7vh, 5rem);
+  width: min(430px, 36vw);
+  color: var(--text); opacity: 0.15;
 }
-.hero-scope { display: none; }
-@media (min-width: 1080px) {
-  .hero-scope {
-    display: block;
-    border: 1px solid var(--border); border-radius: var(--radius);
-    background: var(--surface); box-shadow: var(--shadow);
-    overflow: hidden;
-  }
+[data-theme="light"] .hero-schematic { opacity: 0.11; }
+.hero-schematic svg { width: 100%; height: auto; display: block; }
+.hero-schematic path, .hero-schematic circle {
+  stroke: currentColor; fill: none;
+  stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
 }
-.scope-head {
-  display: flex; align-items: center; gap: 0.6rem;
-  padding: 0.6rem 0.95rem;
-  border-bottom: 1px solid var(--border);
-  color: var(--muted); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
-}
-.scope-led {
-  width: 8px; height: 8px; flex: none; border-radius: 50%;
-  background: var(--accent);
-  animation: pulse 2.2s ease-out infinite;
-}
-.scope-badge {
-  margin-left: auto;
-  padding: 0.08rem 0.55rem; border: 1px solid var(--border); border-radius: 999px;
-  letter-spacing: 0.08em;
-}
-.scope-screen {
-  position: relative; overflow: hidden;
+.hero-schematic circle { fill: currentColor; stroke: none; }
+.hero-schematic .sch-a { stroke: var(--accent); }
+.hero-schematic circle.sch-a { fill: var(--accent); stroke: none; }
+@media (max-width: 900px) { .hero-schematic { display: none; } }
+
+/* Hero grid: brightens around the cursor (precise pointers only) */
+.hero-grid::after {
+  content: ""; position: absolute; inset: 0;
   background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 30px 34px;
+    linear-gradient(var(--grid-line-hot) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-hot) 1px, transparent 1px);
+  background-size: 42px 42px;
+  -webkit-mask-image: radial-gradient(240px circle at var(--hx, -999px) var(--hy, -999px), #000 30%, transparent 100%);
+  mask-image: radial-gradient(240px circle at var(--hx, -999px) var(--hy, -999px), #000 30%, transparent 100%);
 }
-.scope-screen svg { width: 100%; height: 190px; display: block; }
-.scope-screen path { fill: none; }
-.scope-mid { stroke: var(--border); stroke-dasharray: 3 9; }
-.scope-sine {
-  stroke: var(--accent); stroke-width: 2.4; stroke-linecap: round;
-  stroke-dasharray: 200 120;
-  animation: march 7s linear infinite;
-}
-.scope-pwm {
-  stroke: var(--wave2); stroke-width: 1.8; opacity: 0.8;
-  stroke-dasharray: 120 70;
-  animation: march 10s linear infinite reverse;
-}
-.scope-sweep {
-  position: absolute; top: 0; bottom: 0; left: -80px; width: 76px;
-  pointer-events: none;
-  background: linear-gradient(90deg, transparent, var(--glow));
-  border-right: 1px solid var(--accent);
-  opacity: 0.6;
-  animation: scope-sweep 5.5s linear infinite;
-}
-@keyframes scope-sweep { to { left: 100%; } }
-.scope-read {
-  display: flex; flex-wrap: wrap; gap: 0.35rem 1.15rem;
-  padding: 0.6rem 0.95rem 0.7rem;
-  border-top: 1px solid var(--border);
-  color: var(--muted); font-size: 0.78rem;
-}
-.scope-read b { color: var(--accent); font-weight: 700; }
-.scope-read sub { font-size: 0.72em; }
 
 /* Project card mini-diagrams */
 .card-diagram {
@@ -728,14 +687,53 @@ a.file-btn:hover {
 .dg-track { stroke: var(--muted); fill: none; stroke-width: 11; stroke-linecap: round; opacity: 0.28; }
 .dg-race { stroke-width: 2.4; stroke-dasharray: 2 10; animation: dg-flow 5s linear infinite; }
 
-/* Timeline dots: slow radar pulse */
+/* Timeline: icon medallions replace the plain dots */
+.tl-item::before { display: none; }
+.tl-ico {
+  position: absolute; left: 160px; top: 0;
+  width: 22px; height: 22px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--surface); border: 1.5px solid var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+.tl-ico svg { width: 13px; height: 13px; }
 @media (prefers-reduced-motion: no-preference) {
-  .tl-item::before { animation: tl-pulse 3.2s ease-out infinite; }
+  .tl-ico { animation: tl-pulse 3.2s ease-out infinite; }
 }
 @keyframes tl-pulse {
   0%, 100% { box-shadow: 0 0 0 4px var(--accent-soft); }
-  50% { box-shadow: 0 0 0 9px rgba(251, 191, 36, 0.05); }
+  50% { box-shadow: 0 0 0 8px rgba(251, 191, 36, 0.05); }
 }
+
+/* Skill domains: icons replace the diamond bullets */
+.skill-domains > li:not(.sd)::before, .sd-toggle::before { display: none; }
+.sd-ico { width: 18px; height: 18px; flex: none; color: var(--accent); }
+
+/* Stats: steady digits during count-up */
+.stat strong { font-variant-numeric: tabular-nums; }
+
+/* Micro-interactions */
+.btn-primary { position: relative; overflow: hidden; }
+.btn-primary::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: -70%; width: 45%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.38), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+  pointer-events: none;
+}
+.btn-primary:hover::after { left: 125%; }
+.btn-primary > * { position: relative; }
+.card-ico, .doc-ico { transition: transform 0.25s ease; }
+.card:hover .card-ico { transform: rotate(-6deg) scale(1.07); }
+.doc-card:hover .doc-ico { transform: rotate(-6deg) scale(1.07); }
+.file-btn svg { transition: transform 0.2s ease; }
+a.file-btn:hover svg { transform: translateY(-1.5px); }
+.brand:hover .brand-logo path {
+  stroke-dasharray: 46 18;
+  animation: brand-march 1.2s linear infinite;
+}
+@keyframes brand-march { to { stroke-dashoffset: -64; } }
 
 /* Footer wave divider */
 .footer-wave { overflow: hidden; margin-top: -1rem; }
@@ -755,8 +753,7 @@ a.file-btn:hover {
   .tools-track { animation: none; }
   .scroll-cue { animation: none; }
   .card::after { display: none; }
-  .scope-sine, .scope-pwm, .scope-led { animation: none; }
-  .scope-sweep { display: none; }
   .dg-flow, .dg-rot, .dg-race { animation: none; }
-  .tl-item::before { animation: none; }
+  .tl-item::before, .tl-ico { animation: none; }
+  .hero-grid::after { display: none; }
 }
