@@ -17,6 +17,9 @@
     fr: 'Khalil LAGHA — Étudiant M2 CSEE | Électronique de puissance & énergie',
     en: 'Khalil LAGHA — M2 Electrical Energy Systems Design | Power electronics'
   };
+  /* Per-page overrides (e.g. the SIAA variant): a page may define
+     window.PAGE_TITLES / PAGE_EN / PAGE_CV before this script loads. */
+  if (window.PAGE_TITLES) { TITLES = Object.assign({}, TITLES, window.PAGE_TITLES); }
 
   var EN = {
     'skip': 'Skip to content',
@@ -132,6 +135,12 @@
     'contact.pitch': 'A work-study or internship opportunity in power electronics, EV / powertrain, electrical grids or AI applied to energy? Get in touch.',
     'contact.mail': 'Email me'
   };
+  if (window.PAGE_EN) { Object.assign(EN, window.PAGE_EN); }
+
+  var CVP = Object.assign({
+    designFr: 'cv/CV_Khalil_LAGHA_FR.pdf', designEn: 'cv/CV_Khalil_LAGHA_EN.pdf',
+    atsFr: 'cv/CV_Khalil_LAGHA_ATS_FR.pdf', atsEn: 'cv/CV_Khalil_LAGHA_ATS_EN.pdf'
+  }, window.PAGE_CV || {});
 
   var EN_ARIA = { 'aria.nav': 'Main navigation', 'aria.menu': 'Menu', 'aria.chips': 'Areas of interest', 'aria.scroll': 'Scroll to About', 'aria.top': 'Back to top' };
 
@@ -165,10 +174,10 @@
     d.title = TITLES[lang];
     /* Both CV types download in the language currently displayed. */
     d.querySelectorAll('.js-cv-design').forEach(function (a) {
-      a.setAttribute('href', lang === 'fr' ? 'cv/CV_Khalil_LAGHA_FR.pdf' : 'cv/CV_Khalil_LAGHA_EN.pdf');
+      a.setAttribute('href', lang === 'fr' ? CVP.designFr : CVP.designEn);
     });
     d.querySelectorAll('.js-cv-ats').forEach(function (a) {
-      a.setAttribute('href', lang === 'fr' ? 'cv/CV_Khalil_LAGHA_ATS_FR.pdf' : 'cv/CV_Khalil_LAGHA_ATS_EN.pdf');
+      a.setAttribute('href', lang === 'fr' ? CVP.atsFr : CVP.atsEn);
     });
     d.querySelectorAll('.lang-toggle').forEach(function (b) {
       b.textContent = lang === 'fr' ? 'EN' : 'FR';

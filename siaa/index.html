@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khalil LAGHA — Étudiant M2 SIAA | Systèmes embarqués, automatique &amp; IA</title>
+  <meta name="description" content="Khalil LAGHA, étudiant M2 SIAA (Systèmes Intelligents Automobiles &amp; Aéronautiques) à l'Université Paris-Saclay. Systèmes embarqués, automatique/commande, IA, électronique de puissance pour le VE. Recherche alternance dès septembre 2026 ou stage de fin d'études printemps–été 2027.">
+  <link rel="canonical" href="https://khalilellahlagha.github.io/siaa/">
+  <meta name="theme-color" content="#0a0e1c">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://khalilellahlagha.github.io/siaa/">
+  <meta property="og:title" content="Khalil LAGHA — Étudiant M2 SIAA | Systèmes embarqués, automatique & IA">
+  <meta property="og:description" content="Systèmes embarqués, automatique/commande, IA et électronique de puissance pour le VE. Recherche alternance dès septembre 2026 ou stage de fin d'études 2027.">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Khalil LAGHA — Portfolio">
+  <meta property="og:image" content="https://khalilellahlagha.github.io/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Khalil LAGHA — Étudiant M2 CSEE, électronique de puissance &amp; systèmes d'énergie">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://khalilellahlagha.github.io/assets/og.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1120'/%3E%3Cpath d='M10 44q7-20 14 0t14 0q3.5-10 7-10' stroke='%23fbbf24' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='20' r='5' fill='%23fbbf24'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('kl-theme');
+        if (!t) { t = (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark'; }
+        document.documentElement.dataset.theme = t;
+        document.documentElement.classList.add('js');
+      } catch (e) { }
+    })();
+  </script>
+  <script>
+    window.PAGE_TITLES = {
+      fr: 'Khalil LAGHA — Étudiant M2 SIAA | Systèmes embarqués, automatique & IA',
+      en: 'Khalil LAGHA — M2 Intelligent Systems for Automotive & Aerospace | Embedded & control'
+    };
+    window.PAGE_CV = {
+      designFr: '../cv/CV_Khalil_LAGHA_SIAA_FR.pdf', designEn: '../cv/CV_Khalil_LAGHA_SIAA_EN.pdf',
+      atsFr: '../cv/CV_Khalil_LAGHA_SIAA_ATS_FR.pdf', atsEn: '../cv/CV_Khalil_LAGHA_SIAA_ATS_EN.pdf'
+    };
+    window.PAGE_EN = {
+      'hero.tagline': 'M2 student in Intelligent Systems for Automotive & Aerospace — embedded systems & control',
+      'hero.subline': 'Looking for a work-study contract (alternance, 2 days company / 3 days university) from September 2026, or a final-year internship in spring–summer 2027.',
+      'chip1': 'Embedded systems & control',
+      'chip2': 'EV / powertrain',
+      'chip3': 'AI: neural networks, data fusion',
+      'chip4': 'Industrial automation',
+      'about.p1': 'M2 student in SIAA (Intelligent Systems for Automotive & Aerospace) at Université Paris-Saclay, passionate about control, embedded systems and vehicle electrification. Trained in the Electrical Engineering programme of École Nationale Polytechnique d\'Alger, ranked 2nd of the M1 EEA cohort at UGA (annual average 15,43/20). My experience covers modelling and validation of an energy system (GIPSA-lab), industrial power electronics and automation (EURL Lagha) and power grids (Sonelgaz).',
+      'about.p2': 'I am looking for a work-study contract from September 2026 (2 days company / 3 days university) or a final-year internship (spring–summer 2027) in embedded systems, control engineering, applied AI or EV power electronics.',
+      'e1.h': 'M2 SIAA — Intelligent Systems for Automotive & Aerospace',
+      'pwm.h': 'Adjustable PWM generator',
+      'pwm.p': 'Adjustable frequency and duty cycle — 555 timer + D flip-flops, simulated in Proteus then built and fine-tuned on real hardware.',
+      'pwm.t1': 'Hardware',
+      'contact.pitch': 'A work-study or internship opportunity in embedded systems, control, applied AI or EV power electronics? Get in touch.'
+    };
+  </script>
+  <script src="../js/main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Khalil LAGHA",
+    "givenName": "Khalil",
+    "familyName": "LAGHA",
+    "email": "mailto:Lkhalilellah@gmail.com",
+    "telephone": "+33 6 98 34 75 50",
+    "jobTitle": "Étudiant M2 SIAA — Systèmes Intelligents Automobiles & Aéronautiques",
+    "address": { "@type": "PostalAddress", "addressLocality": "Grenoble", "addressCountry": "FR" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Université Grenoble Alpes" },
+      { "@type": "CollegeOrUniversity", "name": "École Nationale Polytechnique d'Alger" }
+    ],
+    "knowsLanguage": ["fr", "en", "ar"],
+    "sameAs": [
+      "https://www.linkedin.com/in/khalil-ellah-lagha",
+      "https://github.com/KhalilEllahLAGHA"
+    ],
+    "url": "https://khalilellahlagha.github.io/siaa/"
+  }
+  </script>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <a class="skip-link" href="#accueil" data-i18n="skip">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#accueil" aria-label="Khalil LAGHA — accueil">
+        <svg class="brand-logo" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <rect width="40" height="40" rx="10" fill="var(--logo-bg)"/>
+          <path d="M7 27q4.5-13 9 0t9 0q2-6 4.5-6" stroke="var(--accent)" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+          <circle cx="31" cy="12" r="3" fill="var(--accent)"/>
+        </svg>
+        <span class="brand-name">Khalil&nbsp;<strong>LAGHA</strong></span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Navigation principale" data-i18n-aria="aria.nav">
+        <ul>
+          <li><a href="#accueil" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="#a-propos" data-i18n="nav.about">À propos</a></li>
+          <li><a href="#formation" data-i18n="nav.edu">Formation</a></li>
+          <li><a href="#experience" data-i18n="nav.exp">Expérience</a></li>
+          <li><a href="#projets" data-i18n="nav.proj">Projets</a></li>
+          <li><a href="#competences" data-i18n="nav.skills">Compétences</a></li>
+          <li><a href="#documents" data-i18n="nav.docs">Documents</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="ctrl lang-toggle" aria-label="Switch to English">EN</button>
+        <button type="button" class="ctrl theme-toggle" aria-label="Basculer en thème clair" aria-pressed="true">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button type="button" class="ctrl burger" aria-expanded="false" aria-controls="site-nav" aria-label="Menu" data-i18n-aria="aria.menu">
+          <span class="burger-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section id="accueil" class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-bg" aria-hidden="true">
+        <svg viewBox="0 0 1440 500" preserveAspectRatio="none" focusable="false">
+          <path class="wave-baseline" d="M0 250 H1440" />
+          <path class="wave-sine" d="M0 250 C60 170 120 170 180 250 S300 330 360 250 S480 170 540 250 S660 330 720 250 S840 170 900 250 S1020 330 1080 250 S1200 170 1260 250 S1380 330 1440 250" />
+          <path class="wave-pwm" d="M0 330 H80 V210 H180 V330 H300 V210 H380 V330 H520 V210 H640 V330 H760 V210 H840 V330 H980 V210 H1100 V330 H1220 V210 H1320 V330 H1440" />
+        </svg>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+        <p class="hero-kicker reveal"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="hero.kicker">Alternance dès septembre 2026 · Stage de fin d'études 2027</span></p>
+        <h1 class="reveal">Khalil <span class="accent">LAGHA</span></h1>
+        <p class="tagline reveal" data-i18n="hero.tagline">Étudiant M2 SIAA — Systèmes embarqués, automatique &amp; commande</p>
+        <p class="subline reveal" data-i18n="hero.subline">Je recherche une alternance dès septembre 2026 (rythme 2 j entreprise / 3 j université) ou un stage de fin d'études au printemps–été 2027.</p>
+
+        <ul class="chips reveal" aria-label="Domaines d'intérêt" data-i18n-aria="aria.chips">
+          <li class="chip"><span class="chip-n" aria-hidden="true">1</span><span data-i18n="chip1">Systèmes embarqués &amp; commande</span></li>
+          <li class="chip"><span class="chip-n" aria-hidden="true">2</span><span data-i18n="chip2">VE / powertrain</span></li>
+          <li class="chip"><span class="chip-n" aria-hidden="true">3</span><span data-i18n="chip3">IA : réseaux de neurones, fusion de données</span></li>
+          <li class="chip"><span class="chip-n" aria-hidden="true">4</span><span data-i18n="chip4">Automatisme industriel</span></li>
+        </ul>
+
+        <div class="cta-row reveal">
+          <a class="btn btn-primary" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="cta.contact">Me contacter</span></a>
+          <a class="btn btn-ghost js-cv-design" href="../cv/CV_Khalil_LAGHA_SIAA_FR.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0 4-4m-4 4-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="cta.cv">Télécharger mon CV</span></a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/khalil-ellah-lagha" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.94 8.5v10.06H3.6V8.5h3.34ZM7.16 5.4a1.9 1.9 0 1 1-3.8 0 1.9 1.9 0 0 1 3.8 0ZM20.4 12.9v5.66h-3.33v-5.27c0-1.32-.47-2.22-1.66-2.22-.9 0-1.44.6-1.68 1.19-.08.21-.1.5-.1.8v5.5H10.3s.04-8.93 0-9.86h3.33v1.4c.44-.68 1.23-1.65 3-1.65 2.2 0 3.77 1.43 3.77 4.45Z" fill="currentColor"/></svg>LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/KhalilEllahLAGHA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" fill="currentColor"/></svg>GitHub</a>
+        </div>
+
+        <p class="cv-alt reveal"><span data-i18n="cta.cvats">Aussi disponible :</span> <a class="js-cv-ats" href="../cv/CV_Khalil_LAGHA_SIAA_ATS_FR.pdf" download><span data-i18n="cta.cvats2">CV version ATS (mise en page simple, pour les candidatures en ligne)</span></a></p>
+
+        <p class="hero-meta reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-7-5.1-7-11a7 7 0 0 1 14 0c0 5.9-7 11-7 11Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          Grenoble, France&nbsp;·&nbsp;<a href="tel:+33698347550">(+33)&nbsp;6&nbsp;98&nbsp;34&nbsp;75&nbsp;50</a>&nbsp;·&nbsp;<span data-i18n="hero.work">Autorisé à travailler en France</span>
+        </p>
+        </div>
+      </div>
+
+      <div class="hero-schematic" aria-hidden="true">
+        <svg viewBox="0 0 420 190" focusable="false">
+          <path d="M30 160 H390 M30 160 V112 M30 100 V70 M30 70 H120 M165 70 H200 M200 70 H220 M340 70 H390 M390 70 V85 M390 135 V160"/>
+          <path d="M20 100 H40 M25 112 H35"/>
+          <path d="M120 70 L160 52"/>
+          <circle cx="120" cy="70" r="2.4"/><circle cx="165" cy="70" r="2.4"/>
+          <path d="M200 70 V96 M192 96 H208 M208 112 H192 L200 96 Z M200 112 V160"/>
+          <path d="M220 70 a15 15 0 0 1 30 0 a15 15 0 0 1 30 0 a15 15 0 0 1 30 0 a15 15 0 0 1 30 0"/>
+          <path d="M340 70 V105 M328 105 H352 M328 115 H352 M340 115 V160"/>
+          <path d="M390 85 l8 6 -16 8 16 8 -16 8 16 8 -8 6"/>
+          <circle class="sch-a" cx="200" cy="70" r="3.4"/>
+          <path class="sch-a" d="M245 48 h30 m-7 -4 7 4 -7 4"/>
+        </svg>
+      </div>
+
+      <a class="scroll-cue" href="#a-propos" aria-label="Faire défiler vers À propos" data-i18n-aria="aria.scroll">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </section>
+
+    <!-- ============ OUTILS (marquee) ============ -->
+    <div class="tools-strip" aria-hidden="true">
+      <div class="tools-track">
+        <span>Matlab/Simulink</span><span>Python</span><span>LTspice</span><span>Proteus</span><span>EPLAN</span><span>AutoCAD Electrical</span><span>Siemens TIA Portal</span><span>Step7</span><span>SolidWorks</span><span>Arduino</span><span>C/C++</span><span>Git</span>
+        <span>Matlab/Simulink</span><span>Python</span><span>LTspice</span><span>Proteus</span><span>EPLAN</span><span>AutoCAD Electrical</span><span>Siemens TIA Portal</span><span>Step7</span><span>SolidWorks</span><span>Arduino</span><span>C/C++</span><span>Git</span>
+      </div>
+    </div>
+
+    <!-- ============ À PROPOS ============ -->
+    <section id="a-propos" class="section">
+      <div class="container">
+        <h2 class="sec-title reveal"><span class="sec-n" aria-hidden="true">01</span><span data-i18n="about.title">À propos</span></h2>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p data-i18n="about.p1">Étudiant en M2 SIAA (Systèmes Intelligents Automobiles &amp; Aéronautiques) à l'Université Paris-Saclay, passionné de commande, de systèmes embarqués et d'électrification des véhicules. Formé au cycle ingénieur Électrotechnique de l'École Nationale Polytechnique d'Alger, classé 2ᵉ de promotion en M1 EEA à l'UGA (moyenne annuelle 15,43/20). Mes expériences couvrent la modélisation et la validation d'un système énergétique (GIPSA-lab), l'électronique de puissance et l'automatisme industriels (EURL Lagha) et les réseaux (Sonelgaz).</p>
+            <p data-i18n="about.p2">Je recherche une alternance dès septembre 2026 (2 j entreprise / 3 j université) ou un stage de fin d'études (printemps–été 2027) en systèmes embarqués, automatique/commande, IA appliquée ou électronique de puissance pour le VE.</p>
+          </div>
+          <div class="stat-cards">
+            <div class="stat reveal"><strong data-i18n="stat1v">2ᵉ</strong><span data-i18n="stat1l">de promotion — M1 EEA (UGA)</span></div>
+            <div class="stat reveal"><strong data-count="15.43" data-decimals="2">15,43<small>/20</small></strong><span data-i18n="stat2l">moyenne annuelle M1</span></div>
+            <div class="stat reveal"><strong>C2</strong><span data-i18n="stat3l">anglais</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FORMATION ============ -->
+    <section id="formation" class="section section-alt">
+      <div class="container">
+        <h2 class="sec-title reveal"><span class="sec-n" aria-hidden="true">02</span><span data-i18n="edu.title">Formation</span></h2>
+        <ol class="timeline">
+          <li class="tl-item reveal">
+            <span class="tl-date">09/2026</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 4 2 9l10 5 10-5-10-5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6 11.5V16c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-4.5M22 9v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <div class="tl-card">
+              <h3 data-i18n="e1.h">M2 SIAA — Systèmes Intelligents Automobiles &amp; Aéronautiques</h3>
+              <p class="tl-org">Université Paris-Saclay, Évry · CFA EVE</p>
+              <p class="tl-note"><span class="badge" data-i18n="e1.badge">Admis</span></p>
+            </div>
+          </li>
+          <li class="tl-item reveal">
+            <span class="tl-date">2025 – 2026</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 21h18M5 21v-9m4.5 9v-9m5 9v-9m4.5 9v-9M3 12 12 4l9 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="tl-card">
+              <h3>M1 EEA (EECS)</h3>
+              <p class="tl-org">Université Grenoble Alpes</p>
+              <p class="tl-note" data-i18n="e2.p">2ᵉ de promotion · moyenne annuelle 15,43/20.</p>
+            </div>
+          </li>
+          <li class="tl-item reveal">
+            <span class="tl-date">2021 – 2025</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+            <div class="tl-card">
+              <h3 data-i18n="e3.h">Cycle ingénieur Électrotechnique</h3>
+              <p class="tl-org">École Nationale Polytechnique d'Alger</p>
+              <p class="tl-note" data-i18n="e3.p">4 années validées sur 5 (départ pour poursuivre en master en France) · classes préparatoires : parmi les majors de promotion.</p>
+            </div>
+          </li>
+          <li class="tl-item reveal">
+            <span class="tl-date">2021</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M17 4H7l6 8-6 8h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="tl-card">
+              <h3 data-i18n="e4.h">Baccalauréat Mathématiques</h3>
+              <p class="tl-note" data-i18n="e4.p">Mention Très Bien — 16,93/20.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ EXPÉRIENCE ============ -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="sec-title reveal"><span class="sec-n" aria-hidden="true">03</span><span data-i18n="exp.title">Expérience</span></h2>
+        <ol class="timeline">
+          <li class="tl-item reveal">
+            <span class="tl-date" data-i18n="x1.date">04 → 07/2026 · 3,5 mois</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M10 3v5.2L4.8 17.5A2 2 0 0 0 6.6 20.5h10.8a2 2 0 0 0 1.8-3L14 8.2V3M8.5 3h7M7.5 14h9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="tl-card">
+              <h3 data-i18n="x1.role">Stagiaire Recherche</h3>
+              <p class="tl-org">GIPSA-lab, Grenoble</p>
+              <ul class="tl-list">
+                <li data-i18n="x1.p1">Modèle Matlab/Simulink d'une pile à combustible PEMFC — erreur 6 % en dynamique / 1 % en statique.</li>
+                <li data-i18n="x1.p2">Régulation de tension via convertisseur DC-DC boost + correcteur PI, en simulation puis en pratique.</li>
+              </ul>
+              <ul class="tags"><li>Matlab/Simulink</li><li>PEMFC</li><li>Boost + PI</li></ul>
+            </div>
+          </li>
+          <li class="tl-item reveal">
+            <span class="tl-date" data-i18n="x2.date">2025 · 1 mois</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M8 21 12 3l4 18M9.3 15h5.4M10.4 9.5h3.2M6 21h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="tl-card">
+              <h3 data-i18n="x2.role">Stagiaire</h3>
+              <p class="tl-org">SLB / Schlumberger</p>
+              <ul class="tl-list">
+                <li data-i18n="x2.p1">Immersion industrielle internationale · synthèses techniques (forage directionnel) · certifications HSE NEST &amp; SIPP Niveau 2.</li>
+              </ul>
+              <ul class="tags"><li>HSE</li><li data-i18n="x2.t2">International</li></ul>
+              <div class="card-files">
+                <span class="files-label" data-i18n="files.label">Voir les fichiers</span>
+                <a class="file-btn" href="../reports/slb-hse-certificate.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m9.2 13-1.4 8 4.2-2.4 4.2 2.4-1.4-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span data-i18n="x2.cert">Certificat HSE NEST &amp; SIPP</span><span class="file-ext">PDF</span></a>
+              </div>
+            </div>
+          </li>
+          <li class="tl-item reveal">
+            <span class="tl-date" data-i18n="x3.date">2024 · 15 jours + 1 mois</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3.5" y="5.5" width="17" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 18.5 20.5 5.5M6.5 9.5q1.5-2.2 3 0M14 15.5h3.5M14 17.5h3.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+            <div class="tl-card">
+              <h3 data-i18n="x3.role">Stagiaire Électronique de puissance &amp; Automatisme</h3>
+              <p class="tl-org">EURL Lagha</p>
+              <ul class="tl-list">
+                <li data-i18n="x3.p1">Convertisseur DC-DC buck industriel 50 V → 0–48 V, 25 A.</li>
+                <li data-i18n="x3.p2">4 transfo-redresseurs pour pipelines (électrolyse) — 400 V tri → 100 V, redressement + filtrage, sortie 100 V DC / 80 A (≈ 8 kW), ondulation &lt; 5 %.</li>
+                <li data-i18n="x3.p3">IHM de supervision sous Siemens TIA Portal · schémas EPLAN.</li>
+              </ul>
+              <ul class="tags"><li>Buck 25 A</li><li>TIA Portal</li><li>EPLAN</li></ul>
+              <div class="card-files">
+                <span class="files-label" data-i18n="files.label">Voir les fichiers</span>
+                <a class="file-btn" href="../reports/eurl-lagha-attestation-01-2024.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m9.2 13-1.4 8 4.2-2.4 4.2 2.4-1.4-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span data-i18n="x3.cert1">Attestation de stage — 01/2024</span><span class="file-ext">PDF</span></a>
+                <a class="file-btn" href="../reports/eurl-lagha-attestation-09-2024.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m9.2 13-1.4 8 4.2-2.4 4.2 2.4-1.4-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span data-i18n="x3.cert2">Attestation de stage — 09/2024</span><span class="file-ext">PDF</span></a>
+              </div>
+            </div>
+          </li>
+          <li class="tl-item reveal">
+            <span class="tl-date" data-i18n="x4.date">2024 · 15 jours · observation</span>
+            <span class="tl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 3 6.5 21M12 3l5.5 18M8.8 9.5h6.4M7.3 14.5h9.4M5 21h14M8.8 9.5l6.9 5M15.2 9.5l-6.9 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="tl-card">
+              <h3 data-i18n="x4.role">Stagiaire Réseaux</h3>
+              <p class="tl-org">Sonelgaz</p>
+              <ul class="tl-list">
+                <li data-i18n="x4.p1">Structure des postes et chaîne complète production → distribution (400/220 kV → 60 kV → 30/10 kV → 400/230 V) · visite d'un poste HTA/BT.</li>
+              </ul>
+              <ul class="tags"><li>400/220 kV</li><li>HTA/BT</li></ul>
+              <div class="card-files">
+                <span class="files-label" data-i18n="files.label">Voir les fichiers</span>
+                <a class="file-btn" href="../reports/sonelgaz-reseaux-electriques.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2.5h7.5L19 8v13.5H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13.5 2.5V8H19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12.5h6M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-i18n="x4.report">Rapport de stage — réseaux électriques</span><span class="file-ext">PDF</span></a>
+                <a class="file-btn" href="../reports/sonelgaz-sadeg-attestation.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m9.2 13-1.4 8 4.2-2.4 4.2 2.4-1.4-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span data-i18n="x4.cert">Attestation de stage</span><span class="file-ext">PDF</span></a>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PROJETS ============ -->
+    <section id="projets" class="section section-alt">
+      <div class="container">
+        <h2 class="sec-title reveal"><span class="sec-n" aria-hidden="true">04</span><span data-i18n="proj.title">Projets</span></h2>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <circle class="dgm" cx="160" cy="42" r="34" fill="none"/>
+                <circle class="dgm" cx="160" cy="42" r="22" fill="none" stroke-dasharray="2 5"/>
+                <path class="dgm" d="M116 42 H204 M160 -2 V86" stroke-dasharray="3 6"/>
+                <g class="dg-rot">
+                  <path class="dga" stroke-width="2.2" d="M160 42 L190 24 M190 24 l-8.5 -0.8 M190 24 l-3.6 7.8"/>
+                  <path class="dgb" d="M160 42 L142 12 M142 12 l0.5 8.5 M142 12 l7.4 4.4"/>
+                </g>
+                <path class="dga" stroke-width="1.4" d="M176 42 A16 16 0 0 0 173.7 33.7"/>
+              </svg>
+            </div>
+            <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20 12a8 8 0 1 1-2.34-5.66" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18 2v4.5h-4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/></svg></span><span class="card-meta">Matlab/Simulink</span></div>
+            <h3 data-i18n="p3.h">Commande vectorielle FOC — moteur asynchrone</h3>
+            <p data-i18n="p3.p">Transformées de Park, régulateurs PID, observateurs.</p>
+            <ul class="tags"><li>FOC</li><li>Park</li><li>PID</li></ul>
+            <div class="card-files">
+              <span class="file-btn is-soon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 8-4 4 4 4m6-8 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>foc-induction-motor-simulink</span><span class="file-ext" data-i18n="repo.soon2">bientôt</span></span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <path class="dgm" d="M14 66 H306" stroke-dasharray="3 6"/>
+                <path class="dga" stroke-width="2.2" d="M14 62 V22 H36 V62 H76 V22 H90 V62 H130 V22 H166 V62 H206 V22 H256 V62 H288 V22 H306"/>
+                <path class="dgb" d="M36 14 h40 m-5 -3 5 3 -5 3 M90 14 h40 m-5 -3 5 3 -5 3" opacity="0.7"/>
+              </svg>
+            </div>
+            <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 17V7h4v10h5V7h4v10h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="card-meta">Timer 555 · Proteus</span></div>
+            <h3 data-i18n="pwm.h">Générateur de PWM réglable</h3>
+            <p data-i18n="pwm.p">Fréquence et rapport cyclique réglables — Timer 555 + bascules D, simulé sous Proteus puis réalisé et mis au point sur circuit réel.</p>
+            <ul class="tags"><li>PWM</li><li>555</li><li data-i18n="pwm.t1">Matériel</li></ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <g class="dgm" opacity="0.8">
+                  <path d="M76 18 154 12M76 18 154 32M76 18 154 52M76 18 154 72M76 42 154 12M76 42 154 32M76 42 154 52M76 42 154 72M76 66 154 12M76 66 154 32M76 66 154 52M76 66 154 72"/>
+                  <path d="M166 12 244 30M166 12 244 54M166 32 244 30M166 32 244 54M166 52 244 30M166 52 244 54M166 72 244 30M166 72 244 54"/>
+                </g>
+                <path class="dga dg-flow" stroke-width="1.8" d="M76 42 154 32 M166 32 244 30"/>
+                <g class="dgb" fill="var(--surface)">
+                  <circle cx="70" cy="18" r="6"/><circle cx="70" cy="42" r="6"/><circle cx="70" cy="66" r="6"/>
+                  <circle cx="160" cy="12" r="6"/><circle cx="160" cy="32" r="6"/><circle cx="160" cy="52" r="6"/><circle cx="160" cy="72" r="6"/>
+                </g>
+                <circle class="dga" cx="250" cy="30" r="7" fill="var(--surface)"/>
+                <circle class="dgb" cx="250" cy="54" r="6" fill="var(--surface)"/>
+                <circle class="dgfa" cx="250" cy="30" r="2.6"/>
+              </svg>
+            </div>
+            <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="5" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="5" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="19" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.7 7 10.3 11M6.7 17l3.6-4M14 12h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="card-meta">Matlab</span></div>
+            <h3 data-i18n="p8.h">Réseau de neurones from scratch (PMC)</h3>
+            <p data-i18n="p8.p">Perceptron multicouche et rétropropagation du gradient codés à la main en Matlab, sans toolbox — deux implémentations : boucles pédagogiques et calcul matriciel vectorisé.</p>
+            <ul class="tags"><li>Matlab</li><li data-i18n="p8.t1">Rétropropagation</li><li data-i18n="p8.t2">Réseaux de neurones</li></ul>
+            <div class="card-files">
+              <span class="files-label" data-i18n="files.label">Voir les fichiers</span>
+              <a class="file-btn" href="https://github.com/KhalilEllahLAGHA/mlp-backpropagation-matlab" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 8-4 4 4 4m6-8 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>mlp-backpropagation-matlab</span><span class="file-ext">GitHub</span></a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <path class="dg-track" d="M16 70 C90 70 90 22 160 22 S250 64 304 38"/>
+                <path class="dga dg-race" d="M16 70 C90 70 90 22 160 22 S250 64 304 38"/>
+                <g transform="translate(160 22)">
+                  <rect class="dgb" x="-15" y="-10" width="30" height="20" rx="5" fill="var(--surface)"/>
+                  <path class="dgm" stroke-width="3" d="M-10 -12 h8 M-10 12 h8"/>
+                  <circle class="dgfa" cx="11" cy="-4" r="2.2"/><circle class="dgfa" cx="11" cy="4" r="2.2"/>
+                </g>
+              </svg>
+            </div>
+            <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="5" y="7" width="14" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7V3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="3" r="1.4" fill="currentColor"/><circle cx="9.2" cy="12" r="1.4" fill="currentColor"/><circle cx="14.8" cy="12" r="1.4" fill="currentColor"/><path d="M9.5 15.4h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="card-meta">Arduino</span></div>
+            <h3 data-i18n="p5.h">Robot suiveur de ligne</h3>
+            <p data-i18n="p5.p">Conception et programmation · compétition Poly Maze (4ᵉ édition, VIC — ENP, 07/2024), équipe OPTIMUM.</p>
+            <ul class="tags"><li>Arduino</li><li>C/C++</li><li data-i18n="p5.t3">Compétition</li></ul>
+            <div class="card-files">
+              <span class="files-label" data-i18n="files.label">Voir les fichiers</span>
+              <a class="file-btn" href="../reports/certificat-line-follower.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m9.2 13-1.4 8 4.2-2.4 4.2 2.4-1.4-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span data-i18n="p5.cert">Certificat de participation</span><span class="file-ext">PDF</span></a>
+              <span class="file-btn is-soon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 8-4 4 4 4m6-8 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>line-follower-arduino</span><span class="file-ext" data-i18n="repo.soon2">bientôt</span></span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <path class="dgm" stroke-width="2.4" d="M46 8 V76 M274 8 V76"/>
+                <g class="dgb">
+                  <path d="M46 26 H92 M92 18 V34 M108 18 V34 M108 26 H231 M249 26 H274"/>
+                  <path d="M46 56 H122 M122 48 V64 M138 48 V64 M122 64 138 48 M138 56 H196 M196 48 V64 M212 48 V64 M212 56 H231 M249 56 H274"/>
+                </g>
+                <circle class="dga" cx="240" cy="26" r="9" fill="none"/>
+                <circle class="dga" cx="240" cy="56" r="9" fill="none"/>
+              </svg>
+            </div>
+            <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M6 3v18M18 3v18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6 8h12M6 16h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="8" r="1.6" fill="currentColor"/><circle cx="12" cy="16" r="1.6" fill="currentColor"/></svg></span><span class="card-meta">Step7</span></div>
+            <h3 data-i18n="p4.h">Automatisme Siemens Step7</h3>
+            <p data-i18n="p4.p">IHM + programme Ladder d'un cycle machine (simulation).</p>
+            <ul class="tags"><li>Ladder</li><li>IHM</li></ul>
+            <div class="card-files">
+              <span class="file-btn is-soon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 8-4 4 4 4m6-8 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>step7-hmi-ladder</span><span class="file-ext" data-i18n="repo.soon2">bientôt</span></span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <g class="dgm" fill="none">
+                  <circle cx="44" cy="38" r="7"/><circle cx="126" cy="38" r="7"/>
+                  <rect x="64" y="24" width="40" height="28" rx="5"/><rect x="146" y="24" width="40" height="28" rx="5"/>
+                  <circle cx="238" cy="38" r="15"/>
+                  <path d="M44 34 v8 M40 38 h8 M126 34 v8 M122 38 h8"/>
+                </g>
+                <g class="dgb">
+                  <path d="M14 38 H35 m-6 -3 6 3 -6 3 M51 38 H62 m-5 -3 5 3 -5 3 M104 38 H117 m-5 -3 5 3 -5 3 M133 38 H144 m-5 -3 5 3 -5 3 M186 38 H221 m-6 -3 6 3 -6 3 M253 38 H302"/>
+                  <path d="M204 38 V66 H126 V47 m-3 5 3 -5 3 5" opacity="0.7"/>
+                  <path d="M238 53 V76 H44 V47 m-3 5 3 -5 3 5" opacity="0.7"/>
+                </g>
+                <text class="dgt" x="84" y="42">PI</text><text class="dgt" x="166" y="42">PI</text><text class="dgt dgt-a" x="238" y="42">M</text>
+              </svg>
+            </div>
+            <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 7h10m4 0h4M3 12h4m4 0h10M3 17h13m4 0h1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="card-meta">Simulink</span></div>
+            <h3 data-i18n="p6.h">Commande en cascade d'un MCC</h3>
+            <p data-i18n="p6.p">Commande en tension via un pont à thyristors triphasé · boucle de vitesse externe, boucle de courant interne.</p>
+            <ul class="tags"><li data-i18n="p6.t1">MCC</li><li>Thyristors</li><li>Cascade</li></ul>
+            <div class="card-files">
+              <span class="files-label" data-i18n="files.label">Voir les fichiers</span>
+              <a class="file-btn" href="https://github.com/KhalilEllahLAGHA/DC-motor-cascade-control" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 8-4 4 4 4m6-8 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>DC-motor-cascade-control</span><span class="file-ext">GitHub</span></a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <path class="dgm" d="M14 74 H306 M20 74 V56 H36 V74 M48 74 V56 H64 V74 M76 74 V56 H92 V74 M104 74 V56 H120 V74 M132 74 V56 H148 V74 M160 74 V56 H176 V74 M188 74 V56 H204 V74 M216 74 V56 H232 V74 M244 74 V56 H260 V74 M272 74 V56 H288 V74"/>
+                <path class="dgb" d="M20 46 H62 V34 H118 V26 H174 V34 H230 V46 H286"/>
+                <path class="dga" stroke-width="2.2" d="M20 36 Q87 2 154 36 T288 36"/>
+              </svg>
+            </div>
+            <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2 15c0-4 4-4 4 0s4 4 4 0 4-4 4 0 4 4 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M2 9h20" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2 3" stroke-linecap="round"/></svg></span><span class="card-meta" data-i18n="p2.meta">Python · PyQt</span></div>
+            <h3 data-i18n="p2.h">Analyse de bobinage et de flux</h3>
+            <p data-i18n="p2.p">Application PyQt : bobinage triphasé, profils de FMM par dent, densité de flux par réseau de réluctances, validation FEMM.</p>
+            <ul class="tags"><li>Python</li><li>PyQt</li><li>FEMM</li><li data-i18n="p2.t2">Réluctances</li></ul>
+            <div class="card-files">
+              <span class="files-label" data-i18n="files.label">Voir les fichiers</span>
+              <a class="file-btn" href="https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 8-4 4 4 4m6-8 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Winding-and-flux-analysis-program</span><span class="file-ext">GitHub</span></a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <path class="dgm" d="M14 66 H306" stroke-dasharray="3 6"/>
+                <g class="dgb" opacity="0.55">
+                  <path d="M14 66 Q34 10 54 66"/><path d="M34 66 Q54 10 74 66"/><path d="M54 66 Q74 10 94 66"/><path d="M74 66 Q94 10 114 66"/><path d="M94 66 Q114 10 134 66"/><path d="M114 66 Q134 10 154 66"/><path d="M134 66 Q154 10 174 66"/><path d="M154 66 Q174 10 194 66"/><path d="M174 66 Q194 10 214 66"/><path d="M194 66 Q214 10 234 66"/><path d="M214 66 Q234 10 254 66"/><path d="M234 66 Q254 10 274 66"/><path d="M254 66 Q274 10 294 66"/>
+                </g>
+                <path class="dga" stroke-width="2.4" d="M44 45 Q54 31 64 45 Q74 31 84 45 Q94 31 104 45 Q114 31 124 45 Q134 31 144 45 Q154 31 164 45 Q174 31 184 45 Q194 31 204 45 Q214 31 224 45 Q234 31 244 45 Q254 31 264 45 Q274 31 284 45"/>
+              </svg>
+            </div>
+            <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 12h4m10 0h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 7v10l10-5L7 7Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M17 7v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="card-meta" data-i18n="p7.meta">ENP · Rapports de TP</span></div>
+            <h3 data-i18n="p7.h">Travaux pratiques d'électronique de puissance</h3>
+            <p data-i18n="p7.p">Redressement triphasé à diodes, pont mixte monophasé, lissage et empiètement anodique — mesures sur banc, calculs théoriques et simulations Matlab/Simulink.</p>
+            <ul class="tags"><li data-i18n="p7.t1">Redressement</li><li>Thyristors</li><li>Simulink</li></ul>
+            <div class="card-files">
+              <span class="files-label" data-i18n="files.label">Voir les fichiers</span>
+              <a class="file-btn" href="../reports/tp-redressement-triphase-diodes.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2.5h7.5L19 8v13.5H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13.5 2.5V8H19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12.5h6M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-i18n="p7.r1">Redressement triphasé à diodes</span><span class="file-ext">PDF</span></a>
+              <a class="file-btn" href="../reports/tp-pont-mixte-monophase.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2.5h7.5L19 8v13.5H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13.5 2.5V8H19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12.5h6M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-i18n="p7.r2">Pont mixte monophasé</span><span class="file-ext">PDF</span></a>
+              <a class="file-btn" href="../reports/tp-redressement-lissage-commutation.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2.5h7.5L19 8v13.5H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13.5 2.5V8H19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12.5h6M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-i18n="p7.r3">Lissage et commutation</span><span class="file-ext">PDF</span></a>
+            </div>
+          </article>
+
+          <article class="card card-flagship reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 640 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <g class="dgb dg-flow"><path d="M84 44 156 24M156 24 246 58M246 58 342 28M342 28 448 54M448 54 542 32M156 24 342 28M246 58 448 54"/></g>
+                <g class="dgb" fill="var(--surface)">
+                  <circle cx="84" cy="44" r="7"/><circle cx="246" cy="58" r="7"/><circle cx="342" cy="28" r="7"/><circle cx="448" cy="54" r="7"/><circle cx="542" cy="32" r="7"/>
+                </g>
+                <circle class="dga" cx="156" cy="24" r="9" fill="var(--surface)"/>
+                <path class="dga" d="M151 24q2.5-3.5 5 0 2.5 3.5 5 0" stroke-width="1.6"/>
+              </svg>
+            </div>
+            <div class="card-top">
+              <span class="flag-badge" data-i18n="proj.flag">Projet phare</span>
+              <span class="card-meta" data-i18n="p1.meta">Matlab · solo</span>
+            </div>
+            <h3 data-i18n="p1.h">Analyse de réseaux électriques</h3>
+            <p data-i18n="p1.p">Load flow de 3 à 118 nœuds (bus PQ/PV/slack) · comparaison de 3 méthodes (précision vs temps de calcul) · stabilité transitoire.</p>
+            <ul class="tags"><li>Matlab</li><li>Load flow</li><li data-i18n="p1.t3">Stabilité transitoire</li></ul>
+            <div class="card-files">
+              <span class="files-label" data-i18n="files.label">Voir les fichiers</span>
+              <a class="file-btn" href="../reports/power-grid-analysis-report.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2.5h7.5L19 8v13.5H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13.5 2.5V8H19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12.5h6M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-i18n="p1.r2">Rapport de projet</span><span class="file-ext">PDF</span></a>
+              <a class="file-btn" href="https://github.com/KhalilEllahLAGHA/Power-grid-analysis-MATLAB" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 8-4 4 4 4m6-8 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Power-grid-analysis-MATLAB</span><span class="file-ext">GitHub</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMPÉTENCES ============ -->
+    <section id="competences" class="section">
+      <div class="container">
+        <h2 class="sec-title reveal"><span class="sec-n" aria-hidden="true">05</span><span data-i18n="skills.title">Compétences</span></h2>
+
+        <p class="domains-hint reveal" data-i18n="sk.hint">Survolez ou touchez un domaine pour voir le détail.</p>
+        <ul class="skill-domains reveal">
+          <li class="sd">
+            <button type="button" class="sd-toggle" aria-expanded="false" aria-controls="sd-panel-6">
+              <svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12a8 8 0 1 1-2.34-5.66" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 2v4.5h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></svg>
+              <span data-i18n="sk.d6">Automatique</span>
+              <svg class="sd-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sd-panel" id="sd-panel-6">
+              <p data-i18n="sk.d6.detail">PID, LQR, filtre de Kalman, identification de systèmes, automatique avancée.</p>
+              <ul class="tags"><li>PID</li><li>LQR</li><li data-i18n="sk.d6.t3">Filtre de Kalman</li><li data-i18n="sk.d6.t4">Identification de systèmes</li></ul>
+            </div>
+          </li>
+          <li><svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="5" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="19" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.7 7 10.3 11M6.7 17l3.6-4M14 12h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span data-i18n="sk.d8">IA (réseaux de neurones, algorithmes génétiques, logique floue)</span></li>
+          <li class="sd">
+            <button type="button" class="sd-toggle" aria-expanded="false" aria-controls="sd-panel-7">
+              <svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="9.5" y="9.5" width="5" height="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span data-i18n="sk.d7">Automatisme (API/PLC, IHM/SCADA)</span>
+              <svg class="sd-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sd-panel" id="sd-panel-7">
+              <p data-i18n="sk.d7.detail">Siemens TIA Portal, Step7 — programmation Ladder (LD), Function Block Diagram (FBD) et Sequential Function Chart (SFC).</p>
+              <ul class="tags"><li>TIA Portal</li><li>Step7</li><li>LD</li><li>FBD</li><li>SFC</li></ul>
+            </div>
+          </li>
+          <li><svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16.5 12H21M8 14.5v-5l2 3 2-3v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="sk.d3">Électronique de puissance pour la commande des machines</span></li>
+          <li class="sd">
+            <button type="button" class="sd-toggle" aria-expanded="false" aria-controls="sd-panel-1">
+              <svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h13l-3.5-3.5M20 16H7l3.5 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="sk.d1">Conversion de puissance (tous types)</span>
+              <svg class="sd-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sd-panel" id="sd-panel-1">
+              <p data-i18n="sk.d1.detail">Convertisseurs statiques : AC-AC, AC-DC, DC-DC, DC-AC. Capable d'analyser un cahier des charges et de dimensionner un convertisseur from scratch — bases et notions avancées d'électronique de puissance. Simulation sous Matlab/Simulink (bibliothèque Simscape Power Systems).</p>
+              <ul class="tags"><li>AC-AC</li><li>AC-DC</li><li>DC-DC</li><li>DC-AC</li><li>Simulink</li><li>Simscape Power Systems</li></ul>
+            </div>
+          </li>
+          <li><svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="8.8" cy="12" r="5.6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="15.2" cy="12" r="5.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span data-i18n="sk.d4">Machines électriques &amp; transformateurs</span></li>
+          <li><svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M13 7.5 9.2 12.7h2.9l-1 4.3 3.9-5.2h-3l1-4.3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span data-i18n="sk.d2">Conversion pour le réseau électrique</span></li>
+          <li class="sd">
+            <button type="button" class="sd-toggle" aria-expanded="false" aria-controls="sd-panel-5">
+              <svg class="sd-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21h18M3 17.5 8.5 12l3.5 3 6-7M18 8h3.2v3.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="sk.d5">Analyse de réseaux, stabilité transitoire</span>
+              <svg class="sd-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sd-panel" id="sd-panel-5">
+              <p data-i18n="sk.d5.detail">Des matrices d'admittance et d'impédance jusqu'au load flow et à la stabilité transitoire.</p>
+              <ul class="tags"><li data-i18n="sk.d5.t1">Matrices Y/Z</li><li>Load flow</li><li data-i18n="sk.d5.t3">Stabilité transitoire</li></ul>
+            </div>
+          </li>
+        </ul>
+
+        <div class="skill-grid">
+          <div class="skill-card reveal">
+            <h3 data-i18n="sk.sw">Logiciels</h3>
+            <ul class="tags tags-lg">
+              <li>Matlab/Simulink</li><li>LTspice</li><li>Proteus</li><li>Python</li><li>EPLAN</li><li>AutoCAD Electrical</li><li>Siemens TIA Portal</li><li>Step7 (Ladder/SCL)</li><li>SolidWorks</li><li>Arduino</li><li>C/C++</li>
+            </ul>
+          </div>
+          <div class="skill-card reveal">
+            <h3 data-i18n="sk.lc">Langues &amp; certification</h3>
+            <ul class="lang-list">
+              <li><span data-i18n="sk.fr">Français</span><span class="lvl">C1</span></li>
+              <li><span data-i18n="sk.en">Anglais</span><span class="lvl">C2</span></li>
+              <li><span data-i18n="sk.ar">Arabe</span><span class="lvl" data-i18n="sk.arlvl">natif</span></li>
+            </ul>
+            <p class="cert" data-i18n="sk.cert">Certification : SLB NEST &amp; SIPP Niveau 2 — 07/2025, HSE.</p>
+          </div>
+          <div class="skill-card reveal">
+            <h3 data-i18n="sk.soft">Savoir-être</h3>
+            <ul class="tags tags-lg">
+              <li data-i18n="sk.soft1">Apprentissage rapide</li>
+              <li data-i18n="sk.soft2">À l'aise avec outils &amp; logiciels</li>
+              <li data-i18n="sk.soft3">Résolution de problèmes</li>
+              <li data-i18n="sk.soft4">Rigueur</li>
+              <li data-i18n="sk.soft5">Organisation</li>
+            </ul>
+          </div>
+          <div class="skill-card reveal">
+            <h3 data-i18n="sk.assoc">Vie associative</h3>
+            <ul class="assoc-list">
+              <li>IEEE Student Branch ENP</li>
+              <li>VIC (ENP)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DOCUMENTS ============ -->
+    <section id="documents" class="section section-alt">
+      <div class="container">
+        <h2 class="sec-title reveal"><span class="sec-n" aria-hidden="true">06</span><span data-i18n="docs.title">Documents</span></h2>
+        <p class="docs-intro reveal" data-i18n="docs.intro">Relevé de notes et lettres de recommandation.</p>
+        <div class="doc-grid">
+          <a class="doc-card reveal" href="../reports/releve-de-notes.pdf" target="_blank" rel="noopener">
+            <span class="doc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M6 2.5h7.5L19 8v13.5H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13.5 2.5V8H19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12h6M9 15.2h6M9 18.4h3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <span class="doc-body">
+              <strong data-i18n="docs.transcript.h">Relevé de notes</strong>
+              <span data-i18n="docs.transcript.p">Baccalauréat, classes préparatoires et cycle ingénieur — École Nationale Polytechnique d'Alger.</span>
+            </span>
+            <span class="file-ext">PDF</span>
+          </a>
+          <a class="doc-card reveal" href="../reports/lettre-recommandation-benmahamed.pdf" target="_blank" rel="noopener">
+            <span class="doc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m4.5 6.5 7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <span class="doc-body">
+              <strong data-i18n="docs.rec1.h">Lettre de recommandation — Dr Y. Benmahamed</strong>
+              <span data-i18n="docs.rec1.p">Enseignant-chercheur, Laboratoire de Recherche en Électrotechnique, ENP Alger.</span>
+            </span>
+            <span class="file-ext">PDF</span>
+          </a>
+          <a class="doc-card reveal" href="../reports/lettre-recommandation-teguar.pdf" target="_blank" rel="noopener">
+            <span class="doc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m4.5 6.5 7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <span class="doc-body">
+              <strong data-i18n="docs.rec2.h">Lettre de recommandation — Prof. Madjid Teguar</strong>
+              <span data-i18n="docs.rec2.p">Directeur du Laboratoire de Recherche en Électrotechnique, ENP Alger.</span>
+            </span>
+            <span class="file-ext">PDF</span>
+          </a>
+          <a class="doc-card reveal" href="../reports/lettre-recommandation-saadaoui.pdf" target="_blank" rel="noopener">
+            <span class="doc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m4.5 6.5 7.5 6 7.5-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <span class="doc-body">
+              <strong data-i18n="docs.rec3.h">Lettre de recommandation — Prof. I. Saadaoui</strong>
+              <span data-i18n="docs.rec3.p">Chef du département, Cycle préparatoire, ENP Alger.</span>
+            </span>
+            <span class="file-ext">PDF</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section">
+      <div class="container contact-wrap">
+        <h2 class="sec-title reveal"><span class="sec-n" aria-hidden="true">07</span><span data-i18n="contact.title">Contact</span></h2>
+        <p class="contact-pitch reveal" data-i18n="contact.pitch">Une opportunité d'alternance ou de stage en systèmes embarqués, automatique/commande, IA appliquée ou électronique de puissance pour le VE ? Écrivez-moi.</p>
+        <div class="cta-row reveal">
+          <a class="btn btn-primary" href="mailto:Lkhalilellah@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="contact.mail">M'écrire</span></a>
+          <a class="btn btn-ghost js-cv-design" href="../cv/CV_Khalil_LAGHA_SIAA_FR.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0 4-4m-4 4-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="cta.cvshort">Mon CV</span></a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/khalil-ellah-lagha" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/KhalilEllahLAGHA" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <p class="cv-alt reveal"><span data-i18n="cta.cvats">Aussi disponible :</span> <a class="js-cv-ats" href="../cv/CV_Khalil_LAGHA_SIAA_ATS_FR.pdf" download><span data-i18n="cta.cvats2">CV version ATS (mise en page simple, pour les candidatures en ligne)</span></a></p>
+        <p class="contact-email reveal"><a href="mailto:Lkhalilellah@gmail.com">Lkhalilellah@gmail.com</a>&nbsp;·&nbsp;<a href="tel:+33698347550">(+33)&nbsp;6&nbsp;98&nbsp;34&nbsp;75&nbsp;50</a></p>
+        <p class="hero-meta reveal">Grenoble, France&nbsp;·&nbsp;<span data-i18n="hero.work">Autorisé à travailler en France</span></p>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" focusable="false">
+      <path class="wave-sine" d="M0 35 Q60 5 120 35 T240 35 T360 35 T480 35 T600 35 T720 35 T840 35 T960 35 T1080 35 T1200 35 T1320 35 T1440 35"/>
+      <path class="wave-pwm" d="M0 52 H90 V22 H210 V52 H330 V22 H450 V52 H570 V22 H690 V52 H810 V22 H930 V52 H1050 V22 H1170 V52 H1290 V22 H1440"/>
+    </svg>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Khalil LAGHA — Grenoble, France</p>
+      <ul class="footer-links">
+        <li><a href="mailto:Lkhalilellah@gmail.com">Email</a></li>
+        <li><a href="tel:+33698347550">(+33) 6 98 34 75 50</a></li>
+        <li><a href="https://www.linkedin.com/in/khalil-ellah-lagha" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/KhalilEllahLAGHA" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="../">Portfolio CSEE (énergie)</a></li>
+      </ul>
+      <div class="footer-actions">
+        <button type="button" class="ctrl lang-toggle" aria-label="Switch to English">EN</button>
+        <button type="button" class="ctrl theme-toggle" aria-label="Basculer en thème clair" aria-pressed="true">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <a class="to-top" href="#accueil" aria-label="Revenir en haut" data-i18n-aria="aria.top">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 14 6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</body>
+</html>
