@@ -31,6 +31,7 @@
   --grid-line: rgba(164, 174, 203, 0.055);
   --spot: rgba(251, 191, 36, 0.07);
   --accent-2: #f59e0b;
+  --pcb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cg fill='none' stroke='%23a4aecb' stroke-opacity='0.06'%3E%3Cpath d='M24 0v34l22 22h44'/%3E%3Ccircle cx='94' cy='56' r='3'/%3E%3Cpath d='M180 44h-34l-16 16v48'/%3E%3Ccircle cx='130' cy='112' r='3'/%3E%3Cpath d='M0 132h56l16-16'/%3E%3Ccircle cx='76' cy='112' r='2.5'/%3E%3Cpath d='M156 180v-28l-22-22'/%3E%3Ccircle cx='24' cy='0' r='2.5'/%3E%3Ccircle cx='156' cy='180' r='2.5'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 [data-theme="light"] {
@@ -53,6 +54,7 @@
   --grid-line: rgba(22, 28, 49, 0.05);
   --spot: rgba(180, 83, 9, 0.05);
   --accent-2: #d97706;
+  --pcb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cg fill='none' stroke='%23161c31' stroke-opacity='0.05'%3E%3Cpath d='M24 0v34l22 22h44'/%3E%3Ccircle cx='94' cy='56' r='3'/%3E%3Cpath d='M180 44h-34l-16 16v48'/%3E%3Ccircle cx='130' cy='112' r='3'/%3E%3Cpath d='M0 132h56l16-16'/%3E%3Ccircle cx='76' cy='112' r='2.5'/%3E%3Cpath d='M156 180v-28l-22-22'/%3E%3Ccircle cx='24' cy='0' r='2.5'/%3E%3Ccircle cx='156' cy='180' r='2.5'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* ---------- Reset-ish ---------- */
@@ -615,6 +617,131 @@ a.file-btn:hover {
   .scroll-cue { display: none; }
 }
 
+/* ---------- Engineering graphics layer ---------- */
+
+/* PCB-trace pattern on alternate sections */
+.section-alt { background-image: var(--pcb); background-size: 180px 180px; }
+
+/* Hero: two columns on wide screens, oscilloscope panel on the right */
+@media (min-width: 1080px) {
+  .hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: center;
+    width: 100%;
+  }
+}
+.hero-scope { display: none; }
+@media (min-width: 1080px) {
+  .hero-scope {
+    display: block;
+    border: 1px solid var(--border); border-radius: var(--radius);
+    background: var(--surface); box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+}
+.scope-head {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.6rem 0.95rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+}
+.scope-led {
+  width: 8px; height: 8px; flex: none; border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2.2s ease-out infinite;
+}
+.scope-badge {
+  margin-left: auto;
+  padding: 0.08rem 0.55rem; border: 1px solid var(--border); border-radius: 999px;
+  letter-spacing: 0.08em;
+}
+.scope-screen {
+  position: relative; overflow: hidden;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 30px 34px;
+}
+.scope-screen svg { width: 100%; height: 190px; display: block; }
+.scope-screen path { fill: none; }
+.scope-mid { stroke: var(--border); stroke-dasharray: 3 9; }
+.scope-sine {
+  stroke: var(--accent); stroke-width: 2.4; stroke-linecap: round;
+  stroke-dasharray: 200 120;
+  animation: march 7s linear infinite;
+}
+.scope-pwm {
+  stroke: var(--wave2); stroke-width: 1.8; opacity: 0.8;
+  stroke-dasharray: 120 70;
+  animation: march 10s linear infinite reverse;
+}
+.scope-sweep {
+  position: absolute; top: 0; bottom: 0; left: -80px; width: 76px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--glow));
+  border-right: 1px solid var(--accent);
+  opacity: 0.6;
+  animation: scope-sweep 5.5s linear infinite;
+}
+@keyframes scope-sweep { to { left: 100%; } }
+.scope-read {
+  display: flex; flex-wrap: wrap; gap: 0.35rem 1.15rem;
+  padding: 0.6rem 0.95rem 0.7rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted); font-size: 0.78rem;
+}
+.scope-read b { color: var(--accent); font-weight: 700; }
+.scope-read sub { font-size: 0.72em; }
+
+/* Project card mini-diagrams */
+.card-diagram {
+  margin: -1.4rem -1.4rem 0.4rem;
+  padding: 0.55rem 0.8rem;
+  background: var(--bg-alt);
+  background-image: var(--pcb); background-size: 180px 180px;
+  border-bottom: 1px solid var(--border);
+}
+.card { min-width: 0; } /* the diagram SVGs' intrinsic width must never size the grid track */
+.card-diagram svg { width: 100%; height: 84px; display: block; }
+@media (min-width: 860px) {
+  .card-flagship .card-diagram svg { height: 132px; }
+}
+.dga { stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.dgb { stroke: var(--wave2); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.dgm { stroke: var(--border); fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.dgfa { fill: var(--accent); }
+.dgt {
+  fill: var(--muted);
+  font-family: var(--font); font-size: 11px; font-weight: 600;
+  text-anchor: middle;
+}
+.dgt-a { fill: var(--accent); }
+.dg-flow { stroke-dasharray: 2 7; animation: dg-flow 6s linear infinite; }
+@keyframes dg-flow { to { stroke-dashoffset: -180; } }
+.dg-rot {
+  transform-box: view-box; transform-origin: 50% 50%;
+  animation: dg-spin 14s linear infinite;
+}
+@keyframes dg-spin { to { transform: rotate(360deg); } }
+.dg-track { stroke: var(--muted); fill: none; stroke-width: 11; stroke-linecap: round; opacity: 0.28; }
+.dg-race { stroke-width: 2.4; stroke-dasharray: 2 10; animation: dg-flow 5s linear infinite; }
+
+/* Timeline dots: slow radar pulse */
+@media (prefers-reduced-motion: no-preference) {
+  .tl-item::before { animation: tl-pulse 3.2s ease-out infinite; }
+}
+@keyframes tl-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px var(--accent-soft); }
+  50% { box-shadow: 0 0 0 9px rgba(251, 191, 36, 0.05); }
+}
+
+/* Footer wave divider */
+.footer-wave { overflow: hidden; margin-top: -1rem; }
+.footer-wave svg { width: 100%; height: 64px; display: block; opacity: 0.55; }
+.footer-wave path { fill: none; stroke-width: 2; }
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -628,4 +755,8 @@ a.file-btn:hover {
   .tools-track { animation: none; }
   .scroll-cue { animation: none; }
   .card::after { display: none; }
+  .scope-sine, .scope-pwm, .scope-led { animation: none; }
+  .scope-sweep { display: none; }
+  .dg-flow, .dg-rot, .dg-race { animation: none; }
+  .tl-item::before { animation: none; }
 }

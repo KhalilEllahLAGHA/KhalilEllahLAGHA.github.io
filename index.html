@@ -108,6 +108,7 @@
       </div>
 
       <div class="container hero-inner">
+        <div class="hero-copy">
         <p class="hero-kicker reveal"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="hero.kicker">Alternance dès septembre 2026 · Stage de fin d'études 2027</span></p>
         <h1 class="reveal">Khalil <span class="accent">LAGHA</span></h1>
         <p class="tagline reveal" data-i18n="hero.tagline">Étudiant M2 CSEE — Électronique de puissance &amp; systèmes d'énergie électrique</p>
@@ -133,6 +134,28 @@
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-7-5.1-7-11a7 7 0 0 1 14 0c0 5.9-7 11-7 11Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           Grenoble, France&nbsp;·&nbsp;<a href="tel:+33698347550">(+33)&nbsp;6&nbsp;98&nbsp;34&nbsp;75&nbsp;50</a>&nbsp;·&nbsp;<span data-i18n="hero.work">Autorisé à travailler en France</span>
         </p>
+        </div>
+
+        <div class="hero-scope reveal" aria-hidden="true">
+          <div class="scope-head">
+            <span class="scope-led"></span>
+            <span class="scope-name">OSCILLOSCOPE</span>
+            <span class="scope-badge">CH1 · CH2</span>
+          </div>
+          <div class="scope-screen">
+            <svg viewBox="0 0 300 170" preserveAspectRatio="none" focusable="false">
+              <path class="scope-mid" d="M0 85 H300"/>
+              <path class="scope-sine" d="M0 85 Q37.5 5 75 85 T150 85 T225 85 T300 85"/>
+              <path class="scope-pwm" d="M0 132 H28 V56 H72 V132 H118 V56 H150 V132 H196 V56 H240 V132 H272 V56 H300"/>
+            </svg>
+            <span class="scope-sweep"></span>
+          </div>
+          <div class="scope-read">
+            <span>CH1 · V<sub>out</sub> <b>48.0 V</b></span>
+            <span>CH2 · PWM <b>D = 0.62</b></span>
+            <span>ΔV <b>&lt; 5 %</b></span>
+          </div>
+        </div>
       </div>
 
       <a class="scroll-cue" href="#a-propos" aria-label="Faire défiler vers À propos" data-i18n-aria="aria.scroll">
@@ -282,6 +305,16 @@
         <h2 class="sec-title reveal"><span class="sec-n" aria-hidden="true">04</span><span data-i18n="proj.title">Projets</span></h2>
         <div class="cards">
           <article class="card card-flagship reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 640 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <g class="dgb dg-flow"><path d="M84 44 156 24M156 24 246 58M246 58 342 28M342 28 448 54M448 54 542 32M156 24 342 28M246 58 448 54"/></g>
+                <g class="dgb" fill="var(--surface)">
+                  <circle cx="84" cy="44" r="7"/><circle cx="246" cy="58" r="7"/><circle cx="342" cy="28" r="7"/><circle cx="448" cy="54" r="7"/><circle cx="542" cy="32" r="7"/>
+                </g>
+                <circle class="dga" cx="156" cy="24" r="9" fill="var(--surface)"/>
+                <path class="dga" d="M151 24q2.5-3.5 5 0 2.5 3.5 5 0" stroke-width="1.6"/>
+              </svg>
+            </div>
             <div class="card-top">
               <span class="flag-badge" data-i18n="proj.flag">Projet phare</span>
               <span class="card-meta" data-i18n="p1.meta">Matlab · solo</span>
@@ -297,6 +330,15 @@
           </article>
 
           <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <path class="dgm" d="M14 66 H306" stroke-dasharray="3 6"/>
+                <g class="dgb" opacity="0.55">
+                  <path d="M14 66 Q34 10 54 66"/><path d="M34 66 Q54 10 74 66"/><path d="M54 66 Q74 10 94 66"/><path d="M74 66 Q94 10 114 66"/><path d="M94 66 Q114 10 134 66"/><path d="M114 66 Q134 10 154 66"/><path d="M134 66 Q154 10 174 66"/><path d="M154 66 Q174 10 194 66"/><path d="M174 66 Q194 10 214 66"/><path d="M194 66 Q214 10 234 66"/><path d="M214 66 Q234 10 254 66"/><path d="M234 66 Q254 10 274 66"/><path d="M254 66 Q274 10 294 66"/>
+                </g>
+                <path class="dga" stroke-width="2.4" d="M44 45 Q54 31 64 45 Q74 31 84 45 Q94 31 104 45 Q114 31 124 45 Q134 31 144 45 Q154 31 164 45 Q174 31 184 45 Q194 31 204 45 Q214 31 224 45 Q234 31 244 45 Q254 31 264 45 Q274 31 284 45"/>
+              </svg>
+            </div>
             <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 12h4m10 0h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 7v10l10-5L7 7Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M17 7v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="card-meta" data-i18n="p7.meta">ENP · Rapports de TP</span></div>
             <h3 data-i18n="p7.h">Travaux pratiques d'électronique de puissance</h3>
             <p data-i18n="p7.p">Redressement triphasé à diodes, pont mixte monophasé, lissage et empiètement anodique — mesures sur banc, calculs théoriques et simulations Matlab/Simulink.</p>
@@ -310,6 +352,13 @@
           </article>
 
           <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <path class="dgm" d="M14 74 H306 M20 74 V56 H36 V74 M48 74 V56 H64 V74 M76 74 V56 H92 V74 M104 74 V56 H120 V74 M132 74 V56 H148 V74 M160 74 V56 H176 V74 M188 74 V56 H204 V74 M216 74 V56 H232 V74 M244 74 V56 H260 V74 M272 74 V56 H288 V74"/>
+                <path class="dgb" d="M20 46 H62 V34 H118 V26 H174 V34 H230 V46 H286"/>
+                <path class="dga" stroke-width="2.2" d="M20 36 Q87 2 154 36 T288 36"/>
+              </svg>
+            </div>
             <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2 15c0-4 4-4 4 0s4 4 4 0 4-4 4 0 4 4 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M2 9h20" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2 3" stroke-linecap="round"/></svg></span><span class="card-meta" data-i18n="p2.meta">Python · PyQt</span></div>
             <h3 data-i18n="p2.h">Analyse de bobinage et de flux</h3>
             <p data-i18n="p2.p">Application PyQt : bobinage triphasé, profils de FMM par dent, densité de flux par réseau de réluctances, validation FEMM.</p>
@@ -321,6 +370,18 @@
           </article>
 
           <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <circle class="dgm" cx="160" cy="42" r="34" fill="none"/>
+                <circle class="dgm" cx="160" cy="42" r="22" fill="none" stroke-dasharray="2 5"/>
+                <path class="dgm" d="M116 42 H204 M160 -2 V86" stroke-dasharray="3 6"/>
+                <g class="dg-rot">
+                  <path class="dga" stroke-width="2.2" d="M160 42 L190 24 M190 24 l-8.5 -0.8 M190 24 l-3.6 7.8"/>
+                  <path class="dgb" d="M160 42 L142 12 M142 12 l0.5 8.5 M142 12 l7.4 4.4"/>
+                </g>
+                <path class="dga" stroke-width="1.4" d="M176 42 A16 16 0 0 0 173.7 33.7"/>
+              </svg>
+            </div>
             <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20 12a8 8 0 1 1-2.34-5.66" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18 2v4.5h-4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/></svg></span><span class="card-meta">Matlab/Simulink</span></div>
             <h3 data-i18n="p3.h">Commande vectorielle FOC — moteur asynchrone</h3>
             <p data-i18n="p3.p">Transformées de Park, régulateurs PID, observateurs.</p>
@@ -331,6 +392,22 @@
           </article>
 
           <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <g class="dgm" fill="none">
+                  <circle cx="44" cy="38" r="7"/><circle cx="126" cy="38" r="7"/>
+                  <rect x="64" y="24" width="40" height="28" rx="5"/><rect x="146" y="24" width="40" height="28" rx="5"/>
+                  <circle cx="238" cy="38" r="15"/>
+                  <path d="M44 34 v8 M40 38 h8 M126 34 v8 M122 38 h8"/>
+                </g>
+                <g class="dgb">
+                  <path d="M14 38 H35 m-6 -3 6 3 -6 3 M51 38 H62 m-5 -3 5 3 -5 3 M104 38 H117 m-5 -3 5 3 -5 3 M133 38 H144 m-5 -3 5 3 -5 3 M186 38 H221 m-6 -3 6 3 -6 3 M253 38 H302"/>
+                  <path d="M204 38 V66 H126 V47 m-3 5 3 -5 3 5" opacity="0.7"/>
+                  <path d="M238 53 V76 H44 V47 m-3 5 3 -5 3 5" opacity="0.7"/>
+                </g>
+                <text class="dgt" x="84" y="42">PI</text><text class="dgt" x="166" y="42">PI</text><text class="dgt dgt-a" x="238" y="42">M</text>
+              </svg>
+            </div>
             <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 7h10m4 0h4M3 12h4m4 0h10M3 17h13m4 0h1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="card-meta">Simulink</span></div>
             <h3 data-i18n="p6.h">Commande en cascade d'un MCC</h3>
             <p data-i18n="p6.p">Commande en tension via un pont à thyristors triphasé · boucle de vitesse externe, boucle de courant interne.</p>
@@ -342,6 +419,22 @@
           </article>
 
           <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <g class="dgm" opacity="0.8">
+                  <path d="M76 18 154 12M76 18 154 32M76 18 154 52M76 18 154 72M76 42 154 12M76 42 154 32M76 42 154 52M76 42 154 72M76 66 154 12M76 66 154 32M76 66 154 52M76 66 154 72"/>
+                  <path d="M166 12 244 30M166 12 244 54M166 32 244 30M166 32 244 54M166 52 244 30M166 52 244 54M166 72 244 30M166 72 244 54"/>
+                </g>
+                <path class="dga dg-flow" stroke-width="1.8" d="M76 42 154 32 M166 32 244 30"/>
+                <g class="dgb" fill="var(--surface)">
+                  <circle cx="70" cy="18" r="6"/><circle cx="70" cy="42" r="6"/><circle cx="70" cy="66" r="6"/>
+                  <circle cx="160" cy="12" r="6"/><circle cx="160" cy="32" r="6"/><circle cx="160" cy="52" r="6"/><circle cx="160" cy="72" r="6"/>
+                </g>
+                <circle class="dga" cx="250" cy="30" r="7" fill="var(--surface)"/>
+                <circle class="dgb" cx="250" cy="54" r="6" fill="var(--surface)"/>
+                <circle class="dgfa" cx="250" cy="30" r="2.6"/>
+              </svg>
+            </div>
             <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="5" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="5" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="19" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.7 7 10.3 11M6.7 17l3.6-4M14 12h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="card-meta">Matlab</span></div>
             <h3 data-i18n="p8.h">Réseau de neurones from scratch (PMC)</h3>
             <p data-i18n="p8.p">Perceptron multicouche et rétropropagation du gradient codés à la main en Matlab, sans toolbox — deux implémentations : boucles pédagogiques et calcul matriciel vectorisé.</p>
@@ -353,6 +446,17 @@
           </article>
 
           <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <path class="dgm" stroke-width="2.4" d="M46 8 V76 M274 8 V76"/>
+                <g class="dgb">
+                  <path d="M46 26 H92 M92 18 V34 M108 18 V34 M108 26 H231 M249 26 H274"/>
+                  <path d="M46 56 H122 M122 48 V64 M138 48 V64 M122 64 138 48 M138 56 H196 M196 48 V64 M212 48 V64 M212 56 H231 M249 56 H274"/>
+                </g>
+                <circle class="dga" cx="240" cy="26" r="9" fill="none"/>
+                <circle class="dga" cx="240" cy="56" r="9" fill="none"/>
+              </svg>
+            </div>
             <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M6 3v18M18 3v18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6 8h12M6 16h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="8" r="1.6" fill="currentColor"/><circle cx="12" cy="16" r="1.6" fill="currentColor"/></svg></span><span class="card-meta">Step7</span></div>
             <h3 data-i18n="p4.h">Automatisme Siemens Step7</h3>
             <p data-i18n="p4.p">IHM + programme Ladder d'un cycle machine (simulation).</p>
@@ -363,6 +467,17 @@
           </article>
 
           <article class="card reveal">
+            <div class="card-diagram" aria-hidden="true">
+              <svg viewBox="0 0 320 84" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <path class="dg-track" d="M16 70 C90 70 90 22 160 22 S250 64 304 38"/>
+                <path class="dga dg-race" d="M16 70 C90 70 90 22 160 22 S250 64 304 38"/>
+                <g transform="translate(160 22)">
+                  <rect class="dgb" x="-15" y="-10" width="30" height="20" rx="5" fill="var(--surface)"/>
+                  <path class="dgm" stroke-width="3" d="M-10 -12 h8 M-10 12 h8"/>
+                  <circle class="dgfa" cx="11" cy="-4" r="2.2"/><circle class="dgfa" cx="11" cy="4" r="2.2"/>
+                </g>
+              </svg>
+            </div>
             <div class="card-top"><span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="5" y="7" width="14" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7V3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="3" r="1.4" fill="currentColor"/><circle cx="9.2" cy="12" r="1.4" fill="currentColor"/><circle cx="14.8" cy="12" r="1.4" fill="currentColor"/><path d="M9.5 15.4h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="card-meta">Arduino</span></div>
             <h3 data-i18n="p5.h">Robot suiveur de ligne</h3>
             <p data-i18n="p5.p">Conception et programmation · compétition Poly Maze (4ᵉ édition, VIC — ENP, 07/2024), équipe OPTIMUM.</p>
@@ -526,6 +641,13 @@
       </div>
     </section>
   </main>
+
+  <div class="footer-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" focusable="false">
+      <path class="wave-sine" d="M0 35 Q60 5 120 35 T240 35 T360 35 T480 35 T600 35 T720 35 T840 35 T960 35 T1080 35 T1200 35 T1320 35 T1440 35"/>
+      <path class="wave-pwm" d="M0 52 H90 V22 H210 V52 H330 V22 H450 V52 H570 V22 H690 V52 H810 V22 H930 V52 H1050 V22 H1170 V52 H1290 V22 H1440"/>
+    </svg>
+  </div>
 
   <footer class="site-footer">
     <div class="container footer-inner">
