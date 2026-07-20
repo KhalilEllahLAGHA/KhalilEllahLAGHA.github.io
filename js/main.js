@@ -30,7 +30,7 @@
     'hero.subline': 'Looking for a work-study contract (alternance, 2–3-week rotation) from September 2026, or a final-year internship in spring–summer 2027.',
     'chip1': 'Power electronics', 'chip2': 'EV / powertrain', 'chip3': 'Electrical grids', 'chip4': 'AI applied to power systems',
     'cta.contact': 'Contact me',
-    'cta.cv': 'Download my CV',
+    'cta.cv': 'View my CV',
     'cta.cvshort': 'My CV',
     'cta.cvats': 'Also available:',
     'cta.cvats2': 'ATS version of my CV (plain single-column layout, for online applications)',
@@ -173,7 +173,7 @@
     });
     root.lang = lang;
     d.title = TITLES[lang];
-    /* Both CV types download in the language currently displayed. */
+    /* Design CV opens in a new tab, ATS CV downloads - both in the language currently displayed. */
     d.querySelectorAll('.js-cv-design').forEach(function (a) {
       a.setAttribute('href', lang === 'fr' ? CVP.designFr : CVP.designEn);
     });
