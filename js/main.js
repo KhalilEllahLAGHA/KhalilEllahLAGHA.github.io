@@ -42,6 +42,7 @@
     'edu.title': 'Education',
     'e1.h': 'M2 CSEE — Electrical Energy Systems Design', 'e1.badge': 'Admitted',
     'e2.p': 'Ranked 2nd of the cohort · annual average 15,43/20.',
+    'e2.att': 'Official ranking certificate — 2nd of 20',
     'e3.h': 'Engineering programme in Electrical Engineering',
     'e3.p': '4 of 5 years completed (left to pursue a master\'s in France) · preparatory classes: among the top-ranked students.',
     'e4.h': 'Baccalauréat in Mathematics', 'e4.p': 'Highest honours (mention Très Bien) — 16,93/20.',
