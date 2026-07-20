@@ -17,7 +17,7 @@
     fr: 'Khalil LAGHA — Étudiant M2 CSEE | Électronique de puissance & énergie',
     en: 'Khalil LAGHA — M2 Electrical Energy Systems Design | Power electronics'
   };
-  /* Per-page overrides (e.g. the SIAA variant): a page may define
+  /* Per-page overrides: a page may define
      window.PAGE_TITLES / PAGE_EN / PAGE_CV before this script loads. */
   if (window.PAGE_TITLES) { TITLES = Object.assign({}, TITLES, window.PAGE_TITLES); }
 
