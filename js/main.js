@@ -97,6 +97,7 @@
     'p7.r1': 'Three-phase diode rectifier',
     'p7.r2': 'Single-phase semi-controlled bridge',
     'p7.r3': 'Smoothing and commutation',
+    'p8.r1': 'Lab report',
     'p8.h': 'Neural network from scratch (MLP)',
     'p8.p': 'Multilayer perceptron and gradient backpropagation hand-coded in Matlab, no toolbox — two implementations: didactic loops and vectorised matrix computation.',
     'p8.t1': 'Backpropagation',
