@@ -186,6 +186,11 @@
     d.querySelectorAll('.js-cv-ats').forEach(function (a) {
       a.setAttribute('href', lang === 'fr' ? CVP.atsFr : CVP.atsEn);
     });
+    /* Report PDFs follow the displayed language (each link carries both paths). */
+    d.querySelectorAll('.js-doc').forEach(function (a) {
+      var href = a.getAttribute(lang === 'fr' ? 'data-fr' : 'data-en');
+      if (href) { a.setAttribute('href', href); }
+    });
     d.querySelectorAll('.lang-toggle').forEach(function (b) {
       b.textContent = lang === 'fr' ? 'EN' : 'FR';
       b.setAttribute('aria-label', lang === 'fr' ? 'Switch to English' : 'Passer en français');
