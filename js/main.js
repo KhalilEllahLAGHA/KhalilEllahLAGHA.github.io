@@ -33,6 +33,7 @@
     'cta.cv': 'View my CV',
     'cta.cvshort': 'My CV',
     'cta.cvats': 'Also available:',
+    'cta.cvdocx': 'Word version (.docx)',
     'cta.cvats2': 'ATS version of my CV (plain single-column layout, for online applications)',
     'hero.work': 'Authorized to work in France',
     'about.title': 'About',
@@ -146,6 +147,7 @@
 
   var CVP = Object.assign({
     designFr: 'cv/CV_Khalil_LAGHA_FR.pdf', designEn: 'cv/CV_Khalil_LAGHA_EN.pdf',
+    atsFrDocx: 'cv/CV_Khalil_LAGHA_ATS_FR.docx', atsEnDocx: 'cv/CV_Khalil_LAGHA_ATS_EN.docx',
     atsFr: 'cv/CV_Khalil_LAGHA_ATS_FR.pdf', atsEn: 'cv/CV_Khalil_LAGHA_ATS_EN.pdf'
   }, window.PAGE_CV || {});
 
@@ -185,6 +187,9 @@
     });
     d.querySelectorAll('.js-cv-ats').forEach(function (a) {
       a.setAttribute('href', lang === 'fr' ? CVP.atsFr : CVP.atsEn);
+    });
+    d.querySelectorAll('.js-cv-ats-docx').forEach(function (a) {
+      a.setAttribute('href', lang === 'fr' ? CVP.atsFrDocx : CVP.atsEnDocx);
     });
     /* Report PDFs follow the displayed language (each link carries both paths). */
     d.querySelectorAll('.js-doc').forEach(function (a) {
