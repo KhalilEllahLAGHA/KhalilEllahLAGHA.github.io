@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Multilayer perceptron training structure</title>
+  <desc id="desc">The sequential classification exercise uses two input variables, two sigmoid neurons in one hidden layer, and one output neuron. Forward propagation calculates an output; the output error flows backward to update the weights and biases.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101a31"/><stop offset="1" stop-color="#0b1123"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#fbbf24"/></marker>
+    <marker id="back" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#66c5d8"/></marker>
+  </defs>
+  <rect width="1200" height="560" rx="24" fill="url(#bg)"/>
+  <g stroke="#33405f" opacity=".25"><path d="M0 80H1200M0 160H1200M0 240H1200M0 320H1200M0 400H1200M0 480H1200M100 0V560M200 0V560M300 0V560M400 0V560M500 0V560M600 0V560M700 0V560M800 0V560M900 0V560M1000 0V560M1100 0V560"/></g>
+  <text x="52" y="55" fill="#fbbf24" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="18" letter-spacing="3">LEARNING ARCHITECTURE</text>
+  <text x="52" y="94" fill="#f4f6fb" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="29">A small network, built from first principles</text>
+  <text x="52" y="126" fill="#a9b7d0" font-family="Segoe UI,Arial,sans-serif" font-size="17">The three-example classification case in the MATLAB exercise uses a 2 → 2 → 1 network.</text>
+  <g fill="none" stroke="#fbbf24" stroke-opacity=".65" stroke-width="3" marker-end="url(#arrow)"><path d="M274 220L561 220"/><path d="M274 220L561 355"/><path d="M274 355L561 220"/><path d="M274 355L561 355"/><path d="M639 220L926 287"/><path d="M639 355L926 287"/></g>
+  <g font-family="Segoe UI,Arial,sans-serif" text-anchor="middle">
+    <g fill="#edf3ff" font-size="16" font-weight="700"><text x="235" y="174">INPUTS</text><text x="600" y="174">HIDDEN LAYER</text><text x="965" y="174">OUTPUT</text></g>
+    <g fill="#152445" stroke="#66c5d8" stroke-width="3"><circle cx="235" cy="220" r="40"/><circle cx="235" cy="355" r="40"/></g>
+    <g fill="#152445" stroke="#fbbf24" stroke-width="3"><circle cx="600" cy="220" r="40"/><circle cx="600" cy="355" r="40"/></g>
+    <circle cx="965" cy="287" r="43" fill="#152445" stroke="#8ce0af" stroke-width="3"/>
+    <g fill="#edf3ff" font-size="22" font-weight="700"><text x="235" y="228">x₁</text><text x="235" y="363">x₂</text><text x="600" y="228">h₁</text><text x="600" y="363">h₂</text><text x="965" y="295">ŷ</text></g>
+    <g fill="#a9b7d0" font-size="15"><text x="418" y="249">weights W₁</text><text x="785" y="247">weights W₂</text><text x="600" y="416">sigmoid activation</text><text x="965" y="364">compare with target y</text></g>
+  </g>
+  <path d="M965 378V469H600H235V401" fill="none" stroke="#66c5d8" stroke-width="3" marker-end="url(#back)"/>
+  <text x="600" y="457" fill="#66c5d8" font-family="Segoe UI,Arial,sans-serif" font-size="17" text-anchor="middle">backpropagation · update weights and biases from output error</text>
+</svg>

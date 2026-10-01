@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Indirect field-oriented control of an induction motor</title>
+  <desc id="desc">A speed PI loop produces a torque request. Rotor flux sets the d-axis current, and torque sets the q-axis current. Inner current controllers drive an SVPWM inverter and induction motor. Measured speed and currents return to the control system; a current-model flux estimator and slip integration provide the orientation angle.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101a31"/><stop offset="1" stop-color="#0b1123"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#fbbf24"/></marker>
+    <marker id="return" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#66c5d8"/></marker>
+  </defs>
+  <rect width="1200" height="560" rx="24" fill="url(#bg)"/>
+  <g stroke="#33405f" opacity=".25"><path d="M0 80H1200M0 160H1200M0 240H1200M0 320H1200M0 400H1200M0 480H1200M100 0V560M200 0V560M300 0V560M400 0V560M500 0V560M600 0V560M700 0V560M800 0V560M900 0V560M1000 0V560M1100 0V560"/></g>
+  <text x="52" y="55" fill="#fbbf24" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="18" letter-spacing="3">VECTOR CONTROL</text>
+  <text x="52" y="94" fill="#f4f6fb" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="29">Flux and torque become separate control channels</text>
+  <text x="52" y="126" fill="#a9b7d0" font-family="Segoe UI,Arial,sans-serif" font-size="17">Simplified indirect rotor-flux-oriented control architecture.</text>
+  <g font-family="Segoe UI,Arial,sans-serif" text-anchor="middle">
+    <rect x="45" y="192" width="170" height="112" rx="15" fill="#152445" stroke="#65748d"/>
+    <text x="130" y="238" fill="#edf3ff" font-size="18" font-weight="700">Speed target</text><text x="130" y="266" fill="#a9b7d0" font-size="16">ω*</text>
+    <rect x="268" y="192" width="170" height="112" rx="15" fill="#152445" stroke="#fbbf24" stroke-width="2"/>
+    <text x="353" y="235" fill="#edf3ff" font-size="18" font-weight="700">Speed PI</text><text x="353" y="265" fill="#fbbf24" font-size="15">torque request</text>
+    <rect x="491" y="192" width="170" height="112" rx="15" fill="#152445" stroke="#fbbf24" stroke-width="2"/>
+    <text x="576" y="231" fill="#edf3ff" font-size="18" font-weight="700">d/q current PI</text><text x="576" y="257" fill="#a9b7d0" font-size="15">decoupling + limits</text>
+    <rect x="714" y="192" width="170" height="112" rx="15" fill="#152445" stroke="#fbbf24" stroke-width="2"/>
+    <text x="799" y="231" fill="#edf3ff" font-size="18" font-weight="700">SVPWM inverter</text><text x="799" y="258" fill="#a9b7d0" font-size="15">three-phase voltage</text>
+    <rect x="937" y="192" width="215" height="112" rx="15" fill="#152445" stroke="#66c5d8" stroke-width="2"/>
+    <text x="1044" y="232" fill="#edf3ff" font-size="18" font-weight="700">Induction motor</text><text x="1044" y="260" fill="#66c5d8" font-size="15">5 kW · 380 V</text>
+    <rect x="392" y="376" width="220" height="76" rx="13" fill="#132942" stroke="#66c5d8"/>
+    <text x="502" y="407" fill="#edf3ff" font-size="16" font-weight="700">Flux reference ψ*</text><text x="502" y="432" fill="#66c5d8" font-size="14">sets d-axis current iᵈ*</text>
+    <rect x="681" y="376" width="244" height="76" rx="13" fill="#132942" stroke="#66c5d8"/>
+    <text x="803" y="407" fill="#edf3ff" font-size="16" font-weight="700">Flux estimator + slip</text><text x="803" y="432" fill="#66c5d8" font-size="14">orientation angle θₑ</text>
+  </g>
+  <g fill="none" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrow)"><path d="M216 248H261"/><path d="M439 248H484"/><path d="M662 248H707"/><path d="M885 248H930"/><path d="M502 375V337H545V311"/></g>
+  <g font-family="Segoe UI,Arial,sans-serif" fill="#cad3e5" font-size="14" text-anchor="middle"><text x="465" y="179">iᑫ* from torque</text><text x="688" y="179">vᵈ*, vᑫ*</text><text x="910" y="179">vₐᵦ꜀</text></g>
+  <path d="M1044 305V514H353V311" fill="none" stroke="#66c5d8" stroke-width="2.5" marker-end="url(#return)"/>
+  <text x="529" y="501" fill="#66c5d8" font-family="Segoe UI,Arial,sans-serif" font-size="16">measured speed</text>
+  <path d="M1044 305V344H803V369" fill="none" stroke="#66c5d8" stroke-width="2.5" marker-end="url(#return)"/>
+  <path d="M803 375V330H608V311" fill="none" stroke="#66c5d8" stroke-width="2.5" marker-end="url(#return)"/>
+  <text x="932" y="333" fill="#66c5d8" font-family="Segoe UI,Arial,sans-serif" font-size="14">currents + speed</text>
+</svg>
