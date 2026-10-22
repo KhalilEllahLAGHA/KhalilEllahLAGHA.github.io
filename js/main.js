@@ -71,7 +71,7 @@
     'skip': 'Skip to content', 'person.name': 'Khalil Lagha',
     'nav.home': 'Home', 'nav.about': 'About', 'nav.edu': 'Education', 'nav.exp': 'Experience',
     'nav.proj': 'Projects', 'nav.skills': 'Skills', 'nav.docs': 'Documents', 'nav.contact': 'Contact',
-    'hero.kicker': 'M2 work-study · Internship from mid-March 2027',
+    'hero.kicker': 'Final-year internship from mid-March 2027',
     'hero.tagline': 'M2 CSEE student at Université Grenoble Alpes.',
     'hero.subline': 'From power electronics to motor control: I connect models, simulations and experiments to understand electrical energy systems.',
     'chip1': 'Power electronics', 'chip2': 'EV / powertrain', 'chip3': 'Electrical grids', 'chip4': 'AI applied to power systems',
@@ -84,7 +84,7 @@
     'hero.work': 'Authorized to work in France',
     'about.title': 'About',
     'about.p1': 'My common thread: understand an electrical system, build its model and compare the result with simulation or experiment. After completing four of five years in the Electrical Engineering programme at ENP Algiers, I joined UGA to specialise in electrical energy systems.',
-    'about.p2': 'I am looking for a one-year M2 work-study contract from September 2026 (2–3-week company / university rotation), or a 4–6-month final-year internship from mid-March 2027, in power electronics, EV / powertrain, power grids or AI applied to energy.',
+    'about.p2': 'I am looking for a 4–6-month final-year internship from mid-March 2027, in power electronics, EV / powertrain, power grids or AI applied to energy.',
     'stat1v': '2nd', 'stat1l': 'of the M1 EEA cohort (UGA)', 'stat2l': 'M1 annual average', 'stat3l': 'English',
     'edu.title': 'Education',
     'e1.h': 'M2 CSEE — Electrical Energy Systems Design', 'e1.badge': 'In progress',
@@ -186,7 +186,7 @@
     'docs.rec3.h': 'Recommendation letter — Prof. I. Saadaoui',
     'docs.rec3.p': 'Head of department, preparatory classes, ENP Algiers.',
     'contact.title': 'Contact',
-    'contact.pitch': 'I am looking for a 4–6-month final-year internship from mid-March 2027, or an M2 work-study contract from September 2026. Power electronics, motor control, power grids or AI applied to energy: let’s discuss your projects.',
+    'contact.pitch': 'I am looking for a 4–6-month final-year internship from mid-March 2027. Power electronics, motor control, power grids or AI applied to energy: let’s discuss your projects.',
     'contact.mail': 'Email me'
   };
   if (window.PAGE_EN) { Object.assign(EN, window.PAGE_EN); }
@@ -215,7 +215,7 @@
   var DICT_ARIA = { fr: FR_ARIA, en: EN_ARIA };
   var descriptions = {
     fr: d.querySelector('meta[name="description"]').content,
-    en: 'Khalil Lagha, M2 CSEE student at Université Grenoble Alpes. Power electronics, motor control, power grids and AI applied to energy. M2 work-study from September 2026 or a 4–6-month final-year internship from mid-March 2027.'
+    en: 'Khalil Lagha, M2 CSEE student at Université Grenoble Alpes. Power electronics, motor control, power grids and AI applied to energy. A 4–6-month final-year internship from mid-March 2027.'
   };
 
   function setLang(lang) {
