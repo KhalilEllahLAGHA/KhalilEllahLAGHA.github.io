@@ -1,11 +1,12 @@
 # Project case studies
 
-Six standalone project pages extend the existing portfolio. Each page contains
+Seven standalone project pages extend the existing portfolio. Each page contains
 French and English content, a visual introduction, four reading chapters,
 documented results, source links, and navigation to the next project.
 
 ## Pages
 
+- [PEMFC internship at GIPSA-lab](pemfc-internship.html)
 - [Power-grid analysis](power-grid-analysis.html)
 - [Field-oriented control](foc-induction-motor.html)
 - [Winding and flux analysis](winding-flux-analysis.html)
@@ -23,7 +24,7 @@ python projects/build_project_pages.py
 ```
 
 Run the command from the portfolio root. The builder uses Python's standard
-library and writes the six HTML files into this directory. Styling and browser
+library and writes the seven HTML files into this directory. Styling and browser
 behaviour are maintained directly in `project.css` and `project.js`.
 
 To preview the portfolio locally from its root:
@@ -37,7 +38,7 @@ Open `http://127.0.0.1:8765/index.html#projets`.
 ## Content and visuals
 
 Personal facts follow `Profile/CSEE/CV.md` in the parent workspace. Detailed
-technical evidence comes from the six project folders and their reports; the
+technical evidence comes from the project folders and their reports; the
 companion editable guide is `Projects/PROJECTS_DETAILED.md`.
 
 The PNG and JPEG assets in `../assets/projects/` are display copies of existing
@@ -50,6 +51,12 @@ update.
 The third power-electronics experiment documents theory and bench measurements;
 the MATLAB/Simulink work belongs to the first two experiments. The winding tool
 and laboratory work are presented as collaborative projects.
+
+The PEMFC internship page uses the internship report and experiment checks. It
+distinguishes empirical fitting and a same-experiment chronological test from
+independent dynamic validation. The boost-converter PI controller is presented
+as a proposed next step. Its report downloads as
+`Khalil_Lagha_PEMFC_Internship_Report.pdf`.
 
 ## Checks completed on 30 September 2026
 

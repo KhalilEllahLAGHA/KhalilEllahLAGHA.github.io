@@ -35,7 +35,7 @@
       } catch (e) { }
     })();
   </script>
-  <script src="js/main.js?v=fbbfec2f8f57" defer></script>
+  <script src="js/main.js?v=c9052fb7291d" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -129,7 +129,7 @@
           <div class="hero-proof">
             <div class="proof-item"><strong>M2</strong><span>CSEE · UGA</span></div>
             <div class="proof-item"><strong data-i18n="stat1v">2ᵉ</strong><span data-i18n="hero.proof.rank">promotion M1 EEA</span></div>
-            <div class="proof-item"><strong>06</strong><span data-i18n="hero.proof.projects">projets à explorer</span></div>
+            <div class="proof-item"><strong>07</strong><span data-i18n="hero.proof.projects">projets à explorer</span></div>
           </div>
           <p class="hero-side-note"><span aria-hidden="true">↳</span> <span data-i18n="hero.side.note">Code, courbes et rapports : chaque projet raconte la démarche.</span></p>
         </aside>
@@ -149,10 +149,10 @@
       <div class="container">
         <div class="section-heading reveal">
           <div><p class="section-overline" data-i18n="proj.overline">Travaux sélectionnés</p><h2 class="sec-title"><span class="sec-n" aria-hidden="true">01</span><span data-i18n="proj.title">Les idées, mises à l’épreuve.</span></h2></div>
-          <p class="section-intro" data-i18n="proj.intro">Six projets pour explorer la conversion d’énergie, les machines, les réseaux et l’IA. Ouvrez un projet pour suivre la méthode, les résultats et leurs limites.</p>
+          <p class="section-intro" data-i18n="proj.intro">Sept projets pour explorer la conversion d’énergie, les machines, les réseaux et l’IA. Ouvrez un projet pour suivre la méthode, les résultats et leurs limites.</p>
         </div>
         <div class="project-filters" role="group" aria-label="Filtrer les projets" data-i18n-aria="aria.filters" hidden>
-          <button class="project-filter" type="button" data-filter="all" aria-pressed="true"><span data-i18n="filter.all">Tous</span><span class="filter-count">06</span></button>
+          <button class="project-filter" type="button" data-filter="all" aria-pressed="true"><span data-i18n="filter.all">Tous</span><span class="filter-count">07</span></button>
           <button class="project-filter" type="button" data-filter="power" aria-pressed="false" data-i18n="filter.power">Énergie & machines</button>
           <button class="project-filter" type="button" data-filter="control" aria-pressed="false" data-i18n="filter.control">Commande</button>
           <button class="project-filter" type="button" data-filter="ai" aria-pressed="false" data-i18n="filter.ai">Intelligence artificielle</button>
@@ -243,6 +243,20 @@
               <div class="project-links"><a class="project-explore" href="projects/power-electronics-labs.html"><span data-i18n="proj.explore">Découvrir le projet</span><span aria-hidden="true">↗</span></a><a class="project-source" href="reports/tp-redressement-triphase-diodes.pdf" target="_blank" rel="noopener">TP 1 · PDF ↗</a><a class="project-source" href="reports/tp-pont-mixte-monophase.pdf" target="_blank" rel="noopener">TP 2 · PDF ↗</a><a class="project-source" href="reports/tp-redressement-lissage-commutation.pdf" target="_blank" rel="noopener">TP 3 · PDF ↗</a></div>
             </div>
           </article>
+          <article class="card project-card reveal" data-category="power control">
+            <a class="project-image-link" href="projects/pemfc-internship.html" aria-label="Stage PEMFC au GIPSA-lab" data-fr-label="Stage PEMFC au GIPSA-lab" data-en-label="PEMFC internship at GIPSA-lab">
+              <img class="project-image" src="assets/projects/pemfc-bench.png" width="1219" height="829" loading="lazy" decoding="async" alt="Banc expérimental de la pile PEMFC" data-fr-alt="Banc expérimental de la pile PEMFC" data-en-alt="PEMFC experimental bench">
+              <span class="project-number" aria-hidden="true">07</span><span class="project-image-label" data-i18n="proj.kind.bench">Mesure au banc</span>
+            </a>
+            <div class="project-body">
+              <span class="card-meta" data-i18n="pemfc.meta">GIPSA-lab · Stage de recherche</span>
+              <h3 data-i18n="pemfc.h">Stage PEMFC au GIPSA-lab</h3>
+              <p data-i18n="pemfc.p">Modélisation d’une pile à combustible, identification à partir des mesures et étude d’une commande par convertisseur DC-DC.</p>
+              <ul class="tags"><li>PEMFC</li><li>Python</li><li>MATLAB / Simulink</li></ul>
+              <div class="project-summary"><strong data-i18n="pemfc.metric">10 cellules</strong><span data-i18n="pemfc.metric.label">modélisation et essais expérimentaux</span></div>
+              <div class="project-links"><a class="project-explore" href="projects/pemfc-internship.html"><span data-i18n="proj.explore">Découvrir le projet</span><span aria-hidden="true">↗</span></a><a class="project-source" href="reports/Khalil_Lagha_PEMFC_Internship_Report.pdf" download="Khalil_Lagha_PEMFC_Internship_Report.pdf"><span data-i18n="pemfc.report">Rapport de stage</span> ↓</a><a class="project-source" href="https://github.com/KhalilEllahLAGHA/PEMFC_Internship_codes" target="_blank" rel="noopener">GitHub ↗</a></div>
+            </div>
+          </article>
         </div>
         <details class="additional-work">
           <summary><span data-i18n="proj.additional">Autres explorations : automatisme & embarqué</span><span aria-hidden="true">+</span></summary>
@@ -282,10 +296,15 @@
               <h3 data-i18n="x1.role">Stagiaire Recherche</h3>
               <p class="tl-org">GIPSA-lab</p>
               <ul class="tl-list">
-                <li data-i18n="x1.p1">Modélisation Matlab/Simulink d’un stack PEMFC de 10 cellules — erreur 6 % en dynamique / 1 % en statique.</li>
-                <li data-i18n="x1.p2">Régulation de tension via convertisseur DC-DC boost + correcteur PI, en simulation puis en pratique.</li>
+                <li data-i18n="x1.p1">Modélisation d’une pile PEMFC de 10 cellules et identification des paramètres à partir de mesures expérimentales.</li>
+                <li data-i18n="x1.p2">Analyse des limites de mesure et proposition d’une commande PI par convertisseur DC-DC boost.</li>
               </ul>
-              <ul class="tags"><li>Matlab/Simulink</li><li>PEMFC</li><li>Boost + PI</li></ul>
+              <ul class="tags"><li>MATLAB / Simulink</li><li>PEMFC</li><li>Python</li></ul>
+              <div class="card-files">
+                <span class="files-label" data-i18n="files.label">Voir les fichiers</span>
+                <a class="file-btn" href="reports/Khalil_Lagha_PEMFC_Internship_Report.pdf" download="Khalil_Lagha_PEMFC_Internship_Report.pdf"><span data-i18n="pemfc.report">Rapport de stage</span><span class="file-ext">PDF</span></a>
+                <a class="file-btn" href="projects/pemfc-internship.html"><span data-i18n="proj.explore">Découvrir le projet</span> ↗</a>
+              </div>
             </div>
           </li>
           <li class="tl-item reveal">

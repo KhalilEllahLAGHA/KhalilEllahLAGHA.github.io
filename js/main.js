@@ -22,6 +22,12 @@
   if (window.PAGE_TITLES) { TITLES = Object.assign({}, TITLES, window.PAGE_TITLES); }
 
   var EN = {
+    'pemfc.meta': 'GIPSA-lab · Research internship',
+    'pemfc.h': 'PEMFC internship at GIPSA-lab',
+    'pemfc.p': 'Fuel-cell modelling, identification from measurements and study of control through a DC-DC converter.',
+    'pemfc.metric': '10 cells',
+    'pemfc.metric.label': 'modelling and experimental tests',
+    'pemfc.report': 'Internship report',
     'proj.measurements': 'Measurements',
     'contact.heading': 'Let’s discuss your next project.',
     'p7.metric.label': 'theory, calculations & measurements',
@@ -48,7 +54,7 @@
     'proj.kind.application': 'Application',
     'proj.kind.simulation': 'Simulation',
     'proj.report': 'PDF report',
-    'proj.intro': 'Six projects exploring energy conversion, machines, power grids and AI. Open a project to follow the method, the results and their limits.',
+    'proj.intro': 'Seven projects exploring energy conversion, machines, power grids and AI. Open a project to follow the method, the results and their limits.',
     'proj.overline': 'Selected work',
     'cta.projects': 'Explore my projects',
     'hero.scroll': 'Explore further ↓',
@@ -92,8 +98,8 @@
     'e4.h': 'Baccalauréat in Mathematics', 'e4.p': 'Highest honours (mention Très Bien) — 16,93/20.',
     'exp.title': 'Experience',
     'x1.date': '04 → 07/2026 · 3.5 months', 'x1.role': 'Research Intern',
-    'x1.p1': 'MATLAB/Simulink modelling of a 10-cell PEMFC stack — 6% dynamic / 1% static error.',
-    'x1.p2': 'Voltage regulation with a DC-DC boost converter + PI controller, in simulation then on real hardware.',
+    'x1.p1': 'Modelling a 10-cell PEMFC stack and identifying parameters from experimental measurements.',
+    'x1.p2': 'Analysis of measurement limits and a proposed PI control scheme using a DC-DC boost converter.',
     'x2.date': '2025 · 1 month', 'x2.role': 'Intern',
     'x2.p1': 'International industrial immersion · technical summaries (directional drilling) · NEST & SIPP Level 2 HSE certifications.',
     'x2.t2': 'International',
