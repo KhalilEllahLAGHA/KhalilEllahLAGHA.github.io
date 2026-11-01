@@ -3,8 +3,8 @@
   <desc id="desc">An outer speed PI controller sets the armature-current reference. An inner current PID controls the firing angle of a six-pulse thyristor bridge, which supplies the DC motor. Measured speed and current close the two loops.</desc>
   <defs>
     <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101a31"/><stop offset="1" stop-color="#0b1123"/></linearGradient>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#fbbf24"/></marker>
-    <marker id="return" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#69c6db"/></marker>
+    <marker id="arrow" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 10 10" refX="10" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#fbbf24"/></marker>
+    <marker id="return" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 10 10" refX="10" refY="5" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#69c6db"/></marker>
   </defs>
   <rect width="1200" height="500" rx="24" fill="url(#bg)"/>
   <g stroke="#33405f" opacity=".25"><path d="M0 80H1200M0 160H1200M0 240H1200M0 320H1200M0 400H1200M100 0V500M200 0V500M300 0V500M400 0V500M500 0V500M600 0V500M700 0V500M800 0V500M900 0V500M1000 0V500M1100 0V500"/></g>
@@ -23,9 +23,9 @@
     <rect x="980" y="193" width="175" height="106" rx="15" fill="#152445" stroke="#69c6db" stroke-width="2"/>
     <text x="1068" y="235" fill="#edf3ff" font-size="19" font-weight="700">DC motor</text><text x="1068" y="265" fill="#69c6db" font-size="15">armature + load</text>
   </g>
-  <g fill="none" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrow)"><path d="M224 246H274"/><path d="M457 246H507"/><path d="M690 246H740"/><path d="M923 246H973"/></g>
+  <g fill="none" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrow)"><path d="M223 246H281"/><path d="M456 246H514"/><path d="M689 246H747"/><path d="M922 246H980"/></g>
   <g font-family="Segoe UI,Arial,sans-serif" fill="#cad3e5" font-size="14" text-anchor="middle"><text x="482" y="184">iₐ*</text><text x="715" y="184">firing angle α</text><text x="948" y="184">armature voltage</text></g>
-  <path d="M1068 300V363H602V306" fill="none" stroke="#69c6db" stroke-width="2.6" marker-end="url(#return)"/>
-  <path d="M1068 363V424H369V306" fill="none" stroke="#69c6db" stroke-width="2.6" marker-end="url(#return)"/>
+  <path d="M1040 299V363H602V299" fill="none" stroke="#69c6db" stroke-width="2.6" marker-end="url(#return)"/>
+  <path d="M1090 299V424H369V299" fill="none" stroke="#69c6db" stroke-width="2.6" marker-end="url(#return)"/>
   <g font-family="Segoe UI,Arial,sans-serif" fill="#69c6db" font-size="16"><text x="744" y="351">measured armature current iₐ</text><text x="580" y="412">measured speed ω</text></g>
 </svg>
