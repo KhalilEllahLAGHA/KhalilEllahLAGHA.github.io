@@ -451,144 +451,161 @@ PAGES = [
                    'points': []}],
      'reports': ('../reports/foc-induction-motor-report.pdf', '../reports/foc-induction-motor-report-en.pdf'),
      'repo': 'https://github.com/KhalilEllahLAGHA/foc-induction-motor'},
-    {'slug': 'winding-flux-analysis',
-     'title': ('Bobinage et analyse de flux', 'Winding and flux analysis'),
-     'eyebrow': ('03 / Conception de machines', '03 / Machine design'),
-     'summary': ('Notre application Python relie les paramètres d’une machine à son bobinage et à une visualisation du '
-                 'flux. L’objectif est de rendre les choix de conception compréhensibles dans un même outil.',
-                 'Our Python application connects machine parameters to winding design and flux visualisation. The goal '
-                 'is to make design choices understandable within one tool.'),
-     'scope': ('Projet d’équipe · Python / PyQt5 / FEMM', 'Team project · Python / PyQt5 / FEMM'),
-     'metrics': [('3', 'espaces de travail dans l’application', 'workspaces in the application'),
-                 ('4', 'régions dans le maillage polaire', 'regions in the polar mesh'),
-                 ('FEMM', 'comparaison par éléments finis', 'finite-element comparison')],
-     'hero_image': ('winding-flux-heatmap.png',
-                    'Carte de densité de flux magnétique dans la machine',
-                    'Magnetic flux-density heatmap in the machine',
-                    'Visualisation issue du calcul de flux de l’application.',
-                    'Flux-computation visualisation from the application.'),
-     'chapters': [{'id': 'problem',
-                   'title': ('Le problème : relier les choix de bobinage au flux',
-                             'The problem: connect winding choices to flux'),
-                   'intro': ('Le dimensionnement d’une machine exige de garder cohérents géométrie, connexions '
-                             'triphasées et grandeurs magnétiques. L’application permet d’explorer cette chaîne dans une '
-                             'même interface.',
-                             'Machine design requires geometry, three-phase connections and magnetic quantities to '
-                             'remain consistent. The application lets users explore that chain in one interface.'),
-                   'paragraphs': [('Dans ce projet d’équipe, nous avons développé une application de bureau en Python et '
-                                   'PyQt5. Elle commence par la configuration en encoches, pôles, couches et pas de '
-                                   'bobinage ; elle calcule la faisabilité, les facteurs de bobinage et la matrice des '
-                                   'connexions de phases.',
-                                   'In this team project, we developed a Python/PyQt5 desktop application. It begins '
-                                   'with slots, poles, layers and coil pitch; it computes feasibility, winding factors '
-                                   'and the phase-connection matrix.'),
-                                  ('Un dessin du stator et des contrôles interactifs évitent de traiter le bobinage '
-                                   'comme une simple ligne de nombres. Les paramètres se transmettent aux vues FMM et '
-                                   'flux pour que les calculs gardent la même machine de référence.',
-                                   'A stator drawing and interactive controls keep the winding from becoming just a row '
-                                   'of numbers. Parameters carry into MMF and flux views so the calculations use the '
-                                   'same machine.')],
-                   'points': [('Bobinage',
-                               'Configuration et vérification de faisabilité.',
-                               'Configuration and feasibility checks.'),
-                              ('Connexions',
-                               'Matrice phase–encoche et représentation du stator.',
-                               'Phase–slot matrix and stator view.'),
-                              ('Cohérence',
-                               'Paramètres synchronisés entre les trois espaces.',
-                               'Parameters shared across all three workspaces.')]},
-                  {'id': 'method',
-                   'title': ('Voir la FMM avant de résoudre le flux', 'See MMF before solving flux'),
-                   'intro': ('La deuxième vue calcule les profils de force magnétomotrice dent par dent pour chaque '
-                             'phase et leur résultante, en fonction de l’angle électrique.',
-                             'The second view computes tooth-based magnetomotive-force profiles for each phase and their '
-                             'resultant versus electrical angle.'),
-                   'paragraphs': [('Le moteur de calcul sépare les profils de phase de la combinaison temporelle. '
-                                   'L’utilisateur peut examiner la matrice de connexion, faire varier l’angle et animer '
-                                   'la résultante ; cela rend visibles les effets du schéma de bobinage.',
-                                   'The calculation engine separates phase profiles from their time-dependent '
-                                   'combination. Users can inspect the connection matrix, vary angle and animate the '
-                                   'resultant, making winding choices visible.'),
-                                  ('La troisième vue guide ensuite la définition de la machine, la génération d’un '
-                                   'maillage polaire à quatre régions et le calcul de densité de flux. Un réseau de '
-                                   'réluctances et un solveur creux produisent des cartes de densité et des lignes de '
-                                   'flux.',
-                                   'The third view then guides machine setup, a four-region polar mesh and flux-density '
-                                   'calculation. A reluctance network and sparse solver produce density maps and flux '
-                                   'lines.')],
-                   'points': [('FMM',
-                               'Profils par phase et résultante interactive.',
-                               'Per-phase profiles and interactive resultant.'),
-                              ('Maillage',
-                               'Géométrie polaire organisée en quatre régions.',
-                               'Polar geometry divided into four regions.'),
-                              ('Solveur',
-                               'Réseau de réluctances puis visualisation du flux.',
-                               'Reluctance network followed by flux visualisation.')],
-                   'image': ('winding-mmf.png',
-                             'Profils de force magnétomotrice des trois phases',
-                             'Three-phase magnetomotive-force profiles',
-                             'La FMM résultante relie connexion des bobines et excitation magnétique.',
-                             'Resultant MMF connects coil connection to magnetic excitation.'),
-                   'flow': [('Configurer',
-                             'Configure',
-                             'L’utilisateur choisit encoches, pôles et connexions ; l’application vérifie la '
-                             'faisabilité.',
-                             'The user selects slots, poles and connections; the application checks feasibility.'),
-                            ('Comprendre l’excitation',
-                             'Understand excitation',
-                             'La force magnétomotrice montre l’effet des courants et de la disposition des bobines.',
-                             'Magnetomotive force shows the effect of currents and coil placement.'),
-                            ('Calculer le flux',
-                             'Calculate flux',
-                             'Un maillage et un réseau de réluctances donnent la répartition du flux dans la machine.',
-                             'A mesh and reluctance network give the flux distribution within the machine.'),
-                            ('Inspecter',
-                             'Inspect',
-                             'Cartes et lignes de flux rendent le résultat lisible ; FEMM reste une comparaison '
-                             'numérique optionnelle.',
-                             'Maps and flux lines make the result inspectable; FEMM remains an optional numerical '
-                             'comparison.')]},
-                  {'id': 'evidence',
-                   'title': ('Comparer et interpréter', 'Compare and interpret'),
-                   'intro': ('Les cartes de densité et lignes de flux rendent le résultat inspectable. Une voie '
-                             'optionnelle relie l’étude au solveur éléments finis FEMM pour une comparaison '
-                             'indépendante.',
-                             'Density maps and flux lines make the result inspectable. An optional path links the study '
-                             'to FEMM finite-element analysis for independent comparison.'),
-                   'paragraphs': [('Les figures du dépôt montrent plusieurs configurations, notamment des bobinages '
-                                   'simple et double couche. L’interface distingue ce qui relève du calcul de bobinage, '
-                                   'de la FMM et du flux ; cette séparation aide à localiser une incohérence.',
-                                   'Repository figures show several configurations, including single- and double-layer '
-                                   'windings. The interface separates winding, MMF and flux calculations, which helps '
-                                   'locate inconsistencies.'),
-                                  ('La comparaison FEMM sert de contrôle numérique, pas d’essai sur prototype physique. '
-                                   'Le dossier fournit le code de l’application et les images de référence, avec FEMM en '
-                                   'dépendance optionnelle pour les vérifications finies.',
-                                   'FEMM comparison is a numerical check, not a physical prototype test. The repository '
-                                   'contains application code and reference images, with FEMM optional for '
-                                   'finite-element checks.')],
-                   'points': [],
-                   'image': ('winding-flux-lines.png',
-                             'Lignes de flux simulées autour de la machine',
-                             'Simulated magnetic flux lines around the machine',
-                             'Lecture visuelle du trajet du flux dans la géométrie étudiée.',
-                             'A visual reading of flux paths in the studied geometry.')},
-                  {'id': 'takeaway',
-                   'title': ('Ce que relie l’application', 'What the application connects'),
-                   'intro': ('Le projet transforme une suite de calculs de machine en parcours exploratoire : saisir, '
-                             'visualiser, calculer, confronter.',
-                             'The project turns a sequence of machine calculations into an exploratory path: enter, '
-                             'visualise, calculate, compare.'),
-                   'paragraphs': [('Il reste un outil de conception et d’analyse numérique. Les résultats doivent être '
-                                   'interprétés dans les hypothèses du réseau de réluctances et de la géométrie choisie '
-                                   '; un essai expérimental demanderait un dispositif et des mesures supplémentaires.',
-                                   'It remains a numerical design and analysis tool. Results must be interpreted within '
-                                   'the chosen geometry and reluctance-network assumptions; experimental validation '
-                                   'would require hardware and measurements.')],
-                   'points': []}],
-     'reports': None,
-     'repo': 'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program'},
+{'slug': 'winding-flux-analysis',
+ 'title': ('Bobinage et analyse de flux', 'Winding and flux analysis'),
+ 'eyebrow': ('03 / Conception de machines', '03 / Machine design'),
+ 'summary': ('Comment un choix de bobinage se traduit-il dans le champ magnétique ? Notre application Python relie '
+             'les paramètres saisis, la force magnétomotrice et le calcul du flux à une lecture de la machine en 2D.',
+             'How does a winding choice affect the magnetic field? Our Python application connects input parameters, '
+             'magnetomotive force and flux calculation to a 2D view of the machine.'),
+ 'scope': ('Projet d’équipe · Python / PyQt5 / FEMM', 'Team project · Python / PyQt5 / FEMM'),
+ 'metrics': [('3', 'espaces : bobinage, FMM, flux', 'workspaces: winding, MMF, flux'),
+             ('2D', 'coupe de la machine pour lire le champ', 'machine cross-section to inspect the field'),
+             ('Python', 'interface et chaîne de calcul', 'interface and calculation pipeline')],
+ 'hero_image': ('winding-parameters-app.png',
+                'Interface de configuration du bobinage avec paramètres, faisabilité et dessin triphasé du stator',
+                'Winding setup interface with parameters, feasibility and a three-phase stator drawing',
+                'Le point de départ : choisir le bobinage et voir immédiatement ses connexions.',
+                'The starting point: choose a winding and immediately see its connections.'),
+ 'chapters': [{'id': 'problem',
+               'title': ('Le problème : passer du bobinage à son effet physique',
+                         'The problem: connect a winding to its physical effect'),
+               'intro': ('Un dessin de bobinage ne suffit pas à comprendre le champ qu’il produit. L’objectif du '
+                         'projet est de suivre cette relation dans un même outil : configurer, calculer puis '
+                         'visualiser.',
+                         'A winding drawing alone does not explain the field it produces. The project follows that '
+                         'relationship in one tool: configure, calculate, then visualise.'),
+               'paragraphs': [('Dans ce projet d’équipe, nous avons développé une application Python/PyQt5. La '
+                               'première interface permet de choisir les encoches, les paires de pôles, le pas de '
+                               'bobine et le nombre de couches. Elle vérifie la faisabilité du bobinage et dessine '
+                               'la répartition des phases dans le stator.',
+                               'In this team project, we developed a Python/PyQt5 application. The first interface '
+                               'sets slots, pole pairs, coil span and layers. It checks winding feasibility and '
+                               'draws the phase arrangement in the stator.'),
+                              ('L’étude se poursuit avec les dimensions de la machine : rayons, entrefer et '
+                               'géométrie des encoches. Le bobinage définit où se trouvent les conducteurs ; la '
+                               'géométrie définit le chemin dans lequel le flux pourra circuler.',
+                               'The study continues with machine dimensions: radii, air gap and slot geometry. The '
+                               'winding defines conductor placement; the geometry defines the paths through which '
+                               'flux can travel.')],
+               'points': [],
+               'image': ('winding-machine-app.png',
+                         'Écran des dimensions de la machine avec aperçu de sa coupe',
+                         'Machine-dimension screen with a cross-section preview',
+                         'Après le bobinage, les dimensions donnent le cadre physique du calcul.',
+                         'After winding setup, the dimensions define the physical domain of the calculation.')},
+              {'id': 'method',
+               'title': ('La solution : de la FMM au système à résoudre',
+                         'The solution: from MMF to the system to solve'),
+               'intro': ('Chaque étape prépare la suivante : les courants créent l’excitation, le maillage '
+                         'représente la machine et le solveur relie les deux.',
+                         'Each stage prepares the next: currents create excitation, the mesh represents the machine, '
+                         'and the solver connects them.'),
+               'flow': [('Calculer la force magnétomotrice — FMM',
+                         'Calculate magnetomotive force — MMF',
+                         'La disposition des bobines, le nombre de spires et les courants donnent la contribution de '
+                         'chaque phase. Leur somme produit une FMM résultante : l’excitation magnétique appliquée '
+                         'aux dents de la machine.',
+                         'Coil placement, turns and currents determine each phase contribution. Their sum gives the '
+                         'resultant MMF: the magnetic excitation applied to the machine teeth.'),
+                        ('Découper la machine en cellules',
+                         'Divide the machine into cells',
+                         'Le maillage polaire représente le rotor, l’entrefer, les dents/encoches et la culasse. '
+                         'Dimensions et matériaux donnent les réluctances entre cellules : elles décrivent la '
+                         'résistance au passage du flux.',
+                         'The polar mesh represents the rotor, air gap, teeth/slots and yoke. Dimensions and '
+                         'materials determine reluctances between cells: how strongly each path opposes magnetic '
+                         'flux.'),
+                        ('Assembler et résoudre Ax = b',
+                         'Assemble and solve Ax = b',
+                         'A décrit les liaisons du réseau de réluctances ; b contient l’excitation issue de la FMM. '
+                         'La résolution donne x, les potentiels magnétiques des cellules. Ces valeurs permettent '
+                         'ensuite de calculer les flux entre cellules.',
+                         'A describes connections in the reluctance network; b contains the excitation derived from '
+                         'MMF. Solving gives x, the cell magnetic potentials. These values then allow fluxes between '
+                         'cells to be calculated.')],
+               'flow_images': {1: [('winding-mmf-app.png',
+                                    'Interface FMM avec contributions des phases A, B, C et résultante',
+                                    'MMF interface with phase A, B, C contributions and their resultant',
+                                    'Cas illustratif commun aux captures : 36 encoches, 2 paires de pôles, double '
+                                    'couche, 204 spires, courant de phase réglé à 0,5 A et angle électrique de 90°.',
+                                    'Illustrative case used throughout these captures: 36 slots, 2 pole pairs, '
+                                    'double layer, 204 turns, phase-current setting 0.5 A and electrical angle '
+                                    '90°.')],
+                               2: [('winding-mesh-app.png',
+                                    'Interface de maillage polaire de la machine, avec 8 640 cellules',
+                                    'Machine polar-mesh interface with 8,640 cells',
+                                    'Le maillage transforme la géométrie en un réseau calculable ; le réglage '
+                                    'présenté comporte 8 640 cellules.',
+                                    'The mesh turns geometry into a network that can be computed; the displayed '
+                                    'setting contains 8,640 cells.')]},
+               'paragraphs': [('La discrétisation utilisée ici est un réseau de réluctances sur une grille polaire. '
+                               'La FMM calculée par dent est reportée sur ce réseau. NumPy organise les données et '
+                               'SciPy résout le système creux par gradient conjugué préconditionné.',
+                               'The discretisation used here is a reluctance network on a polar grid. Tooth MMF is '
+                               'mapped onto that network. NumPy organises the data and SciPy solves the sparse '
+                               'system with preconditioned conjugate gradients.')],
+               'points': []},
+              {'id': 'evidence',
+               'title': ('Le résultat : du flux à une lecture en 2D', 'The result: from flux to a 2D interpretation'),
+               'intro': ('Une fois les potentiels connus, l’application retrouve le flux Φ, puis l’induction '
+                         'magnétique B. Les deux vues aident à comprendre où passe le flux et où le champ est le '
+                         'plus intense.',
+                         'Once potentials are known, the application derives flux Φ and then magnetic flux density '
+                         'B. Two views show where flux travels and where the field is strongest.'),
+               'flow': [('Déduire les flux entre cellules',
+                         'Derive fluxes between cells',
+                         'Les différences de potentiel magnétique, les sources de FMM et les réluctances donnent le '
+                         'flux de chaque branche. Les lignes reconstruites rendent son trajet lisible dans la coupe '
+                         'de la machine.',
+                         'Magnetic-potential differences, MMF sources and reluctances give the flux in each branch. '
+                         'Reconstructed lines make its path visible in the machine cross-section.'),
+                        ('Calculer B et afficher la carte',
+                         'Calculate B and display the map',
+                         'Le flux rapporté aux sections traversées donne les composantes de B. La carte de couleurs '
+                         'affiche son intensité dans la géométrie : on relie ainsi un choix de bobinage à un '
+                         'résultat physique visible.',
+                         'Flux divided by the traversed cross-sectional areas gives the components of B. The colour '
+                         'map shows its magnitude within the geometry, connecting a winding choice to a visible '
+                         'physical result.')],
+               'flow_images': {1: [('winding-flux-lines-app.png',
+                                    'Application affichant les lignes de flux sur la coupe 2D de la machine',
+                                    'Application displaying flux lines on the 2D machine cross-section',
+                                    'Lignes de flux : lire le trajet du flux dans la machine. Elles sont '
+                                    'reconstruites et lissées pour l’affichage.',
+                                    'Flux lines: inspect flux paths through the machine. The lines are reconstructed '
+                                    'and smoothed for display.')],
+                               2: [('winding-b-map-app.png',
+                                    'Application affichant la carte de la norme de B en teslas',
+                                    'Application displaying the magnitude of B in teslas',
+                                    'Carte de |B| : lire la répartition de l’induction magnétique pour le même cas '
+                                    'de calcul.',
+                                    'Map of |B|: inspect the magnetic flux-density distribution for the same '
+                                    'calculation case.')]},
+               'paragraphs': [('Les captures proviennent de l’application, avec un même jeu de paramètres. Le modèle '
+                               'est une coupe 2D à perméabilités imposées ; la saturation n’est pas calculée. Une '
+                               'comparaison avec FEMM peut compléter l’étude, sans constituer un essai sur machine '
+                               'physique.',
+                               'The captures come from the application using one parameter set. The model is a 2D '
+                               'cross-section with prescribed permeabilities; saturation is not calculated. A FEMM '
+                               'comparison can complement the study, without constituting a physical machine test.')],
+               'points': []},
+              {'id': 'takeaway',
+               'title': ('Ce que ce projet démontre', 'What this project demonstrates'),
+               'intro': ('Relier une question d’électrotechnique à un outil Python utilisable : des entrées '
+                         'compréhensibles, une chaîne de calcul cohérente et des résultats que l’on peut '
+                         'interpréter.',
+                         'Connect an electrical-engineering question to a usable Python tool: clear inputs, a '
+                         'consistent calculation pipeline and results that can be interpreted.'),
+               'paragraphs': [('Ce travail d’équipe met en pratique la programmation orientée objet et la séparation '
+                               'entre interface, calcul et visualisation. C’est cette continuité — du paramètre '
+                               'saisi au résultat expliqué — qui donne sa valeur à l’application.',
+                               'This team project applies object-oriented programming and separates the interface, '
+                               'calculation and visualisation. That continuity, from an input parameter to an '
+                               'explained result, gives the application its value.')],
+               'points': []}],
+ 'reports': None,
+ 'repo': 'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program'},
     {'slug': 'dc-motor-cascade-control',
      'title': ('Commande en cascade d’un moteur à courant continu', 'Cascade control of a DC motor'),
      'eyebrow': ('04 / Automatique & conversion', '04 / Control & conversion'),
@@ -1041,6 +1058,13 @@ IMAGE_SIZES = {
     "pemfc-bench.png": (1219, 829), "pemfc-holdout.png": (4380, 2460),
     "winding-flux-heatmap.png": (1152, 720), "winding-flux-lines.png": (1152, 720),
     "winding-mmf.png": (4644, 2070),
+    "winding-parameters-app.png": (1680, 1050),
+    "winding-machine-app.png": (1680, 1050),
+    "winding-mmf-app.png": (1680, 1050),
+    "winding-mesh-app.png": (1680, 1050),
+    "winding-flux-lines-app.png": (1680, 1050),
+    "winding-b-map-app.png": (1680, 1050),
+
 }
 
 
@@ -1072,7 +1096,8 @@ def figure(spec, *, hero=False):
             '<figcaption><span>' + translated((caption_fr, caption_en)) +
             '</span><small>FIG. 01</small></figcaption></figure>'
         )
-    figure_class = 'figure figure-context' if path == 'foc-response-context.png' else 'figure'
+    preserve_aspect = path == 'foc-response-context.png' or (path.startswith('winding-') and path.endswith('-app.png'))
+    figure_class = 'figure figure-context' if preserve_aspect else 'figure'
     return (
         f'<figure class="{figure_class}">' + picture +
         '<figcaption><strong>FIGURE</strong><span>' + translated((caption_fr, caption_en)) +
@@ -1115,10 +1140,12 @@ LABEL_EN = {
 def render_chapter(chapter, number, page):
     paragraphs = ''.join(f'<p>{translated(p)}</p>' for p in chapter.get("paragraphs", []))
     flow = chapter.get('flow', [])
+    flow_images = chapter.get('flow_images', {})
     workflow = (
         '<ol class="flow-steps">' + ''.join(
             '<li><span class="flow-number" aria-hidden="true">' + f'{i:02d}' + '</span><div><h3>'
-            + translated((title_fr, title_en)) + '</h3><p>' + translated((fr, en)) + '</p></div></li>'
+            + translated((title_fr, title_en)) + '</h3><p>' + translated((fr, en)) + '</p>'
+            + ''.join(figure(spec) for spec in flow_images.get(i, [])) + '</div></li>'
             for i, (title_fr, title_en, fr, en) in enumerate(flow, 1)
         ) + '</ol>'
     ) if flow else ''
