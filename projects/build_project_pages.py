@@ -656,11 +656,12 @@ PAGES = [
     {'slug': 'dc-motor-cascade-control',
      'title': ('Commande en cascade d’un moteur à courant continu', 'Cascade control of a DC motor'),
      'eyebrow': ('04 / Automatique & conversion', '04 / Control & conversion'),
-     'summary': ('Maintenir une vitesse quand la charge change : une boucle de vitesse demande le courant nécessaire, '
-                 'puis une boucle plus rapide commande le pont à thyristors pour agir sur le moteur.',
-                 'Hold speed as load changes: a speed loop requests the necessary current, then a faster loop controls '
-                 'the thyristor bridge to act on the motor.'),
-     'scope': ('Étude de simulation · MATLAB / Simulink / Python', 'Simulation study · MATLAB / Simulink / Python'),
+     'summary': ('À l’ENP d’Alger, j’ai conçu une commande de vitesse en cascade pour un moteur à courant continu. '
+                 'J’ai d’abord modélisé l’entraînement par blocs, puis simulé le pont à thyristors et la machine '
+                 'avec Simscape Electrical.',
+                 'At ENP Algiers, I designed a cascade speed controller for a DC motor. I first modelled the drive '
+                 'with Simulink blocks, then simulated the thyristor bridge and motor in Simscape Electrical.'),
+     'scope': ('ENP d’Alger · Simulink / Simscape Electrical', 'ENP Algiers · Simulink / Simscape Electrical'),
      'metrics': [('2', 'boucles de régulation imbriquées', 'nested feedback loops'),
                  ('6', 'pulses du redresseur triphasé', 'pulses in the three-phase rectifier'),
                  ('220 V', 'point nominal étudié', 'studied nominal voltage')],
@@ -670,25 +671,18 @@ PAGES = [
                     'La boucle externe de vitesse fixe la consigne de courant.',
                     'The outer speed loop sets the current reference.'),
      'chapters': [{'id': 'problem',
-                   'title': ('Le problème : corriger la vitesse sans perdre le courant de vue',
-                             'The problem: correct speed while controlling current'),
-                   'intro': ('Quand la charge change, la vitesse dépend du couple, donc du courant d’induit. La commande '
-                             'en cascade donne une réponse rapide au courant avant de demander à la vitesse de se '
-                             'corriger.',
-                             'When load changes, speed depends on torque and therefore armature current. Cascade control '
-                             'lets current respond quickly before the speed loop corrects the overall behaviour.'),
-                   'paragraphs': [('L’étude porte sur une machine à excitation séparée alimentée en tension par un pont '
-                                   'redresseur triphasé à six pulses. La boucle de vitesse externe calcule une consigne '
-                                   'de courant ; la boucle interne agit sur l’angle d’amorçage des thyristors pour '
-                                   'imposer ce courant.',
-                                   'The study uses a separately excited machine supplied through a six-pulse three-phase '
-                                   'rectifier. The outer speed loop computes a current reference; the inner loop acts on '
-                                   'thyristor firing angle to impose that current.'),
-                                  ('Le projet distingue le comportement électrique rapide de la dynamique mécanique plus '
-                                   'lente. Ce découpage rend le réglage des correcteurs explicable à partir des '
-                                   'constantes de temps de la machine.',
-                                   'The project separates fast electrical behaviour from slower mechanical dynamics. '
-                                   'That separation makes controller tuning explainable from machine time constants.')],
+                   'title': ('Régler la vitesse en agissant sur le courant', 'Controlling speed through armature current'),
+                   'intro': ('Quand la charge augmente, le moteur doit produire davantage de couple pour tenir sa '
+                             'vitesse. La boucle externe demande alors plus de courant d’induit et la boucle interne '
+                             'agit sur le redresseur pour atteindre cette consigne.',
+                             'When load increases, the motor needs more torque to hold its speed. The outer loop '
+                             'requests more armature current and the inner loop drives the rectifier to reach that target.'),
+                   'paragraphs': [('J’ai réglé le PI de vitesse et le PID de courant à partir du modèle de la machine. '
+                                   'La boucle de courant répond sur une échelle de temps plus courte que la boucle de '
+                                   'vitesse, ce qui laisse au courant le temps de suivre la demande de couple.',
+                                   'I tuned the speed PI and current PID from the motor model. The current loop responds '
+                                   'on a shorter time scale than the speed loop so that armature current can follow the '
+                                   'torque demand.')],
                    'points': [('Actionneur',
                                'Pont triphasé commandé à thyristors.',
                                'Three-phase controlled thyristor bridge.'),
@@ -699,84 +693,87 @@ PAGES = [
                                'Vitesse et rejet des perturbations de charge.',
                                'Speed and load-disturbance rejection.')]},
                   {'id': 'method',
-                   'title': ('Du modèle au correcteur', 'From plant model to controller'),
-                   'intro': ('Le rapport établit le modèle du redresseur et de la machine, puis règle les correcteurs '
-                             'PI/PID analytiquement par compensation pôle–zéro.',
-                             'The report derives rectifier and motor models, then tunes PI/PID controllers analytically '
-                             'using pole-zero compensation.'),
-                   'paragraphs': [('Les scripts MATLAB définissent les paramètres de la machine, le point de '
-                                   'fonctionnement et les gains. Un modèle Simulink par fonctions de transfert aide à '
-                                   'comprendre la cascade ; un modèle SimPowerSystems inclut le pont commandé et la '
-                                   'machine détaillée.',
-                                   'MATLAB scripts define machine data, the operating point and gains. A '
-                                   'transfer-function Simulink model clarifies the cascade; a SimPowerSystems model '
-                                   'includes the controlled bridge and detailed machine.'),
-                                  ('Un portage NumPy/SciPy reproduit le réglage et génère des courbes de réponse. Il '
-                                   'permet de vérifier les calculs de conception sans dépendre exclusivement du modèle '
-                                   'Simulink ; le guide Python documente la concordance des quantités de réglage.',
-                                   'A NumPy/SciPy port reproduces the tuning and generates response curves. It checks '
-                                   'design calculations independently of the Simulink model; the Python guide documents '
-                                   'agreement of the tuning quantities.')],
-                   'points': [('Modéliser',
-                               'Constantes électriques et mécaniques, redresseur, fonction de transfert.',
-                               'Electrical and mechanical constants, rectifier and transfer function.'),
-                              ('Régler',
-                               'PI/PID à partir des temps de réponse visés.',
-                               'PI/PID from targeted response times.'),
-                              ('Recouper', 'Même réglage reproduit en Python.', 'Same tuning reproduced in Python.')],
-                   'image': ('dc-motor-response.png',
-                             'Réponse nominale du moteur à courant continu avec sa commande en cascade',
-                             'Nominal DC-motor response under cascade control',
-                             'La réponse fermée illustre le point de fonctionnement conçu.',
-                             'Closed-loop response illustrates the designed operating point.'),
-                   'flow': [('Demande de vitesse',
-                             'Speed request',
-                             'La boucle externe compare la vitesse réelle à la consigne et demande le courant '
-                             'nécessaire.',
-                             'The outer loop compares actual speed with its target and requests the required current.'),
-                            ('Réglage du courant',
-                             'Current control',
-                             'La boucle interne corrige rapidement l’écart de courant.',
-                             'The inner loop rapidly corrects current error.'),
-                            ('Pont à thyristors',
-                             'Thyristor bridge',
-                             'L’angle d’amorçage règle la tension moyenne appliquée à l’induit.',
-                             'The firing angle sets the average voltage applied to the armature.'),
-                            ('Retour du moteur',
-                             'Motor feedback',
-                             'Courant et vitesse ferment les deux boucles ; leurs échelles de temps sont différentes.',
-                             'Current and speed close the two loops, which operate on different time scales.')]},
+                   'title': ('Du schéma-blocs à Simscape Electrical', 'From block diagram to Simscape Electrical'),
+                   'intro': ('J’ai conservé les deux boucles et leurs retours de mesure. J’ai remplacé le modèle moyen '
+                             'de l’entraînement par un circuit qui calcule la tension d’induit à chaque commutation. '
+                             'Les deux simulations suivent leurs scénarios d’origine, avec des échelons à des instants différents.',
+                             'I kept the two feedback loops and replaced the averaged drive model with a circuit that '
+                             'calculates armature voltage as the thyristors switch. Each simulation uses its original '
+                             'scenario, with speed steps at different times.'),
+                   'paragraphs': [('Les scripts MATLAB calculent les gains à partir des paramètres du moteur et des '
+                                   'temps de réponse visés. Le rapport détaille le réglage analytique par compensation '
+                                   'pôle–zéro.',
+                                   'The MATLAB scripts calculate gains from the motor parameters and target response '
+                                   'times. The report details the analytical pole-zero cancellation method.')],
+                   'flow': [('Implémentation 1 · Blocs Simulink', 'Implementation 1 · Simulink blocks',
+                             'Un bloc du premier ordre représente la tension moyenne du redresseur. Le sous-système '
+                             'moteur relie cette tension au courant, puis le couple et la charge à la vitesse. Les '
+                             'blocs permettent de suivre le trajet du signal entre les deux correcteurs.',
+                             'A first-order block represents the rectifier’s average voltage. The motor subsystem '
+                             'relates voltage to current, then motor and load torque to speed. The blocks make the '
+                             'signal path through both controllers visible.'),
+                            ('Implémentation 2 · Circuit Simscape Electrical', 'Implementation 2 · Simscape Electrical circuit',
+                             'Dans Specialized Power Systems, la commande du PID de courant fixe l’angle d’amorçage '
+                             'du pont. Un générateur synchronisé au réseau produit les six impulsions. Le pont à '
+                             'thyristors et l’inductance de lissage alimentent la machine. Un capteur renvoie le '
+                             'courant d’induit et le bloc moteur fournit la vitesse.',
+                             'In Specialized Power Systems, the current PID output sets the bridge firing angle. '
+                             'A generator synchronized to the AC supply produces the six firing pulses. The thyristor '
+                             'bridge and smoothing inductor supply the motor. A sensor feeds back armature current '
+                             'and the motor block provides speed.')],
+                   'flow_images': {1: [('dc-motor-block-diagram.png',
+                                        'Modèle Simulink par blocs avec PI de vitesse, PID de courant et modèle du moteur',
+                                        'Block-based Simulink model with speed PI, current PID and motor model',
+                                        'Dans la version par blocs, le redresseur est représenté par sa réponse moyenne.',
+                                        'In the block-based version, the rectifier is represented by its average response.'),
+                                       ('dc-motor-block-diagram-response.png',
+                                        'Vitesse, courant d’induit et tension moyenne dans le modèle par blocs',
+                                        'Speed, armature current and average voltage in the block-based model',
+                                        'Dans ce scénario de 4 s, la consigne passe à 1 000, 3 000 et 1 500 tr/min '
+                                        'à 1, 2 et 3 s, respectivement.',
+                                        'In this 4 s scenario, the reference steps to 1,000, 3,000 and 1,500 rpm at '
+                                        '1, 2 and 3 s, respectively.')],
+                                   2: [('dc-motor-simscape-diagram.png',
+                                        'Circuit Simscape avec source triphasée, pont à thyristors et moteur à courant continu',
+                                        'Simscape circuit with three-phase supply, thyristor bridge and DC motor',
+                                        'La version Simscape détaille les impulsions d’amorçage, le pont et les capteurs.',
+                                        'The Simscape version models the firing pulses, bridge and sensors explicitly.')]}},
                   {'id': 'evidence',
-                   'title': ('Explorer la forme de la réponse', 'Explore the shape of the response'),
-                   'intro': ('Les figures ne se limitent pas à une courbe nominale : elles isolent l’effet du temps de '
-                             'montée de la boucle de courant, puis de l’amortissement et de la fréquence naturelle de la '
-                             'boucle de vitesse.',
-                             'The figures go beyond one nominal curve: they isolate the effect of current-loop rise '
-                             'time, then speed-loop damping and natural frequency.'),
-                   'paragraphs': [('Le guide du portage Python indique un point de fonctionnement conçu à 220 V et 3 000 '
-                                   'tr/min et liste les gains obtenus dans les deux environnements. Les balayages de '
-                                   'paramètres montrent comment les objectifs de temps de réponse modifient dépassement '
-                                   'et établissement.',
-                                   'The Python-port guide records a designed 220 V, 3,000 rpm operating point and '
-                                   'matching gains in both environments. Parameter sweeps show how response targets '
-                                   'affect overshoot and settling.'),
-                                  ('Ce sont des résultats de simulation et de calcul de réglage. Aucune mesure sur banc '
-                                   'moteur n’est revendiquée ; le rapport rassemble l’architecture, les modèles et les '
-                                   'réponses.',
-                                   'These are simulation and tuning-calculation results. No motor-bench measurements are '
-                                   'claimed; the report brings together architecture, models and responses.')],
-                   'points': []},
+                   'title': ('Les résultats dans Simscape', 'The Simscape results'),
+                   'intro': ('Dans le scénario Simscape de 20 s, la consigne passe à 1 000 tr/min à 1 s, à 3 000 tr/min '
+                             'à 5 s, puis à 1 500 tr/min à 10 s. La vitesse simulée atteint un maximum de 3 004,42 '
+                             'tr/min et termine à 1 499,95 tr/min.',
+                             'In the 20 s Simscape scenario, the reference steps to 1,000 rpm at 1 s, 3,000 rpm at '
+                             '5 s, and 1,500 rpm at 10 s. The simulated speed peaks at 3,004.42 rpm and ends '
+                             'at 1,499.95 rpm.'),
+                   'image': ('dc-motor-simscape-response.png',
+                             'Vitesse, courant d’induit et couple électromagnétique simulés dans Simscape',
+                             'Speed, armature current and electromagnetic torque simulated in Simscape',
+                             'La consigne de courant atteint 7 A et le courant d’induit mesuré dans le modèle '
+                             'culmine à 7,07 A.',
+                             'The current reference reaches 7 A and the measured armature current in the model '
+                             'peaks at 7.07 A.'),
+                   'extra_images': [('dc-motor-simscape-rectification.png',
+                                     'Tension continue du pont et courant d’induit sur une période réseau',
+                                     'Bridge DC voltage and armature current over one AC supply cycle',
+                                     'Zoom sur une période réseau de 20 ms à 3 000 tr/min de consigne. La tension est '
+                                     'mesurée à la sortie continue du pont, en amont de l’inductance de lissage. '
+                                     'Le courant d’induit varie de 0,17 A sur cette fenêtre.',
+                                     'A 20 ms supply cycle at a 3,000 rpm command. Voltage is measured at the bridge’s '
+                                     'DC output, upstream of the smoothing inductor. Armature current varies by '
+                                     '0.17 A over this window.')]},
                   {'id': 'takeaway',
-                   'title': ('La leçon de commande', 'The control lesson'),
-                   'intro': ('La cascade permet de concevoir chaque dynamique à sa bonne échelle : courant d’abord, '
-                             'vitesse ensuite. Le recoupement Python rend les calculs de gains plus faciles à auditer.',
-                             'Cascade design gives each dynamic its proper time scale: current first, speed second. '
-                             'Python cross-checking makes gain calculations easier to audit.'),
-                   'paragraphs': [('L’étude reste distincte de la commande vectorielle FOC du moteur asynchrone : '
-                                   'machine, convertisseur et stratégie de commande sont différents.',
-                                   'This study is separate from the induction-motor FOC project: machine, converter and '
-                                   'control strategy all differ.')],
-                   'points': []}],
+                   'title': ('Le réglage vérifié dans Python', 'Cross-checking the tuning in Python'),
+                   'intro': ('J’ai aussi reproduit le calcul des gains en NumPy et SciPy. Le modèle moyen permet de '
+                             'balayer les temps de réponse et de voir leur influence sur le dépassement et le temps '
+                             'd’établissement.',
+                             'I also reproduced the gain calculations in NumPy and SciPy. The averaged model lets '
+                             'me vary the response targets and see how they affect overshoot and settling time.'),
+                   'image': ('dc-motor-response.png',
+                             'Réponse nominale de la cascade calculée avec le modèle moyen dans Python',
+                             'Nominal cascade response calculated with the averaged model in Python',
+                             'Résultat Python au point de fonctionnement étudié de 220 V et 3 000 tr/min.',
+                             'Python result at the studied 220 V, 3,000 rpm operating point.')}],
      'reports': ('../reports/dc-motor-cascade-control-report.pdf', '../reports/dc-motor-cascade-control-report-en.pdf'),
      'repo': 'https://github.com/KhalilEllahLAGHA/DC-motor-cascade-control'},
     {'slug': 'mlp-backpropagation',
@@ -1094,6 +1091,9 @@ CHAPTER_LABELS = {
 
 IMAGE_SIZES = {
     "dc-motor-cascade.svg": (1200, 500), "dc-motor-response.png": (1920, 819),
+    "dc-motor-block-diagram.png": (4293, 1888), "dc-motor-simscape-diagram.png": (5521, 2050),
+    "dc-motor-block-diagram-response.png": (1508, 1104),
+    "dc-motor-simscape-response.png": (1515, 1104), "dc-motor-simscape-rectification.png": (1515, 770),
     "foc-control.svg": (1100, 760), "foc-speed-tracking.png": (1350, 690),
     "foc-response-context.png": (1875, 1785), "foc-simscape-scopes.png": (2133, 1258),
     "foc-simscape-speed.png": (1190, 692),
@@ -1152,6 +1152,8 @@ def figure(spec, *, hero=False):
             '</span><small>FIG. 01</small></figcaption></figure>'
         )
     preserve_aspect = (path == 'foc-response-context.png'
+                       or path.startswith('dc-motor-block-diagram')
+                       or path.startswith('dc-motor-simscape-')
                        or path.startswith('foc-simscape-')
                        or (path.startswith('winding-') and path.endswith('-app.png')))
     figure_class = 'figure figure-context' if preserve_aspect else 'figure'
