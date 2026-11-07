@@ -453,28 +453,18 @@ PAGES = [
                                    'frequency and controller settings. I compared phase voltages and torque over six '
                                    'periods, from 1.1050 to 1.1056 s, at the 1,400 rpm command.')],
                    'extra_images': [
-                       ('foc-simscape-carrier.png',
-                        'Comparaison de la porteuse SPWM et de la porteuse équivalente en SVPWM à sept segments',
-                        'SPWM carrier and equivalent carrier view for seven-segment SVPWM',
-                        'Les consignes maintenues croisent la porteuse dans le même ordre. Le décalage commun '
-                        'de la SVPWM déplace les instants de commutation. La représentation équivalente '
-                        'reproduit les commandes de grille enregistrées sur ces trois périodes.',
-                        'The held commands cross the carrier in the same order. The SVPWM common offset shifts '
-                        'the edges. The equivalent carrier view reproduces the logged gates over these three periods.'),
                        ('foc-simscape-voltage-7seg.png',
                         'Tensions triphasées du moteur en SPWM et en SVPWM à sept segments',
                         'Motor phase voltages for SPWM and seven-segment SVPWM',
-                        'Les deux modulations suivent le même ordre des états dans cette fenêtre. '
-                        'Les niveaux de tension coïncident et les fronts sont légèrement décalés.',
-                        'Both methods follow the same state order in this window. '
-                        'Their voltage levels coincide and the switching edges are slightly shifted.'),
+                        'Sur la première période, les états 000 et 111 durent 14 et 8 µs en SPWM, '
+                        'contre 10 µs chacun en SVPWM centrée.',
+                        'In the first period, states 000 and 111 last 14 and 8 µs with SPWM '
+                        'and 10 µs each with centered SVPWM.'),
                        ('foc-simscape-voltage-4seg.png',
                         'Tensions triphasées du moteur en SPWM et en SVPWM à quatre segments',
                         'Motor phase voltages for SPWM and four-segment SVPWM',
-                        'Sur la première période, les durées actives de 30 et 48 µs sont regroupées en deux '
-                        'impulsions. La tension moyenne de la phase A reste proche de 194,4 V dans les deux essais.',
-                        'In the first period, the four-segment variant groups the 30 and 48 µs active dwells '
-                        'into two pulses. Phase A averages about 194.4 V in both runs over that period.'),
+                        'Sur la première période, la tension moyenne de la phase A vaut environ 194,4 V dans les deux essais.',
+                        'In the first period, phase A averages about 194.4 V in both runs.'),
                        ('foc-simscape-torque.png',
                         'Couple électromagnétique brut des trois modulations sur six périodes PWM',
                         'Raw electromagnetic torque for all three methods over six PWM periods',
@@ -1113,7 +1103,6 @@ IMAGE_SIZES = {
     "foc-simscape-torque.png": (1392, 713),
     "foc-simscape-voltage-7seg.png": (1566, 1071),
     "foc-simscape-voltage-4seg.png": (1566, 1071),
-    "foc-simscape-carrier.png": (1768, 1173),
     "foc-simscape-carrier-slow.png": (1819, 1445),
     "grid-interface.png": (1915, 1003), "grid-loadflow-iterations.png": (1406, 656),
     "grid-transient-stability.png": (1406, 656), "mlp-convergence.png": (1152, 640),
