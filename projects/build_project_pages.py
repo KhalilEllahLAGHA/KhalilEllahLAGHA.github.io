@@ -286,10 +286,10 @@ PAGES = [
     {'slug': 'foc-induction-motor',
      'title': ('Commande vectorielle d’un moteur asynchrone', 'Field-oriented control of an induction motor'),
      'eyebrow': ('02 / Commande de machines', '02 / Motor drives'),
-     'summary': ('Réguler la vitesse d’un moteur asynchrone de 5 kW et comparer la SPWM et la SVPWM à sept segments '
-                 'sur le même onduleur IGBT simulé.',
-                 'Control a 5 kW induction motor and compare SPWM with seven-segment SVPWM on the same simulated '
-                 'IGBT inverter.'),
+     'summary': ('Réguler la vitesse d’un moteur asynchrone de 5 kW et comparer la SPWM à deux séquences SVPWM, '
+                 'à sept et à quatre segments, sur le même onduleur IGBT simulé.',
+                 'Control a 5 kW induction motor and compare SPWM with seven- and four-segment SVPWM on the same '
+                 'simulated IGBT inverter.'),
      'scope': ('Projet individuel · Python / MATLAB / Simulink', 'Individual project · Python / MATLAB / Simulink'),
      'metrics': [('3', 'implémentations comparables', 'comparable implementations'),
                  ('52–95 ms', 'établissement des échelons de vitesse', 'speed-step settling range'),
@@ -344,10 +344,12 @@ PAGES = [
                                   ('La SPWM compare les tensions de phase à une porteuse triangulaire. La SVPWM détermine '
                                    'le secteur du vecteur de tension, calcule les durées des deux états actifs et répartit '
                                    'le temps restant entre les états nuls. La séquence à sept segments organise ces '
-                                   'durées en impulsions de grille symétriques.',
+                                   'durées en impulsions de grille symétriques. La séquence à quatre segments applique '
+                                   'chaque état actif d’un seul tenant.',
                                    'SPWM compares the phase commands with a triangle. SVPWM finds the voltage sector, '
                                    'calculates the two active dwell times and shares the remaining time between the '
-                                   'zero states. The seven-segment sequence arranges those times into symmetric gate pulses.')],
+                                   'zero states. The seven-segment sequence mirrors the active intervals. '
+                                   'The four-segment sequence applies each active state in one interval.')],
                    'flow': [('Clarke et Park',
                              'Clarke and Park',
                              'Les trois courants deviennent deux composantes dans un repère tournant aligné sur le flux.',
@@ -381,6 +383,16 @@ PAGES = [
                              'commandes de grille des IGBT. Les liaisons du modèle sont tracées à angle droit.',
                              'The Scopes panel groups speed, torque, currents, flux and IGBT gate commands. '
                              'The model wiring uses horizontal and vertical segments.'),
+                   'extra_images': [
+                       ('foc-simscape-carrier-slow.png',
+                        'Illustration des trois commandes de grille et des sept segments avec une porteuse lente',
+                        'Slow-carrier illustration of three gate commands and seven switching segments',
+                        'Consignes à 50 Hz et porteuse ralentie à 150 Hz. La porteuse franchit A, C puis B à la descente et les franchit '
+                        'en sens inverse à la remontée. Chaque bras reçoit une impulsion. Les trois bras '
+                        'ensemble donnent les sept segments.',
+                        '50 Hz phase references with a slowed 150 Hz triangle. The falling triangle crosses A, C, then B, and the rising triangle '
+                        'crosses them in reverse. Each leg has one on pulse. The three legs together give seven segments.'),
+                   ],
                    'references': [('FOC à flux rotorique orienté',
                                    'Rotor-field-oriented control',
                                    'https://imperix.com/doc/implementation/rotor-field-oriented-control'),
@@ -428,23 +440,53 @@ PAGES = [
                              'Python scenario with an averaged inverter. Currents, load and flux explain speed changes; '
                              'these are not hardware measurements.')},
                   {'id': 'takeaway',
-                   'title': ('Résultats Simscape', 'Simscape results'),
-                   'intro': ('Les courbes de vitesse, de couple et de courant sur l’essai complet proviennent de la SVPWM '
-                             'à sept segments. Le détail des trois courants de phase couvre une période électrique au palier de 1 400 tr/min.',
-                             'The drive-response plots use the seven-segment SVPWM run. The three phase currents are '
-                             'shown over one electrical cycle on the 1,400 rpm plateau.'),
-                   'paragraphs': [('Pour comparer les modulations, j’ai relevé le couple électromagnétique '
-                                   'sur les mêmes six périodes PWM, de 1,1050 à 1,1056 s. Les deux essais utilisent un bus '
-                                   'continu de 540 V, une fréquence de commutation de 10 kHz et les mêmes réglages de commande.',
-                                   'I compared electromagnetic torque over the same six PWM periods, '
-                                   'from 1.1050 to 1.1056 s. Both runs use a 540 V DC bus, a 10 kHz switching frequency, '
-                                   'and the same controller settings.')],
+                   'title': ('Comparer les trois modulations dans Simscape', 'Compare the three PWM variants in Simscape'),
+                   'intro': ('Pourquoi les tensions de la SPWM et de la SVPWM à sept segments se ressemblent-elles ? '
+                             'J’ai ajouté une séquence à quatre segments pour isoler l’effet du placement des impulsions.',
+                             'Why do SPWM and seven-segment SVPWM produce such similar voltage traces? '
+                             'I added a four-segment variant to see how changing the pulse placement affects the drive.'),
+                   'paragraphs': [('J’ai simulé les trois modèles avec le même onduleur IGBT, un bus continu de 540 V, '
+                                   'une fréquence de commutation de 10 kHz et les mêmes réglages de commande. '
+                                   'J’ai comparé les tensions de phase et le couple sur six périodes, de 1,1050 à 1,1056 s, '
+                                   'à la consigne de 1 400 tr/min.',
+                                   'I ran the three models with the same IGBT inverter, 540 V DC bus, 10 kHz switching '
+                                   'frequency and controller settings. I compared phase voltages and torque over six '
+                                   'periods, from 1.1050 to 1.1056 s, at the 1,400 rpm command.')],
                    'extra_images': [
+                       ('foc-simscape-carrier.png',
+                        'Comparaison de la porteuse SPWM et de la porteuse équivalente en SVPWM à sept segments',
+                        'SPWM carrier and equivalent carrier view for seven-segment SVPWM',
+                        'Les consignes maintenues croisent la porteuse dans le même ordre. Le décalage commun '
+                        'de la SVPWM déplace les instants de commutation. La représentation équivalente '
+                        'reproduit les commandes de grille enregistrées sur ces trois périodes.',
+                        'The held commands cross the carrier in the same order. The SVPWM common offset shifts '
+                        'the edges. The equivalent carrier view reproduces the logged gates over these three periods.'),
+                       ('foc-simscape-voltage-7seg.png',
+                        'Tensions triphasées du moteur en SPWM et en SVPWM à sept segments',
+                        'Motor phase voltages for SPWM and seven-segment SVPWM',
+                        'Les deux modulations suivent le même ordre des états dans cette fenêtre. '
+                        'Les niveaux de tension coïncident et les fronts sont légèrement décalés.',
+                        'Both methods follow the same state order in this window. '
+                        'Their voltage levels coincide and the switching edges are slightly shifted.'),
+                       ('foc-simscape-voltage-4seg.png',
+                        'Tensions triphasées du moteur en SPWM et en SVPWM à quatre segments',
+                        'Motor phase voltages for SPWM and four-segment SVPWM',
+                        'Sur la première période, les durées actives de 30 et 48 µs sont regroupées en deux '
+                        'impulsions. La tension moyenne de la phase A reste proche de 194,4 V dans les deux essais.',
+                        'In the first period, the four-segment variant groups the 30 and 48 µs active dwells '
+                        'into two pulses. Phase A averages about 194.4 V in both runs over that period.'),
+                       ('foc-simscape-torque.png',
+                        'Couple électromagnétique brut des trois modulations sur six périodes PWM',
+                        'Raw electromagnetic torque for all three methods over six PWM periods',
+                        'Sur cette fenêtre, le couple crête à crête vaut 2,14 N·m en SPWM, 1,96 N·m en SVPWM '
+                        'à sept segments et 3,41 N·m en SVPWM à quatre segments.',
+                        'In this window, peak-to-peak torque was 2.14 N·m for SPWM, 1.96 N·m for seven-segment SVPWM, '
+                        'and 3.41 N·m for four-segment SVPWM.'),
                        ('foc-simscape-speed.png',
                         'Vitesse du rotor et consigne en SVPWM dans Simscape',
                         'Simscape SVPWM rotor speed and reference',
-                        'Vitesse du rotor et consigne pendant l’essai en SVPWM.',
-                        'Rotor speed and its reference during the SVPWM run.'),
+                        'Vitesse du rotor et consigne pendant l’essai complet en SVPWM à sept segments.',
+                        'Rotor speed and its reference during the full seven-segment SVPWM run.'),
                        ('foc-simscape-drive-torque.png',
                         'Couple électromagnétique et couple de charge en SVPWM',
                         'SVPWM electromagnetic torque and applied load torque',
@@ -462,11 +504,6 @@ PAGES = [
                         'SVPWM d- and q-axis currents and references',
                         'Suivi des consignes des courants id et iq dans le repère du flux rotorique.',
                         'Tracking of the d- and q-axis current references in the rotor-flux frame.'),
-                       ('foc-simscape-torque.png',
-                        'Couple électromagnétique brut sur six périodes PWM en SPWM et en SVPWM',
-                        'Raw electromagnetic torque over six PWM periods for SPWM and SVPWM',
-                        'Sur ces six périodes, le couple électromagnétique moyen est de 9,87 N·m en SPWM et de 10,69 N·m en SVPWM.',
-                        'Over these six periods, mean electromagnetic torque was 9.87 N·m with SPWM and 10.69 N·m with SVPWM.'),
                    ],
                    'points': []}],
      'reports': ('../reports/foc-induction-motor-report.pdf', '../reports/foc-induction-motor-report-en.pdf'),
@@ -1073,7 +1110,11 @@ IMAGE_SIZES = {
     "foc-simscape-drive-torque.png": (1168, 690),
     "foc-simscape-phase.png": (1156, 666),
     "foc-simscape-dq.png": (1168, 691),
-    "foc-simscape-torque.png": (1473, 513),
+    "foc-simscape-torque.png": (1392, 713),
+    "foc-simscape-voltage-7seg.png": (1566, 1071),
+    "foc-simscape-voltage-4seg.png": (1566, 1071),
+    "foc-simscape-carrier.png": (1768, 1173),
+    "foc-simscape-carrier-slow.png": (1819, 1445),
     "grid-interface.png": (1915, 1003), "grid-loadflow-iterations.png": (1406, 656),
     "grid-transient-stability.png": (1406, 656), "mlp-convergence.png": (1152, 640),
     "mlp-network.svg": (1200, 560), "mlp-sequential-training.png": (1152, 544),
