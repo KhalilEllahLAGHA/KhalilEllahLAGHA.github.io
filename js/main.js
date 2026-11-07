@@ -126,7 +126,7 @@
     'p2.p': 'An application for configuring machine windings, calculating MMF and exploring flux through reluctance networks.',
     'p2.t2': 'Reluctance networks',
     'p3.h': 'Field-oriented control of an induction motor',
-    'p3.p': 'Field-oriented control of a 5 kW motor and an SPWM / SVPWM comparison on the same IGBT bridge in Simscape.',
+    'p3.p': 'Field-oriented control of a 5 kW motor. Simscape SPWM and SVPWM comparison with close-ups of speed, torque, and current ripple.',
     'p3.r1': 'Project report',
     'p6.h': 'Cascade control of a DC motor',
     'p6.p': 'A fast current loop and an outer speed loop, supplied by a three-phase thyristor bridge.',
