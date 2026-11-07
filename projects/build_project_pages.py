@@ -286,11 +286,10 @@ PAGES = [
     {'slug': 'foc-induction-motor',
      'title': ('Commande vectorielle d’un moteur asynchrone', 'Field-oriented control of an induction motor'),
      'eyebrow': ('02 / Commande de machines', '02 / Motor drives'),
-     'summary': ('Maintenir la vitesse d’un moteur asynchrone quand la charge change : une commande FOC sépare le '
-                 'pilotage du flux et du couple, puis une SVPWM traduit les tensions demandées en commandes de '
-                 'l’onduleur.',
-                 'Keep an induction motor on its speed target as load changes: FOC separates flux and torque control, '
-                 'then SVPWM turns voltage requests into inverter commands.'),
+     'summary': ('Réguler la vitesse d’un moteur asynchrone de 5 kW et comparer la SPWM et la SVPWM à sept segments '
+                 'sur le même onduleur IGBT simulé.',
+                 'Control a 5 kW induction motor and compare SPWM with seven-segment SVPWM on the same simulated '
+                 'IGBT inverter.'),
      'scope': ('Projet individuel · Python / MATLAB / Simulink', 'Individual project · Python / MATLAB / Simulink'),
      'metrics': [('3', 'implémentations comparables', 'comparable implementations'),
                  ('52–95 ms', 'établissement des échelons de vitesse', 'speed-step settling range'),
@@ -338,23 +337,17 @@ PAGES = [
                    'paragraphs': [('Le modèle en courant estime le flux rotorique. La vitesse électrique du rotor et le '
                                    'glissement calculé donnent l’angle du repère utilisé par Park. Cet estimateur aide à '
                                    'l’orientation ; le découplage vient du repère aligné et des termes d’anticipation '
-                                   'ajoutés aux régulateurs. Le projet utilise la vitesse du rotor et ne contient pas de '
-                                   'filtre de Kalman.',
+                                   'ajoutés aux régulateurs.',
                                    'A current model estimates rotor flux. Electrical rotor speed and calculated slip '
                                    'provide the reference-frame angle used by Park. The estimator supports orientation; '
-                                   'the aligned frame and feed-forward terms in the controllers provide decoupling. The '
-                                   'project uses rotor speed and contains no Kalman filter.'),
-                                  ('J’ai choisi la SVPWM pour exprimer directement la tension souhaitée comme un vecteur '
-                                   'et exploiter la plage de tension du bus continu à fréquence de commutation fixée. '
-                                   'Sur chaque période, elle combine des états voisins de l’onduleur et des états nuls '
-                                   'pour obtenir la tension moyenne demandée. Les impulsions pilotent les grilles des '
-                                   'IGBT ; le bus continu fournit l’énergie. Les tensions instantanées restent '
-                                   'commutées, leur moyenne suit la référence.',
-                                   'I chose SVPWM to work directly with the requested voltage vector and use the DC-bus '
-                                   'voltage range at a fixed switching frequency. During each period, it combines '
-                                   'neighbouring inverter states and zero states to obtain the requested average '
-                                   'voltage. Gate pulses control the IGBTs; the DC bus supplies the energy. '
-                                   'Instantaneous voltages remain switched, while their average follows the reference.')],
+                                   'the aligned frame and feed-forward terms in the controllers provide decoupling.'),
+                                  ('La SPWM compare les tensions de phase à une porteuse triangulaire. La SVPWM détermine '
+                                   'le secteur du vecteur de tension, calcule les durées des deux états actifs et répartit '
+                                   'le temps restant entre les états nuls. La séquence à sept segments organise ces '
+                                   'durées en impulsions de grille symétriques.',
+                                   'SPWM compares the phase commands with a triangle. SVPWM finds the voltage sector, '
+                                   'calculates the two active dwell times and shares the remaining time between the '
+                                   'zero states. The seven-segment sequence arranges those times into symmetric gate pulses.')],
                    'flow': [('Clarke et Park',
                              'Clarke and Park',
                              'Les trois courants deviennent deux composantes dans un repère tournant aligné sur le flux.',
@@ -370,11 +363,10 @@ PAGES = [
                              'Les PI calculent vd et vq. Park inverse les ramène au repère fixe pour la modulation.',
                              'The PIs calculate vd and vq. Inverse Park returns them to the stationary frame for '
                              'modulation.'),
-                            ('Modulation SVPWM',
-                             'SVPWM modulation',
-                             'Le vecteur de tension et le bus continu déterminent les durées de commutation et les '
-                             'impulsions de grille.',
-                             'The voltage vector and DC bus determine switching durations and gate pulses.'),
+                            ('Modulation de l’onduleur',
+                             'Inverter modulation',
+                             'La SPWM utilise un comparateur et la SVPWM calcule les durées de commutation.',
+                             'SPWM uses a comparator and SVPWM calculates switching durations.'),
                             ('Onduleur et machine',
                              'Inverter and motor',
                              'L’onduleur synthétise les tensions triphasées. Les courants et la vitesse reviennent au '
@@ -429,25 +421,31 @@ PAGES = [
                              'Python scenario with an averaged inverter. Currents, load and flux explain speed changes; '
                              'these are not hardware measurements.')},
                   {'id': 'takeaway',
-                   'title': ('Ce que j’ai construit et vérifié', 'What I built and checked'),
-                   'intro': ('J’ai réalisé trois implémentations de la même commande : Python, Simulink à blocs '
-                             'fondamentaux et Simscape Electrical avec commutation des IGBT représentée en simulation.',
-                             'I built three implementations of the same controller: Python, fundamental-block Simulink '
-                             'and Simscape Electrical with simulated IGBT switching.'),
-                   'paragraphs': [('Leur comparaison examine le suivi de vitesse, l’inversion du sens et le rejet de '
-                                   'charge. Les résultats documentés donnent des établissements en 52 à 95 ms suivant la '
-                                   'transition et la version. La démarche montre ma capacité à relier modèle physique, '
-                                   'programmation et vérification croisée.',
-                                   'Their comparison examines speed tracking, reversal and load rejection. Documented '
-                                   'settling times range from 52 to 95 ms depending on transition and version. The work '
-                                   'demonstrates how I connect a physical model, programming and cross-checking.'),
-                                  ('Les résultats restent des simulations. Le modèle Python utilise un onduleur moyenné '
-                                   '; la version commutée sert à observer les effets de commutation. Le défluxage et '
-                                   'l’adaptation des paramètres rotoriques ne sont pas implémentés. Le rapport conserve '
-                                   'les équations et réglages détaillés.',
-                                   'The results remain simulations. Python uses an averaged inverter; the switching '
-                                   'model exposes switching effects. Field weakening and rotor-parameter adaptation are '
-                                   'not implemented. The report contains detailed equations and tuning.')],
+                   'title': ('SPWM et SVPWM dans Simscape', 'SPWM and SVPWM in Simscape'),
+                   'intro': ('J’ai simulé les deux modulations à 10 kHz avec la même machine, le même pont IGBT et '
+                             'les mêmes réglages de commande.',
+                             'I simulated both modulation methods at 10 kHz with the same motor, IGBT bridge and '
+                             'controller settings.'),
+                   'paragraphs': [('Le modèle à blocs fondamentaux calcule la tension du bus continu avec une source R–L '
+                                   'et un condensateur. Le modèle Python intègre indépendamment les équations du moteur '
+                                   'et permet de tester une rampe de vitesse suivie d’un palier.',
+                                   'The fundamental-block model calculates the DC-link voltage with an R–L source '
+                                   'and a capacitor. The Python model integrates the motor equations independently '
+                                   'and tests an unloaded speed ramp followed by a hold.'),
+                                  ('Au palier de 1 400 tr/min, l’ondulation efficace du courant est passée de 0,254 A '
+                                   'en SPWM à 0,234 A en SVPWM, soit une baisse de 7,7 % sur cet essai. Les courbes '
+                                   'de vitesse et de couple restent proches sur l’ensemble du scénario. L’écart maximal '
+                                   'de vitesse établi est de 1,67 tr/min en SPWM et de 2,26 tr/min en SVPWM.',
+                                   'At 1,400 rpm, RMS current ripple fell from 0.254 A with SPWM to 0.234 A with SVPWM, '
+                                   'a 7.7% reduction in this test. Speed and torque remain close over the full run. '
+                                   'The maximum settled speed error is 1.67 rpm with SPWM and 2.26 rpm with SVPWM.')],
+                   'image': ('foc-pwm-zoom.png',
+                             'Comparaison SPWM et SVPWM dans Simscape, zoom sur six périodes de commutation',
+                             'Simscape SPWM and SVPWM comparison over six switching periods',
+                             'Tension A–B idéale reconstruite à partir des commandes de grille, courant de phase A simulé '
+                             'et ondulation après retrait de la tendance linéaire.',
+                             'Ideal A–B voltage reconstructed from the gate commands, simulated phase A current, and '
+                             'ripple after removing each period’s linear trend.'),
                    'points': []}],
      'reports': ('../reports/foc-induction-motor-report.pdf', '../reports/foc-induction-motor-report-en.pdf'),
      'repo': 'https://github.com/KhalilEllahLAGHA/foc-induction-motor'},
@@ -1048,7 +1046,7 @@ CHAPTER_LABELS = {
 IMAGE_SIZES = {
     "dc-motor-cascade.svg": (1200, 500), "dc-motor-response.png": (1920, 819),
     "foc-control.svg": (1100, 760), "foc-speed-tracking.png": (1350, 690),
-    "foc-response-context.png": (1875, 1785),
+    "foc-response-context.png": (1875, 1785), "foc-pwm-zoom.png": (1550, 1235),
     "grid-interface.png": (1915, 1003), "grid-loadflow-iterations.png": (1406, 656),
     "grid-transient-stability.png": (1406, 656), "mlp-convergence.png": (1152, 640),
     "mlp-network.svg": (1200, 560), "mlp-sequential-training.png": (1152, 544),
@@ -1096,7 +1094,7 @@ def figure(spec, *, hero=False):
             '<figcaption><span>' + translated((caption_fr, caption_en)) +
             '</span><small>FIG. 01</small></figcaption></figure>'
         )
-    preserve_aspect = path == 'foc-response-context.png' or (path.startswith('winding-') and path.endswith('-app.png'))
+    preserve_aspect = path in {'foc-response-context.png', 'foc-pwm-zoom.png'} or (path.startswith('winding-') and path.endswith('-app.png'))
     figure_class = 'figure figure-context' if preserve_aspect else 'figure'
     return (
         f'<figure class="{figure_class}">' + picture +
