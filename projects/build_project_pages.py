@@ -428,73 +428,54 @@ PAGES = [
                              'Python scenario with an averaged inverter. Currents, load and flux explain speed changes; '
                              'these are not hardware measurements.')},
                   {'id': 'takeaway',
-                   'title': ('SPWM et SVPWM dans Simscape', 'SPWM and SVPWM in Simscape'),
-                   'intro': ('J’ai simulé les deux modulations à 10 kHz avec la même machine, le même pont IGBT et '
-                             'les mêmes réglages de commande.',
-                             'I simulated both modulation methods at 10 kHz with the same motor, IGBT bridge and '
-                             'controller settings.'),
-                   'paragraphs': [('Au palier de 1 400 tr/min, l’ondulation efficace du courant est passée de 0,254 A '
-                                   'en SPWM à 0,234 A en SVPWM, soit une baisse de 7,7 % sur cet essai. Les courbes '
-                                   'de vitesse et de couple restent proches sur l’ensemble du scénario. L’écart maximal '
-                                   'de vitesse établi est de 1,67 tr/min en SPWM et de 2,26 tr/min en SVPWM.',
-                                   'At 1,400 rpm, RMS current ripple fell from 0.254 A with SPWM to 0.234 A with SVPWM, '
-                                   'a 7.7% reduction in this test. Speed and torque remain close over the full run. '
-                                   'The maximum settled speed error is 1.67 rpm with SPWM and 2.26 rpm with SVPWM.'),
-                                  ('J’ai extrait les signaux de la simulation électrique au pas de 1 µs. '
-                                   'Pour isoler l’ondulation de commutation, j’ai retiré une tendance linéaire à chaque '
-                                   'période PWM sur le palier de 1,05 à 1,25 s. Les détails montrent six périodes, '
-                                   'de 1,1050 à 1,1056 s.',
-                                   'I used electrical simulation signals recorded at a 1 µs step. To isolate switching '
-                                   'ripple, I removed a fitted line from each PWM period over the 1.05–1.25 s plateau. '
-                                   'The close-ups show six periods from 1.1050 to 1.1056 s.'),
-                                  ('En passant de la SPWM à la SVPWM, l’ondulation efficace du couple est passée '
-                                   'de 0,604 à 0,513 N·m et celle de la vitesse de 0,0191 à 0,0084 tr/min. '
-                                   'L’ondulation efficace de iq est passée de 0,260 à 0,221 A. Celle de id est '
-                                   'restée proche de 0,247 A, avec une ondulation crête à crête moyenne '
-                                   'légèrement plus élevée (0,816 à 0,837 A).',
-                                   'From SPWM to SVPWM, torque ripple RMS fell from 0.604 to 0.513 N·m and '
-                                   'speed ripple RMS fell from 0.0191 to 0.0084 rpm. The iq ripple RMS fell '
-                                   'from 0.260 to 0.221 A. The id ripple RMS stayed near 0.247 A, while '
-                                   'its mean peak-to-peak ripple rose slightly (0.816 to 0.837 A).')],
-                   'image': ('foc-pwm-zoom.png',
-                             'Comparaison SPWM et SVPWM dans Simscape, zoom sur six périodes de commutation',
-                             'Simscape SPWM and SVPWM comparison over six switching periods',
-                             'Tension A–B idéale reconstruite à partir des commandes de grille, courant de phase A simulé '
-                             'et ondulation après retrait de la tendance linéaire.',
-                             'Ideal A–B voltage reconstructed from the gate commands, simulated phase A current, and '
-                             'ripple after removing each period’s linear trend.'),
+                   'title': ('Résultats Simscape', 'Simscape results'),
+                   'intro': ('Les courbes de vitesse, de couple et de courant sur l’essai complet proviennent de la SVPWM '
+                             'à sept segments. Le détail des trois courants de phase couvre une période électrique au palier de 1 400 tr/min.',
+                             'The drive-response plots use the seven-segment SVPWM run. The three phase currents are '
+                             'shown over one electrical cycle on the 1,400 rpm plateau.'),
+                   'paragraphs': [('Pour comparer les modulations, j’ai relevé le couple électromagnétique et les tensions de phase '
+                                   'sur les mêmes six périodes PWM, de 1,1050 à 1,1056 s. Les deux essais utilisent un bus '
+                                   'continu de 540 V, une fréquence de commutation de 10 kHz et les mêmes réglages de commande.',
+                                   'I compared electromagnetic torque and phase voltages over the same six PWM periods, '
+                                   'from 1.1050 to 1.1056 s. Both runs use a 540 V DC bus, a 10 kHz switching frequency, '
+                                   'and the same controller settings.')],
                    'extra_images': [
                        ('foc-simscape-speed.png',
-                        'Vitesse du rotor dans Simscape en SPWM et SVPWM',
-                        'Simscape rotor speed with SPWM and SVPWM',
-                        'Suivi de la consigne, chute à l’application de la charge de 10 N·m et ondulation de vitesse '
-                        'en millièmes de tr/min.',
-                        'Reference tracking, the speed dip under a 10 N·m load step, and switching ripple in '
-                        'thousandths of an rpm.'),
-                       ('foc-simscape-torque.png',
-                        'Couple électromagnétique dans Simscape en SPWM et SVPWM',
-                        'Simscape electromagnetic torque with SPWM and SVPWM',
-                        'Couple électromagnétique et couple de charge sur l’essai complet, puis détail du couple '
-                        'simulé et de son ondulation à l’échelle de la commutation.',
-                        'Electromagnetic and load torque across the full run, with a switching-scale view of '
-                        'the raw torque and its ripple.'),
+                        'Vitesse du rotor et consigne en SVPWM dans Simscape',
+                        'Simscape SVPWM rotor speed and reference',
+                        'Vitesse du rotor et consigne pendant l’essai en SVPWM.',
+                        'Rotor speed and its reference during the SVPWM run.'),
+                       ('foc-simscape-drive-torque.png',
+                        'Couple électromagnétique et couple de charge en SVPWM',
+                        'SVPWM electromagnetic torque and applied load torque',
+                        'Réponse du couple moteur aux changements de consigne et de charge en SVPWM.',
+                        'Motor torque response to the reference and load changes during the SVPWM run.'),
                        ('foc-simscape-phase.png',
-                        'Courants des trois phases dans Simscape avec un zoom par phase',
-                        'Simscape phase A, B, and C currents with individual ripple close-ups',
-                        'Courants du moteur au palier de 1 400 tr/min et ondulation pour chaque phase. '
-                        'En passant de la SPWM à la SVPWM, les valeurs efficaces de l’ondulation sont passées '
-                        'de 0,252 à 0,233 A pour A, de 0,254 à 0,234 A pour B, et de 0,255 à 0,235 A pour C. '
-                        'Le modèle reconstruit le courant C à partir de A et B.',
-                        'Motor currents at the 1,400 rpm plateau and ripple for each phase. '
-                        'From SPWM to SVPWM, ripple RMS fell from 0.252 to 0.233 A on A, from 0.254 to 0.234 A on B, '
-                        'and from 0.255 to 0.235 A on C. The model reconstructs phase C current from A and B.'),
+                        'Courants bruts des phases A, B et C en SVPWM sur une période électrique',
+                        'Raw SVPWM phase A, B and C currents over one electrical cycle',
+                        'Une période électrique pour chaque phase, au pas de simulation de 1 µs. '
+                        'Le courant C est reconstruit à partir de A et B.',
+                        'One electrical cycle for each phase at the 1 µs simulation step. '
+                        'Phase C current is reconstructed from A and B.'),
                        ('foc-simscape-dq.png',
-                        'Suivi et ondulation des courants id et iq dans Simscape',
-                        'Simscape d- and q-axis current tracking and ripple',
-                        'À gauche, suivi des consignes au pas de commande de 100 µs. À droite, ondulation '
-                        'reconstruite à partir des courants de phase et de l’angle de flux interpolé au pas de 1 µs.',
-                        'Left, tracking at the 100 µs controller step. Right, ripple reconstructed from phase '
-                        'currents and the estimated flux angle interpolated to the 1 µs electrical grid.'),
+                        'Courants id et iq et consignes en SVPWM',
+                        'SVPWM d- and q-axis currents and references',
+                        'Suivi des consignes des courants id et iq dans le repère du flux rotorique.',
+                        'Tracking of the d- and q-axis current references in the rotor-flux frame.'),
+                       ('foc-simscape-torque.png',
+                        'Couple électromagnétique brut sur six périodes PWM en SPWM et en SVPWM',
+                        'Raw electromagnetic torque over six PWM periods for SPWM and SVPWM',
+                        'Sur ces six périodes, le couple électromagnétique moyen est de 9,87 N·m en SPWM et de 10,69 N·m en SVPWM.',
+                        'Over these six periods, mean electromagnetic torque was 9.87 N·m with SPWM and 10.69 N·m with SVPWM.'),
+                       ('foc-simscape-voltage.png',
+                        'Tensions des phases A, B et C en SPWM et en SVPWM sur six périodes PWM',
+                        'Phase A, B and C voltages for SPWM and SVPWM over six PWM periods',
+                        'Les tensions de phase sont calculées par rapport au neutre virtuel à partir des tensions AB, BC et CA '
+                        'mesurées aux bornes du moteur. Les niveaux sont les mêmes, par exemple 0, 180 et 360 V environ '
+                        'en phase A. Les instants et les largeurs des impulsions diffèrent.',
+                        'Phase voltages are referred to the virtual neutral using AB, BC and CA measured at the '
+                        'motor terminals. Both methods use the same levels, for example about 0, 180 and 360 V in '
+                        'phase A. Pulse timing and widths differ.'),
                    ],
                    'points': []}],
      'reports': ('../reports/foc-induction-motor-report.pdf', '../reports/foc-induction-motor-report-en.pdf'),
@@ -1096,10 +1077,13 @@ CHAPTER_LABELS = {
 IMAGE_SIZES = {
     "dc-motor-cascade.svg": (1200, 500), "dc-motor-response.png": (1920, 819),
     "foc-control.svg": (1100, 760), "foc-speed-tracking.png": (1350, 690),
-    "foc-response-context.png": (1875, 1785), "foc-pwm-zoom.png": (1550, 1235),
-    "foc-simscape-scopes.png": (2133, 1258),
-    "foc-simscape-speed.png": (1750, 1179), "foc-simscape-torque.png": (1737, 1179),
-    "foc-simscape-phase.png": (1730, 1179), "foc-simscape-dq.png": (1743, 1179),
+    "foc-response-context.png": (1875, 1785), "foc-simscape-scopes.png": (2133, 1258),
+    "foc-simscape-speed.png": (1190, 692),
+    "foc-simscape-drive-torque.png": (1168, 690),
+    "foc-simscape-phase.png": (1305, 950),
+    "foc-simscape-dq.png": (1168, 691),
+    "foc-simscape-torque.png": (1473, 513),
+    "foc-simscape-voltage.png": (1775, 1252),
     "grid-interface.png": (1915, 1003), "grid-loadflow-iterations.png": (1406, 656),
     "grid-transient-stability.png": (1406, 656), "mlp-convergence.png": (1152, 640),
     "mlp-network.svg": (1200, 560), "mlp-sequential-training.png": (1152, 544),
@@ -1147,7 +1131,7 @@ def figure(spec, *, hero=False):
             '<figcaption><span>' + translated((caption_fr, caption_en)) +
             '</span><small>FIG. 01</small></figcaption></figure>'
         )
-    preserve_aspect = (path in {'foc-response-context.png', 'foc-pwm-zoom.png'}
+    preserve_aspect = (path == 'foc-response-context.png'
                        or path.startswith('foc-simscape-')
                        or (path.startswith('winding-') and path.endswith('-app.png')))
     figure_class = 'figure figure-context' if preserve_aspect else 'figure'
