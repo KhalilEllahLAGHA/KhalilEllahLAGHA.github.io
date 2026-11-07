@@ -374,6 +374,13 @@ PAGES = [
                              'The inverter synthesises three-phase voltages. Currents and speed feed back to the '
                              'controller.')],
                    'points': [],
+                   'image': ('foc-simscape-scopes.png',
+                             'Schéma Simscape de la commande FOC et panneau Scopes',
+                             'Simscape FOC wiring and Scopes panel',
+                             'Le panneau Scopes regroupe la vitesse, le couple, les courants, le flux et les '
+                             'commandes de grille des IGBT. Les liaisons du modèle sont tracées à angle droit.',
+                             'The Scopes panel groups speed, torque, currents, flux and IGBT gate commands. '
+                             'The model wiring uses horizontal and vertical segments.'),
                    'references': [('FOC à flux rotorique orienté',
                                    'Rotor-field-oriented control',
                                    'https://imperix.com/doc/implementation/rotor-field-oriented-control'),
@@ -1047,6 +1054,7 @@ IMAGE_SIZES = {
     "dc-motor-cascade.svg": (1200, 500), "dc-motor-response.png": (1920, 819),
     "foc-control.svg": (1100, 760), "foc-speed-tracking.png": (1350, 690),
     "foc-response-context.png": (1875, 1785), "foc-pwm-zoom.png": (1550, 1235),
+    "foc-simscape-scopes.png": (2133, 1258),
     "grid-interface.png": (1915, 1003), "grid-loadflow-iterations.png": (1406, 656),
     "grid-transient-stability.png": (1406, 656), "mlp-convergence.png": (1152, 640),
     "mlp-network.svg": (1200, 560), "mlp-sequential-training.png": (1152, 544),
@@ -1094,7 +1102,7 @@ def figure(spec, *, hero=False):
             '<figcaption><span>' + translated((caption_fr, caption_en)) +
             '</span><small>FIG. 01</small></figcaption></figure>'
         )
-    preserve_aspect = path in {'foc-response-context.png', 'foc-pwm-zoom.png'} or (path.startswith('winding-') and path.endswith('-app.png'))
+    preserve_aspect = path in {'foc-response-context.png', 'foc-pwm-zoom.png', 'foc-simscape-scopes.png'} or (path.startswith('winding-') and path.endswith('-app.png'))
     figure_class = 'figure figure-context' if preserve_aspect else 'figure'
     return (
         f'<figure class="{figure_class}">' + picture +
