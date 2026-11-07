@@ -433,10 +433,10 @@ PAGES = [
                              'à sept segments. Le détail des trois courants de phase couvre une période électrique au palier de 1 400 tr/min.',
                              'The drive-response plots use the seven-segment SVPWM run. The three phase currents are '
                              'shown over one electrical cycle on the 1,400 rpm plateau.'),
-                   'paragraphs': [('Pour comparer les modulations, j’ai relevé le couple électromagnétique et les tensions de phase '
+                   'paragraphs': [('Pour comparer les modulations, j’ai relevé le couple électromagnétique '
                                    'sur les mêmes six périodes PWM, de 1,1050 à 1,1056 s. Les deux essais utilisent un bus '
                                    'continu de 540 V, une fréquence de commutation de 10 kHz et les mêmes réglages de commande.',
-                                   'I compared electromagnetic torque and phase voltages over the same six PWM periods, '
+                                   'I compared electromagnetic torque over the same six PWM periods, '
                                    'from 1.1050 to 1.1056 s. Both runs use a 540 V DC bus, a 10 kHz switching frequency, '
                                    'and the same controller settings.')],
                    'extra_images': [
@@ -453,9 +453,9 @@ PAGES = [
                        ('foc-simscape-phase.png',
                         'Courants bruts des phases A, B et C en SVPWM sur une période électrique',
                         'Raw SVPWM phase A, B and C currents over one electrical cycle',
-                        'Une période électrique pour chaque phase, au pas de simulation de 1 µs. '
+                        'Les trois courants sont superposés sur une période électrique, au pas de simulation de 1 µs. '
                         'Le courant C est reconstruit à partir de A et B.',
-                        'One electrical cycle for each phase at the 1 µs simulation step. '
+                        'The three currents share one set of axes over one electrical cycle at the 1 µs simulation step. '
                         'Phase C current is reconstructed from A and B.'),
                        ('foc-simscape-dq.png',
                         'Courants id et iq et consignes en SVPWM',
@@ -467,15 +467,6 @@ PAGES = [
                         'Raw electromagnetic torque over six PWM periods for SPWM and SVPWM',
                         'Sur ces six périodes, le couple électromagnétique moyen est de 9,87 N·m en SPWM et de 10,69 N·m en SVPWM.',
                         'Over these six periods, mean electromagnetic torque was 9.87 N·m with SPWM and 10.69 N·m with SVPWM.'),
-                       ('foc-simscape-voltage.png',
-                        'Tensions des phases A, B et C en SPWM et en SVPWM sur six périodes PWM',
-                        'Phase A, B and C voltages for SPWM and SVPWM over six PWM periods',
-                        'Les tensions de phase sont calculées par rapport au neutre virtuel à partir des tensions AB, BC et CA '
-                        'mesurées aux bornes du moteur. Les niveaux sont les mêmes, par exemple 0, 180 et 360 V environ '
-                        'en phase A. Les instants et les largeurs des impulsions diffèrent.',
-                        'Phase voltages are referred to the virtual neutral using AB, BC and CA measured at the '
-                        'motor terminals. Both methods use the same levels, for example about 0, 180 and 360 V in '
-                        'phase A. Pulse timing and widths differ.'),
                    ],
                    'points': []}],
      'reports': ('../reports/foc-induction-motor-report.pdf', '../reports/foc-induction-motor-report-en.pdf'),
@@ -1080,10 +1071,9 @@ IMAGE_SIZES = {
     "foc-response-context.png": (1875, 1785), "foc-simscape-scopes.png": (2133, 1258),
     "foc-simscape-speed.png": (1190, 692),
     "foc-simscape-drive-torque.png": (1168, 690),
-    "foc-simscape-phase.png": (1305, 950),
+    "foc-simscape-phase.png": (1156, 666),
     "foc-simscape-dq.png": (1168, 691),
     "foc-simscape-torque.png": (1473, 513),
-    "foc-simscape-voltage.png": (1775, 1252),
     "grid-interface.png": (1915, 1003), "grid-loadflow-iterations.png": (1406, 656),
     "grid-transient-stability.png": (1406, 656), "mlp-convergence.png": (1152, 640),
     "mlp-network.svg": (1200, 560), "mlp-sequential-training.png": (1152, 544),
