@@ -501,14 +501,18 @@ PAGES = [
 {'slug': 'winding-flux-analysis',
  'title': ('Bobinage et analyse de flux', 'Winding and flux analysis'),
  'eyebrow': ('03 / Conception de machines', '03 / Machine design'),
- 'summary': ('Comment un choix de bobinage se traduit-il dans le champ magnétique ? Notre application Python relie '
-             'les paramètres saisis, la force magnétomotrice et le calcul du flux à une lecture de la machine en 2D.',
-             'How does a winding choice affect the magnetic field? Our Python application connects input parameters, '
-             'magnetomotive force and flux calculation to a 2D view of the machine.'),
+ 'summary': ('Du bobinage au champ magnétique : notre application Python relie une matrice de connexions signée, '
+             'la force magnétomotrice et un réseau de réluctances. Les cartes 2D et la comparaison avec FEMM '
+             'permettent d’interpréter le résultat et ses erreurs de discrétisation.',
+             'From winding to magnetic field: our Python application connects a signed connection matrix, '
+             'magnetomotive force and a reluctance network. Its 2D maps and FEMM comparison make the result '
+             'and its discretisation errors visible.'),
+ 'stylesheet': 'winding.css',
+ 'chapter_labels': {'takeaway': ('FEMM', 'FEMM')},
  'scope': ('Projet d’équipe · Python / PyQt5 / FEMM', 'Team project · Python / PyQt5 / FEMM'),
  'metrics': [('3', 'espaces : bobinage, FMM, flux', 'workspaces: winding, MMF, flux'),
              ('2D', 'coupe de la machine pour lire le champ', 'machine cross-section to inspect the field'),
-             ('Python', 'interface et chaîne de calcul', 'interface and calculation pipeline')],
+             ('FEMM', 'comparaison des pics et des courbes signées', 'peak and signed-curve comparison')],
  'hero_image': ('winding-parameters-app.png',
                 'Interface de configuration du bobinage avec paramètres, faisabilité et dessin triphasé du stator',
                 'Winding setup interface with parameters, feasibility and a three-phase stator drawing',
@@ -525,10 +529,13 @@ PAGES = [
                'paragraphs': [('Dans ce projet d’équipe, nous avons développé une application Python/PyQt5. La '
                                'première interface permet de choisir les encoches, les paires de pôles, le pas de '
                                'bobine et le nombre de couches. Elle vérifie la faisabilité du bobinage et dessine '
-                               'la répartition des phases dans le stator.',
+                               'la répartition signée des conducteurs dans le stator. Le dessin et le calcul '
+                               'utilisent la même matrice de connexions ; chaque retour de bobine porte le '
+                               'courant opposé au côté aller, au pas choisi.',
                                'In this team project, we developed a Python/PyQt5 application. The first interface '
                                'sets slots, pole pairs, coil span and layers. It checks winding feasibility and '
-                               'draws the phase arrangement in the stator.'),
+                               'draws the signed conductor arrangement. The drawing and calculation use the same '
+                               'connection matrix; each coil return carries the opposite current at the selected span.'),
                               ('L’étude se poursuit avec les dimensions de la machine : rayons, entrefer et '
                                'géométrie des encoches. Le bobinage définit où se trouvent les conducteurs ; la '
                                'géométrie définit le chemin dans lequel le flux pourra circuler.',
@@ -550,11 +557,14 @@ PAGES = [
                          'and the solver connects them.'),
                'flow': [('Calculer la force magnétomotrice — FMM',
                          'Calculate magnetomotive force — MMF',
-                         'La disposition des bobines, le nombre de spires et les courants donnent la contribution de '
-                         'chaque phase. Leur somme produit une FMM résultante : l’excitation magnétique appliquée '
-                         'aux dents de la machine.',
-                         'Coil placement, turns and currents determine each phase contribution. Their sum gives the '
-                         'resultant MMF: the magnetic excitation applied to the machine teeth.'),
+                         'La matrice signée donne les ampères-tours par encoche. Leur cumul construit une fonction '
+                         'de bobinage constante dans les dents et linéaire dans les encoches. La vue instantanée '
+                         'applique les courants triphasés à l’angle électrique Wt ; la résultante est leur somme. '
+                         'La vue des références de crête permet de comparer les formes de chaque phase.',
+                         'The signed matrix gives the ampere-turns in each slot. Their cumulative sum builds a '
+                         'winding function that is constant in teeth and linear across slots. The instantaneous '
+                         'view applies the three-phase currents at electrical angle Wt; the resultant is their sum. '
+                         'Peak-reference mode compares the individual phase shapes.'),
                         ('Découper la machine en cellules',
                          'Divide the machine into cells',
                          'Le maillage polaire représente le rotor, l’entrefer, les dents/encoches et la culasse. '
@@ -565,20 +575,23 @@ PAGES = [
                          'flux.'),
                         ('Assembler et résoudre Ax = b',
                          'Assemble and solve Ax = b',
-                         'A décrit les liaisons du réseau de réluctances ; b contient l’excitation issue de la FMM. '
-                         'La résolution donne x, les potentiels magnétiques des cellules. Ces valeurs permettent '
-                         'ensuite de calculer les flux entre cellules.',
-                         'A describes connections in the reluctance network; b contains the excitation derived from '
-                         'MMF. Solving gives x, the cell magnetic potentials. These values then allow fluxes between '
-                         'cells to be calculated.')],
+                         'A assemble les conductances magnétiques entre cellules ; b contient l’excitation répartie '
+                         'dans la bande dents/encoches. La conservation du flux impose la somme des flux de '
+                         'branches à chaque nœud. Un potentiel de référence fixe la jauge ; le solveur creux donne '
+                         'les potentiels x, puis les flux signés sur les faces.',
+                         'A assembles magnetic conductances between cells; b contains excitation distributed '
+                         'through the tooth/slot band. Flux conservation balances branch fluxes at each node. '
+                         'One reference potential fixes the gauge; the sparse solver gives cell potentials x '
+                         'and then the signed face fluxes.')],
                'flow_images': {1: [('winding-mmf-app.png',
                                     'Interface FMM avec contributions des phases A, B, C et résultante',
                                     'MMF interface with phase A, B, C contributions and their resultant',
-                                    'Cas illustratif commun aux captures : 36 encoches, 2 paires de pôles, double '
-                                    'couche, 204 spires, courant de phase réglé à 0,5 A et angle électrique de 90°.',
-                                    'Illustrative case used throughout these captures: 36 slots, 2 pole pairs, '
-                                    'double layer, 204 turns, phase-current setting 0.5 A and electrical angle '
-                                    '90°.')],
+                                    'Cas commun aux nouvelles captures : 36 encoches, 4 pôles, double couche, pas '
+                                    'de 9 encoches, N = 204, I = 2,8 A crête et Wt = 90°. Dans cette application, '
+                                    'chaque couche reçoit I/2 ; N multiplie le courant de chaque côté occupé.',
+                                    'Common case in the updated captures: 36 slots, 4 poles, double layer, '
+                                    '9-slot span, N = 204, I = 2.8 A peak and Wt = 90°. This application assigns '
+                                    'I/2 to each layer; N multiplies each occupied coil-side current.')],
                                2: [('winding-mesh-app.png',
                                     'Interface de maillage polaire de la machine, avec 8 640 cellules',
                                     'Machine polar-mesh interface with 8,640 cells',
@@ -586,12 +599,20 @@ PAGES = [
                                     'présenté comporte 8 640 cellules.',
                                     'The mesh turns geometry into a network that can be computed; the displayed '
                                     'setting contains 8,640 cells.')]},
-               'paragraphs': [('La discrétisation utilisée ici est un réseau de réluctances sur une grille polaire. '
-                               'La FMM calculée par dent est reportée sur ce réseau. NumPy organise les données et '
+               'paragraphs': [('Le calcul est un réseau de réluctances sur une grille polaire. Les réluctances '
+                               'intègrent les chemins radiaux et angulaires ; les sources réparties sont cohérentes '
+                               'avec le courant axial homogénéisé utilisé dans FEMM. NumPy organise les données et '
                                'SciPy résout le système creux par gradient conjugué préconditionné.',
-                               'The discretisation used here is a reluctance network on a polar grid. Tooth MMF is '
-                               'mapped onto that network. NumPy organises the data and SciPy solves the sparse '
-                               'system with preconditioned conjugate gradients.')],
+                               'The calculation uses a reluctance network on a polar grid. Reluctances integrate '
+                               'radial and angular paths; the distributed sources are consistent with the '
+                               'homogenised axial slot current used in FEMM. NumPy organises the data and SciPy '
+                               'solves the sparse system with preconditioned conjugate gradients.'),
+                              ('Le résidu relatif du système est inférieur à 10⁻⁹ dans les trois cas comparés '
+                               'ci-dessous. Cela vérifie la résolution du système discret, sans mesurer à lui '
+                               'seul la fidélité du champ : celle-ci se vérifie par comparaison et raffinement.',
+                               'The relative system residual is below 10⁻⁹ in the three cases compared below. '
+                               'This checks the discrete-system solve; field accuracy still requires comparison '
+                               'and refinement.')],
                'points': []},
               {'id': 'evidence',
                'title': ('Le résultat : du flux à une lecture en 2D', 'The result: from flux to a 2D interpretation'),
@@ -602,54 +623,76 @@ PAGES = [
                          'B. Two views show where flux travels and where the field is strongest.'),
                'flow': [('Déduire les flux entre cellules',
                          'Derive fluxes between cells',
-                         'Les différences de potentiel magnétique, les sources de FMM et les réluctances donnent le '
-                         'flux de chaque branche. Les lignes reconstruites rendent son trajet lisible dans la coupe '
-                         'de la machine.',
-                         'Magnetic-potential differences, MMF sources and reluctances give the flux in each branch. '
-                         'Reconstructed lines make its path visible in the machine cross-section.'),
+                         'Les flux de faces servent à reconstruire le potentiel vecteur plan Az, avec continuité '
+                         'angulaire périodique et potentiel constant sur les frontières isolantes. Les lignes '
+                         'affichées sont des contours équidistants de Az : deux contours voisins délimitent le '
+                         'même flux. Le nombre de lignes règle la lecture de la carte.',
+                         'The face fluxes reconstruct planar vector potential Az, with periodic angular '
+                         'continuity and constant potential on insulated boundaries. Displayed lines are '
+                         'equally spaced Az contours: adjacent contours enclose the same flux. The line count '
+                         'controls how the map is read.'),
                         ('Calculer B et afficher la carte',
                          'Calculate B and display the map',
-                         'Le flux rapporté aux sections traversées donne les composantes de B. La carte de couleurs '
-                         'affiche son intensité dans la géométrie : on relie ainsi un choix de bobinage à un '
-                         'résultat physique visible.',
-                         'Flux divided by the traversed cross-sectional areas gives the components of B. The colour '
-                         'map shows its magnitude within the geometry, connecting a winding choice to a visible '
-                         'physical result.')],
+                         'Les observations signées des faces opposées sont moyennées et rapportées aux sections '
+                         'physiques pour obtenir Br et Bθ. « Solve field » affiche directement la carte de |B| '
+                         'en teslas ; un clic dans la machine donne Br, Bθ et |B| dans la cellule choisie.',
+                         'Signed observations from opposite faces are averaged and divided by their physical '
+                         'areas to obtain Br and Bθ. “Solve field” directly displays the |B| map in tesla; '
+                         'clicking inside the machine reports Br, Bθ and |B| for the selected cell.')],
                'flow_images': {1: [('winding-flux-lines-app.png',
                                     'Application affichant les lignes de flux sur la coupe 2D de la machine',
                                     'Application displaying flux lines on the 2D machine cross-section',
-                                    'Lignes de flux : lire le trajet du flux dans la machine. Elles sont '
-                                    'reconstruites et lissées pour l’affichage.',
-                                    'Flux lines: inspect flux paths through the machine. The lines are reconstructed '
-                                    'and smoothed for display.')],
+                                    'Contours de Az reconstruits à partir des flux de faces. Un intervalle de '
+                                    'contour correspond au même flux ; le détail près des encoches dépend du maillage.',
+                                    'Az contours reconstructed from face fluxes. Each contour interval represents '
+                                    'the same flux; detail near slots depends on the mesh.')],
                                2: [('winding-b-map-app.png',
-                                    'Application affichant la carte de la norme de B en teslas',
-                                    'Application displaying the magnitude of B in teslas',
-                                    'Carte de |B| : lire la répartition de l’induction magnétique pour le même cas '
-                                    'de calcul.',
-                                    'Map of |B|: inspect the magnetic flux-density distribution for the same '
-                                    'calculation case.')]},
+                                    'Carte de |B| avec contours de flux et lecture ponctuelle du champ en teslas',
+                                    '|B| map with flux contours and point-value inspection in tesla',
+                                    'Carte de |B| et lecture du champ par clic. Les statistiques « Air Gap » '
+                                    'couvrent toutes les cellules de l’entrefer ; le tableau de validation '
+                                    'utilise une seule couronne commune aux deux modèles.',
+                                    '|B| map and point-value inspection. “Air Gap” statistics cover every '
+                                    'air-gap cell; the validation table uses one shared sampling ring '
+                                    'for both models.')]},
                'paragraphs': [('Les captures proviennent de l’application, avec un même jeu de paramètres. Le modèle '
                                'est une coupe 2D à perméabilités imposées ; la saturation n’est pas calculée. Une '
-                               'comparaison avec FEMM peut compléter l’étude, sans constituer un essai sur machine '
-                               'physique.',
+                               'interpolation dans les cellules préserve leurs flux de faces intégrés. La '
+                               'comparaison FEMM ci-dessous contrôle le champ signé, sans constituer un essai '
+                               'sur machine physique.',
                                'The captures come from the application using one parameter set. The model is a 2D '
-                               'cross-section with prescribed permeabilities; saturation is not calculated. A FEMM '
-                               'comparison can complement the study, without constituting a physical machine test.')],
+                               'cross-section with prescribed permeabilities; saturation is not calculated. '
+                               'Interpolation preserves integrated face fluxes. The FEMM comparison below checks '
+                               'the signed field, without constituting a physical machine test.')],
                'points': []},
               {'id': 'takeaway',
-               'title': ('Ce que ce projet démontre', 'What this project demonstrates'),
-               'intro': ('Relier une question d’électrotechnique à un outil Python utilisable : des entrées '
-                         'compréhensibles, une chaîne de calcul cohérente et des résultats que l’on peut '
-                         'interpréter.',
-                         'Connect an electrical-engineering question to a usable Python tool: clear inputs, a '
-                         'consistent calculation pipeline and results that can be interpreted.'),
-               'paragraphs': [('Ce travail d’équipe met en pratique la programmation orientée objet et la séparation '
-                               'entre interface, calcul et visualisation. C’est cette continuité — du paramètre '
-                               'saisi au résultat expliqué — qui donne sa valeur à l’application.',
-                               'This team project applies object-oriented programming and separates the interface, '
-                               'calculation and visualisation. That continuity, from an input parameter to an '
-                               'explained result, gives the application its value.')],
+               'title': ('Vérifier le champ avec FEMM', 'Check the field against FEMM'),
+               'intro': ('Un pic bien reproduit ne garantit pas une courbe correcte. L’audit du 12 novembre '
+                         '2026 compare les deux composantes signées du champ dans l’entrefer et documente '
+                         'l’effet du maillage.',
+                         'Matching a peak does not guarantee the right curve. The 12 November 2026 audit '
+                         'compares both signed air-gap field components and documents the effect of mesh resolution.'),
+               'paragraphs': [('La validation construit FEMM à partir du bobinage actif, des courants, de Wt, '
+                               'des dimensions, des perméabilités et de la longueur axiale. Le calcul tourne '
+                               'en arrière-plan ; les résultats apparaissent dans une fenêtre et FEMM reste '
+                               'ouvert sur la solution, avec légende |B|, contours de flux et lecture des valeurs '
+                               'par clic.',
+                               'Validation builds FEMM from the active winding, currents, Wt, dimensions, '
+                               'permeabilities and axial length. The solve runs in the background; a results '
+                               'window appears and FEMM remains open on the solution, with its |B| legend, flux '
+                               'contours and point-value inspection.'),
+                              ('Les corrections ont porté sur le signe des retours de bobine, le placement '
+                               'physique des sources, les réluctances radiales et la reconstruction de B sur '
+                               'les faces opposées. Ce travail relie programmation, conservation du flux et '
+                               'vérification numérique ; les écarts restants sont montrés au lieu d’être '
+                               'résumés par le seul maximum.',
+                               'Corrections addressed coil-return signs, physical source placement, radial '
+                               'reluctances and B reconstruction from opposite faces. This connects programming, '
+                               'flux conservation and numerical verification; remaining differences are shown '
+                               'alongside the maximum.')],
+               'validation': True,
+               'references': [('Audit physique et commandes de reproduction', 'Physics audit and reproduction commands',
+                               'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program/blob/main/femm_validation/physics-audit.md')],
                'points': []}],
  'reports': None,
  'repo': 'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program'},
@@ -1119,6 +1162,8 @@ IMAGE_SIZES = {
     "winding-mesh-app.png": (1680, 1050),
     "winding-flux-lines-app.png": (1680, 1050),
     "winding-b-map-app.png": (1680, 1050),
+    "winding-femm-convergence.png": (1500, 920),
+    "winding-femm-profiles.png": (1600, 1040),
 
 }
 
@@ -1155,7 +1200,8 @@ def figure(spec, *, hero=False):
                        or path.startswith('dc-motor-block-diagram')
                        or path.startswith('dc-motor-simscape-')
                        or path.startswith('foc-simscape-')
-                       or (path.startswith('winding-') and path.endswith('-app.png')))
+                       or (path.startswith('winding-') and path.endswith('-app.png'))
+                       or path.startswith('winding-femm-'))
     figure_class = 'figure figure-context' if preserve_aspect else 'figure'
     return (
         f'<figure class="{figure_class}">' + picture +
@@ -1196,6 +1242,170 @@ LABEL_EN = {
 }
 
 
+def winding_validation():
+    """Measured 2026-11-12 audit results, not acceptance thresholds.
+
+    Presets: physics-audit-corrected-{low,mid,high}/physics_comparison.json.
+    Refined reference: physics-audit-high-fine-reference/physics_comparison.json
+    and physics-audit-extra-fine/convergence.json. Radial order is rotor,
+    air gap, tooth/slot band, yoke; angular counts use the 5-degree slot case.
+    """
+    def table(rows, caption, label):
+        headers = [
+            ('Maillage réseau', 'Network mesh'),
+            ('Couches radiales', 'Radial layers'),
+            ('Grille angulaire', 'Angular grid'),
+            ('Cellules', 'Cells'),
+            ('Écart du pic |Br|', 'Peak |Br| error'),
+            ('Erreur Br signée', 'Signed Br error'),
+            ('Erreur Bθ signée', 'Signed Bθ error'),
+        ]
+        body = []
+        for name, layers, angles, cells, peak, br, btheta in rows:
+            def percent(value, places):
+                number = f'{value:.{places}f}'
+                return translated((number.replace('.', ',') + ' %', number + '%'))
+            values = [clean(layers), clean(angles), clean(cells),
+                      percent(peak, 3) if peak is not None else '—',
+                      percent(br, 2), percent(btheta, 2)]
+            body.append('<tr><th scope="row">' + translated(name) + '</th>'
+                        + ''.join('<td>' + value + '</td>' for value in values) + '</tr>')
+        return (
+            '<p class="winding-table-hint">'
+            + translated(('Faire défiler le tableau pour voir toutes les valeurs →',
+                          'Scroll the table to see all values →')) + '</p>'
+            '<div class="winding-table-scroll" role="region" tabindex="0" '
+            f'aria-label="{clean(label[0])}" data-label-fr="{clean(label[0])}" '
+            f'data-label-en="{clean(label[1])}"><table class="winding-table">'
+            '<caption>' + translated(caption) + '</caption><thead><tr>'
+            + ''.join('<th scope="col">' + translated(h) + '</th>' for h in headers)
+            + '</tr></thead><tbody>' + ''.join(body) + '</tbody></table></div>'
+        )
+
+    presets = [
+        (('Bas', 'Low'), '3 / 5 / 3 / 3', '72 · 5° · d=1', '1 008',
+         0.2678520956779109, 14.07514663173804, 33.30397508655229),
+        (('Moyen', 'Mid'), '10 / 10 / 10 / 10', '216 · 1.667° · d=3', '8 640',
+         0.06732397429058047, 7.560621009583911, 43.32410848275632),
+        (('Haut', 'High'), '20 / 30 / 20 / 20', '720 · 0.5° · d=10', '64 800',
+         0.033006160322406226, 2.7344774684462463, 12.142890485828302),
+    ]
+    refined = [
+        (('Haut', 'High'), '20 / 30 / 20 / 20', '720 · 0.5° · d=10', '64 800',
+         0.007755132909209209, 2.685158636287719, 12.009316433074101),
+        (('Raffinement supplémentaire', 'Additional refinement'),
+         '40 / 60 / 40 / 40', '1 440 · 0.25° · d=20', '259 200',
+         None, 0.9041802548068536, 5.322068554021697),
+    ]
+    case = (
+        'Cas comparé : 36 encoches, 4 pôles, pas 9, double couche, 204 spires, '
+        'I = 2,8 A crête, Wt = 90°, ouverture d’encoche 5°, entrefer 1 mm et longueur axiale 110 mm. '
+        'Les deux modèles imposent μr = 4 000 dans le fer, un courant axial homogénéisé dans les encoches '
+        'et un flux normal nul au rayon d’arbre et à la frontière externe.',
+        'Compared case: 36 slots, 4 poles, span 9, double layer, 204 turns, '
+        'I = 2.8 A peak, Wt = 90°, 5° slot opening, 1 mm air gap and 110 mm axial length. '
+        'Both models prescribe iron μr = 4,000, homogenised axial slot current '
+        'and zero normal flux at the shaft radius and outer boundary.',
+    )
+    definitions = (
+        'Pour chaque composante B, l’erreur de courbe est le RMS de (Bréseau − BFEMM) divisé par le RMS '
+        'de BFEMM, sur tous les échantillons signés. C’est la norme L2 normalisée : les signes et les '
+        'écarts locaux comptent, y compris près de zéro. L’écart du pic compare seulement les maxima '
+        'de |Br| ; il ne mesure pas la forme de la courbe.',
+        'For each component B, curve error is RMS(Bnetwork − BFEMM) divided by RMS(BFEMM), '
+        'over all signed samples. This is the normalised L2 error: polarity and local differences '
+        'count, including near zero. Peak error compares only the maxima of |Br|; '
+        'it does not measure curve shape.',
+    )
+    sampling = (
+        'Dans chaque comparaison, FEMM et le réseau sont échantillonnés aux mêmes rayons et angles '
+        'd’une couronne proche du milieu de l’entrefer. Le nombre de points est celui des cellules '
+        'angulaires. Entre les préréglages, ces points et le rayon de la couronne peuvent changer : '
+        'ce tableau documente les réglages réels de l’application, sans constituer une étude à '
+        'échantillonnage fixe. Ordre des couches radiales : rotor / entrefer / dents-encoches / culasse. '
+        'Grille angulaire : nombre de cellules · pas Δθ · diviseur d.',
+        'Within each comparison, FEMM and the network use identical radii and angles on a ring '
+        'near the middle of the air gap. The point count equals the angular cell count. '
+        'Across presets, those locations and the selected ring radius can change: this table '
+        'documents actual application settings rather than a fixed-sample convergence study. '
+        'Radial-layer order: rotor / air gap / tooth-slot band / yoke. '
+        'Angular grid: cell count · step Δθ · divider d.',
+    )
+    findings = (
+        'Le maillage moyen reproduit le pic à 0,067 %, mais son erreur de courbe est de 7,56 % '
+        'sur Br et 43,32 % sur Bθ. Le maillage haut réduit ces erreurs à 2,73 % et 12,14 %. '
+        'L’erreur Bθ n’est pas monotone entre les trois préréglages ; le maximum seul masquerait '
+        'les écarts locaux près des bords d’encoches.',
+        'The mid mesh matches the peak within 0.067%, but its curve errors are 7.56% '
+        'for Br and 43.32% for Bθ. The high mesh reduces these to 2.73% and 12.14%. '
+        'Bθ error is not monotonic across the three presets; the peak alone would hide '
+        'local differences near slot edges.',
+    )
+    refinement = (
+        'La référence FEMM standard utilise des segments d’arc de 1° et une taille de maille '
+        'd’entrefer égale à entrefer/4. Une référence distincte plus fine utilise 0,25° et '
+        'entrefer/12. Les deux lignes ci-dessous utilisent cette référence affinée ; les '
+        'valeurs du réseau à 259 200 cellules sont interpolées aux positions fixes de la '
+        'référence à 720 points. L’écart du pic n’a pas été enregistré pour ce dernier calcul.',
+        'The standard FEMM reference uses 1° arc segments and air-gap mesh size gap/4. '
+        'A separate finer reference uses 0.25° and gap/12. Both rows below use this refined '
+        'reference; the 259,200-cell network values are interpolated to its fixed 720 sample '
+        'locations. Peak error was not recorded for that last calculation.',
+    )
+    limits = (
+        'Ces résultats vérifient le modèle magnétique linéaire implémenté. La perméabilité '
+        'imposée ne représente pas la saturation ; il ne s’agit pas d’une validation expérimentale. '
+        'Aucune tolérance d’acceptation automatique n’est appliquée. Le raffinement réduit '
+        'les écarts résiduels, en particulier la composante tangentielle près des encoches.',
+        'These results check the implemented linear magnetic model. Prescribed permeability '
+        'does not represent saturation; this is not experimental validation. No automatic '
+        'acceptance tolerance is applied. Refinement reduces remaining discrepancies, '
+        'especially the tangential component near slots.',
+    )
+    return (
+        '<div class="winding-validation"><div class="winding-case"><h3>'
+        + translated(('Un même cas physique', 'One shared physical case'))
+        + '</h3><p>' + translated(case) + '</p></div>'
+        '<div class="winding-error-definition"><h3>'
+        + translated(('Deux mesures différentes', 'Two different measurements'))
+        + '</h3><p>' + translated(definitions) + '</p>'
+        '<p class="winding-formula"><span lang="fr">E<sub>courbe</sub> = 100 × '
+        '√[Σ(B<sub>réseau</sub> − B<sub>FEMM</sub>)² / ΣB<sub>FEMM</sub>²]</span>'
+        '<span lang="en">E<sub>curve</sub> = 100 × '
+        '√[Σ(B<sub>network</sub> − B<sub>FEMM</sub>)² / ΣB<sub>FEMM</sub>²]</span></p></div>'
+        + table(presets,
+                ('Préréglages de l’application · référence FEMM standard',
+                 'Application presets · standard FEMM reference'),
+                ('Tableau des préréglages et erreurs, défilement horizontal disponible',
+                 'Preset and error table, horizontal scrolling available'))
+        + '<p class="winding-table-note">' + translated(sampling) + '</p>'
+        + '<div class="winding-finding"><p>' + translated(findings) + '</p></div>'
+        + figure(('winding-femm-convergence.png',
+                  'Erreurs du champ radial et tangentiel selon le maillage du réseau, avec références FEMM distinguées',
+                  'Radial and tangential field errors versus network mesh, with FEMM references distinguished',
+                  'Erreurs de courbes signées : les préréglages et le contrôle avec référence affinée restent distingués.',
+                  'Signed-curve errors: application presets remain separate from the refined-reference check.'))
+        + '<h3 class="winding-refined-title">'
+        + translated(('Contrôle avec une référence FEMM affinée', 'Check against a refined FEMM reference'))
+        + '</h3><p>' + translated(refinement) + '</p>'
+        + table(refined,
+                ('Deux maillages réseau · même référence FEMM affinée',
+                 'Two network meshes · same refined FEMM reference'),
+                ('Tableau avec référence affinée, défilement horizontal disponible',
+                 'Refined-reference table, horizontal scrolling available'))
+        + figure(('winding-femm-profiles.png',
+                  'Comparaison point par point des courbes Br et Bθ signées du réseau et de FEMM',
+                  'Point-by-point comparison of signed Br and Bθ curves from the network and FEMM',
+                  'Les courbes signées révèlent les différences locales que la comparaison des pics ne voit pas.',
+                  'Signed curves reveal local differences that a peak comparison does not show.'))
+        + '<p class="winding-limit">' + translated(limits) + '</p>'
+        '<div class="artifact-row"><a href="../assets/projects/winding-femm-validation.json" '
+        'download="winding-femm-validation.json">'
+        + translated(('Télécharger les résultats et réglages · JSON', 'Download results and settings · JSON'))
+        + '</a></div></div>'
+    )
+
+
 def render_chapter(chapter, number, page):
     paragraphs = ''.join(f'<p>{translated(p)}</p>' for p in chapter.get("paragraphs", []))
     flow = chapter.get('flow', [])
@@ -1227,12 +1437,13 @@ def render_chapter(chapter, number, page):
     visual = figure(chapter["image"]) if chapter.get("image") else ''
     visual += ''.join(figure(spec) for spec in chapter.get('extra_images', []))
     assets = artifact_links(page) if chapter["id"] == "takeaway" else ''
+    validation = winding_validation() if chapter.get('validation') else ''
     return (
         f'<section class="chapter" id="{clean(chapter["id"])}" aria-labelledby="h-{clean(chapter["id"])}">'
         f'<div class="chapter-head"><span class="chapter-no">{number:02d} / 04</span></div>'
         f'<h2 id="h-{clean(chapter["id"])}">{translated(chapter["title"])}</h2>'
         f'<p class="intro">{translated(chapter["intro"])}</p>'
-        f'{workflow}{prose}{cards}{visual}{source_links}{assets}</section>'
+        f'{workflow}{prose}{cards}{visual}{validation}{source_links}{assets}</section>'
     )
 
 
@@ -1241,6 +1452,9 @@ def render(page, next_page):
     title_fr, title_en = page["title"]
     canonical = f"https://khalilellahlagha.github.io/projects/{slug}.html"
     hero_image = f"https://khalilellahlagha.github.io/assets/projects/{page['hero_image'][0]}"
+    extra_stylesheet = (
+        f'<link rel="stylesheet" href="{clean(page["stylesheet"])}?v={asset_version(page["stylesheet"])}">'
+    ) if page.get('stylesheet') else ''
     metrics = ''.join(
         f'<div class="metric"><strong>{clean(value)}</strong><span>{translated((fr, en))}</span></div>'
         for value, fr, en in page["metrics"]
@@ -1249,7 +1463,7 @@ def render(page, next_page):
         f'<li><a href="#{clean(chapter["id"])}" aria-label="{clean(chapter["title"][0])}" '
         f'data-label-fr="{clean(chapter["title"][0])}" data-label-en="{clean(chapter["title"][1])}">'
         f'<span class="chapter-label-full">{translated(chapter["title"])}</span>'
-        f'<span class="chapter-label-short" aria-hidden="true">{translated(CHAPTER_LABELS[chapter["id"]])}</span>'
+        f'<span class="chapter-label-short" aria-hidden="true">{translated(page.get("chapter_labels", {}).get(chapter["id"], CHAPTER_LABELS[chapter["id"]]))}</span>'
         '</a></li>'
         for chapter in page["chapters"]
     )
@@ -1281,7 +1495,7 @@ def render(page, next_page):
   <meta property="og:image" content="{clean(hero_image)}">
   <meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="en_US">
   <meta name="theme-color" content="#090e1c">
-  <link rel="stylesheet" href="project.css?v={asset_version('project.css')}"><script src="project.js?v={asset_version('project.js')}" defer></script>
+  <link rel="stylesheet" href="project.css?v={asset_version('project.css')}"><script src="project.js?v={asset_version('project.js')}" defer></script>{extra_stylesheet}
 </head>
 <body>
   <div class="progress" aria-hidden="true"></div>

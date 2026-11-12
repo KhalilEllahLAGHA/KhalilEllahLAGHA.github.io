@@ -1,0 +1,121 @@
+{
+  "audit_date": "2026-11-12",
+  "case": {
+    "slots": 36,
+    "poles": 4,
+    "layers": 2,
+    "coil_span_slots": 9,
+    "turns_parameter": 204,
+    "peak_current_parameter_a": 2.8,
+    "current_per_layer_a": 1.4,
+    "electrical_angle_deg": 90,
+    "axial_length_mm": 110,
+    "air_gap_mm": 1,
+    "prescribed_iron_relative_permeability": 4000,
+    "pcg_relative_tolerance": 1e-09
+  },
+  "definitions": {
+    "curve_error": "100 * norm(B_network - B_FEMM, 2) / norm(B_FEMM, 2), signed point pairs",
+    "peak_error": "100 * abs(max(abs(Br_network)) - max(abs(Br_FEMM))) / max(abs(Br_FEMM))",
+    "standard_reference": "1-degree geometry arc segments, gap/4 FEMM air-gap mesh size",
+    "refined_reference": "0.25-degree geometry arc segments, gap/12 FEMM air-gap mesh size"
+  },
+  "preset_comparisons_standard_reference": [
+    {
+      "mesh": "Low",
+      "source_run": "physics-audit-corrected-low",
+      "radial_layers_rotor_airgap_slot_yoke": [
+        3,
+        5,
+        3,
+        3
+      ],
+      "angular_divider": 1,
+      "angular_cells": 72,
+      "angular_step_deg": 5.0,
+      "cells": 1008,
+      "network_peak_abs_br_t": 2.1124776455920515,
+      "femm_peak_abs_br_t": 2.118151157858,
+      "peak_abs_br_error_percent": 0.2678520956779109,
+      "br_normalized_l2_percent": 14.07514663173804,
+      "btheta_normalized_l2_percent": 33.30397508655229
+    },
+    {
+      "mesh": "Medium",
+      "source_run": "physics-audit-corrected-mid",
+      "radial_layers_rotor_airgap_slot_yoke": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "angular_divider": 3,
+      "angular_cells": 216,
+      "angular_step_deg": 1.6666666666666667,
+      "cells": 8640,
+      "network_peak_abs_br_t": 2.1185089832199937,
+      "femm_peak_abs_br_t": 2.119936208528,
+      "peak_abs_br_error_percent": 0.06732397429058047,
+      "br_normalized_l2_percent": 7.560621009583911,
+      "btheta_normalized_l2_percent": 43.32410848275632
+    },
+    {
+      "mesh": "High",
+      "source_run": "physics-audit-corrected-high",
+      "radial_layers_rotor_airgap_slot_yoke": [
+        20,
+        30,
+        20,
+        20
+      ],
+      "angular_divider": 10,
+      "angular_cells": 720,
+      "angular_step_deg": 0.5,
+      "cells": 64800,
+      "network_peak_abs_br_t": 2.118650727527782,
+      "femm_peak_abs_br_t": 2.119350243667,
+      "peak_abs_br_error_percent": 0.033006160322406226,
+      "br_normalized_l2_percent": 2.7344774684462463,
+      "btheta_normalized_l2_percent": 12.142890485828302
+    }
+  ],
+  "refined_reference_comparisons": [
+    {
+      "mesh": "High",
+      "cells": 64800,
+      "radial_layers_rotor_airgap_slot_yoke": [
+        20,
+        30,
+        20,
+        20
+      ],
+      "angular_divider": 10,
+      "angular_cells": 720,
+      "angular_step_deg": 0.5,
+      "peak_abs_br_error_percent": 0.007755132909209209,
+      "br_normalized_l2_percent": 2.685158636287719,
+      "btheta_normalized_l2_percent": 12.009316433074101
+    },
+    {
+      "mesh": "Extra fine",
+      "cells": 259200,
+      "radial_layers_rotor_airgap_slot_yoke": [
+        40,
+        60,
+        40,
+        40
+      ],
+      "angular_divider": 20,
+      "angular_cells": 1440,
+      "angular_step_deg": 0.25,
+      "peak_abs_br_error_percent": null,
+      "br_normalized_l2_percent": 0.9041802548068536,
+      "btheta_normalized_l2_percent": 5.322068554021697
+    }
+  ],
+  "sampling": {
+    "presets": "72, 216 and 720 angular samples on each network midpoint-nearest gap ring. Each FEMM run uses that same radius and those same angles.",
+    "refined": "Both use the same refined FEMM reference with 720 samples. Extra-fine network values were interpolated to those fixed locations."
+  },
+  "model_scope": "Linear prescribed-permeability model, homogenized slot current, insulated shaft and outer-yoke boundaries. No automatic acceptance threshold or saturation model."
+}
