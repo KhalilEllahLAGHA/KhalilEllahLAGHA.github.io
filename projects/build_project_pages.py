@@ -691,8 +691,19 @@ PAGES = [
                                'flux conservation and numerical verification; remaining differences are shown '
                                'alongside the maximum.')],
                'validation': True,
+               'credits': [('L’article de Luigi Alberti, « Koil: A Tool to Design the Winding of Rotating '
+                            'Electric Machinery » (ICEM 2018), m’a aidé à comprendre l’algorithme de bobinage, '
+                            'notamment l’étoile des encoches et l’affectation des côtés de bobine aux phases.',
+                            'Luigi Alberti’s article, “Koil: A Tool to Design the Winding of Rotating '
+                            'Electric Machinery” (ICEM 2018), helped me understand the winding algorithm, '
+                            'particularly the star-of-slots method and the assignment of coil sides to phases.'),
+                           ('Des agents IA m’ont aidé à affiner l’application et à repérer et corriger des bugs.',
+                            'AI agents helped me refine the application and identify and fix bugs.')],
                'references': [('Audit physique et commandes de reproduction', 'Physics audit and reproduction commands',
-                               'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program/blob/main/femm_validation/physics-audit.md')],
+                               'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program/blob/main/femm_validation/physics-audit.md'),
+                              ('Luigi Alberti · KOIL · ICEM 2018 · p. 805–811',
+                               'Luigi Alberti · KOIL · ICEM 2018 · pp. 805–811',
+                               'https://doi.org/10.1109/ICELMACH.2018.8507004')],
                'points': []}],
  'reports': None,
  'repo': 'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program'},
@@ -1438,12 +1449,16 @@ def render_chapter(chapter, number, page):
     visual += ''.join(figure(spec) for spec in chapter.get('extra_images', []))
     assets = artifact_links(page) if chapter["id"] == "takeaway" else ''
     validation = winding_validation() if chapter.get('validation') else ''
+    credits = (
+        '<div class="winding-credits"><h3>' + translated(('Crédits', 'Credits')) + '</h3>'
+        + ''.join('<p>' + translated(p) + '</p>' for p in chapter['credits']) + '</div>'
+    ) if chapter.get('credits') else ''
     return (
         f'<section class="chapter" id="{clean(chapter["id"])}" aria-labelledby="h-{clean(chapter["id"])}">'
         f'<div class="chapter-head"><span class="chapter-no">{number:02d} / 04</span></div>'
         f'<h2 id="h-{clean(chapter["id"])}">{translated(chapter["title"])}</h2>'
         f'<p class="intro">{translated(chapter["intro"])}</p>'
-        f'{workflow}{prose}{cards}{visual}{validation}{source_links}{assets}</section>'
+        f'{workflow}{prose}{cards}{visual}{validation}{credits}{source_links}{assets}</section>'
     )
 
 
