@@ -1,0 +1,6 @@
+# Preserve generated reports and recorded videos byte-for-byte on checkouts.
+*.pdf binary
+*.mp4 binary
+*.png binary
+*.jpg binary
+*.jpeg binary

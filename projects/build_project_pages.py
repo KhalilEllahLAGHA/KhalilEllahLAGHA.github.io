@@ -499,213 +499,211 @@ PAGES = [
      'reports': ('../reports/foc-induction-motor-report.pdf', '../reports/foc-induction-motor-report-en.pdf'),
      'repo': 'https://github.com/KhalilEllahLAGHA/foc-induction-motor'},
 {'slug': 'winding-flux-analysis',
- 'title': ('Bobinage et analyse de flux', 'Winding and flux analysis'),
- 'eyebrow': ('03 / Conception de machines', '03 / Machine design'),
- 'summary': ('Du bobinage au champ magnétique : notre application Python relie une matrice de connexions signée, '
-             'la force magnétomotrice et un réseau de réluctances. Les cartes 2D et la comparaison avec FEMM '
-             'permettent d’interpréter le résultat et ses erreurs de discrétisation.',
-             'From winding to magnetic field: our Python application connects a signed connection matrix, '
-             'magnetomotive force and a reluctance network. Its 2D maps and FEMM comparison make the result '
-             'and its discretisation errors visible.'),
+ 'title': ['Bobinage et analyse de flux', 'Winding and flux analysis'],
+ 'eyebrow': ['03 / Conception de machines', '03 / Machine design'],
+ 'summary': ['Du bobinage multiphasé au champ magnétique : notre application Python/PyQt6 relie les '
+             'connexions Dolomites/Koil, la force magnétomotrice et un réseau de réluctances. Deux '
+             'animations et un rapport détaillé montrent comment le choix du bobinage transforme le champ.',
+             'From multiphase winding to magnetic field: our Python/PyQt6 application connects '
+             'Dolomites/Koil coils, magnetomotive force and a reluctance network. Two animations and a '
+             'detailed report show how winding choices change the field.'],
  'stylesheet': 'winding.css',
- 'chapter_labels': {'takeaway': ('FEMM', 'FEMM')},
- 'scope': ('Projet d’équipe · Python / PyQt5 / FEMM', 'Team project · Python / PyQt5 / FEMM'),
- 'metrics': [('3', 'espaces : bobinage, FMM, flux', 'workspaces: winding, MMF, flux'),
-             ('2D', 'coupe de la machine pour lire le champ', 'machine cross-section to inspect the field'),
-             ('FEMM', 'comparaison des pics et des courbes signées', 'peak and signed-curve comparison')],
- 'hero_image': ('winding-parameters-app.png',
-                'Interface de configuration du bobinage avec paramètres, faisabilité et dessin triphasé du stator',
-                'Winding setup interface with parameters, feasibility and a three-phase stator drawing',
-                'Le point de départ : choisir le bobinage et voir immédiatement ses connexions.',
-                'The starting point: choose a winding and immediately see its connections.'),
+ 'chapter_labels': {'takeaway': ['Vérification', 'Checks']},
+ 'scope': ['Projet d’équipe · Python / PyQt6 / Dolomites / FEMM',
+           'Team project · Python / PyQt6 / Dolomites / FEMM'],
+ 'metrics': [['1–26', 'phases avec métadonnées explicites', 'phases with explicit metadata'],
+             ['2', 'solutions de base pour animer le champ', 'basis solutions for field animation'],
+             ['3', 'cas détaillés : 3, 2 et 5 phases', 'worked studies: 3, 2 and 5 phases']],
+ 'hero_image': ['winding-parameters-app.png',
+                'Interface PyQt6 sombre : nombre de phases, encoches, pôles totaux et dessin du bobinage',
+                'Dark PyQt6 interface: phase count, slots, total poles and winding drawing',
+                'L’interface actuelle : des réglages compacts et une grande zone d’étude.',
+                'The current interface: compact controls and a larger study area.'],
  'chapters': [{'id': 'problem',
-               'title': ('Le problème : passer du bobinage à son effet physique',
-                         'The problem: connect a winding to its physical effect'),
-               'intro': ('Un dessin de bobinage ne suffit pas à comprendre le champ qu’il produit. L’objectif du '
-                         'projet est de suivre cette relation dans un même outil : configurer, calculer puis '
-                         'visualiser.',
-                         'A winding drawing alone does not explain the field it produces. The project follows that '
-                         'relationship in one tool: configure, calculate, then visualise.'),
-               'paragraphs': [('Dans ce projet d’équipe, nous avons développé une application Python/PyQt5. La '
-                               'première interface permet de choisir les encoches, les paires de pôles, le pas de '
-                               'bobine et le nombre de couches. Elle vérifie la faisabilité du bobinage et dessine '
-                               'la répartition signée des conducteurs dans le stator. Le dessin et le calcul '
-                               'utilisent la même matrice de connexions ; chaque retour de bobine porte le '
-                               'courant opposé au côté aller, au pas choisi.',
-                               'In this team project, we developed a Python/PyQt5 application. The first interface '
-                               'sets slots, pole pairs, coil span and layers. It checks winding feasibility and '
-                               'draws the signed conductor arrangement. The drawing and calculation use the same '
-                               'connection matrix; each coil return carries the opposite current at the selected span.'),
-                              ('L’étude se poursuit avec les dimensions de la machine : rayons, entrefer et '
-                               'géométrie des encoches. Le bobinage définit où se trouvent les conducteurs ; la '
-                               'géométrie définit le chemin dans lequel le flux pourra circuler.',
-                               'The study continues with machine dimensions: radii, air gap and slot geometry. The '
-                               'winding defines conductor placement; the geometry defines the paths through which '
-                               'flux can travel.')],
+               'title': ['Le problème : relier les connexions au champ',
+                         'The problem: connect coils to their field'],
+               'intro': ['Un dessin de bobinage ne suffit pas à prévoir son effet. Le projet suit une même '
+                         'chaîne de données, du conducteur signé jusqu’au champ 2D, pour comparer des choix '
+                         'de phases, de pôles et de pas de bobine.',
+                         'A winding drawing alone does not explain its effect. The project follows one data '
+                         'chain, from signed conductors to the 2D field, to compare phase counts, poles and '
+                         'coil spans.'],
+               'paragraphs': [['L’application a été migrée vers PyQt6 avec un thème sombre noir/gris, du '
+                               'texte clair et des accents de couleur pour les actions et les phases. Cinq '
+                               'étapes relient bobinage, FMM, géométrie, maillage et champ. Le bouton de '
+                               'masquage des réglages agrandit les résultats ; le panneau de description '
+                               'détaillée a été supprimé.',
+                               'The application now uses PyQt6, a dark black/grey theme, light text and '
+                               'coloured action and phase accents. Five stages connect winding, MMF, '
+                               'geometry, mesh and field. Hiding the settings expands the results; the '
+                               'detailed description panel has been removed.'],
+                              ['Le nombre de phases se règle de 1 à 26. Les contrôles utilisent les pôles '
+                               'totaux et le pas en encoches. La matrice conserve explicitement le nombre de '
+                               'phases et les couches : une matrice de six lignes peut ainsi représenter six '
+                               'phases en simple couche ou trois phases en double couche, sans confusion.',
+                               'Phase count is adjustable from 1 to 26. Controls use total poles and coil '
+                               'span in slots. The matrix retains explicit phase and layer metadata: six '
+                               'rows can therefore represent six-phase single-layer or three-phase '
+                               'double-layer windings without ambiguity.'],
+                              ['Le projet reste un travail d’équipe, avec ce rapport et cette mise à jour '
+                               'présentés par LAGHA Khalil Ellah. Les figures sont des résultats de '
+                               'simulation, à perméabilités imposées, et non des mesures sur une machine '
+                               'physique.',
+                               'This remains a team project, with this report and update presented by LAGHA '
+                               'Khalil Ellah. Figures are simulation results with prescribed permeabilities, '
+                               'rather than measurements on a physical machine.']],
                'points': [],
-               'image': ('winding-machine-app.png',
-                         'Écran des dimensions de la machine avec aperçu de sa coupe',
-                         'Machine-dimension screen with a cross-section preview',
-                         'Après le bobinage, les dimensions donnent le cadre physique du calcul.',
-                         'After winding setup, the dimensions define the physical domain of the calculation.')},
+               'image': ['winding-machine-app.png',
+                         'Géométrie de la machine dans l’application PyQt6',
+                         'Machine geometry in the PyQt6 application',
+                         'Les dimensions définissent les chemins physiques du flux : rotor, entrefer, '
+                         'dents/encoches et culasse.',
+                         'Dimensions define the physical flux paths: rotor, air gap, teeth/slots and yoke.']},
               {'id': 'method',
-               'title': ('La solution : de la FMM au système à résoudre',
-                         'The solution: from MMF to the system to solve'),
-               'intro': ('Chaque étape prépare la suivante : les courants créent l’excitation, le maillage '
-                         'représente la machine et le solveur relie les deux.',
-                         'Each stage prepares the next: currents create excitation, the mesh represents the machine, '
-                         'and the solver connects them.'),
-               'flow': [('Calculer la force magnétomotrice — FMM',
-                         'Calculate magnetomotive force — MMF',
-                         'La matrice signée donne les ampères-tours par encoche. Leur cumul construit une fonction '
-                         'de bobinage constante dans les dents et linéaire dans les encoches. La vue instantanée '
-                         'applique les courants triphasés à l’angle électrique Wt ; la résultante est leur somme. '
-                         'La vue des références de crête permet de comparer les formes de chaque phase.',
-                         'The signed matrix gives the ampere-turns in each slot. Their cumulative sum builds a '
-                         'winding function that is constant in teeth and linear across slots. The instantaneous '
-                         'view applies the three-phase currents at electrical angle Wt; the resultant is their sum. '
-                         'Peak-reference mode compares the individual phase shapes.'),
-                        ('Découper la machine en cellules',
-                         'Divide the machine into cells',
-                         'Le maillage polaire représente le rotor, l’entrefer, les dents/encoches et la culasse. '
-                         'Dimensions et matériaux donnent les réluctances entre cellules : elles décrivent la '
-                         'résistance au passage du flux.',
-                         'The polar mesh represents the rotor, air gap, teeth/slots and yoke. Dimensions and '
-                         'materials determine reluctances between cells: how strongly each path opposes magnetic '
-                         'flux.'),
-                        ('Assembler et résoudre Ax = b',
-                         'Assemble and solve Ax = b',
-                         'A assemble les conductances magnétiques entre cellules ; b contient l’excitation répartie '
-                         'dans la bande dents/encoches. La conservation du flux impose la somme des flux de '
-                         'branches à chaque nœud. Un potentiel de référence fixe la jauge ; le solveur creux donne '
-                         'les potentiels x, puis les flux signés sur les faces.',
-                         'A assembles magnetic conductances between cells; b contains excitation distributed '
-                         'through the tooth/slot band. Flux conservation balances branch fluxes at each node. '
-                         'One reference potential fixes the gauge; the sparse solver gives cell potentials x '
-                         'and then the signed face fluxes.')],
-               'flow_images': {1: [('winding-mmf-app.png',
-                                    'Interface FMM avec contributions des phases A, B, C et résultante',
-                                    'MMF interface with phase A, B, C contributions and their resultant',
-                                    'Cas commun aux nouvelles captures : 36 encoches, 4 pôles, double couche, pas '
-                                    'de 9 encoches, N = 204, I = 2,8 A crête et Wt = 90°. Dans cette application, '
-                                    'chaque couche reçoit I/2 ; N multiplie le courant de chaque côté occupé.',
-                                    'Common case in the updated captures: 36 slots, 4 poles, double layer, '
-                                    '9-slot span, N = 204, I = 2.8 A peak and Wt = 90°. This application assigns '
-                                    'I/2 to each layer; N multiplies each occupied coil-side current.')],
-                               2: [('winding-mesh-app.png',
-                                    'Interface de maillage polaire de la machine, avec 8 640 cellules',
-                                    'Machine polar-mesh interface with 8,640 cells',
-                                    'Le maillage transforme la géométrie en un réseau calculable ; le réglage '
-                                    'présenté comporte 8 640 cellules.',
-                                    'The mesh turns geometry into a network that can be computed; the displayed '
-                                    'setting contains 8,640 cells.')]},
-               'paragraphs': [('Le calcul est un réseau de réluctances sur une grille polaire. Les réluctances '
-                               'intègrent les chemins radiaux et angulaires ; les sources réparties sont cohérentes '
-                               'avec le courant axial homogénéisé utilisé dans FEMM. NumPy organise les données et '
-                               'SciPy résout le système creux par gradient conjugué préconditionné.',
-                               'The calculation uses a reluctance network on a polar grid. Reluctances integrate '
-                               'radial and angular paths; the distributed sources are consistent with the '
-                               'homogenised axial slot current used in FEMM. NumPy organises the data and SciPy '
-                               'solves the sparse system with preconditioned conjugate gradients.'),
-                              ('Le résidu relatif du système est inférieur à 10⁻⁹ dans les trois cas comparés '
-                               'ci-dessous. Cela vérifie la résolution du système discret, sans mesurer à lui '
-                               'seul la fidélité du champ : celle-ci se vérifie par comparaison et raffinement.',
-                               'The relative system residual is below 10⁻⁹ in the three cases compared below. '
-                               'This checks the discrete-system solve; field accuracy still requires comparison '
-                               'and refinement.')],
+               'title': ['La méthode : de l’étoile des encoches au champ',
+                         'The method: from star of slots to field'],
+               'intro': ['Le générateur utilise le module Koil du projet Dolomites. Une même matrice de '
+                         'conducteurs alimente le dessin, la FMM, le solveur, l’animation et l’export FEMM.',
+                         'The generator uses the Koil module from the Dolomites project. One conductor '
+                         'matrix drives the drawing, MMF, solver, animation and FEMM export.'],
+               'flow': [['Construire le bobinage Dolomites/Koil',
+                         'Build the Dolomites/Koil winding',
+                         'Les positions des encoches deviennent des angles électriques dans l’étoile des '
+                         'encoches. Des secteurs positifs et négatifs affectent chaque côté à une phase ; le '
+                         'retour est placé au pas choisi avec le signe opposé. L’adaptateur corrige les '
+                         'secteurs traversant 0° et les frontières numériques, puis contrôle le remplissage, '
+                         'les retours et l’équilibre des axes de phase.',
+                         'Slot positions become electrical angles in the star of slots. Positive and '
+                         'negative sectors assign each side to a phase; the return is placed at the selected '
+                         'span with opposite sign. The adapter fixes sectors crossing 0° and numerical '
+                         'boundaries, then checks occupancy, returns and phase-axis balance.'],
+                        ['Calculer les ampères-tours et la FMM',
+                         'Calculate ampere-turns and MMF',
+                         'Les courants sinusoïdaux multiplient les lignes signées de la matrice. Dolomites '
+                         'utilise un décalage de 360°/m pour m impair et 180°/m pour m pair. Le cumul des '
+                         'ampères-tours donne la FMM des dents ; les transitions sont linéaires dans les '
+                         'encoches. L’application affecte I/2 à chaque couche en double couche, avec I '
+                         'exprimé en valeur de crête.',
+                         'Sinusoidal currents multiply the signed matrix rows. Dolomites uses 360°/m spacing '
+                         'for odd m and 180°/m for even m. Cumulative slot ampere-turns give tooth MMF, with '
+                         'linear transitions across slots. The application assigns I/2 to each layer in '
+                         'double-layer mode, with I entered as a peak value.'],
+                        ['Résoudre le réseau de réluctances',
+                         'Solve the reluctance network',
+                         'Le maillage polaire donne les chemins radiaux et angulaires. Le système creux Ax = '
+                         'b exprime la conservation du flux et fixe un potentiel de référence. Une '
+                         'factorisation LU réutilisée accélère les réseaux jusqu’à 100 000 cellules ; le '
+                         'gradient conjugué préconditionné reste disponible au-delà ou en repli. Le résidu '
+                         'du système complet est contrôlé avant d’accepter une solution.',
+                         'The polar mesh defines radial and angular paths. Sparse Ax = b expresses flux '
+                         'conservation and fixes one reference potential. Reused LU factorisation '
+                         'accelerates networks up to 100,000 cells; preconditioned conjugate gradients '
+                         'remain available for larger systems or as fallback. The full-system residual is '
+                         'checked before accepting a solution.'],
+                        ['Afficher et animer le champ',
+                         'Display and animate the field',
+                         'Les flux signés donnent Br et Bθ, puis |B| en teslas. Les lignes sont des contours '
+                         'équidistants du potentiel vecteur Az reconstruit à partir des flux de faces. Dans '
+                         'ce modèle linéaire à perméabilités fixes, deux solutions signées à 0° et 90° '
+                         'électriques suffisent pour reconstruire tout le cycle ; la préparation tourne en '
+                         'arrière-plan et les limites de couleur restent fixes pendant chaque animation.',
+                         'Signed fluxes give Br and Bθ, then |B| in tesla. Lines are equally spaced contours '
+                         'of vector potential Az reconstructed from face fluxes. In this fixed-permeability '
+                         'linear model, two signed solutions at 0° and 90° electrical reconstruct the full '
+                         'cycle; preparation runs in the background and colour limits remain fixed '
+                         'throughout each animation.']],
+               'flow_images': {2: [['winding-mmf-app.png',
+                                    'Courbes FMM des phases et de leur résultante dans l’application PyQt6',
+                                    'Phase and resultant MMF curves in the PyQt6 application',
+                                    'Le cas par défaut utilise 3 phases, 36 encoches, 4 pôles, un pas de 9 '
+                                    'encoches, N = 204 et I = 2,8 A crête.',
+                                    'The default case uses 3 phases, 36 slots, 4 poles, 9-slot span, N = 204 '
+                                    'and I = 2.8 A peak.']],
+                               3: [['winding-mesh-app.png',
+                                    'Maillage polaire du cas par défaut avec 8 640 cellules',
+                                    'Polar mesh of the default case with 8,640 cells',
+                                    'Le maillage intermédiaire du cas par défaut comporte 8 640 cellules. '
+                                    'Les angles fractionnaires sont conservés pour éviter un raffinement '
+                                    'excessif dû aux arrondis.',
+                                    'The default medium mesh contains 8,640 cells. Fractional angles retain '
+                                    'precision to avoid excessive refinement caused by rounding.']]},
+               'paragraphs': [['Le rapport détaille d’abord les règles, les équations et les contrôles sans '
+                               'exemple. Il les applique ensuite à trois bobinages, avec FMM, lignes de flux '
+                               'et cartes de densité. Les résultats sont calculés avec les mêmes moteurs '
+                               'numériques que l’application.',
+                               'The report first details the rules, equations and checks without an example. '
+                               'It then applies them to three windings, including MMF, flux contours and '
+                               'density maps. Results use the same numerical engines as the application.']],
                'points': []},
               {'id': 'evidence',
-               'title': ('Le résultat : du flux à une lecture en 2D', 'The result: from flux to a 2D interpretation'),
-               'intro': ('Une fois les potentiels connus, l’application retrouve le flux Φ, puis l’induction '
-                         'magnétique B. Les deux vues aident à comprendre où passe le flux et où le champ est le '
-                         'plus intense.',
-                         'Once potentials are known, the application derives flux Φ and then magnetic flux density '
-                         'B. Two views show where flux travels and where the field is strongest.'),
-               'flow': [('Déduire les flux entre cellules',
-                         'Derive fluxes between cells',
-                         'Les flux de faces servent à reconstruire le potentiel vecteur plan Az, avec continuité '
-                         'angulaire périodique et potentiel constant sur les frontières isolantes. Les lignes '
-                         'affichées sont des contours équidistants de Az : deux contours voisins délimitent le '
-                         'même flux. Le nombre de lignes règle la lecture de la carte.',
-                         'The face fluxes reconstruct planar vector potential Az, with periodic angular '
-                         'continuity and constant potential on insulated boundaries. Displayed lines are '
-                         'equally spaced Az contours: adjacent contours enclose the same flux. The line count '
-                         'controls how the map is read.'),
-                        ('Calculer B et afficher la carte',
-                         'Calculate B and display the map',
-                         'Les observations signées des faces opposées sont moyennées et rapportées aux sections '
-                         'physiques pour obtenir Br et Bθ. « Solve field » affiche directement la carte de |B| '
-                         'en teslas ; un clic dans la machine donne Br, Bθ et |B| dans la cellule choisie.',
-                         'Signed observations from opposite faces are averaged and divided by their physical '
-                         'areas to obtain Br and Bθ. “Solve field” directly displays the |B| map in tesla; '
-                         'clicking inside the machine reports Br, Bθ and |B| for the selected cell.')],
-               'flow_images': {1: [('winding-flux-lines-app.png',
-                                    'Application affichant les lignes de flux sur la coupe 2D de la machine',
-                                    'Application displaying flux lines on the 2D machine cross-section',
-                                    'Contours de Az reconstruits à partir des flux de faces. Un intervalle de '
-                                    'contour correspond au même flux ; le détail près des encoches dépend du maillage.',
-                                    'Az contours reconstructed from face fluxes. Each contour interval represents '
-                                    'the same flux; detail near slots depends on the mesh.')],
-                               2: [('winding-b-map-app.png',
-                                    'Carte de |B| avec contours de flux et lecture ponctuelle du champ en teslas',
-                                    '|B| map with flux contours and point-value inspection in tesla',
-                                    'Carte de |B| et lecture du champ par clic. Les statistiques « Air Gap » '
-                                    'couvrent toutes les cellules de l’entrefer ; le tableau de validation '
-                                    'utilise une seule couronne commune aux deux modèles.',
-                                    '|B| map and point-value inspection. “Air Gap” statistics cover every '
-                                    'air-gap cell; the validation table uses one shared sampling ring '
-                                    'for both models.')]},
-               'paragraphs': [('Les captures proviennent de l’application, avec un même jeu de paramètres. Le modèle '
-                               'est une coupe 2D à perméabilités imposées ; la saturation n’est pas calculée. Une '
-                               'interpolation dans les cellules préserve leurs flux de faces intégrés. La '
-                               'comparaison FEMM ci-dessous contrôle le champ signé, sans constituer un essai '
-                               'sur machine physique.',
-                               'The captures come from the application using one parameter set. The model is a 2D '
-                               'cross-section with prescribed permeabilities; saturation is not calculated. '
-                               'Interpolation preserves integrated face fluxes. The FEMM comparison below checks '
-                               'the signed field, without constituting a physical machine test.')],
+               'title': ['Trois bobinages, deux animations de champ', 'Three windings, two field animations'],
+               'intro': ['Les trois études gardent les mêmes rayons, entrefer, hauteur d’encoche et longueur '
+                         'axiale, N = 204, I = 2,8 A crête et les mêmes perméabilités. Les pôles, les encoches '
+                         'et le pas changent ; chaque ouverture vaut la moitié du pas d’encoche. Cette '
+                         'comparaison n’isole donc pas l’effet du seul nombre de phases.',
+                         'The three studies retain the same radii, air gap, slot height and axial length, '
+                         'N = 204, I = 2.8 A peak and permeabilities. Poles, slots and span change; each '
+                         'slot opening is half its slot pitch. This comparison therefore does not isolate '
+                         'phase count alone.'],
+               'paragraphs': [],
+               'multiphase_study': True,
                'points': []},
               {'id': 'takeaway',
-               'title': ('Vérifier le champ avec FEMM', 'Check the field against FEMM'),
-               'intro': ('Un pic bien reproduit ne garantit pas une courbe correcte. L’audit du 12 novembre '
-                         '2026 compare les deux composantes signées du champ dans l’entrefer et documente '
-                         'l’effet du maillage.',
-                         'Matching a peak does not guarantee the right curve. The 12 November 2026 audit '
-                         'compares both signed air-gap field components and documents the effect of mesh resolution.'),
-               'paragraphs': [('La validation construit FEMM à partir du bobinage actif, des courants, de Wt, '
-                               'des dimensions, des perméabilités et de la longueur axiale. Le calcul tourne '
-                               'en arrière-plan ; les résultats apparaissent dans une fenêtre et FEMM reste '
-                               'ouvert sur la solution, avec légende |B|, contours de flux et lecture des valeurs '
-                               'par clic.',
-                               'Validation builds FEMM from the active winding, currents, Wt, dimensions, '
-                               'permeabilities and axial length. The solve runs in the background; a results '
-                               'window appears and FEMM remains open on the solution, with its |B| legend, flux '
-                               'contours and point-value inspection.'),
-                              ('Les corrections ont porté sur le signe des retours de bobine, le placement '
-                               'physique des sources, les réluctances radiales et la reconstruction de B sur '
-                               'les faces opposées. Ce travail relie programmation, conservation du flux et '
-                               'vérification numérique ; les écarts restants sont montrés au lieu d’être '
-                               'résumés par le seul maximum.',
-                               'Corrections addressed coil-return signs, physical source placement, radial '
-                               'reluctances and B reconstruction from opposite faces. This connects programming, '
-                               'flux conservation and numerical verification; remaining differences are shown '
-                               'alongside the maximum.')],
+               'title': ['Vérification, limites et crédits', 'Verification, limits and credits'],
+               'intro': ['Un résidu faible vérifie la résolution du système discret. La fidélité du champ '
+                         'demande aussi un raffinement et une référence indépendante. L’audit FEMM du 12 '
+                         'novembre 2026 reste présenté ci-dessous comme un résultat antérieur ; il ne valide '
+                         'pas automatiquement les nouveaux cas multiphasés.',
+                         'A small residual checks the discrete-system solve. Field accuracy also needs '
+                         'refinement and an independent reference. The 12 November 2026 FEMM audit remains '
+                         'below as earlier evidence; it does not automatically validate the new multiphase '
+                         'cases.'],
+               'paragraphs': [['La validation intégrée construit FEMM à partir du bobinage actif, des '
+                               'courants, de Wt, des dimensions, des perméabilités et de la longueur axiale. '
+                               'FEMM reste ouvert sur la solution pour inspecter |B|, les contours et les '
+                               'valeurs ponctuelles. Le modèle actuel ne calcule ni saturation, ni pertes '
+                               'fer et cuivre, ni couple mécanique, ni rendement.',
+                               'Integrated validation builds FEMM from the active winding, currents, Wt, '
+                               'dimensions, permeabilities and axial length. FEMM stays open on the solution '
+                               'for inspection of |B|, contours and point values. The current model does not '
+                               'calculate saturation, iron or copper losses, mechanical torque or '
+                               'efficiency.']],
                'validation': True,
-               'credits': [('L’article de Luigi Alberti, « Koil: A Tool to Design the Winding of Rotating '
-                            'Electric Machinery » (ICEM 2018), m’a aidé à comprendre l’algorithme de bobinage, '
-                            'notamment l’étoile des encoches et l’affectation des côtés de bobine aux phases.',
-                            'Luigi Alberti’s article, “Koil: A Tool to Design the Winding of Rotating '
-                            'Electric Machinery” (ICEM 2018), helped me understand the winding algorithm, '
-                            'particularly the star-of-slots method and the assignment of coil sides to phases.'),
-                           ('Des agents IA m’ont aidé à affiner l’application et à repérer et corriger des bugs.',
-                            'AI agents helped me refine the application and identify and fix bugs.')],
-               'references': [('Audit physique et commandes de reproduction', 'Physics audit and reproduction commands',
-                               'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program/blob/main/femm_validation/physics-audit.md'),
-                              ('Luigi Alberti · KOIL · ICEM 2018 · p. 805–811',
+               'credits': [['Le générateur intègre le module Python Koil du projet Dolomites de Luigi '
+                            'Alberti et des contributeurs, Université de Padoue, sous licence GPLv3. La '
+                            'version source est épinglée et sa licence ainsi que ses attributions sont '
+                            'conservées dans le dépôt. Les corrections de l’adaptateur sont documentées '
+                            'séparément.',
+                            'The generator includes the Python Koil module from Dolomites by Luigi Alberti '
+                            'and contributors, University of Padova, under GPLv3. Its source revision is '
+                            'pinned and its licence and attribution are retained in the repository. Adapter '
+                            'fixes are documented separately.'],
+                           ['Référence de méthode : Luigi Alberti, « Koil: A Tool to Design the Winding of '
+                            'Rotating Electric Machinery », ICEM 2018, p. 805–811, DOI '
+                            '10.1109/ICELMACH.2018.8507004. Le rapport signé LAGHA Khalil Ellah distingue le '
+                            'code d’origine, son adaptation et les résultats calculés.',
+                            'Method reference: Luigi Alberti, “Koil: A Tool to Design the Winding of '
+                            'Rotating Electric Machinery”, ICEM 2018, pp. 805–811, DOI '
+                            '10.1109/ICELMACH.2018.8507004. The report by LAGHA Khalil Ellah distinguishes '
+                            'the upstream code, its adaptation and computed results.'],
+                           ['Des agents IA m’ont aidé à affiner l’application, à corriger des bugs et à '
+                            'préparer les vérifications et les visualisations.',
+                            'AI agents helped me refine the application, fix bugs and prepare checks and '
+                            'visualisations.']],
+               'references': [['Dolomites / Koil · code d’origine GPLv3',
+                               'Dolomites / Koil · upstream GPLv3 code',
+                               'https://gitlab.com/LuigiAlberti/dolomites-python'],
+                              ['Luigi Alberti · KOIL · ICEM 2018 · p. 805–811',
                                'Luigi Alberti · KOIL · ICEM 2018 · pp. 805–811',
-                               'https://doi.org/10.1109/ICELMACH.2018.8507004')],
+                               'https://doi.org/10.1109/ICELMACH.2018.8507004'],
+                              ['Audit physique et reproduction · 12 novembre 2026',
+                               'Physics audit and reproduction · 12 November 2026',
+                               'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program/blob/main/femm_validation/physics-audit.md']],
                'points': []}],
- 'reports': None,
+ 'reports': ['../reports/winding-dolomites-multiphase-report.pdf',
+             '../reports/winding-dolomites-multiphase-report.pdf'],
+ 'report_label': ['Algorithme et trois études · PDF', 'Algorithm and three studies · PDF'],
+ 'report_download': 'LAGHA_Khalil_Ellah_Dolomites_Multiphase_Report.pdf',
  'repo': 'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program'},
     {'slug': 'dc-motor-cascade-control',
      'title': ('Commande en cascade d’un moteur à courant continu', 'Cascade control of a DC motor'),
@@ -1167,12 +1165,12 @@ IMAGE_SIZES = {
     "pemfc-bench.png": (1219, 829), "pemfc-holdout.png": (4380, 2460),
     "winding-flux-heatmap.png": (1152, 720), "winding-flux-lines.png": (1152, 720),
     "winding-mmf.png": (4644, 2070),
-    "winding-parameters-app.png": (1680, 1050),
-    "winding-machine-app.png": (1680, 1050),
-    "winding-mmf-app.png": (1680, 1050),
-    "winding-mesh-app.png": (1680, 1050),
+    "winding-parameters-app.png": (1440, 960),
+    "winding-machine-app.png": (1440, 960),
+    "winding-mmf-app.png": (1440, 960),
+    "winding-mesh-app.png": (1440, 960),
     "winding-flux-lines-app.png": (1680, 1050),
-    "winding-b-map-app.png": (1680, 1050),
+    "winding-b-map-app.png": (1440, 960),
     "winding-femm-convergence.png": (1500, 920),
     "winding-femm-profiles.png": (1600, 1040),
 
@@ -1417,6 +1415,117 @@ def winding_validation():
     )
 
 
+def winding_multiphase_study():
+    """Two accessible players share the bilingual copy instead of duplicating video."""
+    asset_root = Path(__file__).resolve().parent.parent / 'assets/projects'
+
+    def media_url(filename):
+        digest = sha256((asset_root / filename).read_bytes()).hexdigest()[:12]
+        return '../assets/projects/' + clean(filename) + '?v=' + digest
+
+    def player(stem, title, label, description):
+        source = media_url(stem + '.mp4')
+        poster = media_url(stem + '-poster.jpg')
+        return (
+            '<figure class="winding-video"><figcaption><h3>' + translated(title) + '</h3><p>'
+            + translated(description) + '</p></figcaption>'
+            + '<video controls playsinline loop preload="metadata" width="1280" height="720" '
+            + 'poster="' + poster + '" aria-label="' + clean(label[0]) + '" '
+            + 'data-label-fr="' + clean(label[0]) + '" data-label-en="' + clean(label[1]) + '">'
+            + '<source src="' + source + '" type="video/mp4">'
+            + translated(('Votre navigateur ne lit pas cette vidéo.', 'Your browser cannot play this video.'))
+            + '</video><a class="winding-video-download" href="' + source + '" download>'
+            + translated(('Télécharger la vidéo MP4', 'Download the MP4 video')) + '</a></figure>'
+        )
+
+    table = (
+        '<div class="winding-study-table-scroll"><table class="winding-study-table"><caption>'
+        + translated(('Trois cas du rapport · double couche', 'Three report studies · double layer'))
+        + '</caption><thead><tr><th>' + translated(('Phases', 'Phases'))
+        + '</th><th>' + translated(('Encoches', 'Slots')) + '</th><th>'
+        + translated(('Pôles totaux', 'Total poles')) + '</th><th>'
+        + translated(('Pas · encoches', 'Span · slots')) + '</th></tr></thead><tbody>'
+        + '<tr><th>3</th><td>36</td><td>4</td><td>9</td></tr>'
+        + '<tr><th>2</th><td>24</td><td>4</td><td>6</td></tr>'
+        + '<tr><th>5</th><td>45</td><td>8</td><td>11</td></tr>'
+        + '</tbody></table></div>'
+    )
+    default = player(
+        'winding-default-flux',
+        ('Cas par défaut : 3 phases · 36 encoches · 4 pôles · pas 9',
+         'Default: 3 phases · 36 slots · 4 poles · span 9'),
+        ('Animation du flux et de la densité magnétique du cas triphasé par défaut',
+         'Flux and magnetic-density animation of the default three-phase case'),
+        ('Le cycle électrique complet montre la rotation du champ dominant à quatre pôles. '
+         'Les contours représentent Az et les couleurs |B| en teslas ; les petites déformations '
+         'liées aux encoches et aux harmoniques restent visibles.',
+         'The full electrical cycle shows rotation of the dominant four-pole field. '
+         'Contours represent Az and colours show |B| in tesla; small slot- and harmonic-related '
+         'deformations remain visible.')
+    )
+    five_phase = player(
+        'winding-five-phase-flux',
+        ('Cas demandé : 5 phases · 45 encoches · 8 pôles · pas 11',
+         'Requested case: 5 phases · 45 slots · 8 poles · span 11'),
+        ('Animation du flux et de la densité magnétique : cinq phases, 45 encoches, huit pôles et pas 11',
+         'Flux and magnetic-density animation: five phases, 45 slots, eight poles and span 11'),
+        ('Les cinq courants sont équilibrés et décalés de 72°. Le champ se déforme sous la '
+         'superposition de plusieurs ordres spatiaux : l’aspect non uniforme ne correspond '
+         'donc pas à un déséquilibre des courants de phase.',
+         'The five currents are balanced and separated by 72°. Several spatial orders '
+         'superpose and deform the field: its nonuniform appearance therefore does not '
+         'mean the phase currents are unbalanced.')
+    )
+    finding = (
+        '<aside class="winding-study-finding"><h3>'
+        + translated(('Comment interpréter le cas à cinq phases ?', 'How should the five-phase case be read?'))
+        + '</h3><p>' + translated((
+            'Avec 8 pôles et 45 encoches, un pas de 11 correspond à 352° électriques. '
+            'Le facteur de pas du fondamental visé vaut seulement 0,06976 et le facteur de '
+            'bobinage environ 0,06863. Ce choix couple donc faiblement le courant au champ '
+            'utile à huit pôles. La FMM contient aussi une forte sous-harmonique à deux pôles '
+            'tournant en sens opposé, ce qui explique la coexistence de structures de champ '
+            'et la déformation des contours.',
+            'With 8 poles and 45 slots, an 11-slot span corresponds to 352° electrical. '
+            'The intended fundamental pitch factor is only 0.06976 and its winding factor '
+            'about 0.06863. This choice therefore couples current weakly to the useful '
+            'eight-pole field. MMF also contains a strong counter-rotating two-pole '
+            'subharmonic, explaining the coexistence of field structures and contour deformation.'
+        )) + '</p><p>' + translated((
+            'Pour une machine conçue pour huit pôles, cette répartition est défavorable à '
+            'l’utilisation du courant et peut entraîner des pertes harmoniques ou des '
+            'ondulations de couple supplémentaires. La vidéo ne mesure toutefois aucun '
+            'rendement : le modèle ne calcule ni les pertes ni le couple. Cette observation '
+            'concerne ce choix de bobinage et de pas, pas les machines à cinq phases en général.',
+            'For a machine intended to operate with eight poles, this distribution is '
+            'unfavourable to current utilisation and may cause additional harmonic losses '
+            'or torque ripple. The video does not measure efficiency: the model computes '
+            'neither losses nor torque. This observation concerns this winding and span, '
+            'rather than five-phase machines in general.'
+        )) + '</p><p class="winding-study-sources">'
+        + '<a href="https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program/blob/main/docs/multiphase-report/data/study-summary.json" target="_blank" rel="noopener">'
+        + translated(('Paramètres et résultats calculés', 'Computed parameters and results')) + '</a> · '
+        + '<a href="https://doi.org/10.3390/machines10050401" target="_blank" rel="noopener">'
+        + translated(('Harmoniques et pertes rotor · Brkovic et Jecmenica, 2022',
+                      'Harmonics and rotor losses · Brkovic and Jecmenica, 2022')) + '</a></p></aside>'
+    )
+    note = '<p class="winding-video-note">' + translated((
+        'Animations sans son, ralenties pour la lecture, sur un cycle électrique de 360°. '
+        'La légende de densité reste fixe dans chaque vidéo ; vérifier son échelle avant '
+        'de comparer les couleurs entre cas. Les courbes FMM, les cartes fixes et les '
+        'paramètres complets des trois études figurent dans le rapport.',
+        'Silent animations, slowed for inspection, covering a 360° electrical cycle. '
+        'The density legend stays fixed within each video; check its scale before '
+        'comparing colours between cases. MMF curves, static maps and full parameters '
+        'for all three studies are included in the report.'
+    )) + '</p>'
+    report = '<p class="winding-study-report"><a href="../reports/winding-dolomites-multiphase-report.pdf" target="_blank" rel="noopener">' + translated((
+        'Lire le rapport détaillé de LAGHA Khalil Ellah · PDF ↗',
+        'Read the detailed report by LAGHA Khalil Ellah · PDF ↗'
+    )) + '</a></p>'
+    return '<div class="winding-multiphase-study">' + table + default + five_phase + finding + note + report + '</div>'
+
+
 def render_chapter(chapter, number, page):
     paragraphs = ''.join(f'<p>{translated(p)}</p>' for p in chapter.get("paragraphs", []))
     flow = chapter.get('flow', [])
@@ -1447,6 +1556,7 @@ def render_chapter(chapter, number, page):
     ) if points else ''
     visual = figure(chapter["image"]) if chapter.get("image") else ''
     visual += ''.join(figure(spec) for spec in chapter.get('extra_images', []))
+    visual += winding_multiphase_study() if chapter.get('multiphase_study') else ''
     assets = artifact_links(page) if chapter["id"] == "takeaway" else ''
     validation = winding_validation() if chapter.get('validation') else ''
     credits = (
