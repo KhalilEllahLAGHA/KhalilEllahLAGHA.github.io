@@ -540,16 +540,19 @@ PAGES = [
                                'detailed description panel has been removed.'],
                               ['Le maillage lance automatiquement la préparation du champ en arrière-plan. '
                                'La vue s’ouvre en pause ; « Play / Pause » contrôle la lecture et « Restart » '
-                               'ramène Wt à zéro. Le panneau propose phases, pas de bobine et couches. '
-                               'Ces réglages se comparent au même Wt en réutilisant la réponse préparée de '
-                               'la machine ; saisir Wt permet d’inspecter un instant précis. '
+                               'ramène Wt à zéro. Les paramètres de bobinage restent dans leur onglet ; '
+                               'saisir Wt permet d’inspecter un instant précis. « Save video » enregistre '
+                               'deux tours électriques de 360° : 720 images à 1° par image et 16 ms par image, '
+                               'soit 11,52 secondes. Géométrie et maillage utilisent le même tracé, sans '
+                               'barre d’outils ; le maillage affiché est conservé quand on revient à sa page. '
                                'Le mode d’affichage, le nombre de contours et la case « Show arrows » '
                                'se règlent sur le champ déjà calculé.',
                                'Meshing automatically starts field preparation in the background. '
                                'The view opens paused. Play / Pause controls playback and Restart resets Wt '
-                               'to zero. The panel includes phases, coil span and layers. These settings '
-                               'can be compared at the same Wt using the prepared machine response; '
-                               'entering Wt pauses the view for inspection. '
+                               'to zero. Winding settings remain in their own tab; entering Wt pauses the '
+                               'view for inspection. Save video records two 360° electrical cycles: 720 frames '
+                               'at 1° per frame and 16 ms per frame, lasting 11.52 seconds. Geometry and Mesh '
+                               'share a toolbar-free plot, and returning to Mesh keeps its existing view. '
                                'Display mode, contour count and the Show arrows checkbox use '
                                'the field that is already calculated.'],
                               ['Le nombre de phases se règle de 1 à 26. Les contrôles utilisent les pôles '
@@ -652,11 +655,11 @@ PAGES = [
                                     'The default medium mesh contains 8,640 cells. Fractional angles retain '
                                     'precision to avoid excessive refinement caused by rounding.']],
                                4: [['winding-animation-app.png',
-                                    'Animation du champ avec phases, pas, couches, Wt et Restart',
-                                    'Field animation with phases, span, layers, Wt and Restart',
-                                    'Le panneau permet de comparer phases, pas et couches au même Wt, puis '
-                                    'de revenir à zéro. La case Show arrows affiche le sens du flux.',
-                                    'The panel lets you compare phases, spans and layers at the same Wt, then return to zero. '
+                                    'Animation du champ avec Wt, Restart et sauvegarde vidéo',
+                                    'Field animation with Wt, Restart and video export',
+                                    'Le panneau permet de choisir Wt, de revenir à zéro et d’enregistrer deux '
+                                    'tours complets. La case Show arrows affiche le sens du flux.',
+                                    'The panel lets you select Wt, return to zero and save two complete cycles. '
                                     'Show arrows displays the flux direction.']]},
                'paragraphs': [],
                'points': []},
