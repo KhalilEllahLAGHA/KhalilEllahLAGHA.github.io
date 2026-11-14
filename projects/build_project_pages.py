@@ -539,12 +539,12 @@ PAGES = [
                                'geometry, mesh and animation. Hiding the settings expands the results; the '
                                'detailed description panel has been removed.'],
                               ['Le maillage lance automatiquement la préparation du champ en arrière-plan. '
-                               'L’étape « Field animation » ouvre directement la vue animée ; « Play » lance '
-                               'la lecture. Le mode d’affichage, le nombre de contours et la case « Show arrows » '
+                               'La vue s’ouvre en pause ; un seul bouton « Play / Pause » contrôle la lecture. '
+                               'Le mode d’affichage, le nombre de contours et la case « Show arrows » '
                                'se règlent sur le champ déjà calculé.',
                                'Meshing automatically starts field preparation in the background. '
-                               'The Field animation stage opens the animation view directly; Play starts '
-                               'playback. Display mode, contour count and the Show arrows checkbox use '
+                               'The view opens paused, with one Play / Pause button controlling playback. '
+                               'Display mode, contour count and the Show arrows checkbox use '
                                'the field that is already calculated.'],
                               ['Le nombre de phases se règle de 1 à 26. Les contrôles utilisent les pôles '
                                'totaux et le pas en encoches. La matrice conserve explicitement le nombre de '
