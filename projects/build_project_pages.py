@@ -502,11 +502,11 @@ PAGES = [
  'title': ['Bobinage et analyse de flux', 'Winding and flux analysis'],
  'eyebrow': ['03 / Conception de machines', '03 / Machine design'],
  'summary': ['Une application Python/PyQt6 pour dessiner un bobinage, calculer sa force magnétomotrice '
-             'et observer le champ magnétique. Les flèches sur les lignes de flux indiquent le sens du '
-             'champ et permettent de repérer les polarités.',
+             'et animer le champ magnétique. Après le maillage, le champ se prépare automatiquement : '
+             'il suffit de lancer la lecture. Les flèches indiquent le sens du flux et les polarités.',
              'A Python/PyQt6 application for drawing a winding, calculating its magnetomotive force '
-             'and viewing the magnetic field. Arrows on the flux lines show field direction and help '
-             'identify pole polarity.'],
+             'and animating the magnetic field. The field prepares automatically after meshing: '
+             'press Play to view it. Arrows show flux direction and pole polarity.'],
  'stylesheet': 'winding.css',
  'chapter_labels': {'takeaway': ['Vérification', 'Checks']},
  'scope': ['Projet d’équipe · Python / PyQt6 / FEMM', 'Team project · Python / PyQt6 / FEMM'],
@@ -531,13 +531,21 @@ PAGES = [
                          'coil spans.'],
                'paragraphs': [['L’application a été migrée vers PyQt6 avec un thème sombre noir/gris, du '
                                'texte clair et des accents de couleur pour les actions et les phases. Cinq '
-                               'étapes relient bobinage, FMM, géométrie, maillage et champ. Le bouton de '
+                               'étapes relient bobinage, FMM, géométrie, maillage et animation. Le bouton de '
                                'masquage des réglages agrandit les résultats ; le panneau de description '
                                'détaillée a été supprimé.',
                                'The application now uses PyQt6, a dark black/grey theme, light text and '
                                'coloured action and phase accents. Five stages connect winding, MMF, '
-                               'geometry, mesh and field. Hiding the settings expands the results; the '
+                               'geometry, mesh and animation. Hiding the settings expands the results; the '
                                'detailed description panel has been removed.'],
+                              ['Le maillage lance automatiquement la préparation du champ en arrière-plan. '
+                               'L’étape « Field animation » ouvre directement la vue animée ; « Play » lance '
+                               'la lecture. Le mode d’affichage, le nombre de contours et la case « Show arrows » '
+                               'se règlent sur le champ déjà calculé.',
+                               'Meshing automatically starts field preparation in the background. '
+                               'The Field animation stage opens the animation view directly; Play starts '
+                               'playback. Display mode, contour count and the Show arrows checkbox use '
+                               'the field that is already calculated.'],
                               ['Le nombre de phases se règle de 1 à 26. Les contrôles utilisent les pôles '
                                'totaux et le pas en encoches. La matrice conserve explicitement le nombre de '
                                'phases et les couches : une matrice de six lignes peut ainsi représenter six '
@@ -590,36 +598,38 @@ PAGES = [
                          '360°/m spacing for odd m and 180°/m for even m. Cumulative slot ampere-turns give '
                          'tooth MMF, with linear transitions across slots. The application assigns I/2 to '
                          'each layer in double-layer mode, with I entered as a peak value.'],
-                        ['Résoudre le réseau de réluctances',
-                         'Solve the reluctance network',
+                        ['Préparer le champ en arrière-plan',
+                         'Prepare the field in the background',
                          'Le maillage polaire donne les chemins radiaux et angulaires. Le système creux Ax = '
                          'b exprime la conservation du flux et fixe un potentiel de référence. Une '
                          'factorisation LU réutilisée accélère les réseaux jusqu’à 100 000 cellules ; le '
                          'gradient conjugué préconditionné reste disponible au-delà ou en repli. Le résidu '
-                         'du système complet est contrôlé avant d’accepter une solution.',
+                         'du système complet est contrôlé avant d’accepter une solution. La préparation '
+                         'démarre après le maillage et se relance si les courants ou les matériaux changent.',
                          'The polar mesh defines radial and angular paths. Sparse Ax = b expresses flux '
                          'conservation and fixes one reference potential. Reused LU factorisation '
                          'accelerates networks up to 100,000 cells; preconditioned conjugate gradients '
                          'remain available for larger systems or as fallback. The full-system residual is '
-                         'checked before accepting a solution.'],
-                        ['Afficher et animer le champ',
-                         'Display and animate the field',
+                         'checked before accepting a solution. Preparation starts after meshing and '
+                         'runs again when currents or materials change.'],
+                        ['Lancer l’animation et lire les polarités',
+                         'Play the animation and read the polarities',
                          'Les flux signés donnent Br et Bθ, puis |B| en teslas. Les lignes sont des contours '
                          'équidistants du potentiel vecteur Az reconstruit à partir des flux de faces. '
                          'Les flèches suivent B : dans l’entrefer, le champ sort d’un pôle nord et entre '
                          'dans un pôle sud. Dans '
                          'ce modèle linéaire à perméabilités fixes, deux solutions signées à 0° et 90° '
-                         'électriques suffisent pour reconstruire tout le cycle ; la préparation tourne en '
-                         'arrière-plan et les limites de couleur restent fixes pendant chaque animation. Ces '
-                         'deux états de base contiennent la contribution de toutes les phases : leur nombre '
-                         'ne désigne pas le nombre de phases électriques.',
+                         'électriques suffisent pour reconstruire tout le cycle. Ces solutions servent aussi '
+                         'aux statistiques, à l’export et à la comparaison FEMM. La lecture et les réglages '
+                         'd’affichage réutilisent le champ préparé, avec une échelle de couleur fixe. '
+                         'Chaque état de base contient la contribution de toutes les phases.',
                          'Signed fluxes give Br and Bθ, then |B| in tesla. Lines are equally spaced contours '
                          'of vector potential Az reconstructed from face fluxes. Arrows follow B: in the '
                          'air gap, the field leaves a north pole and enters a south pole. In this fixed-permeability '
                          'linear model, two signed solutions at 0° and 90° electrical reconstruct the full '
-                         'cycle; preparation runs in the background and colour limits remain fixed '
-                         'throughout each animation. Both basis states contain every phase contribution: '
-                         'their number does not denote the number of electrical phases.']],
+                         'cycle. These solutions also supply statistics, export and FEMM comparison. '
+                         'Playback and display settings reuse the prepared field, with a fixed colour scale. '
+                         'Each basis state contains every phase contribution.']],
                'flow_images': {2: [['winding-mmf-app.png',
                                     'Courbes FMM des phases et de leur résultante dans l’application PyQt6',
                                     'Phase and resultant MMF curves in the PyQt6 application',
@@ -634,7 +644,14 @@ PAGES = [
                                     'Les angles fractionnaires sont conservés pour éviter un raffinement '
                                     'excessif dû aux arrondis.',
                                     'The default medium mesh contains 8,640 cells. Fractional angles retain '
-                                    'precision to avoid excessive refinement caused by rounding.']]},
+                                    'precision to avoid excessive refinement caused by rounding.']],
+                               4: [['winding-animation-app.png',
+                                    'Vue d’animation du champ avec Play et la case Show arrows',
+                                    'Field animation view with Play and the Show arrows checkbox',
+                                    'Après le maillage, le champ est prêt pour la lecture. La case Show arrows '
+                                    'affiche le sens du flux.',
+                                    'After meshing, the field is ready for playback. Show arrows displays '
+                                    'the flux direction.']]},
                'paragraphs': [],
                'points': []},
               {'id': 'evidence',
@@ -1151,6 +1168,7 @@ IMAGE_SIZES = {
     "winding-machine-app.png": (1440, 960),
     "winding-mmf-app.png": (1440, 960),
     "winding-mesh-app.png": (1440, 960),
+    "winding-animation-app.png": (1200, 760),
     "winding-flux-lines-app.png": (1680, 1050),
     "winding-b-map-app.png": (1440, 960),
     "winding-femm-convergence.png": (1500, 920),
