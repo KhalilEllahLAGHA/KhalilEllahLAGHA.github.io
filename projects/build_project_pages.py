@@ -539,11 +539,17 @@ PAGES = [
                                'geometry, mesh and animation. Hiding the settings expands the results; the '
                                'detailed description panel has been removed.'],
                               ['Le maillage lance automatiquement la préparation du champ en arrière-plan. '
-                               'La vue s’ouvre en pause ; un seul bouton « Play / Pause » contrôle la lecture. '
+                               'La vue s’ouvre en pause ; « Play / Pause » contrôle la lecture et « Restart » '
+                               'ramène Wt à zéro. Le panneau propose phases, pas de bobine et couches. '
+                               'Ces réglages se comparent au même Wt en réutilisant la réponse préparée de '
+                               'la machine ; saisir Wt permet d’inspecter un instant précis. '
                                'Le mode d’affichage, le nombre de contours et la case « Show arrows » '
                                'se règlent sur le champ déjà calculé.',
                                'Meshing automatically starts field preparation in the background. '
-                               'The view opens paused, with one Play / Pause button controlling playback. '
+                               'The view opens paused. Play / Pause controls playback and Restart resets Wt '
+                               'to zero. The panel includes phases, coil span and layers. These settings '
+                               'can be compared at the same Wt using the prepared machine response; '
+                               'entering Wt pauses the view for inspection. '
                                'Display mode, contour count and the Show arrows checkbox use '
                                'the field that is already calculated.'],
                               ['Le nombre de phases se règle de 1 à 26. Les contrôles utilisent les pôles '
@@ -646,12 +652,12 @@ PAGES = [
                                     'The default medium mesh contains 8,640 cells. Fractional angles retain '
                                     'precision to avoid excessive refinement caused by rounding.']],
                                4: [['winding-animation-app.png',
-                                    'Vue d’animation du champ avec Play et la case Show arrows',
-                                    'Field animation view with Play and the Show arrows checkbox',
-                                    'Après le maillage, le champ est prêt pour la lecture. La case Show arrows '
-                                    'affiche le sens du flux.',
-                                    'After meshing, the field is ready for playback. Show arrows displays '
-                                    'the flux direction.']]},
+                                    'Animation du champ avec phases, pas, couches, Wt et Restart',
+                                    'Field animation with phases, span, layers, Wt and Restart',
+                                    'Le panneau permet de comparer phases, pas et couches au même Wt, puis '
+                                    'de revenir à zéro. La case Show arrows affiche le sens du flux.',
+                                    'The panel lets you compare phases, spans and layers at the same Wt, then return to zero. '
+                                    'Show arrows displays the flux direction.']]},
                'paragraphs': [],
                'points': []},
               {'id': 'evidence',
