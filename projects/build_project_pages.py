@@ -501,13 +501,12 @@ PAGES = [
 {'slug': 'winding-flux-analysis',
  'title': ['Bobinage et analyse de flux', 'Winding and flux analysis'],
  'eyebrow': ['03 / Conception de machines', '03 / Machine design'],
- 'summary': ['Du bobinage multiphasé au champ magnétique : notre application Python/PyQt6 relie les '
-             'connexions des bobines, la force magnétomotrice et un réseau de réluctances. Deux vidéos '
-             'affichent les courants de chaque phase et le champ calculé ; un rapport technique en français '
-             'détaille les algorithmes et trois études.',
-             'From multiphase winding to magnetic field: our Python/PyQt6 application connects coil layouts, '
-             'magnetomotive force and a reluctance network. Two videos show each phase current alongside the '
-             'solved field; a French technical report details the algorithms and three studies.'],
+ 'summary': ['Une application Python/PyQt6 pour dessiner un bobinage, calculer sa force magnétomotrice '
+             'et observer le champ magnétique. Les flèches sur les lignes de flux indiquent le sens du '
+             'champ et permettent de repérer les polarités.',
+             'A Python/PyQt6 application for drawing a winding, calculating its magnetomotive force '
+             'and viewing the magnetic field. Arrows on the flux lines show field direction and help '
+             'identify pole polarity.'],
  'stylesheet': 'winding.css',
  'chapter_labels': {'takeaway': ['Vérification', 'Checks']},
  'scope': ['Projet d’équipe · Python / PyQt6 / FEMM', 'Team project · Python / PyQt6 / FEMM'],
@@ -547,12 +546,10 @@ PAGES = [
                                'span in slots. The matrix retains explicit phase and layer metadata: six '
                                'rows can therefore represent six-phase single-layer or three-phase '
                                'double-layer windings without ambiguity.'],
-                              ['Le projet reste un travail d’équipe, avec ce rapport et cette mise à jour '
-                               'présentés par LAGHA Khalil Ellah. Les figures sont des résultats de '
+                              ['Le projet reste un travail d’équipe. Les figures sont des résultats de '
                                'simulation, à perméabilités imposées, et non des mesures sur une machine '
                                'physique.',
-                               'This remains a team project, with this report and update presented by LAGHA '
-                               'Khalil Ellah. Figures are simulation results with prescribed permeabilities, '
+                               'This remains a team project. Figures are simulation results with prescribed permeabilities, '
                                'rather than measurements on a physical machine.']],
                'points': [],
                'image': ['winding-machine-app.png',
@@ -566,22 +563,22 @@ PAGES = [
                          'The method: from star of slots to field'],
                'intro': ['La construction repose sur l’étoile des encoches et des connexions physiques de '
                          'bobines. Une même matrice de conducteurs alimente le dessin, la FMM, le solveur, '
-                         'l’animation et l’export FEMM. Les sources de la méthode et du code sont citées '
-                         'dans les références.',
+                         'l’animation et l’export FEMM. Le générateur est implémenté directement dans '
+                         'l’application.',
                          'Construction uses the star of slots and physical coil connections. One conductor '
-                         'matrix drives the drawing, MMF, solver, animation and FEMM export. Method and code '
-                         'sources are acknowledged in the references.'],
+                         'matrix drives the drawing, MMF, solver, animation and FEMM export. The generator '
+                         'is implemented directly in the application.'],
                'flow': [['Construire la matrice du bobinage',
                          'Build the winding matrix',
                          'Les positions des encoches deviennent des angles électriques dans l’étoile des '
                          'encoches. Des secteurs positifs et négatifs affectent chaque côté à une phase ; le '
-                         'retour est placé au pas choisi avec le signe opposé. L’adaptateur corrige les '
-                         'secteurs traversant 0° et les frontières numériques, puis contrôle le remplissage, '
+                         'retour est placé au pas choisi avec le signe opposé. Le calcul utilise des '
+                         'positions entières pour traiter exactement les frontières des secteurs, puis contrôle le remplissage, '
                          'les retours et l’équilibre des axes de phase.',
                          'Slot positions become electrical angles in the star of slots. Positive and '
                          'negative sectors assign each side to a phase; the return is placed at the selected '
-                         'span with opposite sign. The adapter fixes sectors crossing 0° and numerical '
-                         'boundaries, then checks occupancy, returns and phase-axis balance.'],
+                         'span with opposite sign. Integer positions handle sector boundaries exactly; '
+                         'the generator then checks occupancy, returns and phase-axis balance.'],
                         ['Calculer les ampères-tours et la FMM',
                          'Calculate ampere-turns and MMF',
                          'Les courants sinusoïdaux multiplient les lignes signées de la matrice. La '
@@ -608,14 +605,17 @@ PAGES = [
                         ['Afficher et animer le champ',
                          'Display and animate the field',
                          'Les flux signés donnent Br et Bθ, puis |B| en teslas. Les lignes sont des contours '
-                         'équidistants du potentiel vecteur Az reconstruit à partir des flux de faces. Dans '
+                         'équidistants du potentiel vecteur Az reconstruit à partir des flux de faces. '
+                         'Les flèches suivent B : dans l’entrefer, le champ sort d’un pôle nord et entre '
+                         'dans un pôle sud. Dans '
                          'ce modèle linéaire à perméabilités fixes, deux solutions signées à 0° et 90° '
                          'électriques suffisent pour reconstruire tout le cycle ; la préparation tourne en '
                          'arrière-plan et les limites de couleur restent fixes pendant chaque animation. Ces '
                          'deux états de base contiennent la contribution de toutes les phases : leur nombre '
                          'ne désigne pas le nombre de phases électriques.',
                          'Signed fluxes give Br and Bθ, then |B| in tesla. Lines are equally spaced contours '
-                         'of vector potential Az reconstructed from face fluxes. In this fixed-permeability '
+                         'of vector potential Az reconstructed from face fluxes. Arrows follow B: in the '
+                         'air gap, the field leaves a north pole and enters a south pole. In this fixed-permeability '
                          'linear model, two signed solutions at 0° and 90° electrical reconstruct the full '
                          'cycle; preparation runs in the background and colour limits remain fixed '
                          'throughout each animation. Both basis states contain every phase contribution: '
@@ -635,16 +635,7 @@ PAGES = [
                                     'excessif dû aux arrondis.',
                                     'The default medium mesh contains 8,640 cells. Fractional angles retain '
                                     'precision to avoid excessive refinement caused by rounding.']]},
-               'paragraphs': [['Le rapport technique est rédigé en français et organisé en algorithmes : '
-                               'entrées, sorties, étapes logiques, équations et contrôles. Une première '
-                               'partie présente la démarche sans exemple numérique. Trois études détaillent '
-                               'ensuite les bobinages triphasé, diphasé et pentaphasé avec leurs FMM, lignes '
-                               'de flux et cartes de densité.',
-                               'The technical report is written in French and organised into algorithms: '
-                               'inputs, outputs, logical steps, equations and checks. The first part '
-                               'presents the method without numerical examples. Three studies then examine '
-                               'three-, two- and five-phase windings with their MMFs, flux contours and '
-                               'density maps.']],
+               'paragraphs': [],
                'points': []},
               {'id': 'evidence',
                'title': ['Trois bobinages, deux animations de champ', 'Three windings, two field animations'],
@@ -680,43 +671,21 @@ PAGES = [
                                'calculate saturation, iron or copper losses, mechanical torque or '
                                'efficiency.']],
                'validation': True,
-               'credits': [['Le générateur intègre le module Python Koil du projet Dolomites de Luigi '
-                            'Alberti et des contributeurs, Université de Padoue, sous licence GPLv3. La '
-                            'version source est épinglée et sa licence ainsi que ses attributions sont '
-                            'conservées dans le dépôt. Les corrections de l’adaptateur sont documentées '
-                            'séparément.',
-                            'The generator includes the Python Koil module from Dolomites by Luigi Alberti '
-                            'and contributors, University of Padova, under GPLv3. Its source revision is '
-                            'pinned and its licence and attribution are retained in the repository. Adapter '
-                            'fixes are documented separately.'],
-                           ['Référence de méthode : Luigi Alberti, « Koil: A Tool to Design the Winding of '
-                            'Rotating Electric Machinery », ICEM 2018, p. 805–811, DOI '
-                            '10.1109/ICELMACH.2018.8507004. Le rapport signé LAGHA Khalil Ellah distingue le '
-                            'code d’origine, son adaptation et les résultats calculés.',
-                            'Method reference: Luigi Alberti, “Koil: A Tool to Design the Winding of '
-                            'Rotating Electric Machinery”, ICEM 2018, pp. 805–811, DOI '
-                            '10.1109/ICELMACH.2018.8507004. The report by LAGHA Khalil Ellah distinguishes '
-                            'the upstream code, its adaptation and computed results.'],
-                           ['Des agents IA m’ont aidé à affiner l’application, à corriger des bugs et à '
-                            'préparer les vérifications et les visualisations.',
-                            'AI agents helped me refine the application, fix bugs and prepare checks and '
-                            'visualisations.']],
-               'references': [['Dolomites / Koil · code d’origine GPLv3',
-                               'Dolomites / Koil · upstream GPLv3 code',
+               'credits': [['Crédit pour la méthode de bobinage : Dolomites et l’article de Luigi Alberti, '
+                            '« Koil: A Tool to Design the Winding of Rotating Electric Machinery », ICEM 2018. '
+                            'L’application utilise sa propre implémentation.',
+                            'Winding-method credit: Dolomites and Luigi Alberti’s article, '
+                            '“Koil: A Tool to Design the Winding of Rotating Electric Machinery”, ICEM 2018. '
+                            'The application uses its own implementation.']],
+               'references': [['Dolomites · méthode de bobinage',
+                               'Dolomites · winding method',
                                'https://gitlab.com/LuigiAlberti/dolomites-python'],
                               ['Luigi Alberti · KOIL · ICEM 2018 · p. 805–811',
                                'Luigi Alberti · KOIL · ICEM 2018 · pp. 805–811',
-                               'https://doi.org/10.1109/ICELMACH.2018.8507004'],
-                              ['Audit physique et reproduction · 12 novembre 2026',
-                               'Physics audit and reproduction · 12 November 2026',
-                               '../reports/winding-physics-audit.md'],
-                              ['Sources des études · version archivée',
-                               'Study sources · archived version',
-                               'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program/tree/86e99d79fe6bf0b75a77949e4ae087b700d98f6d']],
+                               'https://doi.org/10.1109/ICELMACH.2018.8507004']],
                'points': []}],
- 'reports': ['../reports/rapport-bobinages-multiphases.pdf', '../reports/rapport-bobinages-multiphases.pdf'],
- 'report_label': ['Rapport technique en français · PDF', 'French technical report · PDF'],
- 'report_download': 'LAGHA_Khalil_Ellah_Bobinages_Multiphases.pdf',
+ 'reports': None,
+ 'source_download': 'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program/archive/refs/heads/main.zip',
  'repo': 'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program'},
     {'slug': 'dc-motor-cascade-control',
      'title': ('Commande en cascade d’un moteur à courant continu', 'Cascade control of a DC motor'),
@@ -1234,6 +1203,9 @@ def figure(spec, *, hero=False):
 
 def artifact_links(page):
     links = []
+    if page.get("source_download"):
+        links.append(f'<a href="{clean(page["source_download"])}">'
+                     + translated(('Télécharger le code source · ZIP', 'Download the source code · ZIP')) + '</a>')
     if page.get("reports"):
         fr, en = page["reports"]
         download = f' download="{clean(page["report_download"])}"' if page.get("report_download") else ''
@@ -1420,11 +1392,7 @@ def winding_validation():
                   'Point-by-point comparison of signed Br and Bθ curves from the network and FEMM',
                   'Les courbes signées révèlent les différences locales que la comparaison des pics ne voit pas.',
                   'Signed curves reveal local differences that a peak comparison does not show.'))
-        + '<p class="winding-limit">' + translated(limits) + '</p>'
-        '<div class="artifact-row"><a href="../assets/projects/winding-femm-validation.json" '
-        'download="winding-femm-validation.json">'
-        + translated(('Télécharger les résultats et réglages · JSON', 'Download results and settings · JSON'))
-        + '</a></div></div>'
+        + '<p class="winding-limit">' + translated(limits) + '</p></div>'
     )
 
 
@@ -1453,7 +1421,7 @@ def winding_multiphase_study():
 
     table = (
         '<div class="winding-study-table-scroll"><table class="winding-study-table"><caption>'
-        + translated(('Trois cas du rapport · double couche', 'Three report studies · double layer'))
+        + translated(('Trois bobinages · double couche', 'Three windings · double layer'))
         + '</caption><thead><tr><th>' + translated(('Phases', 'Phases'))
         + '</th><th>' + translated(('Encoches', 'Slots')) + '</th><th>'
         + translated(('Pôles totaux', 'Total poles')) + '</th><th>'
@@ -1518,28 +1486,17 @@ def winding_multiphase_study():
             'to the machine and its operating conditions. This prescribed-permeability '
             'simulation does not compute losses, torque or efficiency, so the video '
             'is not an efficiency measurement.'
-        )) + '</p><p class="winding-study-sources">'
-        + '<a href="../assets/projects/winding-study-data.json" target="_blank" rel="noopener">'
-        + translated(('Paramètres et résultats calculés', 'Computed parameters and results')) + '</a> · '
-        + '<a href="https://doi.org/10.3390/machines10050401" target="_blank" rel="noopener">'
-        + translated(('Harmoniques et pertes rotor · Brkovic et Jecmenica, 2022',
-                      'Harmonics and rotor losses · Brkovic and Jecmenica, 2022')) + '</a></p></aside>'
+        )) + '</p></aside>'
     )
     note = '<p class="winding-video-note">' + translated((
         'Animations sans son, ralenties pour la lecture, sur un cycle électrique de 360°. '
         'La légende de densité reste fixe dans chaque vidéo ; vérifier son échelle avant '
-        'de comparer les couleurs entre cas. Les courbes FMM, les cartes fixes et les '
-        'paramètres complets des trois études figurent dans le rapport.',
+        'de comparer les couleurs entre cas.',
         'Silent animations, slowed for inspection, covering a 360° electrical cycle. '
         'The density legend stays fixed within each video; check its scale before '
-        'comparing colours between cases. MMF curves, static maps and full parameters '
-        'for all three studies are included in the report.'
+        'comparing colours between cases.'
     )) + '</p>'
-    report = '<p class="winding-study-report"><a href="../reports/rapport-bobinages-multiphases.pdf" target="_blank" rel="noopener">' + translated((
-        'Lire le rapport technique en français de LAGHA Khalil Ellah · PDF ↗',
-        'Read the French technical report by LAGHA Khalil Ellah · PDF ↗'
-    )) + '</a></p>'
-    return '<div class="winding-multiphase-study" id="flux-videos">' + table + default + five_phase + finding + note + report + '</div>'
+    return '<div class="winding-multiphase-study" id="flux-videos">' + table + default + five_phase + finding + note + '</div>'
 
 
 def render_chapter(chapter, number, page):
@@ -1619,6 +1576,8 @@ def render(page, next_page):
             f'href="{clean(fr)}" target="_blank" rel="noopener"{download}>'
             + translated(page.get("report_label", ("Rapport PDF ↗", "PDF report ↗"))) + '</a>'
         )
+    elif page.get("source_download"):
+        report_action = '<a class="button ghost" href="' + clean(page["source_download"]) + '">' + translated(('Code source · ZIP ↓', 'Source code · ZIP ↓')) + '</a>'
     elif page.get("extra_reports"):
         report_action = '<a class="button ghost" href="#takeaway">' + translated(("Voir les rapports ↓", "See the reports ↓")) + '</a>'
     elif page.get("repo"):
