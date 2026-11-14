@@ -709,7 +709,10 @@ PAGES = [
                                'https://doi.org/10.1109/ICELMACH.2018.8507004'],
                               ['Audit physique et reproduction · 12 novembre 2026',
                                'Physics audit and reproduction · 12 November 2026',
-                               'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program/blob/main/femm_validation/physics-audit.md']],
+                               '../reports/winding-physics-audit.md'],
+                              ['Sources des études · version archivée',
+                               'Study sources · archived version',
+                               'https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program/tree/86e99d79fe6bf0b75a77949e4ae087b700d98f6d']],
                'points': []}],
  'reports': ['../reports/rapport-bobinages-multiphases.pdf', '../reports/rapport-bobinages-multiphases.pdf'],
  'report_label': ['Rapport technique en français · PDF', 'French technical report · PDF'],
@@ -1516,7 +1519,7 @@ def winding_multiphase_study():
             'simulation does not compute losses, torque or efficiency, so the video '
             'is not an efficiency measurement.'
         )) + '</p><p class="winding-study-sources">'
-        + '<a href="https://github.com/KhalilEllahLAGHA/Winding-and-flux-analysis-program/blob/main/docs/multiphase-report/data/study-summary.json" target="_blank" rel="noopener">'
+        + '<a href="../assets/projects/winding-study-data.json" target="_blank" rel="noopener">'
         + translated(('Paramètres et résultats calculés', 'Computed parameters and results')) + '</a> · '
         + '<a href="https://doi.org/10.3390/machines10050401" target="_blank" rel="noopener">'
         + translated(('Harmoniques et pertes rotor · Brkovic et Jecmenica, 2022',
