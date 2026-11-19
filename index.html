@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap">
-  <link rel="stylesheet" href="css/style.css?v=05fef05e9916">
+  <link rel="stylesheet" href="css/style.css?v=dd1272721e9a">
   <script>
     (function () {
       try {
@@ -35,7 +35,9 @@
       } catch (e) { }
     })();
   </script>
-  <script src="js/main.js?v=c05755c2ef73" defer></script>
+  <link rel="stylesheet" href="css/project-views.css?v=9ebfe6e97434">
+  <script src="js/project-views.js?v=2428cd0abaf2" defer></script>
+  <script src="js/main.js?v=4e4167ebe4ba" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -100,41 +102,28 @@
   <main id="main">
     <!-- ============ HERO ============ -->
     <section id="accueil" class="hero">
-      <div class="hero-grid" aria-hidden="true"></div>
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="hero-kicker reveal"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="hero.kicker">Stage de fin d’études dès mi-mars 2027</span></p>
-          <h1 class="reveal"><span data-i18n="person.name">Lagha Khalil</span></h1>
-          <p class="hero-heading reveal"><span class="hero-line" data-i18n="hero.line1">Comprendre.</span><span class="hero-line" data-i18n="hero.line2">Modéliser.</span><span class="hero-line accent" data-i18n="hero.line3">Piloter l’énergie.</span></p>
-          <p class="tagline reveal" data-i18n="hero.tagline">Étudiant en M2 CSEE à l’Université Grenoble Alpes.</p>
-          <p class="subline reveal" data-i18n="hero.subline">De l’électronique de puissance à la commande des machines : je relie modèles, simulations et essais pour comprendre les systèmes d’énergie électrique.</p>
-          <div class="cta-row reveal">
-            <a class="btn btn-primary" href="#projets"><span data-i18n="cta.projects">Découvrir mes projets</span><span aria-hidden="true">↘</span></a>
-            <a class="btn btn-ghost js-cv-design" href="cv/CV_Lagha_Khalil_CSEE_FR.pdf" target="_blank" rel="noopener"><span data-i18n="cta.cv">Voir mon CV</span><span aria-hidden="true">↗</span></a>
+          <div class="hero-identity">
+            <img src="assets/portrait-2026-09-30.webp" width="640" height="800" alt="Portrait de Lagha Khalil" data-fr-alt="Portrait de Lagha Khalil" data-en-alt="Portrait of Khalil Lagha">
+            <div><h1 data-i18n="person.name">Lagha Khalil</h1><p>M2 CSEE · Université Grenoble Alpes</p></div>
           </div>
-          <div class="hero-links reveal">
-            <a href="mailto:laghakhalil.c@gmail.com" data-i18n="cta.contact">Me contacter</a>
-            <a href="https://www.linkedin.com/in/khalil-ellah-lagha" target="_blank" rel="noopener">LinkedIn ↗</a>
-            <a href="https://github.com/KhalilEllahLAGHA" target="_blank" rel="noopener">GitHub ↗</a>
+          <p class="hero-heading"><span class="hero-line" data-i18n="focus.power">Électronique de puissance</span><em class="hero-line" data-i18n="focus.control">et commande.</em></p>
+          <p class="subline" data-i18n="focus.intro">Je travaille sur les convertisseurs, les machines et les réseaux électriques, du schéma de commande aux courbes de simulation et aux mesures au banc.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projets" data-i18n="cta.projects">Découvrir mes projets</a>
+            <a class="btn btn-ghost js-cv-design" href="cv/CV_Lagha_Khalil_CSEE_FR.pdf" target="_blank" rel="noopener" data-i18n="cta.cv">Voir mon CV</a>
           </div>
-          <p class="cv-alt reveal"><a class="js-cv-ats" href="cv/CV_Lagha_Khalil_CSEE_FR.pdf" download><span data-i18n="cta.cvats2">CV pour les candidatures en ligne (ATS)</span></a></p>
-          <p class="hero-meta reveal"><span data-i18n="hero.work">Autorisé à travailler en France</span></p>
+          <p class="hero-kicker"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="hero.kicker">Stage de fin d’études dès mi-mars 2027</span></p>
         </div>
-        <aside class="hero-visual reveal" aria-label="Profil en bref" data-i18n-aria="aria.profile">
-          <figure class="portrait-frame">
-            <div class="portrait-orbit" aria-hidden="true"></div>
-            <img class="hero-portrait" src="assets/portrait-2026-09-30.webp" width="640" height="800" fetchpriority="high" alt="Portrait de Lagha Khalil" data-fr-alt="Portrait de Lagha Khalil" data-en-alt="Portrait of Khalil Lagha">
-            <figcaption class="portrait-caption"><small data-i18n="hero.portrait.label">Énergie électrique · Commande · Simulation</small><strong data-i18n="hero.portrait.title">De la théorie au système.</strong></figcaption>
-          </figure>
-          <div class="hero-proof">
-            <div class="proof-item"><strong>M2</strong><span>CSEE · UGA</span></div>
-            <div class="proof-item"><strong data-i18n="stat1v">2ᵉ</strong><span data-i18n="hero.proof.rank">promotion M1 EEA</span></div>
-            <div class="proof-item"><strong>07</strong><span data-i18n="hero.proof.projects">projets à explorer</span></div>
-          </div>
-          <p class="hero-side-note"><span aria-hidden="true">↳</span> <span data-i18n="hero.side.note">Code, courbes et rapports : chaque projet raconte la démarche.</span></p>
+        <aside class="featured-instrument" aria-labelledby="featured-drive">
+          <header class="instrument-head"><div><p data-i18n="focus.model">Simulation de machine</p><h2 id="featured-drive" data-i18n="focus.foc">Commande vectorielle</h2></div><span class="machine-rating">5 kW</span></header>
+          <!-- views hero foc-induction-motor -->
+<div class="project-views" data-project-views><div class="view-stage"><figure id="hero-foc-induction-motor-0" class="view-panel"><a class="view-image navy" href="assets/projects/foc-signal-flow.svg" target="_blank" rel="noopener" data-figure-link="hero"><img src="assets/projects/foc-signal-flow.svg" width="760" height="396" alt="Les boucles de vitesse et de courant pilotent l’onduleur triphasé." data-figure-alt-fr="Les boucles de vitesse et de courant pilotent l’onduleur triphasé." data-figure-alt-en="The speed and current loops control the three-phase inverter." fetchpriority="high"><span class="view-action"><span lang="fr">Agrandir la figure</span><span lang="en">Enlarge figure</span></span></a><figcaption id="hero-foc-induction-motor-0-caption"><span lang="fr">Les boucles de vitesse et de courant pilotent l’onduleur triphasé.</span><span lang="en">The speed and current loops control the three-phase inverter.</span></figcaption></figure><figure id="hero-foc-induction-motor-1" class="view-panel" hidden><a class="view-image navy" href="assets/projects/foc-speed-trace.webp" target="_blank" rel="noopener" data-figure-link="hero"><img data-file="assets/projects/foc-speed-trace.webp" width="760" height="396" alt="La vitesse simulée suit la consigne jusqu’à l’inversion à −800 tr/min." data-figure-alt-fr="La vitesse simulée suit la consigne jusqu’à l’inversion à −800 tr/min." data-figure-alt-en="The simulated speed follows the reference through reversal to −800 rpm." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Agrandir la figure</span><span lang="en">Enlarge figure</span></span></a><figcaption id="hero-foc-induction-motor-1-caption"><span lang="fr">La vitesse simulée suit la consigne jusqu’à l’inversion à −800 tr/min.</span><span lang="en">The simulated speed follows the reference through reversal to −800 rpm.</span></figcaption></figure><figure id="hero-foc-induction-motor-2" class="view-panel" hidden><a class="view-image navy" href="assets/projects/foc-dq-trace.webp" target="_blank" rel="noopener" data-figure-link="hero"><img data-file="assets/projects/foc-dq-trace.webp" width="760" height="396" alt="Dans le repère du flux rotorique, le courant d règle l’aimantation et le courant q le couple." data-figure-alt-fr="Dans le repère du flux rotorique, le courant d règle l’aimantation et le courant q le couple." data-figure-alt-en="In the rotor-flux frame, the d-axis current controls magnetisation and the q-axis current controls torque." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Agrandir la figure</span><span lang="en">Enlarge figure</span></span></a><figcaption id="hero-foc-induction-motor-2-caption"><span lang="fr">Dans le repère du flux rotorique, le courant d règle l’aimantation et le courant q le couple.</span><span lang="en">In the rotor-flux frame, the d-axis current controls magnetisation and the q-axis current controls torque.</span></figcaption></figure></div><div class="view-switcher" role="group" aria-label="Vues du projet" data-views-group hidden><button type="button" aria-controls="hero-foc-induction-motor-0" aria-pressed="true"><span lang="fr">Commande</span><span lang="en">Control</span></button><button type="button" aria-controls="hero-foc-induction-motor-1" aria-pressed="false"><span lang="fr">Vitesse</span><span lang="en">Speed</span></button><button type="button" aria-controls="hero-foc-induction-motor-2" aria-pressed="false"><span lang="fr">Courants</span><span lang="en">Currents</span></button></div></div>
+<!-- /views -->
+          <a class="instrument-link" href="projects/foc-induction-motor.html"><span data-i18n="focus.study">Étudier la commande du moteur</span><span aria-hidden="true">↗</span></a>
         </aside>
       </div>
-      <div class="container hero-footline"><span data-i18n="chip1">Électronique de puissance</span><span data-i18n="hero.focus2">Commande de machines</span><span data-i18n="hero.focus3">Réseaux électriques & IA</span><a href="#projets" data-i18n="hero.scroll">Explorer la suite ↓</a></div>
     </section>
 
     <!-- ============ OUTILS (marquee) ============ -->
@@ -148,8 +137,8 @@
     <section id="projets" class="section projects-section">
       <div class="container">
         <div class="section-heading reveal">
-          <div><p class="section-overline" data-i18n="proj.overline">Travaux sélectionnés</p><h2 class="sec-title"><span class="sec-n" aria-hidden="true">01</span><span data-i18n="proj.title">Les idées, mises à l’épreuve.</span></h2></div>
-          <p class="section-intro" data-i18n="proj.intro">Sept projets pour explorer la conversion d’énergie, les machines, les réseaux et l’IA. Ouvrez un projet pour suivre la méthode, les résultats et leurs limites.</p>
+          <h2 class="sec-title" data-i18n="focus.projects">Projets sélectionnés</h2>
+          <p class="section-intro" data-i18n="focus.gallery">Explorez les schémas, puis passez aux résultats de simulation ou aux mesures de chaque projet.</p>
         </div>
         <div class="project-filters" role="group" aria-label="Filtrer les projets" data-i18n-aria="aria.filters" hidden>
           <button class="project-filter" type="button" data-filter="all" aria-pressed="true"><span data-i18n="filter.all">Tous</span><span class="filter-count">07</span></button>
@@ -160,10 +149,9 @@
         <p class="sr-only project-filter-status" aria-live="polite" aria-atomic="true"></p>
         <div class="cards project-grid">
           <article class="card project-card featured reveal" data-category="power control">
-            <a class="project-image-link" href="projects/foc-induction-motor.html" aria-label="Commande vectorielle d’un moteur asynchrone" data-fr-label="Commande vectorielle d’un moteur asynchrone" data-en-label="Field-oriented control of an induction motor">
-              <img class="project-image" src="assets/projects/foc-speed-tracking.png" width="1350" height="690" loading="lazy" decoding="async" alt="Résultat de suivi de vitesse FOC" data-fr-alt="Résultat de suivi de vitesse FOC" data-en-alt="FOC speed-tracking simulation result">
-              <span class="project-number" aria-hidden="true">01</span><span class="project-image-label" data-i18n="proj.kind.simulation">Simulation</span>
-            </a>
+            <!-- views card foc-induction-motor -->
+<div class="project-views" data-project-views><div class="view-stage"><figure id="card-foc-induction-motor-0" class="view-panel"><a class="view-image navy" href="projects/foc-induction-motor.html" data-figure-link="card"><img src="assets/projects/foc-speed-trace.webp" width="760" height="396" alt="La vitesse simulée suit la consigne jusqu’à l’inversion à −800 tr/min." data-figure-alt-fr="La vitesse simulée suit la consigne jusqu’à l’inversion à −800 tr/min." data-figure-alt-en="The simulated speed follows the reference through reversal to −800 rpm." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Ouvrir le projet</span><span lang="en">Open project</span></span></a><figcaption id="card-foc-induction-motor-0-caption"><span lang="fr">La vitesse simulée suit la consigne jusqu’à l’inversion à −800 tr/min.</span><span lang="en">The simulated speed follows the reference through reversal to −800 rpm.</span></figcaption></figure><figure id="card-foc-induction-motor-1" class="view-panel" hidden><a class="view-image navy" href="projects/foc-induction-motor.html" data-figure-link="card"><img data-file="assets/projects/foc-signal-flow.svg" width="760" height="396" alt="Les boucles de vitesse et de courant pilotent l’onduleur triphasé." data-figure-alt-fr="Les boucles de vitesse et de courant pilotent l’onduleur triphasé." data-figure-alt-en="The speed and current loops control the three-phase inverter." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Ouvrir le projet</span><span lang="en">Open project</span></span></a><figcaption id="card-foc-induction-motor-1-caption"><span lang="fr">Les boucles de vitesse et de courant pilotent l’onduleur triphasé.</span><span lang="en">The speed and current loops control the three-phase inverter.</span></figcaption></figure></div><div class="view-switcher" role="group" aria-label="Vues du projet" data-views-group hidden><button type="button" aria-controls="card-foc-induction-motor-0" aria-pressed="true"><span lang="fr">Vitesse</span><span lang="en">Speed</span></button><button type="button" aria-controls="card-foc-induction-motor-1" aria-pressed="false"><span lang="fr">Commande</span><span lang="en">Control</span></button></div></div>
+<!-- /views -->
             <div class="project-body">
               <span class="card-meta" data-i18n="p3.meta">Python · MATLAB / Simulink</span>
               <h3 data-i18n="p3.h">Commande vectorielle d’un moteur asynchrone</h3>
@@ -174,10 +162,9 @@
             </div>
           </article>
           <article class="card project-card featured reveal" data-category="power">
-            <a class="project-image-link" href="projects/power-grid-analysis.html" aria-label="Analyse de réseaux électriques" data-fr-label="Analyse de réseaux électriques" data-en-label="Power grid analysis">
-              <img class="project-image" src="assets/projects/grid-interface.png" width="1915" height="1003" loading="lazy" decoding="async" alt="Interface MATLAB d’analyse de réseaux" data-fr-alt="Interface MATLAB d’analyse de réseaux" data-en-alt="MATLAB power-grid analysis interface">
-              <span class="project-number" aria-hidden="true">02</span><span class="project-image-label" data-i18n="proj.kind.application">Application</span>
-            </a>
+            <!-- views card power-grid-analysis -->
+<div class="project-views" data-project-views><div class="view-stage"><figure id="card-power-grid-analysis-0" class="view-panel"><a class="view-image sage" href="projects/power-grid-analysis.html" data-figure-link="card"><img src="assets/projects/ieee14-topology.svg" width="760" height="396" alt="Cas IEEE 14. Les 20 branches relient les nœuds slack, PV et PQ." data-figure-alt-fr="Cas IEEE 14. Les 20 branches relient les nœuds slack, PV et PQ." data-figure-alt-en="IEEE 14-bus case. Its 20 branches connect the slack, PV and PQ buses." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Ouvrir le projet</span><span lang="en">Open project</span></span></a><figcaption id="card-power-grid-analysis-0-caption"><span lang="fr">Cas IEEE 14. Les 20 branches relient les nœuds slack, PV et PQ.</span><span lang="en">IEEE 14-bus case. Its 20 branches connect the slack, PV and PQ buses.</span></figcaption></figure><figure id="card-power-grid-analysis-1" class="view-panel" hidden><a class="view-image paper" href="projects/power-grid-analysis.html" data-figure-link="card"><img data-file="assets/projects/grid-loadflow-iterations.png" width="760" height="396" alt="Nombre d’itérations des trois méthodes de calcul du load flow." data-figure-alt-fr="Nombre d’itérations des trois méthodes de calcul du load flow." data-figure-alt-en="Iteration counts for the three load-flow methods." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Ouvrir le projet</span><span lang="en">Open project</span></span></a><figcaption id="card-power-grid-analysis-1-caption"><span lang="fr">Nombre d’itérations des trois méthodes de calcul du load flow.</span><span lang="en">Iteration counts for the three load-flow methods.</span></figcaption></figure></div><div class="view-switcher" role="group" aria-label="Vues du projet" data-views-group hidden><button type="button" aria-controls="card-power-grid-analysis-0" aria-pressed="true"><span lang="fr">Topologie</span><span lang="en">Topology</span></button><button type="button" aria-controls="card-power-grid-analysis-1" aria-pressed="false"><span lang="fr">Convergence</span><span lang="en">Convergence</span></button></div></div>
+<!-- /views -->
             <div class="project-body">
               <span class="card-meta" data-i18n="p1.meta">MATLAB · Projet individuel</span>
               <h3 data-i18n="p1.h">Analyse de réseaux électriques</h3>
@@ -188,10 +175,9 @@
             </div>
           </article>
           <article class="card project-card reveal" data-category="power">
-            <a class="project-image-link" href="projects/winding-flux-analysis.html" aria-label="Bobinage &amp; flux magnétique" data-fr-label="Bobinage &amp; flux magnétique" data-en-label="Winding &amp; magnetic flux">
-              <img class="project-image" src="assets/projects/winding-flux-heatmap.png?v=4e464953af8c" width="1528" height="819" loading="lazy" decoding="async" alt="Carte de densité de flux magnétique" data-fr-alt="Carte de densité de flux magnétique" data-en-alt="Magnetic flux-density map">
-              <span class="project-number" aria-hidden="true">03</span><span class="project-image-label" data-i18n="proj.kind.application">Application</span>
-            </a>
+            <!-- views card winding-flux-analysis -->
+<div class="project-views" data-project-views><div class="view-stage"><figure id="card-winding-flux-analysis-0" class="view-panel"><a class="view-image navy" href="projects/winding-flux-analysis.html" data-figure-link="card"><img src="assets/projects/winding-field-45.webp" width="760" height="396" alt="Champ calculé à 90° électriques pour 45 encoches, 8 pôles et 5 phases." data-figure-alt-fr="Champ calculé à 90° électriques pour 45 encoches, 8 pôles et 5 phases." data-figure-alt-en="Computed field at 90 electrical degrees for 45 slots, 8 poles and 5 phases." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Ouvrir le projet</span><span lang="en">Open project</span></span></a><figcaption id="card-winding-flux-analysis-0-caption"><span lang="fr">Champ calculé à 90° électriques pour 45 encoches, 8 pôles et 5 phases.</span><span lang="en">Computed field at 90 electrical degrees for 45 slots, 8 poles and 5 phases.</span></figcaption></figure><figure id="card-winding-flux-analysis-1" class="view-panel" hidden><a class="view-image paper" href="projects/winding-flux-analysis.html" data-figure-link="card"><img data-file="assets/projects/winding-mesh-app.png" width="760" height="396" alt="La vue de maillage de l’application discrétise la section de la machine." data-figure-alt-fr="La vue de maillage de l’application discrétise la section de la machine." data-figure-alt-en="The app’s mesh view divides the machine cross-section into cells." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Ouvrir le projet</span><span lang="en">Open project</span></span></a><figcaption id="card-winding-flux-analysis-1-caption"><span lang="fr">La vue de maillage de l’application discrétise la section de la machine.</span><span lang="en">The app’s mesh view divides the machine cross-section into cells.</span></figcaption></figure><figure id="card-winding-flux-analysis-2" class="view-panel" hidden><video class="view-movie" controls playsinline preload="none" data-movie="assets/projects/winding-five-phase-flux.mp4" data-poster="assets/projects/winding-five-phase-flux-poster.jpg" aria-describedby="card-winding-flux-analysis-2-caption"></video><figcaption id="card-winding-flux-analysis-2-caption"><span lang="fr">Animation du champ et des courants du bobinage pentaphasé, avec un pas de 5 encoches.</span><span lang="en">Field and current animation for the five-phase winding with a five-slot coil span.</span></figcaption></figure></div><div class="view-switcher" role="group" aria-label="Vues du projet" data-views-group hidden><button type="button" aria-controls="card-winding-flux-analysis-0" aria-pressed="true"><span lang="fr">Champ</span><span lang="en">Field</span></button><button type="button" aria-controls="card-winding-flux-analysis-1" aria-pressed="false"><span lang="fr">Maillage</span><span lang="en">Mesh</span></button><button type="button" aria-controls="card-winding-flux-analysis-2" aria-pressed="false"><span lang="fr">Animation</span><span lang="en">Animation</span></button></div></div>
+<!-- /views -->
             <div class="project-body">
               <span class="card-meta" data-i18n="p2.meta">Python / PyQt · Projet d’équipe</span>
               <h3 data-i18n="p2.h">Bobinage &amp; flux magnétique</h3>
@@ -202,10 +188,9 @@
             </div>
           </article>
           <article class="card project-card reveal" data-category="control power">
-            <a class="project-image-link" href="projects/dc-motor-cascade-control.html" aria-label="Commande en cascade d’un moteur DC" data-fr-label="Commande en cascade d’un moteur DC" data-en-label="Cascade control of a DC motor">
-              <img class="project-image" src="assets/projects/dc-motor-response.png" width="1920" height="819" loading="lazy" decoding="async" alt="Réponse du modèle moyen du moteur DC calculée en Python" data-fr-alt="Réponse du modèle moyen du moteur DC calculée en Python" data-en-alt="Response of the averaged DC-motor model calculated in Python">
-              <span class="project-number" aria-hidden="true">04</span><span class="project-image-label" data-i18n="proj.kind.simulation">Simulation</span>
-            </a>
+            <!-- views card dc-motor-cascade-control -->
+<div class="project-views" data-project-views><div class="view-stage"><figure id="card-dc-motor-cascade-control-0" class="view-panel"><a class="view-image sage" href="projects/dc-motor-cascade-control.html" data-figure-link="card"><img src="assets/projects/dc-feedback-loops.svg" width="760" height="396" alt="Le PI de vitesse fixe la consigne de courant. Le PID de courant commande le pont à thyristors." data-figure-alt-fr="Le PI de vitesse fixe la consigne de courant. Le PID de courant commande le pont à thyristors." data-figure-alt-en="The speed PI sets the current reference. The current PID controls the thyristor bridge." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Ouvrir le projet</span><span lang="en">Open project</span></span></a><figcaption id="card-dc-motor-cascade-control-0-caption"><span lang="fr">Le PI de vitesse fixe la consigne de courant. Le PID de courant commande le pont à thyristors.</span><span lang="en">The speed PI sets the current reference. The current PID controls the thyristor bridge.</span></figcaption></figure><figure id="card-dc-motor-cascade-control-1" class="view-panel" hidden><a class="view-image paper" href="projects/dc-motor-cascade-control.html" data-figure-link="card"><img data-file="assets/projects/dc-motor-response.png" width="760" height="396" alt="Réponses normalisées des boucles de courant et de vitesse du modèle moyen." data-figure-alt-fr="Réponses normalisées des boucles de courant et de vitesse du modèle moyen." data-figure-alt-en="Normalised current- and speed-loop responses from the averaged model." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Ouvrir le projet</span><span lang="en">Open project</span></span></a><figcaption id="card-dc-motor-cascade-control-1-caption"><span lang="fr">Réponses normalisées des boucles de courant et de vitesse du modèle moyen.</span><span lang="en">Normalised current- and speed-loop responses from the averaged model.</span></figcaption></figure></div><div class="view-switcher" role="group" aria-label="Vues du projet" data-views-group hidden><button type="button" aria-controls="card-dc-motor-cascade-control-0" aria-pressed="true"><span lang="fr">Cascade</span><span lang="en">Cascade</span></button><button type="button" aria-controls="card-dc-motor-cascade-control-1" aria-pressed="false"><span lang="fr">Réponse</span><span lang="en">Response</span></button></div></div>
+<!-- /views -->
             <div class="project-body">
               <span class="card-meta" data-i18n="p6.meta">ENP d’Alger · Simulink / Simscape</span>
               <h3 data-i18n="p6.h">Commande en cascade d’un moteur DC</h3>
@@ -216,10 +201,9 @@
             </div>
           </article>
           <article class="card project-card reveal" data-category="ai">
-            <a class="project-image-link" href="projects/mlp-backpropagation.html" aria-label="Un réseau de neurones, depuis zéro" data-fr-label="Un réseau de neurones, depuis zéro" data-en-label="A neural network, from scratch">
-              <img class="project-image" src="assets/projects/mlp-convergence.png" width="1152" height="640" loading="lazy" decoding="async" alt="Convergence de l’apprentissage du réseau de neurones" data-fr-alt="Convergence de l’apprentissage du réseau de neurones" data-en-alt="Neural-network learning convergence">
-              <span class="project-number" aria-hidden="true">05</span><span class="project-image-label" data-i18n="proj.kind.simulation">Simulation</span>
-            </a>
+            <!-- views card mlp-backpropagation -->
+<div class="project-views" data-project-views><div class="view-stage"><figure id="card-mlp-backpropagation-0" class="view-panel"><a class="view-image plum" href="projects/mlp-backpropagation.html" data-figure-link="card"><img src="assets/projects/mlp-weight-flow.svg" width="760" height="396" alt="Deux entrées, deux neurones cachés et une sortie. Le gradient sert à corriger les poids." data-figure-alt-fr="Deux entrées, deux neurones cachés et une sortie. Le gradient sert à corriger les poids." data-figure-alt-en="Two inputs, two hidden neurons and one output. The gradient updates the weights." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Ouvrir le projet</span><span lang="en">Open project</span></span></a><figcaption id="card-mlp-backpropagation-0-caption"><span lang="fr">Deux entrées, deux neurones cachés et une sortie. Le gradient sert à corriger les poids.</span><span lang="en">Two inputs, two hidden neurons and one output. The gradient updates the weights.</span></figcaption></figure><figure id="card-mlp-backpropagation-1" class="view-panel" hidden><a class="view-image paper" href="projects/mlp-backpropagation.html" data-figure-link="card"><img data-file="assets/projects/mlp-sequential-training.png" width="760" height="396" alt="Évolution de l’erreur lors de l’apprentissage successif des trois exemples." data-figure-alt-fr="Évolution de l’erreur lors de l’apprentissage successif des trois exemples." data-figure-alt-en="Error over successive training on the three examples." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Ouvrir le projet</span><span lang="en">Open project</span></span></a><figcaption id="card-mlp-backpropagation-1-caption"><span lang="fr">Évolution de l’erreur lors de l’apprentissage successif des trois exemples.</span><span lang="en">Error over successive training on the three examples.</span></figcaption></figure></div><div class="view-switcher" role="group" aria-label="Vues du projet" data-views-group hidden><button type="button" aria-controls="card-mlp-backpropagation-0" aria-pressed="true"><span lang="fr">Architecture</span><span lang="en">Architecture</span></button><button type="button" aria-controls="card-mlp-backpropagation-1" aria-pressed="false"><span lang="fr">Apprentissage</span><span lang="en">Training</span></button></div></div>
+<!-- /views -->
             <div class="project-body">
               <span class="card-meta" data-i18n="p8.meta">MATLAB · TP collaboratif</span>
               <h3 data-i18n="p8.h">Un réseau de neurones, depuis zéro</h3>
@@ -230,10 +214,9 @@
             </div>
           </article>
           <article class="card project-card reveal" data-category="power">
-            <a class="project-image-link" href="projects/power-electronics-labs.html" aria-label="L’électronique de puissance au banc" data-fr-label="L’électronique de puissance au banc" data-en-label="Power electronics at the bench">
-              <img class="project-image" src="assets/projects/power-electronics-commutation.jpg" width="1200" height="904" loading="lazy" decoding="async" alt="Mesure à l’oscilloscope des tensions du demi-pont" data-fr-alt="Mesure à l’oscilloscope des tensions du demi-pont" data-en-alt="Oscilloscope measurement of half-bridge voltages">
-              <span class="project-number" aria-hidden="true">06</span><span class="project-image-label" data-i18n="proj.kind.bench">Mesure au banc</span>
-            </a>
+            <!-- views card power-electronics-labs -->
+<div class="project-views" data-project-views><div class="view-stage"><figure id="card-power-electronics-labs-0" class="view-panel"><a class="view-image sage" href="projects/power-electronics-labs.html" data-figure-link="card"><img src="assets/projects/diode-bridge.svg" width="760" height="396" alt="Un pont triphasé à six diodes alimente une charge résistive." data-figure-alt-fr="Un pont triphasé à six diodes alimente une charge résistive." data-figure-alt-en="A three-phase six-diode bridge supplies a resistive load." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Ouvrir le projet</span><span lang="en">Open project</span></span></a><figcaption id="card-power-electronics-labs-0-caption"><span lang="fr">Un pont triphasé à six diodes alimente une charge résistive.</span><span lang="en">A three-phase six-diode bridge supplies a resistive load.</span></figcaption></figure><figure id="card-power-electronics-labs-1" class="view-panel" hidden><a class="view-image navy" href="projects/power-electronics-labs.html" data-figure-link="card"><img data-file="assets/projects/rectifier-scope.webp" width="760" height="396" alt="Tension redressée du pont complet, relevée à l’oscilloscope pendant le TP." data-figure-alt-fr="Tension redressée du pont complet, relevée à l’oscilloscope pendant le TP." data-figure-alt-en="Full-bridge rectified voltage recorded on the oscilloscope during the lab." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Ouvrir le projet</span><span lang="en">Open project</span></span></a><figcaption id="card-power-electronics-labs-1-caption"><span lang="fr">Tension redressée du pont complet, relevée à l’oscilloscope pendant le TP.</span><span lang="en">Full-bridge rectified voltage recorded on the oscilloscope during the lab.</span></figcaption></figure></div><div class="view-switcher" role="group" aria-label="Vues du projet" data-views-group hidden><button type="button" aria-controls="card-power-electronics-labs-0" aria-pressed="true"><span lang="fr">Circuit</span><span lang="en">Circuit</span></button><button type="button" aria-controls="card-power-electronics-labs-1" aria-pressed="false"><span lang="fr">Oscilloscope</span><span lang="en">Oscilloscope</span></button></div></div>
+<!-- /views -->
             <div class="project-body">
               <span class="card-meta" data-i18n="p7.meta">ENP · TP collaboratifs</span>
               <h3 data-i18n="p7.h">L’électronique de puissance au banc</h3>
@@ -244,10 +227,9 @@
             </div>
           </article>
           <article class="card project-card reveal" data-category="power control">
-            <a class="project-image-link" href="projects/pemfc-internship.html" aria-label="Stage PEMFC au GIPSA-lab" data-fr-label="Stage PEMFC au GIPSA-lab" data-en-label="PEMFC internship at GIPSA-lab">
-              <img class="project-image" src="assets/projects/pemfc-bench.png" width="1219" height="829" loading="lazy" decoding="async" alt="Banc expérimental de la pile PEMFC" data-fr-alt="Banc expérimental de la pile PEMFC" data-en-alt="PEMFC experimental bench">
-              <span class="project-number" aria-hidden="true">07</span><span class="project-image-label" data-i18n="proj.kind.bench">Mesure au banc</span>
-            </a>
+            <!-- views card pemfc-internship -->
+<div class="project-views" data-project-views><div class="view-stage"><figure id="card-pemfc-internship-0" class="view-panel"><a class="view-image navy" href="projects/pemfc-internship.html" data-figure-link="card"><img src="assets/projects/pemfc-identification-fr.svg" data-source-fr="assets/projects/pemfc-identification-fr.svg" data-source-en="assets/projects/pemfc-identification-en.svg" width="760" height="396" alt="Cellules 3 à 9. Ajustement sur 269 échantillons, puis test sur les 116 suivants du même essai." data-figure-alt-fr="Cellules 3 à 9. Ajustement sur 269 échantillons, puis test sur les 116 suivants du même essai." data-figure-alt-en="Cells 3–9. The model was fitted to 269 samples and tested on the next 116 from the same run." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Ouvrir le projet</span><span lang="en">Open project</span></span></a><figcaption id="card-pemfc-internship-0-caption"><span lang="fr">Cellules 3 à 9. Ajustement sur 269 échantillons, puis test sur les 116 suivants du même essai.</span><span lang="en">Cells 3–9. The model was fitted to 269 samples and tested on the next 116 from the same run.</span></figcaption></figure><figure id="card-pemfc-internship-1" class="view-panel" hidden><a class="view-image paper" href="projects/pemfc-internship.html" data-figure-link="card"><img data-file="assets/projects/pemfc-holdout.png" width="760" height="396" alt="Comparaison des tensions mesurées et prédites sur la fenêtre de test chronologique." data-figure-alt-fr="Comparaison des tensions mesurées et prédites sur la fenêtre de test chronologique." data-figure-alt-en="Measured and predicted voltages over the chronological test window." loading="lazy" decoding="async"><span class="view-action"><span lang="fr">Ouvrir le projet</span><span lang="en">Open project</span></span></a><figcaption id="card-pemfc-internship-1-caption"><span lang="fr">Comparaison des tensions mesurées et prédites sur la fenêtre de test chronologique.</span><span lang="en">Measured and predicted voltages over the chronological test window.</span></figcaption></figure></div><div class="view-switcher" role="group" aria-label="Vues du projet" data-views-group hidden><button type="button" aria-controls="card-pemfc-internship-0" aria-pressed="true"><span lang="fr">Méthode</span><span lang="en">Workflow</span></button><button type="button" aria-controls="card-pemfc-internship-1" aria-pressed="false"><span lang="fr">Résultats</span><span lang="en">Results</span></button></div></div>
+<!-- /views -->
             <div class="project-body">
               <span class="card-meta" data-i18n="pemfc.meta">GIPSA-lab · Stage de recherche</span>
               <h3 data-i18n="pemfc.h">Stage PEMFC au GIPSA-lab</h3>

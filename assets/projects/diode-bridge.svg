@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 396" width="760" height="396" role="img" aria-labelledby="title desc">
+<title id="title">Three-phase diode bridge</title>
+<desc id="desc">Three AC lines feed the midpoints of three diode pairs. The six diodes rectify the line-to-line voltage across a resistive DC load.</desc>
+<defs>
+<marker id="wire" viewBox="0 0 9 9" markerWidth="8" markerHeight="8" refX="8.3" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M0 0 9 4.5 0 9Z" fill="#1b6160"/>
+</marker>
+<marker id="fb" viewBox="0 0 9 9" markerWidth="8" markerHeight="8" refX="8.3" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M0 0 9 4.5 0 9Z" fill="#a34726"/>
+</marker>
+<marker id="neutral" viewBox="0 0 9 9" markerWidth="8" markerHeight="8" refX="8.3" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M0 0 9 4.5 0 9Z" fill="#486c70"/>
+</marker>
+<pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+<circle cx="1" cy="1" r="1" fill="#c0d1cb"/>
+</pattern>
+</defs>
+<style> text{font-family:Segoe UI,Arial,sans-serif} .ink{fill:#143d41}.muted{fill:#486c70}.warm{fill:#1b6160}.cool{fill:#a34726}.wire{stroke:#1b6160}.fb{stroke:#a34726}.neutral{stroke:#486c70}.box{fill:#f9fcf8;stroke-width:1.8}.line{fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}.pulse{fill:none;stroke:#143d41;stroke-width:3;stroke-dasharray:3 40;stroke-linecap:round;opacity:0}@media(prefers-reduced-motion:no-preference){.pulse{animation:signal 2s linear 2}@keyframes signal{0%{stroke-dashoffset:86;opacity:0}12%,82%{opacity:.85}100%{stroke-dashoffset:0;opacity:0}}}</style>
+<rect width="760" height="396" fill="#eaf1ef"/>
+<rect width="760" height="396" fill="url(#grid)"/>
+<path d="M225 66H650V147" class="line wire"/>
+<path d="M225 325H650V249" class="line fb"/>
+<path d="M225 66V110 M225 134V260 M225 284V325" class="line neutral"/>
+<path d="M213 134h24l-12 -23z" fill="#2c5957" stroke="#2c5957"/>
+<path d="M210 110h30" stroke="#2c5957" stroke-width="3"/>
+<path d="M213 284h24l-12 -23z" fill="#2c5957" stroke="#2c5957"/>
+<path d="M210 260h30" stroke="#2c5957" stroke-width="3"/>
+<text x="72" y="164" class="ink" font-size="24" font-weight="500" text-anchor="middle">a</text>
+<path d="M92 159H225" class="line neutral"/>
+<circle cx="225" cy="159" r="4.5" fill="#234d4a"/>
+<circle cx="225" cy="66" r="4" fill="#234d4a"/>
+<circle cx="225" cy="325" r="4" fill="#234d4a"/>
+<path d="M357 66V110 M357 134V260 M357 284V325" class="line neutral"/>
+<path d="M345 134h24l-12 -23z" fill="#2c5957" stroke="#2c5957"/>
+<path d="M342 110h30" stroke="#2c5957" stroke-width="3"/>
+<path d="M345 284h24l-12 -23z" fill="#2c5957" stroke="#2c5957"/>
+<path d="M342 260h30" stroke="#2c5957" stroke-width="3"/>
+<text x="72" y="200" class="ink" font-size="24" font-weight="500" text-anchor="middle">b</text>
+<path d="M92 195H357" class="line neutral"/>
+<circle cx="357" cy="195" r="4.5" fill="#234d4a"/>
+<circle cx="357" cy="66" r="4" fill="#234d4a"/>
+<circle cx="357" cy="325" r="4" fill="#234d4a"/>
+<path d="M489 66V110 M489 134V260 M489 284V325" class="line neutral"/>
+<path d="M477 134h24l-12 -23z" fill="#2c5957" stroke="#2c5957"/>
+<path d="M474 110h30" stroke="#2c5957" stroke-width="3"/>
+<path d="M477 284h24l-12 -23z" fill="#2c5957" stroke="#2c5957"/>
+<path d="M474 260h30" stroke="#2c5957" stroke-width="3"/>
+<text x="72" y="236" class="ink" font-size="24" font-weight="500" text-anchor="middle">c</text>
+<path d="M92 231H489" class="line neutral"/>
+<circle cx="489" cy="231" r="4.5" fill="#234d4a"/>
+<circle cx="489" cy="66" r="4" fill="#234d4a"/>
+<circle cx="489" cy="325" r="4" fill="#234d4a"/>
+<rect x="636" y="147" width="28" height="102" fill="#f9fcf8" stroke="#234d4a" stroke-width="2.7"/>
+<text x="690" y="206" class="ink" font-size="26" font-weight="500" text-anchor="middle">R</text>
+<text x="684" y="72" class="warm" font-size="25" font-weight="500" text-anchor="middle">+</text>
+<text x="684" y="333" class="cool" font-size="25" font-weight="500" text-anchor="middle">−</text>
+</svg>

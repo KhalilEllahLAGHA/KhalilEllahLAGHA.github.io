@@ -4,6 +4,8 @@ from html import escape
 from hashlib import sha256
 from pathlib import Path
 
+from project_views import refresh_homepage, render_views
+
 
 PAGES = [
     {'slug': 'pemfc-internship',
@@ -1622,6 +1624,7 @@ def render(page, next_page):
   <meta property="og:image" content="{clean(hero_image)}">
   <meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="en_US">
   <meta name="theme-color" content="#090e1c">
+  <link rel="stylesheet" href="../css/project-views.css?v={asset_version('../css/project-views.css')}"><script defer src="../js/project-views.js?v={asset_version('../js/project-views.js')}"></script>
   <link rel="stylesheet" href="project.css?v={asset_version('project.css')}"><script src="project.js?v={asset_version('project.js')}" defer></script>{extra_stylesheet}
 </head>
 <body>
@@ -1640,7 +1643,7 @@ def render(page, next_page):
         <p class="lede">{translated(page['summary'])}</p>
         <div class="hero-actions"><a class="button primary" href="#problem">{translated(('Découvrir le projet ↓','Explore the project ↓'))}</a>{report_action}</div>
         <div class="hero-index"><span>{translated(page['scope'])}</span></div>
-      </div>{figure(page['hero_image'], hero=True)}</div>
+      </div>{render_views(slug, 'story', page['hero_image'])}</div>
     </div></section>
     <section class="metric-band" aria-label="Repères du projet" data-label-fr="Repères du projet" data-label-en="Project highlights"><div class="container metrics">{metrics}</div></section>
     <div class="container story-shell">
@@ -1656,6 +1659,7 @@ def render(page, next_page):
 
 if __name__ == "__main__":
     here = Path(__file__).resolve().parent
+    refresh_homepage(here.parent / "index.html")
     for index, page in enumerate(PAGES):
         destination = here / f"{page['slug']}.html"
         destination.write_text(render(page, PAGES[(index + 1) % len(PAGES)]), encoding="utf-8")

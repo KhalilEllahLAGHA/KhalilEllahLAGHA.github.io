@@ -25,3 +25,14 @@
     document.querySelectorAll('.chapter[id]').forEach(function(el){obs.observe(el)});
   }
 })();
+
+if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const steps = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('step-seen');
+      steps.unobserve(entry.target);
+    }
+  });
+  document.querySelectorAll('.flow-steps > li, .chapter').forEach(step => steps.observe(step));
+}

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 396" width="760" height="396" role="img" aria-labelledby="title desc">
+<title id="title">2–2–1 multilayer perceptron</title>
+<desc id="desc">The MATLAB three-example case has two input variables, two hidden sigmoid units and one output. The return path denotes gradient updates during training. Bias connections are omitted for readability.</desc>
+<defs>
+<marker id="wire" viewBox="0 0 9 9" markerWidth="8" markerHeight="8" refX="8.3" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M0 0 9 4.5 0 9Z" fill="#dcb3f6"/>
+</marker>
+<marker id="fb" viewBox="0 0 9 9" markerWidth="8" markerHeight="8" refX="8.3" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M0 0 9 4.5 0 9Z" fill="#96d9cd"/>
+</marker>
+<marker id="neutral" viewBox="0 0 9 9" markerWidth="8" markerHeight="8" refX="8.3" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M0 0 9 4.5 0 9Z" fill="#c5b7d3"/>
+</marker>
+<pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+<circle cx="1" cy="1" r="1" fill="#3c3654"/>
+</pattern>
+</defs>
+<style> text{font-family:Segoe UI,Arial,sans-serif} .ink{fill:#f4eff8}.muted{fill:#c5b7d3}.warm{fill:#dcb3f6}.cool{fill:#96d9cd}.wire{stroke:#dcb3f6}.fb{stroke:#96d9cd}.neutral{stroke:#c5b7d3}.box{fill:#302743;stroke-width:1.8}.line{fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}.pulse{fill:none;stroke:#f4eff8;stroke-width:3;stroke-dasharray:3 40;stroke-linecap:round;opacity:0}@media(prefers-reduced-motion:no-preference){.pulse{animation:signal 2s linear 2}@keyframes signal{0%{stroke-dashoffset:86;opacity:0}12%,82%{opacity:.85}100%{stroke-dashoffset:0;opacity:0}}}</style>
+<rect width="760" height="396" fill="#201c35"/>
+<rect width="760" height="396" fill="url(#grid)"/>
+<path d="M128 114L347 114" class="line wire" marker-end="url(#wire)"/>
+<path d="M128 114L347 114" class="pulse"/>
+<path d="M128 114L352 242" class="line wire" marker-end="url(#wire)"/>
+<path d="M128 114L352 242" class="pulse"/>
+<path d="M128 248L352 121" class="line wire" marker-end="url(#wire)"/>
+<path d="M128 248L352 121" class="pulse"/>
+<path d="M128 248L347 248" class="line wire" marker-end="url(#wire)"/>
+<path d="M128 248L347 248" class="pulse"/>
+<path d="M415 114L616 174" class="line wire" marker-end="url(#wire)"/>
+<path d="M415 114L616 174" class="pulse"/>
+<path d="M415 248L616 187" class="line wire" marker-end="url(#wire)"/>
+<path d="M415 248L616 187" class="pulse"/>
+<circle cx="95" cy="114" r="34" class="box fb"/>
+<text x="95" y="124" class="ink" font-size="29" font-weight="500" text-anchor="middle">x₁</text>
+<circle cx="95" cy="248" r="34" class="box fb"/>
+<text x="95" y="258" class="ink" font-size="29" font-weight="500" text-anchor="middle">x₂</text>
+<circle cx="382" cy="114" r="34" class="box wire"/>
+<text x="382" y="124" class="ink" font-size="29" font-weight="500" text-anchor="middle">h₁</text>
+<circle cx="382" cy="248" r="34" class="box wire"/>
+<text x="382" y="258" class="ink" font-size="29" font-weight="500" text-anchor="middle">h₂</text>
+<circle cx="655" cy="181" r="34" class="box fb"/>
+<text x="655" y="191" class="ink" font-size="29" font-weight="500" text-anchor="middle">ŷ</text>
+<text x="240" y="78" class="warm" font-size="22" font-weight="500" text-anchor="middle">W₁</text>
+<text x="526" y="103" class="warm" font-size="22" font-weight="500" text-anchor="middle">W₂</text>
+<path d="M655 216V332H238V249" class="line fb" marker-end="url(#fb)"/>
+<path d="M655 216V332H238V249" class="pulse"/>
+<path d="M526 332V216" class="line fb" marker-end="url(#fb)"/>
+<text x="376" y="319" class="cool" font-size="20" font-weight="500" text-anchor="middle">∂L / ∂W₁</text>
+<text x="586" y="270" class="cool" font-size="20" font-weight="500" text-anchor="middle">∂L / ∂W₂</text>
+</svg>

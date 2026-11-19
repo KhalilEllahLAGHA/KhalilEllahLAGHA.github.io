@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 396" width="760" height="396" role="img" aria-labelledby="title desc">
+<title id="title">DC motor cascade control</title>
+<desc id="desc">The outer speed PI sets the current reference. The current PID controls the firing angle of a six-pulse thyristor bridge. Armature current and speed close the two negative-feedback loops.</desc>
+<defs>
+<marker id="wire" viewBox="0 0 9 9" markerWidth="8" markerHeight="8" refX="8.3" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M0 0 9 4.5 0 9Z" fill="#1b6160"/>
+</marker>
+<marker id="fb" viewBox="0 0 9 9" markerWidth="8" markerHeight="8" refX="8.3" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M0 0 9 4.5 0 9Z" fill="#a34726"/>
+</marker>
+<marker id="neutral" viewBox="0 0 9 9" markerWidth="8" markerHeight="8" refX="8.3" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M0 0 9 4.5 0 9Z" fill="#486c70"/>
+</marker>
+<pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+<circle cx="1" cy="1" r="1" fill="#c0d1cb"/>
+</pattern>
+</defs>
+<style> text{font-family:Segoe UI,Arial,sans-serif} .ink{fill:#143d41}.muted{fill:#486c70}.warm{fill:#1b6160}.cool{fill:#a34726}.wire{stroke:#1b6160}.fb{stroke:#a34726}.neutral{stroke:#486c70}.box{fill:#f9fcf8;stroke-width:1.8}.line{fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}.pulse{fill:none;stroke:#143d41;stroke-width:3;stroke-dasharray:3 40;stroke-linecap:round;opacity:0}@media(prefers-reduced-motion:no-preference){.pulse{animation:signal 2s linear 2}@keyframes signal{0%{stroke-dashoffset:86;opacity:0}12%,82%{opacity:.85}100%{stroke-dashoffset:0;opacity:0}}}</style>
+<rect width="760" height="396" fill="#eaf1ef"/>
+<rect width="760" height="396" fill="url(#grid)"/>
+<text x="35" y="131" class="warm" font-size="22" font-weight="500" text-anchor="middle">ω*</text>
+<path d="M23 148H76" class="line wire" marker-end="url(#wire)"/>
+<rect x="76" y="110" width="112" height="76" rx="5" class="box wire"/>
+<text x="132.0" y="156.0" class="ink" font-size="26" font-weight="650" text-anchor="middle">PI ω</text>
+<path d="M188 148H248" class="line wire" marker-end="url(#wire)"/>
+<path d="M188 148H248" class="pulse"/>
+<text x="218" y="128" class="warm" font-size="21" font-weight="500" text-anchor="middle">i<tspan baseline-shift="sub" font-size="72%">a</tspan>*</text>
+<rect x="248" y="110" width="112" height="76" rx="5" class="box wire"/>
+<text x="304.0" y="156.0" class="ink" font-size="26" font-weight="650" text-anchor="middle">PID i<tspan baseline-shift="sub" font-size="72%">a</tspan>
+</text>
+<path d="M360 148H425" class="line wire" marker-end="url(#wire)"/>
+<path d="M360 148H425" class="pulse"/>
+<text x="394" y="129" class="warm" font-size="22" font-weight="500" text-anchor="middle">α</text>
+<rect x="425" y="110" width="126" height="76" rx="5" class="box wire"/>
+<text x="488.0" y="148.0" class="ink" font-size="26" font-weight="650" text-anchor="middle">AC/DC</text>
+<text x="488.0" y="175.0" class="muted" font-size="19" font-weight="500" text-anchor="middle">6 × SCR</text>
+<path d="M551 148H637" class="line wire" marker-end="url(#wire)"/>
+<path d="M551 148H637" class="pulse"/>
+<text x="588" y="118" class="warm" font-size="22" font-weight="500" text-anchor="middle">uₐ</text>
+<circle cx="680" cy="148" r="43" class="box fb"/>
+<text x="680" y="148" class="ink" font-size="28" font-weight="650" text-anchor="middle">M</text>
+<text x="680" y="172" class="muted" font-size="16" font-weight="500" text-anchor="middle">DC</text>
+<path d="M601 164V251H304V186" class="line fb" marker-end="url(#fb)"/>
+<path d="M601 164V251H304V186" class="pulse"/>
+<text x="487" y="241" class="cool" font-size="23" font-weight="500" text-anchor="middle">i<tspan baseline-shift="sub" font-size="72%">a</tspan>
+</text>
+<circle cx="601" cy="148" r="16" class="box wire"/>
+<text x="601" y="154" class="ink" font-size="17" font-weight="500" text-anchor="middle">A</text>
+<path d="M680 191V311H133V186" class="line fb" marker-end="url(#fb)"/>
+<path d="M680 191V311H133V186" class="pulse"/>
+<text x="435" y="301" class="cool" font-size="23" font-weight="500" text-anchor="middle">ωₘ</text>
+<text x="120" y="207" class="cool" font-size="16" font-weight="500" text-anchor="middle">−</text>
+<text x="290" y="207" class="cool" font-size="16" font-weight="500" text-anchor="middle">−</text>
+</svg>

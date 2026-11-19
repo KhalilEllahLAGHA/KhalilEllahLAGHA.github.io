@@ -16,16 +16,18 @@ documented results, source links, and navigation to the next project.
 
 ## Editing and rebuilding
 
-`build_project_pages.py` is the editable source for the bilingual copy, image
-captions, report links, and page structure. Edit this source, then run:
+`build_project_pages.py` holds the bilingual case studies and report links.
+`project_views.py` defines the technical figures, view selectors and captions
+used in both the homepage gallery and the project introductions. To rebuild, run:
 
 ```sh
 python projects/build_project_pages.py
 ```
 
 Run the command from the portfolio root. The builder uses Python's standard
-library and writes the seven HTML files into this directory. Styling and browser
-behaviour are maintained directly in `project.css` and `project.js`.
+library and writes the seven HTML files into this directory. It also refreshes
+the marked figure blocks in the homepage. Shared viewer styles and behaviour
+are in `../css/project-views.css` and `../js/project-views.js`.
 
 To preview the portfolio locally from its root:
 
@@ -41,12 +43,18 @@ Personal facts follow `Profile/CSEE/CV.md` in the parent workspace. Detailed
 technical evidence comes from the project folders and their reports; the
 companion editable guide is `Projects/PROJECTS_DETAILED.md`.
 
-The PNG and JPEG assets in `../assets/projects/` are display copies of existing
-project plots, application views, or laboratory-report figures. Original project
-assets and reports are preserved. The three SVG diagrams explain the FOC, DC
-motor, and MLP architectures; they are explanatory drawings, not measurements.
-Reported simulation and laboratory results were not rerun during this portfolio
-update.
+The compact FOC and DC diagrams trace the controllers in the two motor projects.
+The FOC speed and d/q traces use the same 24,000 samples from the original Python
+scenario A with its averaged inverter. The network drawing uses the bus types and
+all 20 branches in `Projects/power-grid-analysis/system14bus.m`. The MLP diagram
+follows the 2–2–1 architecture in `datass.m`.
+
+The winding cover uses the linear field solver with the five-phase, 45-slot,
+8-pole, span-5 report case at 90 electrical degrees. The Animation view plays the
+existing scientific export of that case. The six-diode diagram pairs with the
+original full-bridge scope capture `manip3_p06_0.jpg` in the three-phase
+rectifier report. The PEMFC workflow uses the internship report’s cell selection
+and chronological fit/test split. Full-size figures open from the case pages.
 
 The third power-electronics experiment documents theory and bench measurements;
 the MATLAB/Simulink work belongs to the first two experiments. The winding tool
