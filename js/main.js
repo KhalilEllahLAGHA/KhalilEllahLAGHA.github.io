@@ -84,11 +84,15 @@
     'hero.subline': 'From power electronics to motor control: I connect models, simulations and experiments to understand electrical energy systems.',
     'chip1': 'Power electronics', 'chip2': 'EV / powertrain', 'chip3': 'Electrical grids', 'chip4': 'AI applied to power systems',
     'cta.contact': 'Contact me',
-    'cta.cv': 'View my CV',
-    'cta.cvshort': 'My CV',
+    'cta.cv': 'Detailed CV',
+    'cta.cvshort': 'Detailed CV',
     'cta.cvats': 'Also available:',
     'cta.cvdocx': 'Word version (.docx)',
-    'cta.cvats2': 'CV for online applications (ATS)',
+    'cta.cvats2': 'ATS CV for online applications (2 pages)',
+    'cta.cvatsShort': 'ATS CV',
+    'docs.cv.detailed': 'Detailed CV', 'docs.cv.ats': 'ATS CV',
+    'docs.cv.detailed.format': 'Two pages, including a full page of engineering projects.',
+    'docs.cv.ats.format': 'Two pages in a single column for online applications.',
     'hero.work': 'Authorized to work in France',
     'about.title': 'About',
     'about.p1': 'My common thread: understand an electrical system, build its model and compare the result with simulation or experiment. After completing four of five years in the Electrical Engineering programme at ENP Algiers, I joined UGA to specialise in electrical energy systems.',
@@ -184,7 +188,7 @@
     'sk.soft5': 'Organized',
     'sk.assoc': 'Student involvement',
     'docs.title': 'Documents',
-    'docs.intro': 'Academic transcript and recommendation letters.',
+    'docs.intro': 'CVs, academic transcript and recommendation letters.',
     'docs.transcript.h': 'Academic transcript',
     'docs.transcript.p': 'Baccalauréat, preparatory classes and engineering programme — École Nationale Polytechnique d\'Alger.',
     'docs.rec1.h': 'Recommendation letter — Dr Y. Benmahamed',
@@ -200,8 +204,8 @@
   if (window.PAGE_EN) { Object.assign(EN, window.PAGE_EN); }
 
   var CVP = Object.assign({
-    designFr: 'cv/CV_Lagha_Khalil_CSEE_FR.pdf', designEn: 'cv/CV_Khalil_Lagha_CSEE_EN.pdf',
-    atsFr: 'cv/CV_Lagha_Khalil_CSEE_FR.pdf', atsEn: 'cv/CV_Khalil_Lagha_CSEE_EN.pdf'
+    designFr: 'cv/CV_Lagha_Khalil_Genie_Electrique_Detaille_FR.pdf', designEn: 'cv/CV_Khalil_Lagha_Electrical_Engineering_Detailed_EN.pdf',
+    atsFr: 'cv/CV_Lagha_Khalil_Genie_Electrique_ATS_FR.pdf', atsEn: 'cv/CV_Khalil_Lagha_Electrical_Engineering_ATS_EN.pdf'
   }, window.PAGE_CV || {});
 
   var EN_ARIA = { 'aria.nav': 'Main navigation', 'aria.menu': 'Menu', 'aria.chips': 'Areas of interest', 'aria.scroll': 'Scroll to About', 'aria.top': 'Back to top', 'aria.brand': 'Khalil Lagha — home', 'aria.profile': 'Profile at a glance', 'aria.filters': 'Filter projects' };
