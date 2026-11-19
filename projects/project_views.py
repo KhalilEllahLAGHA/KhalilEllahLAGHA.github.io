@@ -106,11 +106,11 @@ def refresh_homepage(destination):
     """Update only the explicitly marked figures in the hand-authored home page."""
     html = destination.read_text(encoding="utf-8")
     def update(match):
-        location, slug = match.group(1, 2)
-        return f'<!-- views {location} {slug} -->\n{render_views(slug, location)}\n<!-- /views -->'
-    rebuilt, count = re.subn(r'<!-- views (hero|card) ([\w-]+) -->.*?<!-- /views -->', update, html, flags=re.S)
-    if count != len(VIEWS) + 1:
-        raise ValueError("Expected one featured viewer and one viewer per project")
+        slug = match.group(1)
+        return f'<!-- views card {slug} -->\n{render_views(slug, "card")}\n<!-- /views -->'
+    rebuilt, count = re.subn(r'<!-- views card ([\w-]+) -->.*?<!-- /views -->', update, html, flags=re.S)
+    if count != len(VIEWS):
+        raise ValueError("Expected one project viewer per card")
     def version(match):
         path = match.group(1)
         content = (destination.parent / path).read_bytes().replace(b'\r\n', b'\n')

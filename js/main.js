@@ -14,8 +14,8 @@
   /* ==================== i18n ==================== */
 
   var TITLES = {
-    fr: 'Lagha Khalil — Étudiant M2 CSEE | Électronique de puissance & énergie',
-    en: 'Khalil Lagha — M2 Electrical Energy Systems Design | Power electronics'
+    fr: 'Lagha Khalil | Électrotechnique et systèmes d’énergie électrique',
+    en: 'Khalil Lagha | Electrical engineering and power systems'
   };
   /* Per-page overrides: a page may define
      window.PAGE_TITLES / PAGE_EN / PAGE_CV before this script loads. */
@@ -29,7 +29,7 @@
     'pemfc.metric.label': 'modelling and experimental tests',
     'pemfc.report': 'Internship report',
     'proj.measurements': 'Measurements',
-    'contact.heading': 'Let’s discuss your next project.',
+    'contact.heading': 'Get in touch about my projects',
     'p7.metric.label': 'theory, calculations & measurements',
     'p7.metric': '3 experiments',
     'p8.metric.label': 'understanding every calculation step',
@@ -55,12 +55,8 @@
     'proj.kind.simulation': 'Simulation',
     'proj.report': 'PDF report',
     'proj.intro': 'Seven projects exploring energy conversion, machines, power grids and AI. Open a project to follow the method, the results and their limits.',
-    'focus.power': 'Power electronics',
-    'focus.control': 'and control.',
-    'focus.intro': 'I work on converters, electric machines and power grids, from control diagrams to simulation results and measurements at the bench.',
-    'focus.model': 'Machine simulation',
-    'focus.foc': 'Field-oriented control',
-    'focus.study': 'Explore the motor controller',
+    'focus.field': 'Electrical engineering and power systems',
+    'focus.intro': 'Power electronics · Power grids · Motor control',
     'focus.projects': 'Selected projects',
     'focus.gallery': 'Explore the diagrams, then switch to the simulation results or bench measurements for each project.',
     'proj.overline': 'Selected work',
@@ -79,7 +75,6 @@
     'skip': 'Skip to content', 'person.name': 'Khalil Lagha',
     'nav.home': 'Home', 'nav.about': 'About', 'nav.edu': 'Education', 'nav.exp': 'Experience',
     'nav.proj': 'Projects', 'nav.skills': 'Skills', 'nav.docs': 'Documents', 'nav.contact': 'Contact',
-    'hero.kicker': 'Final-year internship from mid-March 2027',
     'hero.tagline': 'M2 CSEE student at Université Grenoble Alpes.',
     'hero.subline': 'From power electronics to motor control: I connect models, simulations and experiments to understand electrical energy systems.',
     'chip1': 'Power electronics', 'chip2': 'EV / powertrain', 'chip3': 'Electrical grids', 'chip4': 'AI applied to power systems',
@@ -96,7 +91,6 @@
     'hero.work': 'Authorized to work in France',
     'about.title': 'About',
     'about.p1': 'My common thread: understand an electrical system, build its model and compare the result with simulation or experiment. After completing four of five years in the Electrical Engineering programme at ENP Algiers, I joined UGA to specialise in electrical energy systems.',
-    'about.p2': 'I am looking for a 4–6-month final-year internship from mid-March 2027, in power electronics, EV / powertrain, power grids or AI applied to energy.',
     'stat1v': '2nd', 'stat1l': 'of the M1 EEA cohort (UGA)', 'stat2l': 'M1 annual average', 'stat3l': 'English',
     'edu.title': 'Education',
     'e1.h': 'M2 CSEE — Electrical Energy Systems Design', 'e1.badge': 'In progress',
@@ -198,7 +192,6 @@
     'docs.rec3.h': 'Recommendation letter — Prof. I. Saadaoui',
     'docs.rec3.p': 'Head of department, preparatory classes, ENP Algiers.',
     'contact.title': 'Contact',
-    'contact.pitch': 'I am looking for a 4–6-month final-year internship from mid-March 2027. Power electronics, motor control, power grids or AI applied to energy: let’s discuss your projects.',
     'contact.mail': 'Email me'
   };
   if (window.PAGE_EN) { Object.assign(EN, window.PAGE_EN); }
@@ -227,7 +220,7 @@
   var DICT_ARIA = { fr: FR_ARIA, en: EN_ARIA };
   var descriptions = {
     fr: d.querySelector('meta[name="description"]').content,
-    en: 'Khalil Lagha, M2 CSEE student at Université Grenoble Alpes. Power electronics, motor control, power grids and AI applied to energy. A 4–6-month final-year internship from mid-March 2027.'
+    en: 'Portfolio of Khalil Lagha, an M2 CSEE student at Université Grenoble Alpes. Projects in power electronics, power grids and motor control.'
   };
 
   function setLang(lang) {
